@@ -1,0 +1,26 @@
+<dataConfig>
+  <dataSource type="JdbcDataSource" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/recommender" user="root" password="Wurst1337Brot"/>
+    <document name="recipes">
+    	<entity name="item" query="select * from showrecipes">
+    	    <field column="TITLE" name="title" />
+    		<field column="RECIPE_ID" name="Recipe_ID" />  
+            <field column="VEGETARIAN" name="Vegetarian" /> 
+            <field column="VEGAN" name="Vegan" />
+            <field column="DIABETUS" name="Diabetus" />
+            <field column="SPORTSMAN" name="Sportsman" />
+            <field column="LACTOSE" name="Lactose" />
+            <field column="GLUTEN" name="Gluten" />
+            <field column="PORK" name="Pork" />
+            <field column="ANTIALC" name="Antialc" />
+            <field column="BEEF" name="beef" />
+            <field column="TIMETOWORK" name="TimeToWork" />
+            <field column="TIMETOCOOK" name="TimeToCook" />
+            <field column="TIMETOREST" name="TimeToRest" />
+            <field column="SOURCE" name="url"/>
+            <entity name="ingredients" query="select a.name from fr_cleaningredientnames as a, fr_ingredients as b, showrecipes as c where c.recipe_id = '${item.ID}' AND c.recipe_id = b.recipe_id AND b.CleanNames_ID = a.id">
+                <field column="name" name="ingredientname" />
+            <entity/>  		   
+        </entity>
+    </document>
+</dataConfig>
+
