@@ -1,5 +1,5 @@
 <dataConfig>
-  <dataSource type="JdbcDataSource" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/recommender" user="root" password="Wurst1337Brot"/>
+  <dataSource type="JdbcDataSource" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/recommender" user="woot" password="hoot"/>
     <document name="recipes">
     	<entity name="item" query="select * from showrecipes">
     	    <field column="TITLE" name="title" />
