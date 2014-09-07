@@ -5726,3 +5726,1365 @@ INFO  - 2014-09-05 16:08:09.729; org.apache.solr.core.SolrCore; [collection1] we
 INFO  - 2014-09-05 16:08:44.516; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/cores params={indexInfo=false&_=1409926124503&wt=json} status=0 QTime=0 
 INFO  - 2014-09-05 16:08:44.552; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/system params={_=1409926124541&wt=json} status=0 QTime=1 
 INFO  - 2014-09-05 16:08:50.067; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={indent=true&q=*:*&_=1409926130053&wt=json} hits=139942 status=0 QTime=1 
+INFO  - 2014-09-05 17:31:16.990; org.eclipse.jetty.server.Server; jetty-8.1.10.v20130312
+INFO  - 2014-09-05 17:31:17.610; org.eclipse.jetty.deploy.providers.ScanningAppProvider; Deployment monitor /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/contexts at interval 0
+INFO  - 2014-09-05 17:31:17.721; org.eclipse.jetty.deploy.DeploymentManager; Deployable added: /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/contexts/solr-jetty-context.xml
+INFO  - 2014-09-05 17:31:20.599; org.eclipse.jetty.webapp.WebInfConfiguration; Extract jar:file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/webapps/solr.war!/ to /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr-webapp/webapp
+INFO  - 2014-09-05 17:31:23.688; org.eclipse.jetty.webapp.StandardDescriptorProcessor; NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+INFO  - 2014-09-05 17:31:23.812; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init()
+INFO  - 2014-09-05 17:31:23.870; org.apache.solr.core.SolrResourceLoader; JNDI not configured for solr (NoInitialContextEx)
+INFO  - 2014-09-05 17:31:23.870; org.apache.solr.core.SolrResourceLoader; solr home defaulted to 'solr/' (could not find system property or JNDI)
+INFO  - 2014-09-05 17:31:23.871; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr/'
+INFO  - 2014-09-05 17:31:24.032; org.apache.solr.core.ConfigSolr; Loading container configuration from /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/solr.xml
+INFO  - 2014-09-05 17:31:24.240; org.apache.solr.core.CorePropertiesLocator; Config-defined core root directory: /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr
+INFO  - 2014-09-05 17:31:24.260; org.apache.solr.core.CoreContainer; New CoreContainer 2014461570
+INFO  - 2014-09-05 17:31:24.261; org.apache.solr.core.CoreContainer; Loading cores into CoreContainer [instanceDir=solr/]
+INFO  - 2014-09-05 17:31:24.285; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting socketTimeout to: 0
+INFO  - 2014-09-05 17:31:24.285; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting urlScheme to: null
+INFO  - 2014-09-05 17:31:24.312; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting connTimeout to: 0
+INFO  - 2014-09-05 17:31:24.314; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxConnectionsPerHost to: 20
+INFO  - 2014-09-05 17:31:24.314; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting corePoolSize to: 0
+INFO  - 2014-09-05 17:31:24.315; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maximumPoolSize to: 2147483647
+INFO  - 2014-09-05 17:31:24.315; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxThreadIdleTime to: 5
+INFO  - 2014-09-05 17:31:24.315; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting sizeOfQueue to: -1
+INFO  - 2014-09-05 17:31:24.316; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting fairnessPolicy to: false
+INFO  - 2014-09-05 17:31:24.502; org.apache.solr.logging.LogWatcher; SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+INFO  - 2014-09-05 17:31:24.503; org.apache.solr.logging.LogWatcher; Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+INFO  - 2014-09-05 17:31:24.504; org.apache.solr.core.CoreContainer; Host Name: 
+INFO  - 2014-09-05 17:31:24.568; org.apache.solr.core.CorePropertiesLocator; Looking for core definitions underneath /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr
+INFO  - 2014-09-05 17:31:24.618; org.apache.solr.core.CorePropertiesLocator; Found core collection1 in /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/
+INFO  - 2014-09-05 17:31:24.618; org.apache.solr.core.CorePropertiesLocator; Found 1 core definitions
+INFO  - 2014-09-05 17:31:24.650; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: '/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/'
+INFO  - 2014-09-05 17:31:24.747; org.apache.solr.core.SolrConfig; Adding specified lib dirs to ClassLoader
+INFO  - 2014-09-05 17:31:24.772; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/dist/solr-dataimporthandler-4.9.0.jar' to classloader
+INFO  - 2014-09-05 17:31:24.773; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/dist/solr-dataimporthandler-extras-4.9.0.jar' to classloader
+WARN  - 2014-09-05 17:31:24.774; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../lib/ (resolved as: /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/../../../lib).
+INFO  - 2014-09-05 17:31:24.775; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/apache-mime4j-core-0.7.2.jar' to classloader
+INFO  - 2014-09-05 17:31:24.775; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/apache-mime4j-dom-0.7.2.jar' to classloader
+INFO  - 2014-09-05 17:31:24.776; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/aspectjrt-1.6.11.jar' to classloader
+INFO  - 2014-09-05 17:31:24.776; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/bcmail-jdk15-1.45.jar' to classloader
+INFO  - 2014-09-05 17:31:24.776; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/bcprov-jdk15-1.45.jar' to classloader
+INFO  - 2014-09-05 17:31:24.776; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/boilerpipe-1.1.0.jar' to classloader
+INFO  - 2014-09-05 17:31:24.777; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/commons-compress-1.7.jar' to classloader
+INFO  - 2014-09-05 17:31:24.777; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/dom4j-1.6.1.jar' to classloader
+INFO  - 2014-09-05 17:31:24.777; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/fontbox-1.8.4.jar' to classloader
+INFO  - 2014-09-05 17:31:24.777; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/icu4j-53.1.jar' to classloader
+INFO  - 2014-09-05 17:31:24.777; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/isoparser-1.0-RC-1.jar' to classloader
+INFO  - 2014-09-05 17:31:24.778; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/jdom-1.0.jar' to classloader
+INFO  - 2014-09-05 17:31:24.778; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/jempbox-1.8.4.jar' to classloader
+INFO  - 2014-09-05 17:31:24.778; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/jhighlight-1.0.jar' to classloader
+INFO  - 2014-09-05 17:31:24.778; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/juniversalchardet-1.0.3.jar' to classloader
+INFO  - 2014-09-05 17:31:24.778; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/metadata-extractor-2.6.2.jar' to classloader
+INFO  - 2014-09-05 17:31:24.779; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/netcdf-4.2-min.jar' to classloader
+INFO  - 2014-09-05 17:31:24.779; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/pdfbox-1.8.4.jar' to classloader
+INFO  - 2014-09-05 17:31:24.779; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/poi-3.10-beta2.jar' to classloader
+INFO  - 2014-09-05 17:31:24.779; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/poi-ooxml-3.10-beta2.jar' to classloader
+INFO  - 2014-09-05 17:31:24.779; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/poi-ooxml-schemas-3.10-beta2.jar' to classloader
+INFO  - 2014-09-05 17:31:24.780; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/poi-scratchpad-3.10-beta2.jar' to classloader
+INFO  - 2014-09-05 17:31:24.780; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/rome-0.9.jar' to classloader
+INFO  - 2014-09-05 17:31:24.780; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/tagsoup-1.2.1.jar' to classloader
+INFO  - 2014-09-05 17:31:24.780; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/tika-core-1.5.jar' to classloader
+INFO  - 2014-09-05 17:31:24.781; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/tika-parsers-1.5.jar' to classloader
+INFO  - 2014-09-05 17:31:24.781; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/tika-xmp-1.5.jar' to classloader
+INFO  - 2014-09-05 17:31:24.781; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/vorbis-java-core-0.1.jar' to classloader
+INFO  - 2014-09-05 17:31:24.781; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/vorbis-java-tika-0.1.jar' to classloader
+INFO  - 2014-09-05 17:31:24.782; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/xercesImpl-2.9.1.jar' to classloader
+INFO  - 2014-09-05 17:31:24.782; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/xmlbeans-2.3.0.jar' to classloader
+INFO  - 2014-09-05 17:31:24.782; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/xmpcore-5.1.2.jar' to classloader
+INFO  - 2014-09-05 17:31:24.783; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/xz-1.4.jar' to classloader
+INFO  - 2014-09-05 17:31:24.784; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/dist/solr-cell-4.9.0.jar' to classloader
+INFO  - 2014-09-05 17:31:24.784; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/clustering/lib/attributes-binder-1.2.1.jar' to classloader
+INFO  - 2014-09-05 17:31:24.785; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/clustering/lib/carrot2-mini-3.9.0.jar' to classloader
+INFO  - 2014-09-05 17:31:24.785; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/clustering/lib/hppc-0.5.2.jar' to classloader
+INFO  - 2014-09-05 17:31:24.785; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/clustering/lib/jackson-core-asl-1.9.13.jar' to classloader
+INFO  - 2014-09-05 17:31:24.785; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/clustering/lib/jackson-mapper-asl-1.9.13.jar' to classloader
+INFO  - 2014-09-05 17:31:24.786; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/clustering/lib/mahout-collections-1.0.jar' to classloader
+INFO  - 2014-09-05 17:31:24.786; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/clustering/lib/mahout-math-0.6.jar' to classloader
+INFO  - 2014-09-05 17:31:24.786; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/clustering/lib/simple-xml-2.7.jar' to classloader
+INFO  - 2014-09-05 17:31:24.787; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/dist/solr-clustering-4.9.0.jar' to classloader
+INFO  - 2014-09-05 17:31:24.787; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/langid/lib/jsonic-1.2.7.jar' to classloader
+INFO  - 2014-09-05 17:31:24.787; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/langid/lib/langdetect-1.1-20120112.jar' to classloader
+INFO  - 2014-09-05 17:31:24.788; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/dist/solr-langid-4.9.0.jar' to classloader
+INFO  - 2014-09-05 17:31:24.788; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/velocity/lib/commons-beanutils-1.8.3.jar' to classloader
+INFO  - 2014-09-05 17:31:24.789; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/velocity/lib/commons-collections-3.2.1.jar' to classloader
+INFO  - 2014-09-05 17:31:24.789; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/velocity/lib/velocity-1.7.jar' to classloader
+INFO  - 2014-09-05 17:31:24.789; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/velocity/lib/velocity-tools-2.0.jar' to classloader
+INFO  - 2014-09-05 17:31:24.790; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/dist/solr-velocity-4.9.0.jar' to classloader
+INFO  - 2014-09-05 17:31:25.499; org.apache.solr.update.SolrIndexConfig; IndexWriter infoStream solr logging is enabled
+INFO  - 2014-09-05 17:31:25.506; org.apache.solr.core.SolrConfig; Using Lucene MatchVersion: LUCENE_4_9
+INFO  - 2014-09-05 17:31:26.076; org.apache.solr.core.SolrConfig; Loaded SolrConfig: solrconfig.xml
+INFO  - 2014-09-05 17:31:26.168; org.apache.solr.schema.IndexSchema; Reading Solr Schema from schema.xml
+INFO  - 2014-09-05 17:31:26.349; org.apache.solr.schema.IndexSchema; [collection1] Schema name=example
+INFO  - 2014-09-05 17:31:27.310; org.apache.solr.schema.IndexSchema; unique key field: id
+INFO  - 2014-09-05 17:31:27.323; org.apache.solr.rest.RestManager$Registry; Registered ManagedResource impl org.apache.solr.rest.schema.analysis.ManagedWordSetResource for path /schema/analysis/stopwords/english
+INFO  - 2014-09-05 17:31:27.324; org.apache.solr.rest.RestManager$Registry; Registered ManagedResource impl org.apache.solr.rest.schema.analysis.ManagedSynonymFilterFactory$SynonymManager for path /schema/analysis/synonyms/english
+INFO  - 2014-09-05 17:31:27.589; org.apache.solr.schema.FileExchangeRateProvider; Reloading exchange rates from file currency.xml
+INFO  - 2014-09-05 17:31:27.712; org.apache.solr.schema.FileExchangeRateProvider; Reloading exchange rates from file currency.xml
+INFO  - 2014-09-05 17:31:29.096; org.apache.solr.core.CoreContainer; Creating SolrCore 'collection1' using configuration from instancedir /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/
+INFO  - 2014-09-05 17:31:29.141; org.apache.solr.core.SolrCore; solr.NRTCachingDirectoryFactory
+INFO  - 2014-09-05 17:31:29.148; org.apache.solr.core.SolrCore; [collection1] Opening new SolrCore at /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/, dataDir=/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data/
+INFO  - 2014-09-05 17:31:29.154; org.apache.solr.core.JmxMonitoredMap; No JMX servers found, not exposing Solr information with JMX.
+INFO  - 2014-09-05 17:31:29.158; org.apache.solr.core.SolrCore; [collection1] Added SolrEventListener for newSearcher: org.apache.solr.core.QuerySenderListener{queries=[]}
+INFO  - 2014-09-05 17:31:29.158; org.apache.solr.core.SolrCore; [collection1] Added SolrEventListener for firstSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=static firstSearcher warming in solrconfig.xml}]}
+INFO  - 2014-09-05 17:31:29.171; org.apache.solr.core.CachingDirectoryFactory; return new directory for /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data
+INFO  - 2014-09-05 17:31:29.281; org.apache.solr.core.SolrCore; New index directory detected: old=null new=/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data/index/
+INFO  - 2014-09-05 17:31:29.286; org.apache.solr.core.CachingDirectoryFactory; return new directory for /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data/index
+INFO  - 2014-09-05 17:31:29.423; org.apache.solr.core.SolrCore; created json: solr.JSONResponseWriter
+INFO  - 2014-09-05 17:31:29.423; org.apache.solr.core.SolrCore; adding lazy queryResponseWriter: solr.VelocityResponseWriter
+INFO  - 2014-09-05 17:31:29.424; org.apache.solr.core.SolrCore; created velocity: solr.VelocityResponseWriter
+INFO  - 2014-09-05 17:31:29.427; org.apache.solr.core.SolrCore; created xslt: solr.XSLTResponseWriter
+INFO  - 2014-09-05 17:31:29.427; org.apache.solr.response.XSLTResponseWriter; xsltCacheLifetimeSeconds=5
+INFO  - 2014-09-05 17:31:29.503; org.apache.solr.core.SolrCore; no updateRequestProcessorChain defined as default, creating implicit default
+INFO  - 2014-09-05 17:31:29.530; org.apache.solr.core.RequestHandlers; created /dataimport: solr.DataImportHandler
+INFO  - 2014-09-05 17:31:29.546; org.apache.solr.core.RequestHandlers; created /select: solr.SearchHandler
+INFO  - 2014-09-05 17:31:29.546; org.apache.solr.core.RequestHandlers; created /query: solr.SearchHandler
+INFO  - 2014-09-05 17:31:29.548; org.apache.solr.core.RequestHandlers; created /get: solr.RealTimeGetHandler
+INFO  - 2014-09-05 17:31:29.548; org.apache.solr.core.RequestHandlers; created /browse: solr.SearchHandler
+INFO  - 2014-09-05 17:31:29.551; org.apache.solr.core.RequestHandlers; created /update: solr.UpdateRequestHandler
+INFO  - 2014-09-05 17:31:29.552; org.apache.solr.core.RequestHandlers; created /update/json: solr.UpdateRequestHandler
+INFO  - 2014-09-05 17:31:29.552; org.apache.solr.core.RequestHandlers; created /update/csv: solr.UpdateRequestHandler
+INFO  - 2014-09-05 17:31:29.552; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.extraction.ExtractingRequestHandler
+INFO  - 2014-09-05 17:31:29.553; org.apache.solr.core.RequestHandlers; created /update/extract: solr.extraction.ExtractingRequestHandler
+INFO  - 2014-09-05 17:31:29.553; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+INFO  - 2014-09-05 17:31:29.553; org.apache.solr.core.RequestHandlers; created /analysis/field: solr.FieldAnalysisRequestHandler
+INFO  - 2014-09-05 17:31:29.553; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.DocumentAnalysisRequestHandler
+INFO  - 2014-09-05 17:31:29.553; org.apache.solr.core.RequestHandlers; created /analysis/document: solr.DocumentAnalysisRequestHandler
+INFO  - 2014-09-05 17:31:29.555; org.apache.solr.core.RequestHandlers; created /admin/: solr.admin.AdminHandlers
+INFO  - 2014-09-05 17:31:29.558; org.apache.solr.core.RequestHandlers; created /admin/ping: solr.PingRequestHandler
+INFO  - 2014-09-05 17:31:29.559; org.apache.solr.core.RequestHandlers; created /debug/dump: solr.DumpRequestHandler
+INFO  - 2014-09-05 17:31:29.569; org.apache.solr.core.RequestHandlers; created /replication: solr.ReplicationHandler
+INFO  - 2014-09-05 17:31:29.570; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2014-09-05 17:31:29.570; org.apache.solr.core.RequestHandlers; created /spell: solr.SearchHandler
+INFO  - 2014-09-05 17:31:29.570; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2014-09-05 17:31:29.570; org.apache.solr.core.RequestHandlers; created /suggest: solr.SearchHandler
+INFO  - 2014-09-05 17:31:29.571; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2014-09-05 17:31:29.571; org.apache.solr.core.RequestHandlers; created /tvrh: solr.SearchHandler
+INFO  - 2014-09-05 17:31:29.571; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2014-09-05 17:31:29.571; org.apache.solr.core.RequestHandlers; created /terms: solr.SearchHandler
+INFO  - 2014-09-05 17:31:29.571; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2014-09-05 17:31:29.572; org.apache.solr.core.RequestHandlers; created /elevate: solr.SearchHandler
+INFO  - 2014-09-05 17:31:29.593; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2014-09-05 17:31:29.595; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2014-09-05 17:31:29.596; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2014-09-05 17:31:29.849; org.apache.solr.update.CommitTracker; Hard AutoCommit: if uncommited for 15000ms; 
+INFO  - 2014-09-05 17:31:29.849; org.apache.solr.update.CommitTracker; Soft AutoCommit: disabled
+INFO  - 2014-09-05 17:31:30.218; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=NRTCachingDirectory(MMapDirectory@/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data/index lockFactory=NativeFSLockFactory@/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data/index; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_12,generation=38}
+INFO  - 2014-09-05 17:31:30.219; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 38
+INFO  - 2014-09-05 17:31:30.927; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@6b2c572a[collection1] main
+INFO  - 2014-09-05 17:31:30.933; org.apache.solr.rest.ManagedResourceStorage$FileStorageIO; File-based storage initialized to use dir: /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/conf
+INFO  - 2014-09-05 17:31:30.933; org.apache.solr.rest.RestManager; Initializing RestManager with initArgs: {storageDir=/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/conf/}
+INFO  - 2014-09-05 17:31:30.934; org.apache.solr.rest.ManagedResourceStorage; Reading _rest_managed.json using file:dir=/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/conf
+WARN  - 2014-09-05 17:31:30.934; org.apache.solr.rest.ManagedResource; No stored data found for /rest/managed
+WARN  - 2014-09-05 17:31:30.934; org.apache.solr.rest.ManagedResource; No registered observers for /rest/managed
+INFO  - 2014-09-05 17:31:30.935; org.apache.solr.rest.RestManager; Initializing 2 registered ManagedResources
+INFO  - 2014-09-05 17:31:30.935; org.apache.solr.rest.ManagedResourceStorage; Reading _schema_analysis_stopwords_english.json using file:dir=/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/conf
+INFO  - 2014-09-05 17:31:30.981; org.apache.solr.rest.ManagedResourceStorage; Loaded LinkedHashMap at path _schema_analysis_stopwords_english.json using file:dir=/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/conf
+INFO  - 2014-09-05 17:31:30.982; org.apache.solr.rest.ManagedResource; Loaded initArgs {ignoreCase=true} for /schema/analysis/stopwords/english
+INFO  - 2014-09-05 17:31:30.982; org.apache.solr.rest.schema.analysis.ManagedWordSetResource; Loaded 35 words for /schema/analysis/stopwords/english
+INFO  - 2014-09-05 17:31:30.982; org.apache.solr.rest.ManagedResource; Notified 1 observers of /schema/analysis/stopwords/english
+INFO  - 2014-09-05 17:31:30.983; org.apache.solr.rest.ManagedResourceStorage; Reading _schema_analysis_synonyms_english.json using file:dir=/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/conf
+INFO  - 2014-09-05 17:31:30.984; org.apache.solr.rest.ManagedResourceStorage; Loaded LinkedHashMap at path _schema_analysis_synonyms_english.json using file:dir=/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/conf
+INFO  - 2014-09-05 17:31:30.984; org.apache.solr.rest.ManagedResource; Loaded initArgs {ignoreCase=true,format=solr} for /schema/analysis/synonyms/english
+INFO  - 2014-09-05 17:31:30.985; org.apache.solr.rest.schema.analysis.ManagedSynonymFilterFactory$SynonymManager; Loaded 3 synonym mappings for /schema/analysis/synonyms/english
+INFO  - 2014-09-05 17:31:30.987; org.apache.solr.rest.ManagedResource; Notified 1 observers of /schema/analysis/synonyms/english
+INFO  - 2014-09-05 17:31:30.987; org.apache.solr.handler.component.SpellCheckComponent; Initializing spell checkers
+INFO  - 2014-09-05 17:31:30.993; org.apache.solr.spelling.DirectSolrSpellChecker; init: {name=default,field=text,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+INFO  - 2014-09-05 17:31:31.000; org.apache.solr.handler.component.SpellCheckComponent; No queryConverter defined, using default converter
+INFO  - 2014-09-05 17:31:31.001; org.apache.solr.handler.component.SuggestComponent; Initializing SuggestComponent
+INFO  - 2014-09-05 17:31:31.002; org.apache.solr.spelling.suggest.SolrSuggester; init: {name=mySuggester,lookupImpl=FuzzyLookupFactory,dictionaryImpl=DocumentDictionaryFactory,field=cat,weightField=price,suggestAnalyzerFieldType=string}
+INFO  - 2014-09-05 17:31:31.017; org.apache.solr.spelling.suggest.SolrSuggester; Dictionary loaded with params: {name=mySuggester,lookupImpl=FuzzyLookupFactory,dictionaryImpl=DocumentDictionaryFactory,field=cat,weightField=price,suggestAnalyzerFieldType=string}
+INFO  - 2014-09-05 17:31:31.018; org.apache.solr.handler.component.QueryElevationComponent; Loading QueryElevation from: /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/conf/elevate.xml
+INFO  - 2014-09-05 17:31:31.083; org.apache.solr.handler.ReplicationHandler; Commits will be reserved for  10000
+INFO  - 2014-09-05 17:31:31.084; org.apache.solr.core.QuerySenderListener; QuerySenderListener sending requests to Searcher@6b2c572a[collection1] main{StandardDirectoryReader(segments_12:141:nrt _19(4.9):C23962 _1a(4.9):C8479 _1b(4.9):C21054 _1c(4.9):C9798 _1d(4.9):C18943 _1e(4.9):C7966 _1f(4.9):C20898 _1g(4.9):C8379 _1h(4.9):C20463)}
+INFO  - 2014-09-05 17:31:31.084; org.apache.solr.core.CoreContainer; registering core: collection1
+INFO  - 2014-09-05 17:31:31.182; org.apache.solr.servlet.SolrDispatchFilter; user.dir=/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example
+INFO  - 2014-09-05 17:31:31.183; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init() done
+INFO  - 2014-09-05 17:31:31.260; org.eclipse.jetty.server.AbstractConnector; Started SocketConnector@0.0.0.0:8983
+INFO  - 2014-09-05 17:31:32.993; org.apache.solr.core.SolrCore; [collection1] webapp=null path=null params={q=static+firstSearcher+warming+in+solrconfig.xml&distrib=false&event=firstSearcher} hits=4116 status=0 QTime=1811 
+INFO  - 2014-09-05 17:31:33.021; org.apache.solr.core.QuerySenderListener; QuerySenderListener done.
+INFO  - 2014-09-05 17:31:33.021; org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener; Loading spell index for spellchecker: default
+INFO  - 2014-09-05 17:31:33.022; org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener; Loading spell index for spellchecker: wordbreak
+INFO  - 2014-09-05 17:31:33.022; org.apache.solr.handler.component.SuggestComponent$SuggesterListener; Loading suggester index for: mySuggester
+INFO  - 2014-09-05 17:31:33.022; org.apache.solr.spelling.suggest.SolrSuggester; reload()
+INFO  - 2014-09-05 17:31:33.023; org.apache.solr.spelling.suggest.SolrSuggester; build()
+INFO  - 2014-09-05 17:31:39.428; org.apache.solr.core.SolrCore; [collection1] Registered new searcher Searcher@6b2c572a[collection1] main{StandardDirectoryReader(segments_12:141:nrt _19(4.9):C23962 _1a(4.9):C8479 _1b(4.9):C21054 _1c(4.9):C9798 _1d(4.9):C18943 _1e(4.9):C7966 _1f(4.9):C20898 _1g(4.9):C8379 _1h(4.9):C20463)}
+INFO  - 2014-09-05 17:31:57.942; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1409931117932} status=0 QTime=2 
+INFO  - 2014-09-05 17:31:58.462; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/system params={wt=json&_=1409931117974} status=0 QTime=483 
+INFO  - 2014-09-05 17:32:02.918; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file/ params={file=admin-extra.menu-top.html&contentType=text/html;charset%3Dutf-8&_=1409931122907} status=0 QTime=2 
+INFO  - 2014-09-05 17:32:02.931; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file/ params={file=admin-extra.menu-bottom.html&contentType=text/html;charset%3Dutf-8&_=1409931122908} status=0 QTime=1 
+INFO  - 2014-09-05 17:32:02.981; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file/ params={file=admin-extra.html&_=1409931122971} status=0 QTime=0 
+INFO  - 2014-09-05 17:32:02.984; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/ping params={action=status&wt=json&_=1409931122972} status=503 QTime=3 
+INFO  - 2014-09-05 17:32:02.986; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/replication params={wt=json&command=details&_=1409931122970} status=0 QTime=7 
+INFO  - 2014-09-05 17:32:02.991; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/system params={wt=json&_=1409931122971} status=0 QTime=11 
+INFO  - 2014-09-05 17:32:02.991; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={show=index&numTerms=0&wt=json&_=1409931122969} status=0 QTime=13 
+INFO  - 2014-09-05 17:32:11.472; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&wt=json&_=1409931131443} status=0 QTime=23 
+INFO  - 2014-09-05 17:32:11.567; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&wt=json&_=1409931131557} status=0 QTime=1 
+INFO  - 2014-09-05 17:32:11.584; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931131560} status=0 QTime=17 
+INFO  - 2014-09-05 17:32:11.665; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&command=show-config&_=1409931131558} status=0 QTime=98 
+INFO  - 2014-09-05 17:32:14.298; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1409931133535} status=0 QTime=755 
+INFO  - 2014-09-05 17:32:14.323; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1409931134301} status=0 QTime=20 
+INFO  - 2014-09-05 17:32:55.440; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&wt=json&_=1409931175428} status=0 QTime=0 
+INFO  - 2014-09-05 17:32:55.491; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&wt=json&_=1409931175482} status=0 QTime=0 
+INFO  - 2014-09-05 17:32:55.491; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931175485} status=0 QTime=0 
+INFO  - 2014-09-05 17:32:55.508; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&command=show-config&_=1409931175483} status=0 QTime=17 
+INFO  - 2014-09-05 17:34:15.604; org.eclipse.jetty.server.Server; Graceful shutdown SocketConnector@0.0.0.0:8983
+INFO  - 2014-09-05 17:34:15.686; org.eclipse.jetty.server.Server; Graceful shutdown o.e.j.w.WebAppContext{/solr,file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr-webapp/webapp/},/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/webapps/solr.war
+INFO  - 2014-09-05 17:34:16.689; org.apache.solr.core.CoreContainer; Shutting down CoreContainer instance=2014461570
+INFO  - 2014-09-05 17:34:16.690; org.apache.solr.core.SolrCore; [collection1]  CLOSING SolrCore org.apache.solr.core.SolrCore@6914195
+INFO  - 2014-09-05 17:34:16.691; org.apache.solr.update.DirectUpdateHandler2; closing DirectUpdateHandler2{commits=0,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0,transaction_logs_total_size=24012385,transaction_logs_total_number=1}
+INFO  - 2014-09-05 17:34:16.692; org.apache.solr.update.SolrCoreState; Closing SolrCoreState
+INFO  - 2014-09-05 17:34:16.692; org.apache.solr.update.DefaultSolrCoreState; SolrCoreState ref count has reached 0 - closing IndexWriter
+INFO  - 2014-09-05 17:34:16.693; org.apache.solr.update.DefaultSolrCoreState; closing IndexWriter with IndexWriterCloser
+INFO  - 2014-09-05 17:34:16.698; org.apache.solr.core.SolrCore; [collection1] Closing main searcher on request.
+INFO  - 2014-09-05 17:34:16.704; org.apache.solr.core.CachingDirectoryFactory; Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+INFO  - 2014-09-05 17:34:16.748; org.apache.solr.core.CachingDirectoryFactory; looking to close /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data/index [CachedDir<<refCount=0;path=/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data/index;done=false>>]
+INFO  - 2014-09-05 17:34:16.749; org.apache.solr.core.CachingDirectoryFactory; Closing directory: /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data/index
+INFO  - 2014-09-05 17:34:16.749; org.apache.solr.core.CachingDirectoryFactory; looking to close /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data [CachedDir<<refCount=0;path=/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data;done=false>>]
+INFO  - 2014-09-05 17:34:16.749; org.apache.solr.core.CachingDirectoryFactory; Closing directory: /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data
+INFO  - 2014-09-05 17:34:16.762; org.eclipse.jetty.server.handler.ContextHandler; stopped o.e.j.w.WebAppContext{/solr,file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr-webapp/webapp/},/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/webapps/solr.war
+INFO  - 2014-09-05 17:34:36.247; org.eclipse.jetty.server.Server; jetty-8.1.10.v20130312
+INFO  - 2014-09-05 17:34:36.269; org.eclipse.jetty.deploy.providers.ScanningAppProvider; Deployment monitor /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/contexts at interval 0
+INFO  - 2014-09-05 17:34:36.274; org.eclipse.jetty.deploy.DeploymentManager; Deployable added: /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/contexts/solr-jetty-context.xml
+INFO  - 2014-09-05 17:34:37.296; org.eclipse.jetty.webapp.StandardDescriptorProcessor; NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+INFO  - 2014-09-05 17:34:37.345; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init()
+INFO  - 2014-09-05 17:34:37.356; org.apache.solr.core.SolrResourceLoader; JNDI not configured for solr (NoInitialContextEx)
+INFO  - 2014-09-05 17:34:37.357; org.apache.solr.core.SolrResourceLoader; solr home defaulted to 'solr/' (could not find system property or JNDI)
+INFO  - 2014-09-05 17:34:37.381; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr/'
+INFO  - 2014-09-05 17:34:37.486; org.apache.solr.core.ConfigSolr; Loading container configuration from /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/solr.xml
+INFO  - 2014-09-05 17:34:37.585; org.apache.solr.core.CorePropertiesLocator; Config-defined core root directory: /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr
+INFO  - 2014-09-05 17:34:37.591; org.apache.solr.core.CoreContainer; New CoreContainer 2014461570
+INFO  - 2014-09-05 17:34:37.592; org.apache.solr.core.CoreContainer; Loading cores into CoreContainer [instanceDir=solr/]
+INFO  - 2014-09-05 17:34:37.603; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting socketTimeout to: 0
+INFO  - 2014-09-05 17:34:37.603; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting urlScheme to: null
+INFO  - 2014-09-05 17:34:37.607; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting connTimeout to: 0
+INFO  - 2014-09-05 17:34:37.607; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxConnectionsPerHost to: 20
+INFO  - 2014-09-05 17:34:37.609; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting corePoolSize to: 0
+INFO  - 2014-09-05 17:34:37.609; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maximumPoolSize to: 2147483647
+INFO  - 2014-09-05 17:34:37.609; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxThreadIdleTime to: 5
+INFO  - 2014-09-05 17:34:37.609; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting sizeOfQueue to: -1
+INFO  - 2014-09-05 17:34:37.610; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting fairnessPolicy to: false
+INFO  - 2014-09-05 17:34:37.763; org.apache.solr.logging.LogWatcher; SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+INFO  - 2014-09-05 17:34:37.764; org.apache.solr.logging.LogWatcher; Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+INFO  - 2014-09-05 17:34:37.765; org.apache.solr.core.CoreContainer; Host Name: 
+INFO  - 2014-09-05 17:34:37.814; org.apache.solr.core.CorePropertiesLocator; Looking for core definitions underneath /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr
+INFO  - 2014-09-05 17:34:37.827; org.apache.solr.core.CorePropertiesLocator; Found core collection1 in /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/
+INFO  - 2014-09-05 17:34:37.828; org.apache.solr.core.CorePropertiesLocator; Found 1 core definitions
+INFO  - 2014-09-05 17:34:37.829; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: '/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/'
+INFO  - 2014-09-05 17:34:37.890; org.apache.solr.core.SolrConfig; Adding specified lib dirs to ClassLoader
+INFO  - 2014-09-05 17:34:37.918; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/dist/solr-dataimporthandler-4.9.0.jar' to classloader
+INFO  - 2014-09-05 17:34:37.919; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/dist/solr-dataimporthandler-extras-4.9.0.jar' to classloader
+WARN  - 2014-09-05 17:34:37.920; org.apache.solr.core.SolrResourceLoader; Can't find (or read) directory to add to classloader: ../../../lib/ (resolved as: /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/../../../lib).
+INFO  - 2014-09-05 17:34:37.922; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/apache-mime4j-core-0.7.2.jar' to classloader
+INFO  - 2014-09-05 17:34:37.923; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/apache-mime4j-dom-0.7.2.jar' to classloader
+INFO  - 2014-09-05 17:34:37.923; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/aspectjrt-1.6.11.jar' to classloader
+INFO  - 2014-09-05 17:34:37.924; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/bcmail-jdk15-1.45.jar' to classloader
+INFO  - 2014-09-05 17:34:37.924; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/bcprov-jdk15-1.45.jar' to classloader
+INFO  - 2014-09-05 17:34:37.925; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/boilerpipe-1.1.0.jar' to classloader
+INFO  - 2014-09-05 17:34:37.925; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/commons-compress-1.7.jar' to classloader
+INFO  - 2014-09-05 17:34:37.926; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/dom4j-1.6.1.jar' to classloader
+INFO  - 2014-09-05 17:34:37.926; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/fontbox-1.8.4.jar' to classloader
+INFO  - 2014-09-05 17:34:37.926; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/icu4j-53.1.jar' to classloader
+INFO  - 2014-09-05 17:34:37.927; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/isoparser-1.0-RC-1.jar' to classloader
+INFO  - 2014-09-05 17:34:37.927; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/jdom-1.0.jar' to classloader
+INFO  - 2014-09-05 17:34:37.928; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/jempbox-1.8.4.jar' to classloader
+INFO  - 2014-09-05 17:34:37.928; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/jhighlight-1.0.jar' to classloader
+INFO  - 2014-09-05 17:34:37.928; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/juniversalchardet-1.0.3.jar' to classloader
+INFO  - 2014-09-05 17:34:37.928; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/metadata-extractor-2.6.2.jar' to classloader
+INFO  - 2014-09-05 17:34:37.929; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/netcdf-4.2-min.jar' to classloader
+INFO  - 2014-09-05 17:34:37.929; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/pdfbox-1.8.4.jar' to classloader
+INFO  - 2014-09-05 17:34:37.929; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/poi-3.10-beta2.jar' to classloader
+INFO  - 2014-09-05 17:34:37.929; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/poi-ooxml-3.10-beta2.jar' to classloader
+INFO  - 2014-09-05 17:34:37.930; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/poi-ooxml-schemas-3.10-beta2.jar' to classloader
+INFO  - 2014-09-05 17:34:37.930; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/poi-scratchpad-3.10-beta2.jar' to classloader
+INFO  - 2014-09-05 17:34:37.930; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/rome-0.9.jar' to classloader
+INFO  - 2014-09-05 17:34:37.930; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/tagsoup-1.2.1.jar' to classloader
+INFO  - 2014-09-05 17:34:37.930; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/tika-core-1.5.jar' to classloader
+INFO  - 2014-09-05 17:34:37.930; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/tika-parsers-1.5.jar' to classloader
+INFO  - 2014-09-05 17:34:37.931; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/tika-xmp-1.5.jar' to classloader
+INFO  - 2014-09-05 17:34:37.931; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/vorbis-java-core-0.1.jar' to classloader
+INFO  - 2014-09-05 17:34:37.931; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/vorbis-java-tika-0.1.jar' to classloader
+INFO  - 2014-09-05 17:34:37.931; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/xercesImpl-2.9.1.jar' to classloader
+INFO  - 2014-09-05 17:34:37.931; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/xmlbeans-2.3.0.jar' to classloader
+INFO  - 2014-09-05 17:34:37.932; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/xmpcore-5.1.2.jar' to classloader
+INFO  - 2014-09-05 17:34:37.932; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/extraction/lib/xz-1.4.jar' to classloader
+INFO  - 2014-09-05 17:34:37.933; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/dist/solr-cell-4.9.0.jar' to classloader
+INFO  - 2014-09-05 17:34:37.934; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/clustering/lib/attributes-binder-1.2.1.jar' to classloader
+INFO  - 2014-09-05 17:34:37.934; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/clustering/lib/carrot2-mini-3.9.0.jar' to classloader
+INFO  - 2014-09-05 17:34:37.934; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/clustering/lib/hppc-0.5.2.jar' to classloader
+INFO  - 2014-09-05 17:34:37.934; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/clustering/lib/jackson-core-asl-1.9.13.jar' to classloader
+INFO  - 2014-09-05 17:34:37.935; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/clustering/lib/jackson-mapper-asl-1.9.13.jar' to classloader
+INFO  - 2014-09-05 17:34:37.935; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/clustering/lib/mahout-collections-1.0.jar' to classloader
+INFO  - 2014-09-05 17:34:37.935; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/clustering/lib/mahout-math-0.6.jar' to classloader
+INFO  - 2014-09-05 17:34:37.935; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/clustering/lib/simple-xml-2.7.jar' to classloader
+INFO  - 2014-09-05 17:34:37.936; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/dist/solr-clustering-4.9.0.jar' to classloader
+INFO  - 2014-09-05 17:34:37.936; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/langid/lib/jsonic-1.2.7.jar' to classloader
+INFO  - 2014-09-05 17:34:37.936; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/langid/lib/langdetect-1.1-20120112.jar' to classloader
+INFO  - 2014-09-05 17:34:37.937; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/dist/solr-langid-4.9.0.jar' to classloader
+INFO  - 2014-09-05 17:34:37.937; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/velocity/lib/commons-beanutils-1.8.3.jar' to classloader
+INFO  - 2014-09-05 17:34:37.937; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/velocity/lib/commons-collections-3.2.1.jar' to classloader
+INFO  - 2014-09-05 17:34:37.938; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/velocity/lib/velocity-1.7.jar' to classloader
+INFO  - 2014-09-05 17:34:37.938; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/contrib/velocity/lib/velocity-tools-2.0.jar' to classloader
+INFO  - 2014-09-05 17:34:37.938; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/dist/solr-velocity-4.9.0.jar' to classloader
+INFO  - 2014-09-05 17:34:38.018; org.apache.solr.update.SolrIndexConfig; IndexWriter infoStream solr logging is enabled
+INFO  - 2014-09-05 17:34:38.026; org.apache.solr.core.SolrConfig; Using Lucene MatchVersion: LUCENE_4_9
+INFO  - 2014-09-05 17:34:38.196; org.apache.solr.core.SolrConfig; Loaded SolrConfig: solrconfig.xml
+INFO  - 2014-09-05 17:34:38.223; org.apache.solr.schema.IndexSchema; Reading Solr Schema from schema.xml
+INFO  - 2014-09-05 17:34:38.271; org.apache.solr.schema.IndexSchema; [collection1] Schema name=example
+INFO  - 2014-09-05 17:34:38.686; org.apache.solr.schema.IndexSchema; unique key field: id
+INFO  - 2014-09-05 17:34:38.696; org.apache.solr.rest.RestManager$Registry; Registered ManagedResource impl org.apache.solr.rest.schema.analysis.ManagedWordSetResource for path /schema/analysis/stopwords/english
+INFO  - 2014-09-05 17:34:38.697; org.apache.solr.rest.RestManager$Registry; Registered ManagedResource impl org.apache.solr.rest.schema.analysis.ManagedSynonymFilterFactory$SynonymManager for path /schema/analysis/synonyms/english
+INFO  - 2014-09-05 17:34:38.806; org.apache.solr.schema.FileExchangeRateProvider; Reloading exchange rates from file currency.xml
+INFO  - 2014-09-05 17:34:38.810; org.apache.solr.schema.FileExchangeRateProvider; Reloading exchange rates from file currency.xml
+INFO  - 2014-09-05 17:34:38.893; org.apache.solr.core.CoreContainer; Creating SolrCore 'collection1' using configuration from instancedir /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/
+INFO  - 2014-09-05 17:34:38.910; org.apache.solr.core.SolrCore; solr.NRTCachingDirectoryFactory
+INFO  - 2014-09-05 17:34:38.919; org.apache.solr.core.SolrCore; [collection1] Opening new SolrCore at /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/, dataDir=/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data/
+INFO  - 2014-09-05 17:34:38.921; org.apache.solr.core.JmxMonitoredMap; No JMX servers found, not exposing Solr information with JMX.
+INFO  - 2014-09-05 17:34:38.926; org.apache.solr.core.SolrCore; [collection1] Added SolrEventListener for newSearcher: org.apache.solr.core.QuerySenderListener{queries=[]}
+INFO  - 2014-09-05 17:34:38.926; org.apache.solr.core.SolrCore; [collection1] Added SolrEventListener for firstSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=static firstSearcher warming in solrconfig.xml}]}
+INFO  - 2014-09-05 17:34:38.941; org.apache.solr.core.CachingDirectoryFactory; return new directory for /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data
+INFO  - 2014-09-05 17:34:38.948; org.apache.solr.core.SolrCore; New index directory detected: old=null new=/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data/index/
+INFO  - 2014-09-05 17:34:38.978; org.apache.solr.core.CachingDirectoryFactory; return new directory for /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data/index
+INFO  - 2014-09-05 17:34:38.996; org.apache.solr.core.SolrCore; created json: solr.JSONResponseWriter
+INFO  - 2014-09-05 17:34:38.996; org.apache.solr.core.SolrCore; adding lazy queryResponseWriter: solr.VelocityResponseWriter
+INFO  - 2014-09-05 17:34:38.996; org.apache.solr.core.SolrCore; created velocity: solr.VelocityResponseWriter
+INFO  - 2014-09-05 17:34:39.095; org.apache.solr.core.SolrCore; created xslt: solr.XSLTResponseWriter
+INFO  - 2014-09-05 17:34:39.096; org.apache.solr.response.XSLTResponseWriter; xsltCacheLifetimeSeconds=5
+INFO  - 2014-09-05 17:34:39.182; org.apache.solr.core.SolrCore; no updateRequestProcessorChain defined as default, creating implicit default
+INFO  - 2014-09-05 17:34:39.199; org.apache.solr.core.RequestHandlers; created /dataimport: solr.DataImportHandler
+INFO  - 2014-09-05 17:34:39.206; org.apache.solr.core.RequestHandlers; created /select: solr.SearchHandler
+INFO  - 2014-09-05 17:34:39.206; org.apache.solr.core.RequestHandlers; created /query: solr.SearchHandler
+INFO  - 2014-09-05 17:34:39.208; org.apache.solr.core.RequestHandlers; created /get: solr.RealTimeGetHandler
+INFO  - 2014-09-05 17:34:39.208; org.apache.solr.core.RequestHandlers; created /browse: solr.SearchHandler
+INFO  - 2014-09-05 17:34:39.211; org.apache.solr.core.RequestHandlers; created /update: solr.UpdateRequestHandler
+INFO  - 2014-09-05 17:34:39.212; org.apache.solr.core.RequestHandlers; created /update/json: solr.UpdateRequestHandler
+INFO  - 2014-09-05 17:34:39.212; org.apache.solr.core.RequestHandlers; created /update/csv: solr.UpdateRequestHandler
+INFO  - 2014-09-05 17:34:39.212; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.extraction.ExtractingRequestHandler
+INFO  - 2014-09-05 17:34:39.213; org.apache.solr.core.RequestHandlers; created /update/extract: solr.extraction.ExtractingRequestHandler
+INFO  - 2014-09-05 17:34:39.213; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+INFO  - 2014-09-05 17:34:39.213; org.apache.solr.core.RequestHandlers; created /analysis/field: solr.FieldAnalysisRequestHandler
+INFO  - 2014-09-05 17:34:39.213; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.DocumentAnalysisRequestHandler
+INFO  - 2014-09-05 17:34:39.213; org.apache.solr.core.RequestHandlers; created /analysis/document: solr.DocumentAnalysisRequestHandler
+INFO  - 2014-09-05 17:34:39.215; org.apache.solr.core.RequestHandlers; created /admin/: solr.admin.AdminHandlers
+INFO  - 2014-09-05 17:34:39.219; org.apache.solr.core.RequestHandlers; created /admin/ping: solr.PingRequestHandler
+INFO  - 2014-09-05 17:34:39.222; org.apache.solr.core.RequestHandlers; created /debug/dump: solr.DumpRequestHandler
+INFO  - 2014-09-05 17:34:39.239; org.apache.solr.core.RequestHandlers; created /replication: solr.ReplicationHandler
+INFO  - 2014-09-05 17:34:39.300; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2014-09-05 17:34:39.300; org.apache.solr.core.RequestHandlers; created /spell: solr.SearchHandler
+INFO  - 2014-09-05 17:34:39.301; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2014-09-05 17:34:39.301; org.apache.solr.core.RequestHandlers; created /suggest: solr.SearchHandler
+INFO  - 2014-09-05 17:34:39.301; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2014-09-05 17:34:39.301; org.apache.solr.core.RequestHandlers; created /tvrh: solr.SearchHandler
+INFO  - 2014-09-05 17:34:39.301; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2014-09-05 17:34:39.301; org.apache.solr.core.RequestHandlers; created /terms: solr.SearchHandler
+INFO  - 2014-09-05 17:34:39.302; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2014-09-05 17:34:39.302; org.apache.solr.core.RequestHandlers; created /elevate: solr.SearchHandler
+INFO  - 2014-09-05 17:34:39.323; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2014-09-05 17:34:39.326; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2014-09-05 17:34:39.327; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2014-09-05 17:34:39.386; org.apache.solr.update.CommitTracker; Hard AutoCommit: if uncommited for 15000ms; 
+INFO  - 2014-09-05 17:34:39.386; org.apache.solr.update.CommitTracker; Soft AutoCommit: disabled
+INFO  - 2014-09-05 17:34:39.642; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=NRTCachingDirectory(MMapDirectory@/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data/index lockFactory=NativeFSLockFactory@/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data/index; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_12,generation=38}
+INFO  - 2014-09-05 17:34:39.643; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 38
+INFO  - 2014-09-05 17:34:39.876; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@2de8a38e[collection1] main
+INFO  - 2014-09-05 17:34:39.882; org.apache.solr.rest.ManagedResourceStorage$FileStorageIO; File-based storage initialized to use dir: /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/conf
+INFO  - 2014-09-05 17:34:39.882; org.apache.solr.rest.RestManager; Initializing RestManager with initArgs: {storageDir=/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/conf/}
+INFO  - 2014-09-05 17:34:39.883; org.apache.solr.rest.ManagedResourceStorage; Reading _rest_managed.json using file:dir=/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/conf
+WARN  - 2014-09-05 17:34:39.883; org.apache.solr.rest.ManagedResource; No stored data found for /rest/managed
+WARN  - 2014-09-05 17:34:39.883; org.apache.solr.rest.ManagedResource; No registered observers for /rest/managed
+INFO  - 2014-09-05 17:34:39.884; org.apache.solr.rest.RestManager; Initializing 2 registered ManagedResources
+INFO  - 2014-09-05 17:34:39.884; org.apache.solr.rest.ManagedResourceStorage; Reading _schema_analysis_stopwords_english.json using file:dir=/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/conf
+INFO  - 2014-09-05 17:34:39.895; org.apache.solr.rest.ManagedResourceStorage; Loaded LinkedHashMap at path _schema_analysis_stopwords_english.json using file:dir=/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/conf
+INFO  - 2014-09-05 17:34:39.896; org.apache.solr.rest.ManagedResource; Loaded initArgs {ignoreCase=true} for /schema/analysis/stopwords/english
+INFO  - 2014-09-05 17:34:39.896; org.apache.solr.rest.schema.analysis.ManagedWordSetResource; Loaded 35 words for /schema/analysis/stopwords/english
+INFO  - 2014-09-05 17:34:39.896; org.apache.solr.rest.ManagedResource; Notified 1 observers of /schema/analysis/stopwords/english
+INFO  - 2014-09-05 17:34:39.897; org.apache.solr.rest.ManagedResourceStorage; Reading _schema_analysis_synonyms_english.json using file:dir=/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/conf
+INFO  - 2014-09-05 17:34:39.898; org.apache.solr.rest.ManagedResourceStorage; Loaded LinkedHashMap at path _schema_analysis_synonyms_english.json using file:dir=/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/conf
+INFO  - 2014-09-05 17:34:39.898; org.apache.solr.rest.ManagedResource; Loaded initArgs {ignoreCase=true,format=solr} for /schema/analysis/synonyms/english
+INFO  - 2014-09-05 17:34:39.898; org.apache.solr.rest.schema.analysis.ManagedSynonymFilterFactory$SynonymManager; Loaded 3 synonym mappings for /schema/analysis/synonyms/english
+INFO  - 2014-09-05 17:34:39.900; org.apache.solr.rest.ManagedResource; Notified 1 observers of /schema/analysis/synonyms/english
+INFO  - 2014-09-05 17:34:39.901; org.apache.solr.handler.component.SpellCheckComponent; Initializing spell checkers
+INFO  - 2014-09-05 17:34:39.907; org.apache.solr.spelling.DirectSolrSpellChecker; init: {name=default,field=text,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+INFO  - 2014-09-05 17:34:39.914; org.apache.solr.handler.component.SpellCheckComponent; No queryConverter defined, using default converter
+INFO  - 2014-09-05 17:34:39.915; org.apache.solr.handler.component.SuggestComponent; Initializing SuggestComponent
+INFO  - 2014-09-05 17:34:39.916; org.apache.solr.spelling.suggest.SolrSuggester; init: {name=mySuggester,lookupImpl=FuzzyLookupFactory,dictionaryImpl=DocumentDictionaryFactory,field=cat,weightField=price,suggestAnalyzerFieldType=string}
+INFO  - 2014-09-05 17:34:39.930; org.apache.solr.spelling.suggest.SolrSuggester; Dictionary loaded with params: {name=mySuggester,lookupImpl=FuzzyLookupFactory,dictionaryImpl=DocumentDictionaryFactory,field=cat,weightField=price,suggestAnalyzerFieldType=string}
+INFO  - 2014-09-05 17:34:39.931; org.apache.solr.handler.component.QueryElevationComponent; Loading QueryElevation from: /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/conf/elevate.xml
+INFO  - 2014-09-05 17:34:39.958; org.apache.solr.handler.ReplicationHandler; Commits will be reserved for  10000
+INFO  - 2014-09-05 17:34:39.959; org.apache.solr.core.QuerySenderListener; QuerySenderListener sending requests to Searcher@2de8a38e[collection1] main{StandardDirectoryReader(segments_12:141:nrt _19(4.9):C23962 _1a(4.9):C8479 _1b(4.9):C21054 _1c(4.9):C9798 _1d(4.9):C18943 _1e(4.9):C7966 _1f(4.9):C20898 _1g(4.9):C8379 _1h(4.9):C20463)}
+INFO  - 2014-09-05 17:34:39.959; org.apache.solr.core.CoreContainer; registering core: collection1
+INFO  - 2014-09-05 17:34:39.961; org.apache.solr.servlet.SolrDispatchFilter; user.dir=/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example
+INFO  - 2014-09-05 17:34:39.961; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init() done
+INFO  - 2014-09-05 17:34:39.988; org.eclipse.jetty.server.AbstractConnector; Started SocketConnector@0.0.0.0:8983
+INFO  - 2014-09-05 17:34:40.017; org.apache.solr.core.SolrCore; [collection1] webapp=null path=null params={q=static+firstSearcher+warming+in+solrconfig.xml&distrib=false&event=firstSearcher} hits=4116 status=0 QTime=56 
+INFO  - 2014-09-05 17:34:40.029; org.apache.solr.core.QuerySenderListener; QuerySenderListener done.
+INFO  - 2014-09-05 17:34:40.030; org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener; Loading spell index for spellchecker: default
+INFO  - 2014-09-05 17:34:40.030; org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener; Loading spell index for spellchecker: wordbreak
+INFO  - 2014-09-05 17:34:40.030; org.apache.solr.handler.component.SuggestComponent$SuggesterListener; Loading suggester index for: mySuggester
+INFO  - 2014-09-05 17:34:40.030; org.apache.solr.spelling.suggest.SolrSuggester; reload()
+INFO  - 2014-09-05 17:34:40.031; org.apache.solr.spelling.suggest.SolrSuggester; build()
+INFO  - 2014-09-05 17:34:44.436; org.apache.solr.core.SolrCore; [collection1] Registered new searcher Searcher@2de8a38e[collection1] main{StandardDirectoryReader(segments_12:141:nrt _19(4.9):C23962 _1a(4.9):C8479 _1b(4.9):C21054 _1c(4.9):C9798 _1d(4.9):C18943 _1e(4.9):C7966 _1f(4.9):C20898 _1g(4.9):C8379 _1h(4.9):C20463)}
+INFO  - 2014-09-05 17:34:44.744; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1409931284732} status=0 QTime=1 
+INFO  - 2014-09-05 17:34:44.936; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/system params={wt=json&_=1409931284761} status=0 QTime=170 
+INFO  - 2014-09-05 17:34:48.328; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file/ params={file=admin-extra.menu-bottom.html&contentType=text/html;charset%3Dutf-8&_=1409931288311} status=0 QTime=0 
+INFO  - 2014-09-05 17:34:48.328; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file/ params={file=admin-extra.menu-top.html&contentType=text/html;charset%3Dutf-8&_=1409931288310} status=0 QTime=4 
+INFO  - 2014-09-05 17:34:48.373; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file/ params={file=admin-extra.html&_=1409931288360} status=0 QTime=1 
+INFO  - 2014-09-05 17:34:48.379; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/ping params={action=status&wt=json&_=1409931288361} status=503 QTime=4 
+INFO  - 2014-09-05 17:34:48.380; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/replication params={wt=json&command=details&_=1409931288359} status=0 QTime=9 
+INFO  - 2014-09-05 17:34:48.381; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={show=index&numTerms=0&wt=json&_=1409931288357} status=0 QTime=12 
+INFO  - 2014-09-05 17:34:48.423; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/system params={wt=json&_=1409931288360} status=0 QTime=52 
+INFO  - 2014-09-05 17:34:51.067; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&wt=json&_=1409931291060} status=0 QTime=2 
+INFO  - 2014-09-05 17:34:51.119; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&wt=json&_=1409931291112} status=0 QTime=1 
+INFO  - 2014-09-05 17:34:51.123; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&command=show-config&_=1409931291112} status=0 QTime=5 
+INFO  - 2014-09-05 17:34:51.120; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931291114} status=0 QTime=1 
+INFO  - 2014-09-05 17:34:54.671; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931294662} status=0 QTime=1 
+INFO  - 2014-09-05 17:34:56.696; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931296694} status=0 QTime=0 
+INFO  - 2014-09-05 17:34:58.706; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931298703} status=0 QTime=0 
+INFO  - 2014-09-05 17:35:00.718; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931300714} status=0 QTime=0 
+INFO  - 2014-09-05 17:35:02.727; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931302723} status=0 QTime=1 
+INFO  - 2014-09-05 17:35:04.781; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931304777} status=0 QTime=1 
+INFO  - 2014-09-05 17:35:06.789; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931306787} status=0 QTime=0 
+INFO  - 2014-09-05 17:35:08.796; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931308794} status=0 QTime=0 
+INFO  - 2014-09-05 17:35:10.803; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931310800} status=0 QTime=0 
+INFO  - 2014-09-05 17:35:12.811; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931312808} status=0 QTime=0 
+INFO  - 2014-09-05 17:35:14.818; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931314816} status=0 QTime=0 
+INFO  - 2014-09-05 17:35:16.825; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931316823} status=0 QTime=0 
+INFO  - 2014-09-05 17:35:18.924; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931318916} status=0 QTime=0 
+INFO  - 2014-09-05 17:35:20.934; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931320929} status=0 QTime=0 
+INFO  - 2014-09-05 17:35:22.943; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931322940} status=0 QTime=1 
+INFO  - 2014-09-05 17:35:24.987; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931324984} status=0 QTime=1 
+INFO  - 2014-09-05 17:35:27.042; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931327040} status=0 QTime=0 
+INFO  - 2014-09-05 17:35:29.051; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931329048} status=0 QTime=0 
+INFO  - 2014-09-05 17:35:31.580; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931331573} status=0 QTime=1 
+INFO  - 2014-09-05 17:35:33.617; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931333613} status=0 QTime=0 
+INFO  - 2014-09-05 17:35:35.628; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931335625} status=0 QTime=0 
+INFO  - 2014-09-05 17:35:37.637; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931337634} status=0 QTime=0 
+INFO  - 2014-09-05 17:35:39.647; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931339643} status=0 QTime=0 
+INFO  - 2014-09-05 17:35:41.662; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931341658} status=0 QTime=1 
+INFO  - 2014-09-05 17:35:43.671; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931343669} status=0 QTime=0 
+INFO  - 2014-09-05 17:35:45.684; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931345682} status=0 QTime=0 
+INFO  - 2014-09-05 17:35:47.694; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931347691} status=0 QTime=0 
+INFO  - 2014-09-05 17:35:49.705; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931349701} status=0 QTime=1 
+INFO  - 2014-09-05 17:35:51.718; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931351716} status=0 QTime=0 
+INFO  - 2014-09-05 17:35:53.726; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931353723} status=0 QTime=1 
+INFO  - 2014-09-05 17:35:54.565; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931354561} status=0 QTime=0 
+INFO  - 2014-09-05 17:35:55.736; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931355733} status=0 QTime=0 
+INFO  - 2014-09-05 17:35:57.746; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931357743} status=0 QTime=1 
+INFO  - 2014-09-05 17:35:59.756; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931359754} status=0 QTime=0 
+INFO  - 2014-09-05 17:36:01.763; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931361761} status=0 QTime=1 
+INFO  - 2014-09-05 17:36:03.770; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931363768} status=0 QTime=0 
+INFO  - 2014-09-05 17:36:05.779; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931365776} status=0 QTime=0 
+INFO  - 2014-09-05 17:36:07.789; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931367786} status=0 QTime=0 
+INFO  - 2014-09-05 17:36:09.798; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931369796} status=0 QTime=0 
+INFO  - 2014-09-05 17:36:11.807; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931371803} status=0 QTime=1 
+INFO  - 2014-09-05 17:36:13.816; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931373813} status=0 QTime=0 
+INFO  - 2014-09-05 17:36:15.843; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931375841} status=0 QTime=0 
+INFO  - 2014-09-05 17:36:17.537; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931377534} status=0 QTime=0 
+INFO  - 2014-09-05 17:36:17.851; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931377848} status=0 QTime=0 
+INFO  - 2014-09-05 17:36:18.639; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931378636} status=0 QTime=1 
+INFO  - 2014-09-05 17:36:19.863; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931379859} status=0 QTime=0 
+INFO  - 2014-09-05 17:36:21.911; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931381871} status=0 QTime=0 
+INFO  - 2014-09-05 17:36:23.919; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931383916} status=0 QTime=0 
+INFO  - 2014-09-05 17:36:25.973; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931385928} status=0 QTime=0 
+INFO  - 2014-09-05 17:36:27.982; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931387979} status=0 QTime=0 
+INFO  - 2014-09-05 17:36:30.005; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931390000} status=0 QTime=0 
+INFO  - 2014-09-05 17:36:31.335; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&wt=json&_=1409931391329} status=0 QTime=1 
+INFO  - 2014-09-05 17:36:31.468; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&wt=json&_=1409931391459} status=0 QTime=1 
+INFO  - 2014-09-05 17:36:31.470; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931391462} status=0 QTime=0 
+INFO  - 2014-09-05 17:36:31.471; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&command=show-config&_=1409931391460} status=0 QTime=1 
+INFO  - 2014-09-05 17:36:33.543; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931393540} status=0 QTime=0 
+INFO  - 2014-09-05 17:36:35.552; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931395549} status=0 QTime=0 
+INFO  - 2014-09-05 17:36:37.559; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931397556} status=0 QTime=0 
+INFO  - 2014-09-05 17:36:39.569; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931399566} status=0 QTime=0 
+INFO  - 2014-09-05 17:36:41.577; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931401575} status=0 QTime=0 
+INFO  - 2014-09-05 17:36:43.585; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931403583} status=0 QTime=0 
+INFO  - 2014-09-05 17:36:45.600; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931405598} status=0 QTime=0 
+INFO  - 2014-09-05 17:36:47.613; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931407610} status=0 QTime=1 
+INFO  - 2014-09-05 17:36:49.641; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931409640} status=0 QTime=0 
+INFO  - 2014-09-05 17:36:51.650; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931411647} status=0 QTime=0 
+INFO  - 2014-09-05 17:36:53.663; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931413661} status=0 QTime=0 
+INFO  - 2014-09-05 17:36:55.671; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931415669} status=0 QTime=0 
+INFO  - 2014-09-05 17:36:57.680; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931417677} status=0 QTime=0 
+INFO  - 2014-09-05 17:36:59.692; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931419689} status=0 QTime=0 
+INFO  - 2014-09-05 17:37:01.702; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931421699} status=0 QTime=0 
+INFO  - 2014-09-05 17:37:03.716; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931423713} status=0 QTime=0 
+INFO  - 2014-09-05 17:37:05.724; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931425721} status=0 QTime=0 
+INFO  - 2014-09-05 17:37:07.734; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931427731} status=0 QTime=0 
+INFO  - 2014-09-05 17:37:09.743; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931429741} status=0 QTime=0 
+INFO  - 2014-09-05 17:37:10.490; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1409931430453} status=0 QTime=7 
+INFO  - 2014-09-05 17:37:15.565; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/select params={q=*:*&indent=true&wt=json&_=1409931435548} hits=139942 status=0 QTime=7 
+INFO  - 2014-09-05 17:37:24.388; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&wt=json&_=1409931444382} status=0 QTime=1 
+INFO  - 2014-09-05 17:37:24.558; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&wt=json&_=1409931444428} status=0 QTime=1 
+INFO  - 2014-09-05 17:37:24.558; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&command=show-config&_=1409931444429} status=0 QTime=1 
+INFO  - 2014-09-05 17:37:24.560; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931444430} status=0 QTime=1 
+INFO  - 2014-09-05 17:37:26.577; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931446575} status=0 QTime=0 
+INFO  - 2014-09-05 17:37:28.585; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931448582} status=0 QTime=1 
+INFO  - 2014-09-05 17:37:30.596; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931450592} status=0 QTime=0 
+INFO  - 2014-09-05 17:37:31.520; org.apache.solr.handler.dataimport.DataImporter; Loading DIH Configuration: db-data-config.xml
+ERROR - 2014-09-05 17:37:31.619; org.apache.solr.common.SolrException; org.apache.solr.handler.dataimport.DataImportHandlerException: Data Config problem: Elementtyp "entity" muss mit dem entsprechenden Endtag "</entity>" beendet werden.
+	at org.apache.solr.handler.dataimport.DataImporter.loadDataConfig(DataImporter.java:215)
+	at org.apache.solr.handler.dataimport.DataImporter.maybeReloadConfiguration(DataImporter.java:130)
+	at org.apache.solr.handler.dataimport.DataImportHandler.handleRequestBody(DataImportHandler.java:203)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:1962)
+	at org.apache.solr.servlet.SolrDispatchFilter.execute(SolrDispatchFilter.java:777)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:418)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:207)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:368)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72)
+	at org.eclipse.jetty.server.bio.SocketConnector$ConnectorEndPoint.run(SocketConnector.java:264)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.xml.sax.SAXParseException; systemId: solrres:/db-data-config.xml; lineNumber: 24; columnNumber: 7; Elementtyp "entity" muss mit dem entsprechenden Endtag "</entity>" beendet werden.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:441)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:368)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1436)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1749)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2973)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:117)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:243)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:348)
+	at org.apache.solr.handler.dataimport.DataImporter.loadDataConfig(DataImporter.java:206)
+	... 32 more
+
+INFO  - 2014-09-05 17:37:31.620; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={command=reload-config&_=1409931451517} status=500 QTime=100 
+ERROR - 2014-09-05 17:37:31.621; org.apache.solr.common.SolrException; null:org.apache.solr.handler.dataimport.DataImportHandlerException: Data Config problem: Elementtyp "entity" muss mit dem entsprechenden Endtag "</entity>" beendet werden.
+	at org.apache.solr.handler.dataimport.DataImporter.loadDataConfig(DataImporter.java:215)
+	at org.apache.solr.handler.dataimport.DataImporter.maybeReloadConfiguration(DataImporter.java:130)
+	at org.apache.solr.handler.dataimport.DataImportHandler.handleRequestBody(DataImportHandler.java:203)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:1962)
+	at org.apache.solr.servlet.SolrDispatchFilter.execute(SolrDispatchFilter.java:777)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:418)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:207)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:368)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72)
+	at org.eclipse.jetty.server.bio.SocketConnector$ConnectorEndPoint.run(SocketConnector.java:264)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.xml.sax.SAXParseException; systemId: solrres:/db-data-config.xml; lineNumber: 24; columnNumber: 7; Elementtyp "entity" muss mit dem entsprechenden Endtag "</entity>" beendet werden.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:441)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:368)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1436)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1749)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2973)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:117)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:243)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:348)
+	at org.apache.solr.handler.dataimport.DataImporter.loadDataConfig(DataImporter.java:206)
+	... 32 more
+
+INFO  - 2014-09-05 17:37:31.630; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&command=show-config&_=1409931451627} status=0 QTime=1 
+INFO  - 2014-09-05 17:37:32.604; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931452601} status=0 QTime=0 
+INFO  - 2014-09-05 17:37:32.764; org.apache.solr.handler.dataimport.DataImporter; Loading DIH Configuration: db-data-config.xml
+ERROR - 2014-09-05 17:37:32.767; org.apache.solr.common.SolrException; org.apache.solr.handler.dataimport.DataImportHandlerException: Data Config problem: Elementtyp "entity" muss mit dem entsprechenden Endtag "</entity>" beendet werden.
+	at org.apache.solr.handler.dataimport.DataImporter.loadDataConfig(DataImporter.java:215)
+	at org.apache.solr.handler.dataimport.DataImporter.maybeReloadConfiguration(DataImporter.java:130)
+	at org.apache.solr.handler.dataimport.DataImportHandler.handleRequestBody(DataImportHandler.java:203)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:1962)
+	at org.apache.solr.servlet.SolrDispatchFilter.execute(SolrDispatchFilter.java:777)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:418)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:207)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:368)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72)
+	at org.eclipse.jetty.server.bio.SocketConnector$ConnectorEndPoint.run(SocketConnector.java:264)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.xml.sax.SAXParseException; systemId: solrres:/db-data-config.xml; lineNumber: 24; columnNumber: 7; Elementtyp "entity" muss mit dem entsprechenden Endtag "</entity>" beendet werden.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:441)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:368)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1436)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1749)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2973)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:117)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:243)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:348)
+	at org.apache.solr.handler.dataimport.DataImporter.loadDataConfig(DataImporter.java:206)
+	... 32 more
+
+INFO  - 2014-09-05 17:37:32.768; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={command=reload-config&_=1409931452760} status=500 QTime=4 
+ERROR - 2014-09-05 17:37:32.769; org.apache.solr.common.SolrException; null:org.apache.solr.handler.dataimport.DataImportHandlerException: Data Config problem: Elementtyp "entity" muss mit dem entsprechenden Endtag "</entity>" beendet werden.
+	at org.apache.solr.handler.dataimport.DataImporter.loadDataConfig(DataImporter.java:215)
+	at org.apache.solr.handler.dataimport.DataImporter.maybeReloadConfiguration(DataImporter.java:130)
+	at org.apache.solr.handler.dataimport.DataImportHandler.handleRequestBody(DataImportHandler.java:203)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:1962)
+	at org.apache.solr.servlet.SolrDispatchFilter.execute(SolrDispatchFilter.java:777)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:418)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:207)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:368)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72)
+	at org.eclipse.jetty.server.bio.SocketConnector$ConnectorEndPoint.run(SocketConnector.java:264)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.xml.sax.SAXParseException; systemId: solrres:/db-data-config.xml; lineNumber: 24; columnNumber: 7; Elementtyp "entity" muss mit dem entsprechenden Endtag "</entity>" beendet werden.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:441)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:368)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1436)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1749)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2973)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:117)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:243)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:348)
+	at org.apache.solr.handler.dataimport.DataImporter.loadDataConfig(DataImporter.java:206)
+	... 32 more
+
+INFO  - 2014-09-05 17:37:32.775; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&command=show-config&_=1409931452772} status=0 QTime=1 
+INFO  - 2014-09-05 17:37:34.610; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931454608} status=0 QTime=0 
+INFO  - 2014-09-05 17:37:36.637; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931456635} status=0 QTime=0 
+INFO  - 2014-09-05 17:37:38.643; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931458642} status=0 QTime=0 
+INFO  - 2014-09-05 17:37:40.651; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931460649} status=0 QTime=0 
+INFO  - 2014-09-05 17:37:42.660; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931462657} status=0 QTime=0 
+INFO  - 2014-09-05 17:37:44.249; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=0&_=1409931464238} status=0 QTime=1 
+INFO  - 2014-09-05 17:37:54.286; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931452769&_=1409931474284} status=0 QTime=0 
+INFO  - 2014-09-05 17:38:04.291; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931452769&_=1409931484289} status=0 QTime=0 
+INFO  - 2014-09-05 17:38:14.297; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931452769&_=1409931494294} status=0 QTime=0 
+INFO  - 2014-09-05 17:38:24.306; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931452769&_=1409931504302} status=0 QTime=0 
+INFO  - 2014-09-05 17:38:34.312; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931452769&_=1409931514310} status=0 QTime=0 
+INFO  - 2014-09-05 17:38:43.445; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={show=index&numTerms=0&wt=json&_=1409931523424} status=0 QTime=12 
+INFO  - 2014-09-05 17:38:43.449; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/ping params={action=status&wt=json&_=1409931523429} status=503 QTime=0 
+INFO  - 2014-09-05 17:38:43.445; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file/ params={file=admin-extra.html&_=1409931523428} status=0 QTime=1 
+INFO  - 2014-09-05 17:38:43.561; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/replication params={wt=json&command=details&_=1409931523425} status=0 QTime=112 
+INFO  - 2014-09-05 17:38:43.753; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/system params={wt=json&_=1409931523426} status=0 QTime=302 
+INFO  - 2014-09-05 17:38:45.201; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&wt=json&_=1409931525196} status=0 QTime=1 
+INFO  - 2014-09-05 17:38:45.224; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&wt=json&_=1409931525216} status=0 QTime=1 
+INFO  - 2014-09-05 17:38:45.225; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&command=show-config&_=1409931525217} status=0 QTime=1 
+INFO  - 2014-09-05 17:38:45.225; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931525219} status=0 QTime=1 
+INFO  - 2014-09-05 17:38:47.270; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931527266} status=0 QTime=0 
+INFO  - 2014-09-05 17:38:47.686; org.apache.solr.handler.dataimport.DataImporter; Loading DIH Configuration: db-data-config.xml
+INFO  - 2014-09-05 17:38:47.762; org.apache.solr.handler.dataimport.config.DIHConfiguration; id is a required field in SolrSchema . But not found in DataConfig
+INFO  - 2014-09-05 17:38:47.763; org.apache.solr.handler.dataimport.DataImporter; Data Configuration loaded successfully
+INFO  - 2014-09-05 17:38:47.763; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={command=reload-config&_=1409931527681} status=0 QTime=78 
+INFO  - 2014-09-05 17:38:47.769; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&command=show-config&_=1409931527767} status=0 QTime=0 
+INFO  - 2014-09-05 17:38:49.276; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931529274} status=0 QTime=0 
+INFO  - 2014-09-05 17:38:51.284; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931531281} status=0 QTime=1 
+INFO  - 2014-09-05 17:38:52.073; org.apache.solr.handler.dataimport.DataImporter; Loading DIH Configuration: db-data-config.xml
+INFO  - 2014-09-05 17:38:52.076; org.apache.solr.handler.dataimport.config.DIHConfiguration; id is a required field in SolrSchema . But not found in DataConfig
+INFO  - 2014-09-05 17:38:52.076; org.apache.solr.handler.dataimport.DataImporter; Data Configuration loaded successfully
+INFO  - 2014-09-05 17:38:52.082; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={debug=false&optimize=false&indent=true&commit=true&clean=true&wt=json&command=full-import&verbose=false} status=0 QTime=9 
+INFO  - 2014-09-05 17:38:52.082; org.apache.solr.handler.dataimport.DataImporter; Starting Full Import
+INFO  - 2014-09-05 17:38:52.086; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931532084} status=0 QTime=1 
+INFO  - 2014-09-05 17:38:52.174; org.apache.solr.handler.dataimport.SimplePropertiesWriter; Read dataimport.properties
+INFO  - 2014-09-05 17:38:52.539; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@6efc9902[collection1] realtime
+INFO  - 2014-09-05 17:38:52.626; org.apache.solr.handler.dataimport.JdbcDataSource$1; Creating a connection for entity item with URL: jdbc:mysql://localhost/foodrecommender
+INFO  - 2014-09-05 17:38:53.292; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931533289} status=0 QTime=1 
+ERROR - 2014-09-05 17:38:53.347; org.apache.solr.common.SolrException; Exception while processing: item document : SolrInputDocument(fields: []):org.apache.solr.handler.dataimport.DataImportHandlerException: Unable to execute query: select * from showrecipes Processing Document # 1
+	at org.apache.solr.handler.dataimport.DataImportHandlerException.wrapAndThrow(DataImportHandlerException.java:71)
+	at org.apache.solr.handler.dataimport.JdbcDataSource$ResultSetIterator.<init>(JdbcDataSource.java:281)
+	at org.apache.solr.handler.dataimport.JdbcDataSource.getData(JdbcDataSource.java:238)
+	at org.apache.solr.handler.dataimport.JdbcDataSource.getData(JdbcDataSource.java:42)
+	at org.apache.solr.handler.dataimport.SqlEntityProcessor.initQuery(SqlEntityProcessor.java:59)
+	at org.apache.solr.handler.dataimport.SqlEntityProcessor.nextRow(SqlEntityProcessor.java:73)
+	at org.apache.solr.handler.dataimport.EntityProcessorWrapper.nextRow(EntityProcessorWrapper.java:243)
+	at org.apache.solr.handler.dataimport.DocBuilder.buildDocument(DocBuilder.java:461)
+	at org.apache.solr.handler.dataimport.DocBuilder.buildDocument(DocBuilder.java:400)
+	at org.apache.solr.handler.dataimport.DocBuilder.doFullDump(DocBuilder.java:315)
+	at org.apache.solr.handler.dataimport.DocBuilder.execute(DocBuilder.java:223)
+	at org.apache.solr.handler.dataimport.DataImporter.doFullImport(DataImporter.java:411)
+	at org.apache.solr.handler.dataimport.DataImporter.runCmd(DataImporter.java:483)
+	at org.apache.solr.handler.dataimport.DataImporter$1.run(DataImporter.java:464)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1127)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:356)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2502)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2539)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2321)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	at org.apache.solr.handler.dataimport.JdbcDataSource$1.call(JdbcDataSource.java:151)
+	at org.apache.solr.handler.dataimport.JdbcDataSource$1.call(JdbcDataSource.java:131)
+	at org.apache.solr.handler.dataimport.JdbcDataSource.getConnection(JdbcDataSource.java:394)
+	at org.apache.solr.handler.dataimport.JdbcDataSource.access$200(JdbcDataSource.java:42)
+	at org.apache.solr.handler.dataimport.JdbcDataSource$ResultSetIterator.<init>(JdbcDataSource.java:268)
+	... 12 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:244)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:258)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:306)
+	... 29 more
+
+INFO  - 2014-09-05 17:38:53.347; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/dataimport params={debug=false&optimize=false&indent=true&commit=true&clean=true&wt=json&command=full-import&verbose=false} status=0 QTime=9 {deleteByQuery=*:* (-1478420366387838976)} 0 9
+ERROR - 2014-09-05 17:38:53.348; org.apache.solr.common.SolrException; Full Import failed:java.lang.RuntimeException: java.lang.RuntimeException: org.apache.solr.handler.dataimport.DataImportHandlerException: Unable to execute query: select * from showrecipes Processing Document # 1
+	at org.apache.solr.handler.dataimport.DocBuilder.execute(DocBuilder.java:262)
+	at org.apache.solr.handler.dataimport.DataImporter.doFullImport(DataImporter.java:411)
+	at org.apache.solr.handler.dataimport.DataImporter.runCmd(DataImporter.java:483)
+	at org.apache.solr.handler.dataimport.DataImporter$1.run(DataImporter.java:464)
+Caused by: java.lang.RuntimeException: org.apache.solr.handler.dataimport.DataImportHandlerException: Unable to execute query: select * from showrecipes Processing Document # 1
+	at org.apache.solr.handler.dataimport.DocBuilder.buildDocument(DocBuilder.java:402)
+	at org.apache.solr.handler.dataimport.DocBuilder.doFullDump(DocBuilder.java:315)
+	at org.apache.solr.handler.dataimport.DocBuilder.execute(DocBuilder.java:223)
+	... 3 more
+Caused by: org.apache.solr.handler.dataimport.DataImportHandlerException: Unable to execute query: select * from showrecipes Processing Document # 1
+	at org.apache.solr.handler.dataimport.DataImportHandlerException.wrapAndThrow(DataImportHandlerException.java:71)
+	at org.apache.solr.handler.dataimport.JdbcDataSource$ResultSetIterator.<init>(JdbcDataSource.java:281)
+	at org.apache.solr.handler.dataimport.JdbcDataSource.getData(JdbcDataSource.java:238)
+	at org.apache.solr.handler.dataimport.JdbcDataSource.getData(JdbcDataSource.java:42)
+	at org.apache.solr.handler.dataimport.SqlEntityProcessor.initQuery(SqlEntityProcessor.java:59)
+	at org.apache.solr.handler.dataimport.SqlEntityProcessor.nextRow(SqlEntityProcessor.java:73)
+	at org.apache.solr.handler.dataimport.EntityProcessorWrapper.nextRow(EntityProcessorWrapper.java:243)
+	at org.apache.solr.handler.dataimport.DocBuilder.buildDocument(DocBuilder.java:461)
+	at org.apache.solr.handler.dataimport.DocBuilder.buildDocument(DocBuilder.java:400)
+	... 5 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1127)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:356)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2502)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2539)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2321)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	at org.apache.solr.handler.dataimport.JdbcDataSource$1.call(JdbcDataSource.java:151)
+	at org.apache.solr.handler.dataimport.JdbcDataSource$1.call(JdbcDataSource.java:131)
+	at org.apache.solr.handler.dataimport.JdbcDataSource.getConnection(JdbcDataSource.java:394)
+	at org.apache.solr.handler.dataimport.JdbcDataSource.access$200(JdbcDataSource.java:42)
+	at org.apache.solr.handler.dataimport.JdbcDataSource$ResultSetIterator.<init>(JdbcDataSource.java:268)
+	... 12 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:244)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:258)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:306)
+	... 29 more
+
+INFO  - 2014-09-05 17:38:53.376; org.apache.solr.update.DirectUpdateHandler2; start rollback{}
+INFO  - 2014-09-05 17:38:53.377; org.apache.solr.update.DefaultSolrCoreState; Creating new IndexWriter...
+INFO  - 2014-09-05 17:38:53.377; org.apache.solr.update.DefaultSolrCoreState; Waiting until IndexWriter is unused... core=collection1
+INFO  - 2014-09-05 17:38:53.377; org.apache.solr.update.DefaultSolrCoreState; Rollback old IndexWriter... core=collection1
+INFO  - 2014-09-05 17:38:53.500; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931533497} status=0 QTime=0 
+INFO  - 2014-09-05 17:38:53.613; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=NRTCachingDirectory(MMapDirectory@/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data/index lockFactory=NativeFSLockFactory@/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data/index; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_12,generation=38}
+INFO  - 2014-09-05 17:38:53.613; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 38
+INFO  - 2014-09-05 17:38:53.614; org.apache.solr.update.DefaultSolrCoreState; New IndexWriter is ready to be used.
+INFO  - 2014-09-05 17:38:53.614; org.apache.solr.update.DirectUpdateHandler2; end_rollback
+INFO  - 2014-09-05 17:38:54.369; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931534365} status=0 QTime=0 
+INFO  - 2014-09-05 17:38:55.321; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931535319} status=0 QTime=0 
+INFO  - 2014-09-05 17:38:57.330; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931537327} status=0 QTime=0 
+INFO  - 2014-09-05 17:38:59.341; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931539338} status=0 QTime=0 
+INFO  - 2014-09-05 17:38:59.586; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=0&_=1409931539580} status=0 QTime=1 
+INFO  - 2014-09-05 17:39:09.592; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931533348&_=1409931549590} status=0 QTime=0 
+INFO  - 2014-09-05 17:39:13.097; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file/ params={file=admin-extra.html&_=1409931553086} status=0 QTime=0 
+INFO  - 2014-09-05 17:39:13.098; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/ping params={action=status&wt=json&_=1409931553087} status=503 QTime=0 
+INFO  - 2014-09-05 17:39:13.100; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/replication params={wt=json&command=details&_=1409931553085} status=0 QTime=4 
+INFO  - 2014-09-05 17:39:13.105; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={show=index&numTerms=0&wt=json&_=1409931553084} status=0 QTime=9 
+INFO  - 2014-09-05 17:39:13.217; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/system params={wt=json&_=1409931553086} status=0 QTime=120 
+INFO  - 2014-09-05 17:39:43.601; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&wt=json&_=1409931583596} status=0 QTime=0 
+INFO  - 2014-09-05 17:39:43.656; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&wt=json&_=1409931583645} status=0 QTime=0 
+INFO  - 2014-09-05 17:39:43.657; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931583648} status=0 QTime=1 
+INFO  - 2014-09-05 17:39:43.657; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&command=show-config&_=1409931583646} status=0 QTime=1 
+INFO  - 2014-09-05 17:39:45.673; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931585671} status=0 QTime=0 
+INFO  - 2014-09-05 17:39:47.685; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931587683} status=0 QTime=0 
+INFO  - 2014-09-05 17:39:48.333; org.apache.solr.handler.dataimport.DataImporter; Loading DIH Configuration: db-data-config.xml
+INFO  - 2014-09-05 17:39:48.336; org.apache.solr.handler.dataimport.config.DIHConfiguration; id is a required field in SolrSchema . But not found in DataConfig
+INFO  - 2014-09-05 17:39:48.336; org.apache.solr.handler.dataimport.DataImporter; Data Configuration loaded successfully
+INFO  - 2014-09-05 17:39:48.337; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={command=reload-config&_=1409931588328} status=0 QTime=4 
+INFO  - 2014-09-05 17:39:48.342; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&command=show-config&_=1409931588339} status=0 QTime=1 
+INFO  - 2014-09-05 17:39:49.697; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931589694} status=0 QTime=1 
+INFO  - 2014-09-05 17:39:51.706; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931591704} status=0 QTime=0 
+INFO  - 2014-09-05 17:39:52.466; org.apache.solr.handler.dataimport.DataImporter; Loading DIH Configuration: db-data-config.xml
+INFO  - 2014-09-05 17:39:52.468; org.apache.solr.handler.dataimport.config.DIHConfiguration; id is a required field in SolrSchema . But not found in DataConfig
+INFO  - 2014-09-05 17:39:52.468; org.apache.solr.handler.dataimport.DataImporter; Data Configuration loaded successfully
+INFO  - 2014-09-05 17:39:52.469; org.apache.solr.handler.dataimport.DataImporter; Starting Full Import
+INFO  - 2014-09-05 17:39:52.469; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={debug=false&optimize=false&indent=true&commit=true&clean=true&wt=json&command=full-import&verbose=false} status=0 QTime=4 
+INFO  - 2014-09-05 17:39:52.473; org.apache.solr.handler.dataimport.SimplePropertiesWriter; Read dataimport.properties
+INFO  - 2014-09-05 17:39:52.525; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931592470} status=0 QTime=0 
+INFO  - 2014-09-05 17:39:52.828; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@3d988f17[collection1] realtime
+INFO  - 2014-09-05 17:39:52.841; org.apache.solr.handler.dataimport.JdbcDataSource$1; Creating a connection for entity item with URL: jdbc:mysql://localhost/foodrecommender
+ERROR - 2014-09-05 17:39:52.845; org.apache.solr.common.SolrException; Exception while processing: item document : SolrInputDocument(fields: []):org.apache.solr.handler.dataimport.DataImportHandlerException: Unable to execute query: select * from showrecipes Processing Document # 1
+	at org.apache.solr.handler.dataimport.DataImportHandlerException.wrapAndThrow(DataImportHandlerException.java:71)
+	at org.apache.solr.handler.dataimport.JdbcDataSource$ResultSetIterator.<init>(JdbcDataSource.java:281)
+	at org.apache.solr.handler.dataimport.JdbcDataSource.getData(JdbcDataSource.java:238)
+	at org.apache.solr.handler.dataimport.JdbcDataSource.getData(JdbcDataSource.java:42)
+	at org.apache.solr.handler.dataimport.SqlEntityProcessor.initQuery(SqlEntityProcessor.java:59)
+	at org.apache.solr.handler.dataimport.SqlEntityProcessor.nextRow(SqlEntityProcessor.java:73)
+	at org.apache.solr.handler.dataimport.EntityProcessorWrapper.nextRow(EntityProcessorWrapper.java:243)
+	at org.apache.solr.handler.dataimport.DocBuilder.buildDocument(DocBuilder.java:461)
+	at org.apache.solr.handler.dataimport.DocBuilder.buildDocument(DocBuilder.java:400)
+	at org.apache.solr.handler.dataimport.DocBuilder.doFullDump(DocBuilder.java:315)
+	at org.apache.solr.handler.dataimport.DocBuilder.execute(DocBuilder.java:223)
+	at org.apache.solr.handler.dataimport.DataImporter.doFullImport(DataImporter.java:411)
+	at org.apache.solr.handler.dataimport.DataImporter.runCmd(DataImporter.java:483)
+	at org.apache.solr.handler.dataimport.DataImporter$1.run(DataImporter.java:464)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1127)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:356)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2502)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2539)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2321)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	at org.apache.solr.handler.dataimport.JdbcDataSource$1.call(JdbcDataSource.java:151)
+	at org.apache.solr.handler.dataimport.JdbcDataSource$1.call(JdbcDataSource.java:131)
+	at org.apache.solr.handler.dataimport.JdbcDataSource.getConnection(JdbcDataSource.java:394)
+	at org.apache.solr.handler.dataimport.JdbcDataSource.access$200(JdbcDataSource.java:42)
+	at org.apache.solr.handler.dataimport.JdbcDataSource$ResultSetIterator.<init>(JdbcDataSource.java:268)
+	... 12 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:244)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:258)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:306)
+	... 29 more
+
+INFO  - 2014-09-05 17:39:52.846; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/dataimport params={debug=false&optimize=false&indent=true&commit=true&clean=true&wt=json&command=full-import&verbose=false} status=0 QTime=4 {deleteByQuery=*:* (-1478420429510017024)} 0 4
+ERROR - 2014-09-05 17:39:52.846; org.apache.solr.common.SolrException; Full Import failed:java.lang.RuntimeException: java.lang.RuntimeException: org.apache.solr.handler.dataimport.DataImportHandlerException: Unable to execute query: select * from showrecipes Processing Document # 1
+	at org.apache.solr.handler.dataimport.DocBuilder.execute(DocBuilder.java:262)
+	at org.apache.solr.handler.dataimport.DataImporter.doFullImport(DataImporter.java:411)
+	at org.apache.solr.handler.dataimport.DataImporter.runCmd(DataImporter.java:483)
+	at org.apache.solr.handler.dataimport.DataImporter$1.run(DataImporter.java:464)
+Caused by: java.lang.RuntimeException: org.apache.solr.handler.dataimport.DataImportHandlerException: Unable to execute query: select * from showrecipes Processing Document # 1
+	at org.apache.solr.handler.dataimport.DocBuilder.buildDocument(DocBuilder.java:402)
+	at org.apache.solr.handler.dataimport.DocBuilder.doFullDump(DocBuilder.java:315)
+	at org.apache.solr.handler.dataimport.DocBuilder.execute(DocBuilder.java:223)
+	... 3 more
+Caused by: org.apache.solr.handler.dataimport.DataImportHandlerException: Unable to execute query: select * from showrecipes Processing Document # 1
+	at org.apache.solr.handler.dataimport.DataImportHandlerException.wrapAndThrow(DataImportHandlerException.java:71)
+	at org.apache.solr.handler.dataimport.JdbcDataSource$ResultSetIterator.<init>(JdbcDataSource.java:281)
+	at org.apache.solr.handler.dataimport.JdbcDataSource.getData(JdbcDataSource.java:238)
+	at org.apache.solr.handler.dataimport.JdbcDataSource.getData(JdbcDataSource.java:42)
+	at org.apache.solr.handler.dataimport.SqlEntityProcessor.initQuery(SqlEntityProcessor.java:59)
+	at org.apache.solr.handler.dataimport.SqlEntityProcessor.nextRow(SqlEntityProcessor.java:73)
+	at org.apache.solr.handler.dataimport.EntityProcessorWrapper.nextRow(EntityProcessorWrapper.java:243)
+	at org.apache.solr.handler.dataimport.DocBuilder.buildDocument(DocBuilder.java:461)
+	at org.apache.solr.handler.dataimport.DocBuilder.buildDocument(DocBuilder.java:400)
+	... 5 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1127)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:356)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2502)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2539)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2321)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	at org.apache.solr.handler.dataimport.JdbcDataSource$1.call(JdbcDataSource.java:151)
+	at org.apache.solr.handler.dataimport.JdbcDataSource$1.call(JdbcDataSource.java:131)
+	at org.apache.solr.handler.dataimport.JdbcDataSource.getConnection(JdbcDataSource.java:394)
+	at org.apache.solr.handler.dataimport.JdbcDataSource.access$200(JdbcDataSource.java:42)
+	at org.apache.solr.handler.dataimport.JdbcDataSource$ResultSetIterator.<init>(JdbcDataSource.java:268)
+	... 12 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:244)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:258)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:306)
+	... 29 more
+
+INFO  - 2014-09-05 17:39:52.846; org.apache.solr.update.DirectUpdateHandler2; start rollback{}
+INFO  - 2014-09-05 17:39:52.846; org.apache.solr.update.DefaultSolrCoreState; Creating new IndexWriter...
+INFO  - 2014-09-05 17:39:52.846; org.apache.solr.update.DefaultSolrCoreState; Waiting until IndexWriter is unused... core=collection1
+INFO  - 2014-09-05 17:39:52.846; org.apache.solr.update.DefaultSolrCoreState; Rollback old IndexWriter... core=collection1
+INFO  - 2014-09-05 17:39:52.925; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=NRTCachingDirectory(MMapDirectory@/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data/index lockFactory=NativeFSLockFactory@/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data/index; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_12,generation=38}
+INFO  - 2014-09-05 17:39:52.925; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 38
+INFO  - 2014-09-05 17:39:52.925; org.apache.solr.update.DefaultSolrCoreState; New IndexWriter is ready to be used.
+INFO  - 2014-09-05 17:39:52.925; org.apache.solr.update.DirectUpdateHandler2; end_rollback
+INFO  - 2014-09-05 17:39:53.716; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931593714} status=0 QTime=0 
+INFO  - 2014-09-05 17:39:55.556; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931595552} status=0 QTime=0 
+INFO  - 2014-09-05 17:39:55.724; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931595722} status=0 QTime=0 
+INFO  - 2014-09-05 17:39:57.734; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931597731} status=0 QTime=0 
+INFO  - 2014-09-05 17:39:58.680; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=0&_=1409931598668} status=0 QTime=0 
+INFO  - 2014-09-05 17:40:08.702; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931608699} status=0 QTime=0 
+INFO  - 2014-09-05 17:40:18.707; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931618704} status=0 QTime=0 
+INFO  - 2014-09-05 17:40:28.845; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931628793} status=0 QTime=0 
+INFO  - 2014-09-05 17:40:38.859; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931638851} status=0 QTime=0 
+INFO  - 2014-09-05 17:40:48.864; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931648862} status=0 QTime=0 
+INFO  - 2014-09-05 17:41:00.056; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931660042} status=0 QTime=1 
+INFO  - 2014-09-05 17:41:10.072; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931670068} status=0 QTime=0 
+INFO  - 2014-09-05 17:41:20.113; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931680110} status=0 QTime=0 
+INFO  - 2014-09-05 17:41:30.118; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931690116} status=0 QTime=0 
+INFO  - 2014-09-05 17:41:40.139; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931700137} status=0 QTime=0 
+INFO  - 2014-09-05 17:41:50.184; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931710182} status=0 QTime=0 
+INFO  - 2014-09-05 17:42:00.218; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931720216} status=0 QTime=0 
+INFO  - 2014-09-05 17:42:10.244; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931730239} status=0 QTime=0 
+INFO  - 2014-09-05 17:42:20.280; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931740276} status=0 QTime=0 
+INFO  - 2014-09-05 17:42:30.325; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931750321} status=0 QTime=0 
+INFO  - 2014-09-05 17:42:40.491; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931760488} status=0 QTime=0 
+INFO  - 2014-09-05 17:42:50.496; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931770494} status=0 QTime=0 
+INFO  - 2014-09-05 17:43:00.503; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931780499} status=0 QTime=0 
+INFO  - 2014-09-05 17:43:10.510; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931790507} status=0 QTime=0 
+INFO  - 2014-09-05 17:43:20.561; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931800558} status=0 QTime=0 
+INFO  - 2014-09-05 17:43:30.569; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931810566} status=0 QTime=0 
+INFO  - 2014-09-05 17:43:40.578; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931820575} status=0 QTime=0 
+INFO  - 2014-09-05 17:43:42.841; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file/ params={file=admin-extra.html&_=1409931822804} status=0 QTime=0 
+INFO  - 2014-09-05 17:43:42.841; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/ping params={action=status&wt=json&_=1409931822805} status=503 QTime=0 
+INFO  - 2014-09-05 17:43:42.994; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/replication params={wt=json&command=details&_=1409931822803} status=0 QTime=153 
+INFO  - 2014-09-05 17:43:43.305; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={show=index&numTerms=0&wt=json&_=1409931822802} status=0 QTime=493 
+INFO  - 2014-09-05 17:43:43.395; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/system params={wt=json&_=1409931822803} status=0 QTime=554 
+INFO  - 2014-09-05 17:43:45.347; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&wt=json&_=1409931825341} status=0 QTime=0 
+INFO  - 2014-09-05 17:43:45.470; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&wt=json&_=1409931825364} status=0 QTime=0 
+INFO  - 2014-09-05 17:43:45.471; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&command=show-config&_=1409931825365} status=0 QTime=1 
+INFO  - 2014-09-05 17:43:45.471; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931825366} status=0 QTime=0 
+INFO  - 2014-09-05 17:43:47.530; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931827527} status=0 QTime=0 
+INFO  - 2014-09-05 17:43:47.592; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931827588} status=0 QTime=1 
+INFO  - 2014-09-05 17:43:48.712; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931828708} status=0 QTime=0 
+INFO  - 2014-09-05 17:43:49.542; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931829539} status=0 QTime=1 
+INFO  - 2014-09-05 17:43:51.553; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409931831551} status=0 QTime=0 
+INFO  - 2014-09-05 17:43:51.722; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=0&_=1409931831717} status=0 QTime=1 
+INFO  - 2014-09-05 17:43:57.268; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&_=1409931837232} status=0 QTime=31 
+INFO  - 2014-09-05 17:43:59.040; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=0&_=1409931839035} status=0 QTime=0 
+INFO  - 2014-09-05 17:44:09.046; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931849044} status=0 QTime=0 
+INFO  - 2014-09-05 17:44:19.075; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931859071} status=0 QTime=0 
+INFO  - 2014-09-05 17:44:29.083; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931869081} status=0 QTime=0 
+INFO  - 2014-09-05 17:44:39.091; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931879087} status=0 QTime=0 
+INFO  - 2014-09-05 17:44:49.098; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931889094} status=0 QTime=0 
+INFO  - 2014-09-05 17:44:59.105; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931899101} status=0 QTime=0 
+INFO  - 2014-09-05 17:45:09.545; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931909540} status=0 QTime=0 
+INFO  - 2014-09-05 17:45:19.553; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931919549} status=0 QTime=0 
+INFO  - 2014-09-05 17:45:29.560; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931929557} status=0 QTime=0 
+INFO  - 2014-09-05 17:45:39.569; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931939566} status=0 QTime=0 
+INFO  - 2014-09-05 17:45:49.577; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931949573} status=0 QTime=0 
+INFO  - 2014-09-05 17:45:59.586; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931959581} status=0 QTime=1 
+INFO  - 2014-09-05 17:46:09.593; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931969590} status=0 QTime=0 
+INFO  - 2014-09-05 17:46:19.600; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931979597} status=0 QTime=0 
+INFO  - 2014-09-05 17:46:29.606; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931989603} status=0 QTime=0 
+INFO  - 2014-09-05 17:46:39.614; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409931999610} status=0 QTime=0 
+INFO  - 2014-09-05 17:46:49.621; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409932009617} status=0 QTime=0 
+INFO  - 2014-09-05 17:46:59.653; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409932019650} status=0 QTime=1 
+INFO  - 2014-09-05 17:47:09.659; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409932029655} status=0 QTime=1 
+INFO  - 2014-09-05 17:47:19.664; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409931592846&_=1409932039661} status=0 QTime=0 
+INFO  - 2014-09-05 17:47:20.687; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/ping params={action=status&wt=json&_=1409932040679} status=503 QTime=0 
+INFO  - 2014-09-05 17:47:20.758; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/replication params={wt=json&command=details&_=1409932040676} status=0 QTime=71 
+INFO  - 2014-09-05 17:47:20.760; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={show=index&numTerms=0&wt=json&_=1409932040675} status=0 QTime=76 
+INFO  - 2014-09-05 17:47:20.777; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file/ params={file=admin-extra.html&_=1409932040678} status=0 QTime=0 
+INFO  - 2014-09-05 17:47:21.018; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/system params={wt=json&_=1409932040677} status=0 QTime=331 
+INFO  - 2014-09-05 17:47:22.656; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1409932042567} status=0 QTime=83 
+INFO  - 2014-09-05 17:47:22.681; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1409932042670} status=0 QTime=9 
+INFO  - 2014-09-05 17:47:36.430; org.apache.solr.request.UnInvertedField; UnInverted multi-valued field {field=cat,memSize=4288,tindexSize=0,time=0,phase1=0,nTerms=0,bigTerms=0,termInstances=0,uses=0}
+INFO  - 2014-09-05 17:47:36.448; org.apache.solr.request.UnInvertedField; UnInverted multi-valued field {field=content_type,memSize=4288,tindexSize=0,time=0,phase1=0,nTerms=0,bigTerms=0,termInstances=0,uses=0}
+INFO  - 2014-09-05 17:47:36.614; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/browse params={} hits=139942 status=0 QTime=471 
+INFO  - 2014-09-05 17:47:37.587; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file params={file=/velocity/main.css&contentType=text/css} status=0 QTime=1 
+INFO  - 2014-09-05 17:47:37.598; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file params={file=/velocity/jquery.autocomplete.css&contentType=text/css} status=0 QTime=0 
+INFO  - 2014-09-05 17:47:37.645; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file params={file=/velocity/jquery.autocomplete.js&contentType=text/javascript} status=0 QTime=58 
+INFO  - 2014-09-05 17:48:54.639; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/browse params={q=id:"1"&mlt=true} hits=1 status=0 QTime=52 
+INFO  - 2014-09-05 17:48:54.867; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file params={file=/velocity/main.css&contentType=text/css} status=0 QTime=0 
+INFO  - 2014-09-05 17:48:54.892; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file params={file=/velocity/jquery.autocomplete.css&contentType=text/css} status=0 QTime=1 
+INFO  - 2014-09-05 17:48:54.892; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file params={file=/velocity/jquery.autocomplete.js&contentType=text/javascript} status=0 QTime=1 
+INFO  - 2014-09-05 17:49:10.010; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/browse params={} hits=139942 status=0 QTime=18 
+INFO  - 2014-09-05 17:49:10.677; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file params={file=/velocity/main.css&contentType=text/css} status=0 QTime=0 
+INFO  - 2014-09-05 17:49:10.678; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file params={file=/velocity/jquery.autocomplete.js&contentType=text/javascript} status=0 QTime=1 
+INFO  - 2014-09-05 17:49:10.717; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file params={file=/velocity/jquery.autocomplete.css&contentType=text/css} status=0 QTime=0 
+INFO  - 2014-09-05 17:55:13.458; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1409932513449} status=0 QTime=0 
+INFO  - 2014-09-05 17:55:13.791; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/system params={wt=json&_=1409932513486} status=0 QTime=301 
+INFO  - 2014-09-05 17:55:16.926; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file/ params={file=admin-extra.menu-top.html&contentType=text/html;charset%3Dutf-8&_=1409932516918} status=0 QTime=0 
+INFO  - 2014-09-05 17:55:16.970; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file/ params={file=admin-extra.menu-bottom.html&contentType=text/html;charset%3Dutf-8&_=1409932516919} status=0 QTime=0 
+INFO  - 2014-09-05 17:55:17.022; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/ping params={action=status&wt=json&_=1409932516980} status=503 QTime=0 
+INFO  - 2014-09-05 17:55:17.110; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/system params={wt=json&_=1409932516978} status=0 QTime=123 
+INFO  - 2014-09-05 17:55:17.110; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/file/ params={file=admin-extra.html&_=1409932516979} status=0 QTime=0 
+INFO  - 2014-09-05 17:55:17.181; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/replication params={wt=json&command=details&_=1409932516977} status=0 QTime=194 
+INFO  - 2014-09-05 17:55:17.185; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/luke params={show=index&numTerms=0&wt=json&_=1409932516975} status=0 QTime=200 
+INFO  - 2014-09-05 17:55:18.836; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&wt=json&_=1409932518831} status=0 QTime=0 
+INFO  - 2014-09-05 17:55:18.861; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&wt=json&_=1409932518854} status=0 QTime=0 
+INFO  - 2014-09-05 17:55:18.862; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409932518856} status=0 QTime=1 
+INFO  - 2014-09-05 17:55:18.861; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&command=show-config&_=1409932518855} status=0 QTime=0 
+INFO  - 2014-09-05 17:55:20.909; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409932520907} status=0 QTime=0 
+INFO  - 2014-09-05 17:55:22.922; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409932522918} status=0 QTime=0 
+INFO  - 2014-09-05 17:55:24.109; org.apache.solr.handler.dataimport.DataImporter; Loading DIH Configuration: db-data-config.xml
+INFO  - 2014-09-05 17:55:24.113; org.apache.solr.handler.dataimport.config.DIHConfiguration; id is a required field in SolrSchema . But not found in DataConfig
+INFO  - 2014-09-05 17:55:24.113; org.apache.solr.handler.dataimport.DataImporter; Data Configuration loaded successfully
+INFO  - 2014-09-05 17:55:24.114; org.apache.solr.handler.dataimport.DataImporter; Starting Full Import
+INFO  - 2014-09-05 17:55:24.114; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={debug=false&optimize=false&indent=true&commit=true&clean=true&wt=json&command=full-import&entity=item&verbose=false} status=0 QTime=6 
+INFO  - 2014-09-05 17:55:24.149; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409932524147} status=0 QTime=0 
+INFO  - 2014-09-05 17:55:24.200; org.apache.solr.handler.dataimport.SimplePropertiesWriter; Read dataimport.properties
+INFO  - 2014-09-05 17:55:24.787; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@26c70af4[collection1] realtime
+INFO  - 2014-09-05 17:55:24.792; org.apache.solr.handler.dataimport.JdbcDataSource$1; Creating a connection for entity item with URL: jdbc:mysql://localhost/foodrecommender
+ERROR - 2014-09-05 17:55:24.796; org.apache.solr.common.SolrException; Exception while processing: item document : SolrInputDocument(fields: []):org.apache.solr.handler.dataimport.DataImportHandlerException: Unable to execute query: select * from showrecipes Processing Document # 1
+	at org.apache.solr.handler.dataimport.DataImportHandlerException.wrapAndThrow(DataImportHandlerException.java:71)
+	at org.apache.solr.handler.dataimport.JdbcDataSource$ResultSetIterator.<init>(JdbcDataSource.java:281)
+	at org.apache.solr.handler.dataimport.JdbcDataSource.getData(JdbcDataSource.java:238)
+	at org.apache.solr.handler.dataimport.JdbcDataSource.getData(JdbcDataSource.java:42)
+	at org.apache.solr.handler.dataimport.SqlEntityProcessor.initQuery(SqlEntityProcessor.java:59)
+	at org.apache.solr.handler.dataimport.SqlEntityProcessor.nextRow(SqlEntityProcessor.java:73)
+	at org.apache.solr.handler.dataimport.EntityProcessorWrapper.nextRow(EntityProcessorWrapper.java:243)
+	at org.apache.solr.handler.dataimport.DocBuilder.buildDocument(DocBuilder.java:461)
+	at org.apache.solr.handler.dataimport.DocBuilder.buildDocument(DocBuilder.java:400)
+	at org.apache.solr.handler.dataimport.DocBuilder.doFullDump(DocBuilder.java:315)
+	at org.apache.solr.handler.dataimport.DocBuilder.execute(DocBuilder.java:223)
+	at org.apache.solr.handler.dataimport.DataImporter.doFullImport(DataImporter.java:411)
+	at org.apache.solr.handler.dataimport.DataImporter.runCmd(DataImporter.java:483)
+	at org.apache.solr.handler.dataimport.DataImporter$1.run(DataImporter.java:464)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1127)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:356)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2502)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2539)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2321)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	at org.apache.solr.handler.dataimport.JdbcDataSource$1.call(JdbcDataSource.java:151)
+	at org.apache.solr.handler.dataimport.JdbcDataSource$1.call(JdbcDataSource.java:131)
+	at org.apache.solr.handler.dataimport.JdbcDataSource.getConnection(JdbcDataSource.java:394)
+	at org.apache.solr.handler.dataimport.JdbcDataSource.access$200(JdbcDataSource.java:42)
+	at org.apache.solr.handler.dataimport.JdbcDataSource$ResultSetIterator.<init>(JdbcDataSource.java:268)
+	... 12 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:244)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:258)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:306)
+	... 29 more
+
+INFO  - 2014-09-05 17:55:26.556; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409932524931} status=0 QTime=0 
+INFO  - 2014-09-05 17:55:26.839; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/dataimport params={debug=false&optimize=false&indent=true&commit=true&clean=true&wt=json&command=full-import&entity=item&verbose=false} status=0 QTime=6 {deleteByQuery=*:* (-1478421406523850752)} 0 6
+ERROR - 2014-09-05 17:55:26.840; org.apache.solr.common.SolrException; Full Import failed:java.lang.RuntimeException: java.lang.RuntimeException: org.apache.solr.handler.dataimport.DataImportHandlerException: Unable to execute query: select * from showrecipes Processing Document # 1
+	at org.apache.solr.handler.dataimport.DocBuilder.execute(DocBuilder.java:262)
+	at org.apache.solr.handler.dataimport.DataImporter.doFullImport(DataImporter.java:411)
+	at org.apache.solr.handler.dataimport.DataImporter.runCmd(DataImporter.java:483)
+	at org.apache.solr.handler.dataimport.DataImporter$1.run(DataImporter.java:464)
+Caused by: java.lang.RuntimeException: org.apache.solr.handler.dataimport.DataImportHandlerException: Unable to execute query: select * from showrecipes Processing Document # 1
+	at org.apache.solr.handler.dataimport.DocBuilder.buildDocument(DocBuilder.java:402)
+	at org.apache.solr.handler.dataimport.DocBuilder.doFullDump(DocBuilder.java:315)
+	at org.apache.solr.handler.dataimport.DocBuilder.execute(DocBuilder.java:223)
+	... 3 more
+Caused by: org.apache.solr.handler.dataimport.DataImportHandlerException: Unable to execute query: select * from showrecipes Processing Document # 1
+	at org.apache.solr.handler.dataimport.DataImportHandlerException.wrapAndThrow(DataImportHandlerException.java:71)
+	at org.apache.solr.handler.dataimport.JdbcDataSource$ResultSetIterator.<init>(JdbcDataSource.java:281)
+	at org.apache.solr.handler.dataimport.JdbcDataSource.getData(JdbcDataSource.java:238)
+	at org.apache.solr.handler.dataimport.JdbcDataSource.getData(JdbcDataSource.java:42)
+	at org.apache.solr.handler.dataimport.SqlEntityProcessor.initQuery(SqlEntityProcessor.java:59)
+	at org.apache.solr.handler.dataimport.SqlEntityProcessor.nextRow(SqlEntityProcessor.java:73)
+	at org.apache.solr.handler.dataimport.EntityProcessorWrapper.nextRow(EntityProcessorWrapper.java:243)
+	at org.apache.solr.handler.dataimport.DocBuilder.buildDocument(DocBuilder.java:461)
+	at org.apache.solr.handler.dataimport.DocBuilder.buildDocument(DocBuilder.java:400)
+	... 5 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1127)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:356)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2502)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2539)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2321)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	at org.apache.solr.handler.dataimport.JdbcDataSource$1.call(JdbcDataSource.java:151)
+	at org.apache.solr.handler.dataimport.JdbcDataSource$1.call(JdbcDataSource.java:131)
+	at org.apache.solr.handler.dataimport.JdbcDataSource.getConnection(JdbcDataSource.java:394)
+	at org.apache.solr.handler.dataimport.JdbcDataSource.access$200(JdbcDataSource.java:42)
+	at org.apache.solr.handler.dataimport.JdbcDataSource$ResultSetIterator.<init>(JdbcDataSource.java:268)
+	... 12 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:244)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:258)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:306)
+	... 29 more
+
+INFO  - 2014-09-05 17:55:26.840; org.apache.solr.update.DirectUpdateHandler2; start rollback{}
+INFO  - 2014-09-05 17:55:26.840; org.apache.solr.update.DefaultSolrCoreState; Creating new IndexWriter...
+INFO  - 2014-09-05 17:55:26.840; org.apache.solr.update.DefaultSolrCoreState; Waiting until IndexWriter is unused... core=collection1
+INFO  - 2014-09-05 17:55:26.840; org.apache.solr.update.DefaultSolrCoreState; Rollback old IndexWriter... core=collection1
+INFO  - 2014-09-05 17:55:26.852; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=NRTCachingDirectory(MMapDirectory@/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data/index lockFactory=NativeFSLockFactory@/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data/index; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_12,generation=38}
+INFO  - 2014-09-05 17:55:26.852; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 38
+INFO  - 2014-09-05 17:55:26.852; org.apache.solr.update.DefaultSolrCoreState; New IndexWriter is ready to be used.
+INFO  - 2014-09-05 17:55:26.852; org.apache.solr.update.DirectUpdateHandler2; end_rollback
+INFO  - 2014-09-05 17:55:28.566; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409932528564} status=0 QTime=0 
+INFO  - 2014-09-05 17:55:30.577; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={indent=true&wt=json&command=status&_=1409932530574} status=0 QTime=1 
+INFO  - 2014-09-05 17:55:32.252; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=0&_=1409932532247} status=0 QTime=0 
+INFO  - 2014-09-05 17:55:42.258; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932542256} status=0 QTime=0 
+INFO  - 2014-09-05 17:55:52.293; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932552291} status=0 QTime=0 
+INFO  - 2014-09-05 17:56:02.298; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932562295} status=0 QTime=0 
+INFO  - 2014-09-05 17:56:12.302; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932572300} status=0 QTime=0 
+INFO  - 2014-09-05 17:56:22.309; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932582306} status=0 QTime=0 
+INFO  - 2014-09-05 17:56:32.352; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932592349} status=0 QTime=0 
+INFO  - 2014-09-05 17:56:42.357; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932602355} status=0 QTime=0 
+INFO  - 2014-09-05 17:56:52.362; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932612360} status=0 QTime=0 
+INFO  - 2014-09-05 17:57:02.369; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932622365} status=0 QTime=0 
+INFO  - 2014-09-05 17:57:12.375; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932632372} status=0 QTime=0 
+INFO  - 2014-09-05 17:57:22.383; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932642379} status=0 QTime=1 
+INFO  - 2014-09-05 17:57:32.390; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932652387} status=0 QTime=0 
+INFO  - 2014-09-05 17:57:42.397; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932662394} status=0 QTime=1 
+INFO  - 2014-09-05 17:57:52.404; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932672401} status=0 QTime=1 
+INFO  - 2014-09-05 17:58:02.409; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932682406} status=0 QTime=0 
+INFO  - 2014-09-05 17:58:12.417; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932692415} status=0 QTime=0 
+INFO  - 2014-09-05 17:58:22.426; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932702421} status=0 QTime=0 
+INFO  - 2014-09-05 17:58:32.432; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932712430} status=0 QTime=0 
+INFO  - 2014-09-05 17:58:42.441; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932722438} status=0 QTime=0 
+INFO  - 2014-09-05 17:58:52.448; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932732445} status=0 QTime=1 
+INFO  - 2014-09-05 17:59:02.454; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932742451} status=0 QTime=0 
+INFO  - 2014-09-05 17:59:12.460; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932752458} status=0 QTime=0 
+INFO  - 2014-09-05 17:59:22.469; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932762465} status=0 QTime=1 
+INFO  - 2014-09-05 17:59:32.478; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932772473} status=0 QTime=0 
+INFO  - 2014-09-05 17:59:42.487; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932782484} status=0 QTime=0 
+INFO  - 2014-09-05 17:59:52.493; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932792490} status=0 QTime=0 
+INFO  - 2014-09-05 18:00:02.502; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932802498} status=0 QTime=1 
+INFO  - 2014-09-05 18:00:12.509; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932812507} status=0 QTime=0 
+INFO  - 2014-09-05 18:00:22.518; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932822514} status=0 QTime=0 
+INFO  - 2014-09-05 18:00:32.528; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932832523} status=0 QTime=0 
+INFO  - 2014-09-05 18:00:42.537; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932842533} status=0 QTime=0 
+INFO  - 2014-09-05 18:00:52.546; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932852542} status=0 QTime=0 
+INFO  - 2014-09-05 18:01:02.554; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932862551} status=0 QTime=0 
+INFO  - 2014-09-05 18:01:12.561; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932872558} status=0 QTime=0 
+INFO  - 2014-09-05 18:01:22.569; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932882565} status=0 QTime=1 
+INFO  - 2014-09-05 18:01:32.579; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932892576} status=0 QTime=1 
+INFO  - 2014-09-05 18:01:42.585; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932902582} status=0 QTime=0 
+INFO  - 2014-09-05 18:01:52.593; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932912590} status=0 QTime=0 
+INFO  - 2014-09-05 18:02:02.600; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932922596} status=0 QTime=0 
+INFO  - 2014-09-05 18:02:12.609; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932932606} status=0 QTime=0 
+INFO  - 2014-09-05 18:02:22.619; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932942615} status=0 QTime=0 
+INFO  - 2014-09-05 18:02:32.627; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932952624} status=0 QTime=0 
+INFO  - 2014-09-05 18:02:42.636; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932962632} status=0 QTime=0 
+INFO  - 2014-09-05 18:02:52.642; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932972639} status=0 QTime=0 
+INFO  - 2014-09-05 18:03:02.649; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932982645} status=0 QTime=0 
+INFO  - 2014-09-05 18:03:12.657; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409932992653} status=0 QTime=1 
+INFO  - 2014-09-05 18:03:22.717; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409933002661} status=0 QTime=0 
+INFO  - 2014-09-05 18:03:32.725; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409933012720} status=0 QTime=0 
+INFO  - 2014-09-05 18:03:42.733; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409933022730} status=0 QTime=0 
+INFO  - 2014-09-05 18:03:52.739; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409933032737} status=0 QTime=0 
+INFO  - 2014-09-05 18:04:02.848; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409933042845} status=0 QTime=0 
+INFO  - 2014-09-05 18:04:12.854; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409933052851} status=0 QTime=0 
+INFO  - 2014-09-05 18:04:22.861; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=1409932526840&_=1409933062857} status=0 QTime=0 
+INFO  - 2014-09-05 18:04:32.438; org.eclipse.jetty.server.Server; Graceful shutdown SocketConnector@0.0.0.0:8983
+INFO  - 2014-09-05 18:04:32.439; org.eclipse.jetty.server.Server; Graceful shutdown o.e.j.w.WebAppContext{/solr,file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr-webapp/webapp/},/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/webapps/solr.war
+INFO  - 2014-09-05 18:04:33.498; org.apache.solr.core.CoreContainer; Shutting down CoreContainer instance=2014461570
+INFO  - 2014-09-05 18:04:33.498; org.apache.solr.core.SolrCore; [collection1]  CLOSING SolrCore org.apache.solr.core.SolrCore@6f53f4f3
+INFO  - 2014-09-05 18:04:33.499; org.apache.solr.update.DirectUpdateHandler2; closing DirectUpdateHandler2{commits=0,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=3,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0,transaction_logs_total_size=24012385,transaction_logs_total_number=1}
+INFO  - 2014-09-05 18:04:33.499; org.apache.solr.update.SolrCoreState; Closing SolrCoreState
+INFO  - 2014-09-05 18:04:33.499; org.apache.solr.update.DefaultSolrCoreState; SolrCoreState ref count has reached 0 - closing IndexWriter
+INFO  - 2014-09-05 18:04:33.500; org.apache.solr.update.DefaultSolrCoreState; closing IndexWriter with IndexWriterCloser
+INFO  - 2014-09-05 18:04:33.500; org.apache.solr.update.DirectUpdateHandler2; Committing on IndexWriter close.
+INFO  - 2014-09-05 18:04:33.665; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onCommit: commits: num=2
+	commit{dir=NRTCachingDirectory(MMapDirectory@/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data/index lockFactory=NativeFSLockFactory@/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data/index; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_12,generation=38}
+	commit{dir=NRTCachingDirectory(MMapDirectory@/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data/index lockFactory=NativeFSLockFactory@/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data/index; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_13,generation=39}
+INFO  - 2014-09-05 18:04:33.665; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 39
+INFO  - 2014-09-05 18:04:33.669; org.apache.solr.core.SolrCore; [collection1] Closing main searcher on request.
+INFO  - 2014-09-05 18:04:33.674; org.apache.solr.core.CachingDirectoryFactory; Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+INFO  - 2014-09-05 18:04:33.675; org.apache.solr.core.CachingDirectoryFactory; looking to close /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data/index [CachedDir<<refCount=0;path=/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data/index;done=false>>]
+INFO  - 2014-09-05 18:04:33.675; org.apache.solr.core.CachingDirectoryFactory; Closing directory: /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data/index
+INFO  - 2014-09-05 18:04:33.675; org.apache.solr.core.CachingDirectoryFactory; looking to close /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data [CachedDir<<refCount=0;path=/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data;done=false>>]
+INFO  - 2014-09-05 18:04:33.675; org.apache.solr.core.CachingDirectoryFactory; Closing directory: /Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr/collection1/data
+INFO  - 2014-09-05 18:04:33.747; org.eclipse.jetty.server.handler.ContextHandler; stopped o.e.j.w.WebAppContext{/solr,file:/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/solr-webapp/webapp/},/Applications/XAMPP/xamppfiles/htdocs/FoodRecommenderRepo/IRV2014-Recommender/solr-4.9.0/example/webapps/solr.war
