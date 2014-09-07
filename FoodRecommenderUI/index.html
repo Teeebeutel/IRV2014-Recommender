@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <title>Foodrecommender</title>
+
+  <script src="libs/bower_components/platform/platform.js"></script>
+  <link rel="stylesheet" href="libs/bootstrap-3.2.0/css/bootstrap.min.css">
+  <link rel="import" href="libs/bower_components/core-header-panel/core-header-panel.html">
+  <link rel="import" href="libs/bower_components/core-toolbar/core-toolbar.html">
+  <link rel="import" href="libs/bower_components/core-icon-button/core-icon-button.html">
+  <link rel="import" href="libs/bower_components/core-drawer-panel/core-drawer-panel.html">
+  <link rel="import" href="libs/bower_components/core-icons/core-icons.html">
+  <link rel="import" href="libs/bower_components/core-menu/core-menu.html">
+  <link rel="import" href="libs/bower_components/core-menu/core-submenu.html">
+  <link rel="import" href="libs/bower_components/core-item/core-item.html">
+  <link rel="import" href="libs/bower_components/core-field/core-field.html">
+  <link rel="import" href="libs/bower_components/paper-shadow/paper-shadow.html">
+  <link rel="import" href="libs/bower_components/paper-tabs/paper-tabs.html">
+  <link rel="import" href="libs/bower_components/paper-checkbox/paper-checkbox.html">
+  <link rel="import" href="libs/bower_components/paper-radio-group/paper-radio-group.html">
+  <link rel="import" href="libs/bower_components/paper-fab/paper-fab.html">
+  <link rel="import" href="libs/bower_components/paper-input/paper-input.html">
+  <link rel="import" href="libs/bower_components/core-transition/core-transition-css.html">
+  <link rel="import" href="libs/bower_components/core-overlay/core-overlay.html">
+  <link rel="import" href="libs/bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="libs/bower_components/core-dropdown/core-dropdown.html">
+  <link rel="import" href="libs/bower_components/page-er/page-er.html">
+  <link rel="import" href="libs/bower_components/paper-slider/paper-slider.html">
+  <link rel="import" href="libs/bower_components/slider-polymer/index.html">
+  
+  <link rel="stylesheet" href="res/css/style.css">
+
+  
+
+
+</head>
+<body>
+
+  <core-toolbar class="tall" >
+    <div id="heading" flex>feed.me</div>
+    <div id="search">
+        <core-field>
+          <paper-icon-button icon="search"></paper-icon-button>
+          
+          <input placeholder="Suchen..." type="text" id="query" name="query" autocomplete="off" flex>
+          <paper-icon-button icon="clear" class="clearButton"></paper-icon-button>
+          <core-dropdown valueattr="label" selected="0" id="searchTypeSelect">
+              <core-item label="profilbezogen"></core-item>
+              <core-item label="frei"></core-item>
+          </core-dropdown>
+        </core-field>
+        <paper-shadow z="1"></paper-shadow>
+      </div>
+
+
+    <div class="bottom fit" horizontal center-justified end layout>
+      
+      <paper-tabs id="mainMenuTabs" selected="0" flex style="width: 70%;">
+
+        <paper-tab id="homeMenuItem">Home</paper-tab>
+        <paper-tab id="fastAdviceMenuItem">Schnell Vorschlag</paper-tab>
+        <paper-tab id="myRecipesMenuItem">Meine Rezepte</paper-tab>
+        <paper-tab id="profilMenuItem">Profil</paper-tab>
+      </paper-tabs>
+      
+    </div>
+  
+  </core-toolbar>
+
+   
+  <div id="content">
+
+  </div>
+  
+  <script src="libs/jquery-2.1.1.js"></script>
+  <script src="libs/underscore.js"></script>
+  <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/themes/smoothness/jquery-ui.css">
+  <script src="js/reuters.js"></script>
+  
+
+
+  <script src="libs/core/Core.js"></script>
+  <script src="libs/core/AbstractManager.js"></script>
+  <script src="libs/managers/Manager.jquery.js"></script>
+  <script src="libs/core/Parameter.js"></script>
+  <script src="libs/core/ParameterStore.js"></script>
+  <script src="libs/core/AbstractWidget.js"></script>
+  <script src="widgets/ResultWidget.js"></script>
+  <script src="libs/widgets/jquery/PagerWidget.js"></script>
+  <script src="libs/core/AbstractFacetWidget.js"></script>
+  <script src="widgets/TagcloudWidget.js"></script>
+  <script src="widgets/CurrentSearchWidget.9.js"></script>
+  <script src="libs/core/AbstractTextWidget.js"></script>
+  <script src="widgets/AutocompleteWidget.js"></script>
+
+
+
+  <script src="src/FoodRecommender.js"></script>
+  <script src="src/MainController.js"></script>
+  <script src="src/MainModel.js"></script>
+  <script src="src/RecommenderView.js"></script>
+  <script src="src/MenuView.js"></script>
+  <script src="src/HomeScreenView.js"></script>
+  <script src="src/ProfilView.js"></script>
+  <script src="src/AdvancedSearchView.js"></script>
+  <script src="src/MyRecipesView.js"></script>
+
+
+  <script src="src/AdvancedSearchItem.js"></script>
+  <script src="src/ProfilItem.js"></script>
+  <script src="src/MyRecipesItem.js"></script>
+  <script src="src/HomeScreenItem.js"></script>
+
+<script type="text/html" id="homeScreen-tpl">
+    <div id="<%= id %>">
+      <div id="sliderContainer">
+      <slider-component>
+        <img src="res/images/Nudelsalat.jpg">
+        <img src="res/images/Cheesecake.jpg">
+        <img src="res/images/Tortillas.jpg">
+        <img src="res/images/Pizzateig.jpg">
+        <img src="res/images/Plätzchen.jpg">
+        <img src="res/images/PestoRosso.jpg">
+        <img src="res/images/RucolasalatMitErdbeeren.jpg">
+      </slider-component>
+      <paper-shadow z="1"></paper-shadow>
+    </div>
+    <h2>Menüart</h2></br>
+
+    <div class="card">
+      <paper-shadow z="1"></paper-shadow>
+    </div>
+
+    <div class="card selectedCard">
+      <paper-shadow z="1"></paper-shadow>
+    </div>
+
+    <div class="card">
+      <paper-shadow z="1"></paper-shadow>
+    </div>
+    <br  class="clear" />
+    
+    <h2>Ernährungskonzept</h2></br>
+    <h2>Dauer</h2></br>
+    <h2>Schwierigkeitsgrad</h2></br>
+    <div id="imageGetterContainer">
+            <h1>Chefkoch-Image-Getter</h1>
+            <div class="btn search-field navbar-right input-group" id="loadImageSearchField">
+
+                    <input type="text" class="input-field form-control" id="input-field" autocomplete="off" placeholder="chefkoch-URL" >
+                    <span class="input-group-btn">
+                        <button class="search-button btn btn-primary" id="search-button" type="submit"><span class="glyphicon glyphicon-search"></span><span id="searchLable"> load Image</span></button>
+                    </span>
+                </div>
+            <img id="imgContainer" src="res/images/Kochtopf.png"><paper-shadow z="1"></paper-shadow>
+    </div>
+    </div>
+  </script>
+
+
+  <script type="text/html" id="advancedSearch-tpl">
+    <div id="<%= id %>">
+      <div class="left leftSide">
+      <h2>Current Selection</h2>
+      <ul id="selection"></ul>
+      
+
+      <h2>Menüart</h2></br>
+
+      <core-selector id="kindOfMenuSelector" selected="0">
+        <div class="kindOfMenuContainer" id="starterOption">
+          <img src="res/images/Kochtopf.png">
+          <div class="selectionMark">
+            <div class="iconDiv"></div>
+            <core-icon icon="check"></core-icon>
+          </div>
+          <div>Vorspeise</div>
+        </div>
+        <div class="kindOfMenuContainer" id="lunchOption">
+          <img src="res/images/Kochtopf.png">
+          <div>Mittagessen</div>
+        </div>
+        <div class="kindOfMenuContainer" id="dessertOption">
+          <img src="res/images/Kochtopf.png">
+          <div>Dessert</div>
+        </div>
+        <div class="kindOfMenuContainer" id="drinksOption">
+          <img src="res/images/Kochtopf.png">
+          <div>Getränke</div>
+        </div>
+      </core-selector>
+
+
+      <h2>Ernährungskonzept</h2></br>
+
+      <core-dropdown valueattr="label" selected="0" id="nutritionConceptSelect">
+          <core-item label="keines"></core-item>
+          <core-item label="Vegetarisch"></core-item>
+          <core-item label="Fettarm"></core-item>
+          <core-item label="Diabetiker"></core-item>
+          <core-item label="Laktosefrei"></core-item>
+          <core-item label="Gluthenfrei"></core-item>
+        </core-dropdown>
+
+
+      <h2>Dauer</h2></br>
+      <paper-slider pin value="0" max="120" editable></paper-slider>
+
+      <h2>Schwierigkeitsgrad</h2></br>
+      <core-selector id="levelOfDifficultySelector" selected="0">
+        <div class="levelOfDifficulty" id="egal"></div>
+        <div class="levelOfDifficulty" id="leicht"></div>
+        <div class="levelOfDifficulty" id="mittel"></div>
+        <div class="levelOfDifficulty" id="schwer"></div>
+      </core-selector>
+
+        <div class="levelOfDifficultyText">egal</div>
+        <div class="levelOfDifficultyText">leicht</div>
+        <div class="levelOfDifficultyText">mittel</div>
+        <div class="levelOfDifficultyText">schwer</div>
+     
+      <h2>Zutaten</h2></br>
+
+      <div id="addField">
+        <core-field>
+          <input placeholder="neue Zutat..."flex>
+          <paper-icon-button icon="add" class="addButton"></paper-icon-button>
+        </core-field>
+        <paper-shadow z="1"></paper-shadow>
+      </div>
+    </div>
+  
+
+  <div class="right">
+      <div id="countSelectContainer">
+      <span>Anzahl</span>
+      <core-dropdown valueattr="label" selected="0" id="countSelect">
+          <core-item label="10"></core-item>
+          <core-item label="5"></core-item>
+        </core-dropdown>
+      </div>
+
+      <div id="sortSelectContainer">
+        <span>Sortierung</span>
+        <core-dropdown valueattr="label" selected="0" id="sortSelect">
+          <core-item label="Relevanz"></core-item>
+          <core-item label="Zeit"></core-item>
+          <core-item label="Dauer"></core-item>
+          <core-item label="Schwierigkeit"></core-item>
+        </core-dropdown>
+      </div>
+
+
+      <div id="result">
+        <div id="docs"></div>
+        <div id="navigation">
+          <ul id="pager" class="pagination"></ul>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    </div>
+  </script>
+
+  <script type="text/html" id="profil-tpl">
+    <div id="<%= id %>">
+      <div class="center">
+      <div class="profilInformation">
+        <div>
+          <div id="cathegories">
+            <p>Name</p><p>Email</p>
+          </div>
+          <div id="personalInformation">
+            <p>Max Mustermann</p><p>max@mustermann.de</p>
+          </div>
+        </div>
+        <paper-button class="colored dialogButton" label="Bearbeiten"></paper-button>
+        <paper-shadow z="1"></paper-shadow>
+      </div>
+
+      <div class="profilInformation">
+        
+        <div class="left">
+        <div horizontal layout class="cBContainer">
+          <paper-checkbox></paper-checkbox>
+          <div vertical layout>
+            <div>Vegan</div>
+          </div>
+        </div><br  class="clear" />
+
+        <div horizontal layout class="cBContainer">
+          <paper-checkbox></paper-checkbox>
+          <div vertical layout>
+            <div>Laktosefrei</div>
+          </div>
+        </div><br  class="clear" />
+
+        <div horizontal layout class="cBContainer">
+          <paper-checkbox></paper-checkbox>
+          <div vertical layout>
+            <div>Antialkoholisch</div>
+          </div>
+        </div><br  class="clear" />
+
+        <div horizontal layout class="cBContainer">
+          <paper-checkbox></paper-checkbox>
+          <div vertical layout>
+            <div>Diabetiker</div>
+          </div>
+        </div><br  class="clear" />
+
+        <div horizontal layout class="cBContainer">
+          <paper-checkbox></paper-checkbox>
+          <div vertical layout>
+            <div>Schwein</div>
+          </div>
+        </div><br  class="clear" />
+        </div>
+
+        <div class="left">
+        <div horizontal layout class="cBContainer">
+          <paper-checkbox></paper-checkbox>
+          <div vertical layout>
+            <div>Vetetarisch</div>
+          </div>
+        </div><br  class="clear" />
+
+        <div horizontal layout class="cBContainer">
+          <paper-checkbox></paper-checkbox>
+          <div vertical layout>
+            <div>Glutenfrei</div>
+          </div>
+        </div><br  class="clear" />
+
+        <div horizontal layout class="cBContainer">
+          <paper-checkbox></paper-checkbox>
+          <div vertical layout>
+            <div>Sportler</div>
+          </div>
+        </div><br  class="clear" />
+
+        <div horizontal layout class="cBContainer">
+          <paper-checkbox></paper-checkbox>
+          <div vertical layout>
+            <div>Rind</div>
+          </div>
+        </div><br  class="clear" />
+        </div>
+        <paper-shadow z="1"></paper-shadow>
+      </div>
+
+
+      </div>
+
+
+    </div>
+  </script>
+
+
+  <script type="text/html" id="myRecipes-tpl">
+    <div id="<%= id %>">
+      MyRecipes
+    </div>
+  </script>
+
+  <script>
+            FoodRecommender.init();
+           
+        </script>
+</body>
+</html>
