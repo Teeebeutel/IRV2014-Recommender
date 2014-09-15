@@ -16,6 +16,7 @@ AjaxSolr.Manager = AjaxSolr.AbstractManager.extend(
   /** @lends AjaxSolr.Manager.prototype */
   {
   executeRequest: function (servlet, string, handler, errorHandler) {
+
     var self = this,
         options = {dataType: 'json'};
     string = string || this.store.string();

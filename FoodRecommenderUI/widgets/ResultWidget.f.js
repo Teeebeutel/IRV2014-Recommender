@@ -53,9 +53,9 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
       $(this.target).append(this.template(doc));
 
       var items = [];
-      items = items.concat(this.facetLinks('topics', doc.topics));
-      items = items.concat(this.facetLinks('organisations', doc.organisations));
-      items = items.concat(this.facetLinks('exchanges', doc.exchanges));
+      items = items.concat(this.facetLinks('Vegan', doc.topics));
+      items = items.concat(this.facetLinks('Vegetarian', doc.organisations));
+      items = items.concat(this.facetLinks('Beef', doc.exchanges));
 
       var $links = $('#links_' + doc.id);
       $links.empty();

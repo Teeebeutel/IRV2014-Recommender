@@ -1,5 +1,5 @@
 <dataConfig>
-  <dataSource type="JdbcDataSource" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/recommender" user="root" password="hollaHeMann1337"/>
+  <dataSource type="JdbcDataSource" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/recommender" user="root" password=""/>
     <document name="recipes">
     	<entity name="item" query="select * from showrecipes">
     	    <field column="TITLE" name="title" />
@@ -16,14 +16,12 @@
             <field column="TIMETOWORK" name="TimeToWork" />
             <field column="TIMETOCOOK" name="TimeToCook" />
             <field column="TIMETOREST" name="TimeToRest" />
-<<<<<<< HEAD
+            <!--
             <field column="SOURCE" name="url"/>
             <entity name="ingredients" query="select a.name from fr_cleaningredientnames as a, fr_ingredients as b, showrecipes as c where c.recipe_id = '${item.ID}' AND c.recipe_id = b.recipe_id AND b.CleanNames_ID = a.id">
                 <field column="name" name="ingredientname" />
             </entity>  		   
-=======
-            <field column="SOURCE" name="url"/>  		   
->>>>>>> 87b4d0e5b2bd04545815ccae2f92104f768d7a53
+            -->
         </entity>
     </document>
 </dataConfig>

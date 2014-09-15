@@ -16,6 +16,7 @@ AjaxSolr.TextWidget = AjaxSolr.AbstractTextWidget.extend({
       if (e.which == 13) {
         var value = $(this).val();
         if (value && self.set(value)) {
+          console.log('woot');
           self.doRequest();
         }
       }

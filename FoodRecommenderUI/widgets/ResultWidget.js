@@ -46,15 +46,19 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
   },
 
   afterRequest: function () {
+    derp = $(this.target);
+    console.log(derp);
     $(this.target).empty();
     for (var i = 0, l = this.manager.response.response.docs.length; i < l; i++) {
       var doc = this.manager.response.response.docs[i];
       $(this.target).append(this.template(doc));
-
       var items = [];
-      items = items.concat(this.facetLinks('topics', doc.topics));
-      items = items.concat(this.facetLinks('organisations', doc.organisations));
-      items = items.concat(this.facetLinks('exchanges', doc.exchanges));
+      //console.log('result after request',doc)
+      items = items.concat(this.facetLinks('TimeToWork', doc.TimeToWork));
+      items = items.concat(this.facetLinks('RequiredSkill', doc.RequiredSkill));
+      items = items.concat(this.facetLinks('Vegetarian', doc.Vegetarian));
+      items = items.concat(this.facetLinks('Vegan', doc.Vegan));
+      items = items.concat(this.facetLinks('UserRating', doc.UserRating));
 
       var $links = $('#links_' + doc.id);
       $links.empty();
@@ -65,14 +69,15 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
   },
 
   template: function (doc) {
+    //console.log('resultwidget template',doc);
     var snippet = '';
-    if (doc.text.length > 300) {
-      snippet += doc.dateline + ' ' + doc.text.substring(0, 300);
-      snippet += '<span style="display:none;">' + doc.text.substring(300);
+    if (doc.Instructions.length > 300) {
+      snippet += /*doc.dateline + ' ' + */doc.Instructions.substring(0, 300);
+      snippet += '<span style="display:none;">' + doc.Instructions.substring(300);
       snippet += '</span> <a href="#" class="more">more</a>';
     }
     else {
-      snippet += doc.dateline + ' ' + doc.text;
+      snippet += /*doc.dateline + ' ' +*/ doc.Instructions;
     }
 
     var output = '<div class="resultElement"><div class="resultImg"><img src="./res/images/Plätzchen.jpg"></div><div class="resultDescription"><h2>' + doc.title + '</h2>';
