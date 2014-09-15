@@ -1,7 +1,7 @@
 <dataConfig>
-  <dataSource type="JdbcDataSource" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/recommender" user="root" password=""/>
+  <dataSource type="JdbcDataSource" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/recommender" user="root" password="hollaHeMann1337"/>
     <document name="recipes">
-    	<entity name="item" query="select * from showrecipes">
+    	<entity name="item" query="select * from showrecipes" transformer="TemplateTransformer">
     	    <field column="TITLE" name="title" />
     		<field column="RECIPE_ID" name="Recipe_ID" />  
             <field column="VEGETARIAN" name="Vegetarian" /> 
@@ -16,12 +16,12 @@
             <field column="TIMETOWORK" name="TimeToWork" />
             <field column="TIMETOCOOK" name="TimeToCook" />
             <field column="TIMETOREST" name="TimeToRest" />
-            <!--
-            <field column="SOURCE" name="url"/>
-            <entity name="ingredients" query="select a.name from fr_cleaningredientnames as a, fr_ingredients as b, showrecipes as c where c.recipe_id = '${item.ID}' AND c.recipe_id = b.recipe_id AND b.CleanNames_ID = a.id">
+            <field column="SOURCE" name="url" template="http://www.chefkoch.de/rezepte/${item.Recipe_ID}"/>
+
+            <entity name="ingredients" query="select a.name from fr_cleaningredientnames as a, fr_ingredients as b, showrecipes as c where c.Recipe_ID = '${item.Recipe_ID}' AND c.Recipe_ID = b.Recipe_ID AND b.CleanNames_ID = a.id">
                 <field column="name" name="ingredientname" />
-            </entity>  		   
-            -->
+            </entity>         
+
         </entity>
     </document>
 </dataConfig>
