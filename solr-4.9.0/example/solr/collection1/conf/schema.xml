@@ -123,53 +123,31 @@
 
   <!-- own indexed fields start   -->
 
-  <field name="Recipe_ID" type="text_general" indexed="true" stored="true"/>
-  <field name="Instructions" type="text_general" indexed="false" stored="true"/>
-  <!-- 
-  <field name="Source" type="text_general" indexed="true" stored="true"/>
-  <field name="Title" type="text_general" indexed="true" stored="true"/> 
-  -->
-  <field name="Type" type="text_general" indexed="true" stored="true"/>
-
-  <field name="NumUserRatings" type="int" indexed="true" stored="true"/>
-  <field name="UserRating" type="int" indexed="true" stored="true"/>
-  <field name="RequiredSkill" type="int" indexed="true" stored="true"/>
-  
-  <field name="Vegetarian" type="boolean" indexed="true" stored="true"/>
-  <field name="Vegan" type="boolean" indexed="true" stored="true"/>
-  <field name="Diabetus" type="boolean" indexed="true" stored="true"/>
-  <field name="Sportsman" type="boolean" indexed="true" stored="true"/>
-  <field name="Lactose" type="boolean" indexed="true" stored="true"/>
-  <field name="Gluten" type="boolean" indexed="true" stored="true"/> 
-  <field name="Pork" type="boolean" indexed="true" stored="true"/>
-  <field name="Antialc" type="boolean" indexed="true" stored="true"/>
+  <field name="recipe_id" type="text_general" indexed="true" stored="true"/>
+  <field name="instructions" type="text_general" indexed="false" stored="true"/>
+  <field name="type" type="text_general" indexed="true" stored="true"/>
+  <field name="numUserRatings" type="int" indexed="true" stored="true"/>
+  <field name="userRating" type="int" indexed="true" stored="true"/>
+  <field name="requiredSkill" type="int" indexed="true" stored="true"/>
+  <field name="vegetarian" type="boolean" indexed="true" stored="true"/>
+  <field name="vegan" type="boolean" indexed="true" stored="true"/>
+  <field name="diabetus" type="boolean" indexed="true" stored="true"/>
+  <field name="sportsman" type="boolean" indexed="true" stored="true"/>
+  <field name="lactose" type="boolean" indexed="true" stored="true"/>
+  <field name="gluten" type="boolean" indexed="true" stored="true"/> 
+  <field name="pork" type="boolean" indexed="true" stored="true"/>
+  <field name="antialc" type="boolean" indexed="true" stored="true"/>
   <field name="beef" type="boolean" indexed="true" stored="true"/>
-  <field name="TimeToWork" type="int" indexed="true" stored="true"/>
-  <field name="TimeToCook" type="int" indexed="true" stored="true"/>
-  <field name="TimeToRest" type="int" indexed="true" stored="true"/>
+  <!--maybe reduce this to a single "time needed" field-->
+  <field name="timetowork" type="int" indexed="true" stored="true"/>
+  <field name="timetocook" type="int" indexed="true" stored="true"/>
+  <field name="timetorest" type="int" indexed="true" stored="true"/>
   <field name="ingredients" type="text_general" indexed="true" stored="true" multiValued="true"/>
   <field name="ingredientname" type="text_general" indexed="false" stored="true" multiValued="true"/>
 
-   <!-- own indexed fields end-->
+   <!-- end own indexed fields end-->
 
 
-
-  <!--
-   <field name="sku" type="text_en_splitting_tight" indexed="true" stored="true" omitNorms="true"/>
-   <field name="name" type="text_general" indexed="true" stored="true"/>
-
-   <field name="manu" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-   <field name="cat" type="string" indexed="true" stored="true" multiValued="true"/>
-   <field name="features" type="text_general" indexed="true" stored="true" multiValued="true"/>
-   <field name="includes" type="text_general" indexed="true" stored="true" termVectors="true" termPositions="true" termOffsets="true" />
-
-   <field name="weight" type="float" indexed="true" stored="true"/>
-   <field name="price"  type="float" indexed="true" stored="true"/>
-   <field name="popularity" type="int" indexed="true" stored="true" />
-   <field name="inStock" type="boolean" indexed="true" stored="true" />
-
-   <field name="store" type="location" indexed="true" stored="true"/>
-  -->
    <!-- Common metadata fields, named specifically to match up with
      SolrCell metadata when parsing rich documents such as Word, PDF.
      Some fields are multiValued only because Tika currently may return

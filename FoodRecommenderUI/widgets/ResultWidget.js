@@ -79,23 +79,23 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
 
   template: function (doc) {
     console.log(doc);
-    console.log(doc.Vegan, doc.Gluten, doc.Lactose, doc.Vegetarian, doc.Antialc);
+    console.log(doc.vegan, doc.gluten, doc.lactose, doc.vegetarian, doc.antialc);
     var snippet = '';
-    if (doc.Instructions.length > 300) {
-      snippet += /*doc.dateline + ' ' + */doc.Instructions.substring(0, 300);
-      snippet += '<span style="display:none;">' + doc.Instructions.substring(300);
+    if (doc.instructions.length > 300) {
+      snippet += /*doc.dateline + ' ' + */doc.instructions.substring(0, 300);
+      snippet += '<span style="display:none;">' + doc.instructions.substring(300);
       snippet += '</span> <a href="#" class="more">more</a>';
     }
     else {
-      snippet += /*doc.dateline + ' ' +*/ doc.Instructions;
+      snippet += /*doc.dateline + ' ' + */doc.instructions;
     }
 
     var images = ""; 
-    images += doc.Vegan ? '<img src="./res/images/vegan.png">' : ''; 
-    images += doc.Gluten ? '<img src="./res/images/gluthenfrei.png">' : ''; 
-    images += doc.Lactose ? '<img src="./res/images/laktosefrei.png">' : ''; 
-    images += doc.Vegetarian ? '<img src="./res/images/vegetarisch.png">' : ''; 
-    images += doc.Antialc ? '<img src="./res/images/alkoholfrei.png">' : ''; 
+    images += doc.vegan ? '<img src="./res/images/vegan.png">' : ''; 
+    images += doc.gluten ? '<img src="./res/images/gluthenfrei.png">' : ''; 
+    images += doc.lactose ? '<img src="./res/images/laktosefrei.png">' : ''; 
+    images += doc.vegetarian ? '<img src="./res/images/vegetarisch.png">' : ''; 
+    images += doc.antialc ? '<img src="./res/images/alkoholfrei.png">' : ''; 
 
     var output = '<div class="resultElement"><div class="resultImg"><img id="' + doc.Recipe_ID + '" src="./res/images/ajax-loader.gif"></div><div class="resultDescription"><h2>' + doc.title + '</h2>';
     output += '<p id="links_' + doc.id + '" class="links"></p>';
