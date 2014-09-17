@@ -79,13 +79,13 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
 
   template: function (doc) {
     var snippet = '';
-    if (doc.Instructions.length > 300) {
-      snippet += /*doc.dateline + ' ' + */doc.Instructions.substring(0, 300);
-      snippet += '<span style="display:none;">' + doc.Instructions.substring(300);
+    if (doc.instructions.length > 300) {
+      snippet += doc.dateline + ' ' + doc.instructions.substring(0, 300);
+      snippet += '<span style="display:none;">' + doc.instructions.substring(300);
       snippet += '</span> <a href="#" class="more">more</a>';
     }
     else {
-      snippet += /*doc.dateline + ' ' +*/ doc.Instructions;
+      snippet += doc.dateline + ' ' + doc.instructions;
     }
 
     var output = '<div class="resultElement"><div class="resultImg"><img id="' + doc.Recipe_ID + '" src="./res/images/ajax-loader.gif"></div><div class="resultDescription"><h2>' + doc.title + '</h2>';

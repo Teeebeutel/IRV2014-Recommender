@@ -4,7 +4,7 @@ var Manager;
 
   $(function () {
     Manager = new AjaxSolr.Manager({
-      solrUrl: 'http://localhost:8983/solr/Recommender/'
+      solrUrl: 'http://localhost:8983/solr/'
       // If you are using a local Solr instance with a "reuters" core, use:
       // solrUrl: 'http://localhost:8983/solr/reuters/'
       // If you are using a local Solr instance with a single core, use:
@@ -39,13 +39,13 @@ var Manager;
     Manager.addWidget(new AjaxSolr.AutocompleteWidget({
       id: 'text',
       target: '#search',
-      fields: [ 'title'/*, 'Gluten', 'Diabetus', 'Lactose', 'Sportsman', 'Antialc', 'Pork', 'Vegetarian', 'Vegan', 'RequiredSkill'*/]
+      fields: [ 'title'/*,'gluten', 'diabetus', 'lactose', 'sportsman', 'antialc', 'pork', 'vegetarian', 'vegan', 'requiredskill'*/]
     }));
     Manager.init();
     Manager.store.addByValue('q', '*:*');
     var params = {
       facet: true,
-      'facet.field': [ 'Gluten', 'Diabetus', 'Lactose', 'Sportsman', 'Antialc', 'Pork', 'Vegetarian', 'Vegan' ],
+      'facet.field': [ 'gluten', 'diabetus', 'lactose', 'sportsman', 'antialc', 'pork', 'vegetarian', 'vegan' ],
       'facet.limit': 20,
       'facet.mincount': 1,
       'json.nl': 'map'
