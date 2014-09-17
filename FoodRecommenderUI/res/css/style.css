@@ -15,6 +15,18 @@ body {
   line-height: 18px;
 }
 
+.iconContainer {
+  position: absolute;
+  bottom: 0px;
+  padding-left: 200px;
+}
+
+.iconContainer img {
+  height: 30px;
+  margin: 10px;
+  float: right;
+}
+
 #kindOfMenuSelector {
   border-bottom: none;
   list-style: none;
