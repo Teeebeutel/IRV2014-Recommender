@@ -10,7 +10,6 @@ FoodRecommender.HomeScreenView = (function() {
     makeHomeScreenItem({
       id: "homeScreenItem"
     });
-    console.log("hi");
   }, 
 
   makeHomeScreenItem = function(options) {
@@ -20,7 +19,6 @@ FoodRecommender.HomeScreenView = (function() {
     });
     var $el = item.render(); 
     $('#content').append($el);
-    console.log("make");
   };
 
   that.addHomeScreenItem = addHomeScreenItem;

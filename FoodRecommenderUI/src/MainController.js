@@ -5,7 +5,7 @@ FoodRecommender.MainController = (function() {
 	advancedSearchView = null, 
 	myRecipesView = null, 
 	menuView = null,
-	recommenderView = null, 
+	//recommenderView = null, 
 	//mainModel = null,
 
 	init = function() {
@@ -17,14 +17,14 @@ FoodRecommender.MainController = (function() {
 		profilView = FoodRecommender.ProfilView.init();
 		advancedSearchView = FoodRecommender.AdvancedSearchView.init();
 		myRecipesView = FoodRecommender.MyRecipesView.init();
-		recommenderView = FoodRecommender.RecommenderView.init(); 
+		//recommenderView = FoodRecommender.RecommenderView.init(); 
 
 		$(menuView).on('homeMenuItemClick', onHomeMenuItemClick);
 		$(menuView).on('fastAdviceMenuItemClick', onFastAdviceMenuItemClick);
 		$(menuView).on('myRecipesMenuItemClick', onMyRecipesMenuItemClick);
 		$(menuView).on('profilMenuItemClick', onProfilMenuItemClick);
 
-		$(recommenderView).on("getImage", onGetImage); 
+		//$(recommenderView).on("getImage", onGetImage); 
 	}, 
 
 	onHomeMenuItemClick = function(event) {
@@ -51,9 +51,9 @@ FoodRecommender.MainController = (function() {
 		profilView.addProfilItem();
 	},
 
-	onGetImage = function(event, inputURL) {
+	/*onGetImage = function(event, inputURL) {
 		mainModel.getImage(inputURL); 
-	}, 
+	}, */
 
 	emptyContent = function() {
 		$('#content').empty();

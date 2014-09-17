@@ -24,14 +24,14 @@ var Manager;
         $('#pager-header').html($('<span></span>').text('displaying ' + Math.min(total, offset + 1) + ' to ' + Math.min(total, offset + perPage) + ' of ' + total));
       }
     }));
-    var fields = [ 'title', 'Gluten', 'Diabetus', 'Lactose', 'Sportsman', 'Antialc', 'Pork', 'Vegetarian', 'Vegan', 'RequiredSkill' ];
+   /* var fields = [ 'title', 'Gluten', 'Diabetus', 'Lactose', 'Sportsman', 'Antialc', 'Pork', 'Vegetarian', 'Vegan', 'RequiredSkill' ];
     for (var i = 0, l = fields.length; i < l; i++) {
       Manager.addWidget(new AjaxSolr.TagcloudWidget({
         id: fields[i],
         target: '#' + fields[i],
         field: fields[i]
       }));
-    }
+    }*/
     Manager.addWidget(new AjaxSolr.CurrentSearchWidget({
       id: 'currentsearch',
       target: '#selection'
@@ -39,7 +39,7 @@ var Manager;
     Manager.addWidget(new AjaxSolr.AutocompleteWidget({
       id: 'text',
       target: '#search',
-      fields: [ 'title', 'Gluten', 'Diabetus', 'Lactose', 'Sportsman', 'Antialc', 'Pork', 'Vegetarian', 'Vegan', 'RequiredSkill']
+      fields: [ 'title'/*, 'Gluten', 'Diabetus', 'Lactose', 'Sportsman', 'Antialc', 'Pork', 'Vegetarian', 'Vegan', 'RequiredSkill'*/]
     }));
     Manager.init();
     Manager.store.addByValue('q', '*:*');

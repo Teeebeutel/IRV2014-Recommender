@@ -9,7 +9,7 @@ FoodRecommender.AdvancedSearchView = (function() {
 	    makeAdvancedSearchItem({
 	      id: "advancedSearchItem"
 	    });
-	    $('.kindOfMenuContainer').on('click', onSelectedItemChange);
+	    //$('.kindOfMenuContainer').on('click', onSelectedItemChange);
 	}, 
 
 	makeAdvancedSearchItem = function(options) {
