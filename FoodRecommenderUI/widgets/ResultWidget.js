@@ -78,19 +78,28 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
   },
 
   template: function (doc) {
+    console.log(doc);
+    console.log(doc.vegan, doc.gluten, doc.lactose, doc.vegetarian, doc.antialc);
     var snippet = '';
     if (doc.instructions.length > 300) {
-      snippet += doc.dateline + ' ' + doc.instructions.substring(0, 300);
+      snippet += /*doc.dateline + ' ' + */doc.instructions.substring(0, 300);
       snippet += '<span style="display:none;">' + doc.instructions.substring(300);
       snippet += '</span> <a href="#" class="more">more</a>';
     }
     else {
-      snippet += doc.dateline + ' ' + doc.instructions;
+      snippet += /*doc.dateline + ' ' + */doc.instructions;
     }
+
+    var images = ""; 
+    images += doc.vegan ? '<img src="./res/images/vegan.png">' : ''; 
+    images += doc.gluten ? '<img src="./res/images/gluthenfrei.png">' : ''; 
+    images += doc.lactose ? '<img src="./res/images/laktosefrei.png">' : ''; 
+    images += doc.vegetarian ? '<img src="./res/images/vegetarisch.png">' : ''; 
+    images += doc.antialc ? '<img src="./res/images/alkoholfrei.png">' : ''; 
 
     var output = '<div class="resultElement"><div class="resultImg"><img id="' + doc.Recipe_ID + '" src="./res/images/ajax-loader.gif"></div><div class="resultDescription"><h2>' + doc.title + '</h2>';
     output += '<p id="links_' + doc.id + '" class="links"></p>';
-    output += '<p>' + snippet + '</p></div><paper-icon-button icon="star" class="addToFavouritesBtn"></paper-icon-button><paper-shadow z="1"></paper-shadow></div>';
+    output += '<p>' + snippet + '</p></div><paper-icon-button icon="star" class="addToFavouritesBtn"></paper-icon-button><div class="iconContainer">'+ images+'</div><paper-shadow z="1"></paper-shadow></div>';
     return output;
   },
 
