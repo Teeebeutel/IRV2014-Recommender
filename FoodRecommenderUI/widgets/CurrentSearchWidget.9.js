@@ -57,6 +57,7 @@ AjaxSolr.CurrentSearchWidget = AjaxSolr.AbstractWidget.extend({
     else {
       $(this.target).html('<li>Viewing all documents!</li>');
     }
+    console.log('i am done!');
   },
 
   removeFacet: function (facet) {

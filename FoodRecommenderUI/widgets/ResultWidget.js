@@ -63,11 +63,11 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
           });
       }); 
       var items = [];
-      items = items.concat(this.facetLinks('TimeToWork', doc.TimeToWork));
-      items = items.concat(this.facetLinks('RequiredSkill', doc.RequiredSkill));
-      items = items.concat(this.facetLinks('Vegetarian', doc.Vegetarian));
-      items = items.concat(this.facetLinks('Vegan', doc.Vegan));
-      items = items.concat(this.facetLinks('UserRating', doc.UserRating));
+      items = items.concat(this.facetLinks('timetowork', doc.TimeToWork));
+      items = items.concat(this.facetLinks('requiredskill', doc.RequiredSkill));
+      items = items.concat(this.facetLinks('vegetarian', doc.Vegetarian));
+      items = items.concat(this.facetLinks('vegan', doc.Vegan));
+      items = items.concat(this.facetLinks('userrating', doc.UserRating));
 
       var $links = $('#links_' + doc.id);
       $links.empty();
