@@ -1,0 +1,12 @@
+diff a/FoodRecommenderUI/widgets/ResultWidget.js b/FoodRecommenderUI/widgets/ResultWidget.js	(rejected hunks)
+@@ -78,8 +78,8 @@
+   },
+ 
+   template: function (doc) {
+-    console.log(doc);
+-    console.log(doc.vegan, doc.gluten, doc.lactose, doc.vegetarian, doc.antialc);
++    //console.log(doc);
++    //console.log(doc.vegan, doc.gluten, doc.lactose, doc.vegetarian, doc.antialc);
+     var snippet = '';
+     if (doc.instructions.length > 300) {
+       snippet += /*doc.dateline + ' ' + */doc.instructions.substring(0, 300);

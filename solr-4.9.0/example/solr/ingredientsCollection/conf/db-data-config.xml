@@ -1,0 +1,10 @@
+<dataConfig>
+  <dataSource type="JdbcDataSource" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/recommender" user="root" password="hollaHeMann1337"/>
+    <document name="ingredientslist">
+        <entity name="ingredient" query="SELECT * FROM `fr_cleaningredientnames`">
+            <field column="name" name="name"/>
+            <field column="name_en" name="name_en"/>
+            <field column="name_es" name="name_es"/>
+        </entity>
+    </document>
+</dataConfig>
