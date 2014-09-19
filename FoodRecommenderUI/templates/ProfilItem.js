@@ -1,12 +1,13 @@
-FoodRecommender.HomeScreenItem = function() {
+ProfilItem = function() {
 	var that  = {}, 
 	template  = null, 
 	id = null, 
 
 	init = function(options) {
+		console.log("hi");
 		id = options.id; 
 
-		template = $('#homeScreen-tpl').html(); 
+		template = $('#profil-tpl').html(); 
 
 		return that; 
 	}, 

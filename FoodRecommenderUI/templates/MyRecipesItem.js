@@ -1,4 +1,4 @@
-FoodRecommender.MyRecipesItem = function() {
+MyRecipesItem = function() {
 	var that  = {}, 
 	template  = null, 
 	id = null, 

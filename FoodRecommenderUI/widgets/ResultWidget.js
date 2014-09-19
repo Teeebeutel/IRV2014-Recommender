@@ -18,7 +18,6 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
   },
 
   facetLinks: function (facet_field, facet_values) {
-    console.log("hi");
     var links = [];
     if (facet_values) {
       for (var i = 0, l = facet_values.length; i < l; i++) {
@@ -78,8 +77,8 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
   },
 
   template: function (doc) {
-    console.log(doc);
-    console.log(doc.vegan, doc.gluten, doc.lactose, doc.vegetarian, doc.antialc);
+    //console.log(doc);
+    //console.log(doc.type/*, doc.vegan, doc.gluten, doc.lactose, doc.vegetarian, doc.antialc*/);
     var snippet = '';
     if (doc.instructions.length > 300) {
       snippet += /*doc.dateline + ' ' + */doc.instructions.substring(0, 300);
@@ -97,7 +96,7 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
     images += doc.vegetarian ? '<img src="./res/images/vegetarisch.png">' : ''; 
     images += doc.antialc ? '<img src="./res/images/alkoholfrei.png">' : ''; 
 
-    var output = '<div class="resultElement"><div class="resultImg"><img id="' + doc.Recipe_ID + '" src="./res/images/ajax-loader.gif"></div><div class="resultDescription"><h2>' + doc.title + '</h2>';
+    var output = '<div class="resultElement"><div class="resultImg"><img id="' + doc.recipe_id + '" src="./res/images/ajax-loader.gif"></div><div class="resultDescription"><h2>' + doc.title + '</h2>';
     output += '<p id="links_' + doc.id + '" class="links"></p>';
     output += '<p>' + snippet + '</p></div><paper-icon-button icon="star" class="addToFavouritesBtn"></paper-icon-button><div class="iconContainer">'+ images+'</div><paper-shadow z="1"></paper-shadow></div>';
     return output;
@@ -135,25 +134,7 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
       );
   },
 
-  onSelectedItemChange: function(event) {
-    $('#kindOfMenuSelector').find('.core-selected').find('.selectionMark').remove();
-    $(event.currentTarget).append('<div class="selectionMark"><div class="iconDiv"></div><core-icon icon="check"></core-icon></div>');
-  }, 
-
-  onNutritionConceptSelectChange: function(event) {
-    var target = this;
-    var currentlySelectedOption = $(event.currentTarget.selectedItem).attr("label"); 
-    console.log(currentlySelectedOption);
-    //if(currentlySelectedOption == "Vegan") {
-      //var item = this.facetLinks('Vegan', true);
-      //var $links = $('#links_' + doc.id);
-      //$links.append($('<li></li>').append(item));
-    //}
-  }, 
-
   init: function () {
-    $(document).on('click', '.kindOfMenuContainer', this.onSelectedItemChange);
-    $(document).on('core-select', '#nutritionConceptSelect', this.onNutritionConceptSelectChange); 
     $(document).on('click', 'a.more', function () {
       var $this = $(this),
           span = $this.parent().find('span');

@@ -79,10 +79,9 @@
   
   <script src="libs/jquery-2.1.1.js"></script>
   <script src="libs/underscore.js"></script>
-  <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js"></script>
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/themes/smoothness/jquery-ui.css">
-  <script src="js/reuters.js"></script>
+  <script src="js/feedme.js"></script>
   
 
 
@@ -99,24 +98,15 @@
   <script src="widgets/CurrentSearchWidget.9.js"></script>
   <script src="libs/core/AbstractTextWidget.js"></script>
   <script src="widgets/AutocompleteWidget.js"></script>
+  <script src="widgets/KindOfMenuWidget.js"></script>
+  <script src="widgets/NutritionConceptWidget.js"></script>
+  <script src="widgets/AddIngredientsWidget.js"></script>
+  <script src="widgets/LevelOfDifficultyWidget.js"></script>
 
-
-
-  <script src="src/FoodRecommender.js"></script>
-  <script src="src/MainController.js"></script>
-  <script src="src/MainModel.js"></script>
-  <!--<script src="src/RecommenderView.js"></script>-->
-  <script src="src/MenuView.js"></script>
-  <script src="src/HomeScreenView.js"></script>
-  <script src="src/ProfilView.js"></script>
-  <script src="src/AdvancedSearchView.js"></script>
-  <script src="src/MyRecipesView.js"></script>
-
-
-  <script src="src/AdvancedSearchItem.js"></script>
-  <script src="src/ProfilItem.js"></script>
-  <script src="src/MyRecipesItem.js"></script>
-  <script src="src/HomeScreenItem.js"></script>
+  <script src="templates/AdvancedSearchItem.js"></script>
+  <script src="templates/ProfilItem.js"></script>
+  <script src="templates/MyRecipesItem.js"></script>
+  <script src="templates/HomeScreenItem.js"></script>
 
 <script type="text/html" id="homeScreen-tpl">
     <div id="<%= id %>">
@@ -135,32 +125,42 @@
     <h2>Menüart</h2></br>
 
     <div class="card">
+      <img src="res/images/Kochtopf.png">
       <paper-shadow z="1"></paper-shadow>
     </div>
 
     <div class="card selectedCard">
+      <img src="res/images/Kochtopf.png">
       <paper-shadow z="1"></paper-shadow>
     </div>
 
     <div class="card">
+      <img src="res/images/Kochtopf.png">
       <paper-shadow z="1"></paper-shadow>
     </div>
     <br  class="clear" />
     
     <h2>Ernährungskonzept</h2></br>
+
+    <div class="card">
+      <img src="res/images/alkoholfrei.png">
+      <paper-shadow z="1"></paper-shadow>
+    </div>
+
+    <div class="card selectedCard">
+      <img src="res/images/vegan.png">
+      <paper-shadow z="1"></paper-shadow>
+    </div>
+
+    <div class="card">
+      <img src="res/images/Vegetarisch.png">
+      <paper-shadow z="1"></paper-shadow>
+    </div>
+    <br  class="clear" />
+
+
     <h2>Dauer</h2></br>
     <h2>Schwierigkeitsgrad</h2></br>
-    <!--<div id="imageGetterContainer">
-            <h1>Chefkoch-Image-Getter</h1>
-            <div class="btn search-field navbar-right input-group" id="loadImageSearchField">
-
-                    <input type="text" class="input-field form-control" id="input-field" autocomplete="off" placeholder="chefkoch-URL" >
-                    <span class="input-group-btn">
-                        <button class="search-button btn btn-primary" id="search-button" type="submit"><span class="glyphicon glyphicon-search"></span><span id="searchLable"> load Image</span></button>
-                    </span>
-                </div>
-            <img id="imgContainer" src="res/images/Kochtopf.png"><paper-shadow z="1"></paper-shadow>
-    </div>-->
     </div>
   </script>
 
@@ -181,20 +181,20 @@
             <div class="iconDiv"></div>
             <core-icon icon="check"></core-icon>
           </div>
-          <div>Vorspeise</div>
+          <div>Frühstück</div>
         </div>
         <div class="kindOfMenuContainer" id="lunchOption">
           <img src="res/images/Kochtopf.png">
           <div>Mittagessen</div>
         </div>
-        <div class="kindOfMenuContainer" id="dessertOption">
+        <!--<div class="kindOfMenuContainer" id="dessertOption">
           <img src="res/images/Kochtopf.png">
           <div>Dessert</div>
         </div>
         <div class="kindOfMenuContainer" id="drinksOption">
           <img src="res/images/Kochtopf.png">
           <div>Getränke</div>
-        </div>
+        </div>-->
       </core-selector>
 
 
@@ -318,12 +318,6 @@
           </div>
         </div><br  class="clear" />
 
-        <div horizontal layout class="cBContainer">
-          <paper-checkbox></paper-checkbox>
-          <div vertical layout>
-            <div>Schwein</div>
-          </div>
-        </div><br  class="clear" />
         </div>
 
         <div class="left">
@@ -351,9 +345,10 @@
         <div horizontal layout class="cBContainer">
           <paper-checkbox></paper-checkbox>
           <div vertical layout>
-            <div>Rind</div>
+            <div>Schwein</div>
           </div>
         </div><br  class="clear" />
+
         </div>
         <paper-shadow z="1"></paper-shadow>
       </div>
@@ -372,9 +367,9 @@
     </div>
   </script>
 
-  <script>
+  <!--<script>
             FoodRecommender.init();
            
-        </script>
+        </script>-->
 </body>
 </html>

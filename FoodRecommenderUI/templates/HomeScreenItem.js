@@ -1,4 +1,4 @@
-FoodRecommender.AdvancedSearchItem = function() {
+HomeScreenItem = function() {
 	var that  = {}, 
 	template  = null, 
 	id = null, 
@@ -6,7 +6,7 @@ FoodRecommender.AdvancedSearchItem = function() {
 	init = function(options) {
 		id = options.id; 
 
-		template = $('#advancedSearch-tpl').html(); 
+		template = $('#homeScreen-tpl').html(); 
 
 		return that; 
 	}, 

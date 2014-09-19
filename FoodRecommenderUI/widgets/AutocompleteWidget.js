@@ -11,7 +11,6 @@
 
 AjaxSolr.AutocompleteWidget = AjaxSolr.AbstractTextWidget.extend({
   afterRequest: function () {
-    //$(this.target).find('input').unbind().removeData('events').val('');
 
     var self = this;
 

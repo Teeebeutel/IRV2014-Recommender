@@ -1,13 +1,12 @@
-FoodRecommender.ProfilItem = function() {
+AdvancedSearchItem = function() {
 	var that  = {}, 
 	template  = null, 
 	id = null, 
 
 	init = function(options) {
-		console.log("hi");
 		id = options.id; 
 
-		template = $('#profil-tpl').html(); 
+		template = $('#advancedSearch-tpl').html(); 
 
 		return that; 
 	}, 
