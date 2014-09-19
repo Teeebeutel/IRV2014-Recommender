@@ -32,3 +32,5 @@
 2014-09-17 16:13:18,401 - Left side ($pivots.size()) of '>' operation has null value at VM_global_library.vm[line 124, column 23]
 2014-09-17 16:13:18,401 - Left side ($pivots.size()) of '>' operation has null value at VM_global_library.vm[line 124, column 23]
 2014-09-17 16:13:18,401 - Left side ($pivots.size()) of '>' operation has null value at VM_global_library.vm[line 124, column 23]
+2014-09-19 11:34:17,757 - Left side ($field.size()) of '>' operation has null value at VM_global_library.vm[line 82, column 22]
+2014-09-19 11:34:17,788 - Left side ($pivots.size()) of '>' operation has null value at VM_global_library.vm[line 124, column 23]
