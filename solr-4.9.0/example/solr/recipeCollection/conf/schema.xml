@@ -142,8 +142,8 @@
   <field name="timetowork" type="int" indexed="true" stored="true"/>
   <field name="timetocook" type="int" indexed="true" stored="true"/>
   <field name="timetorest" type="int" indexed="true" stored="true"/>
-  <field name="ingredients" type="text_general" indexed="true" stored="true" multiValued="true"/>
-  <field name="ingredientname" type="text_general" indexed="false" stored="true" multiValued="true"/>
+  <field name="ingredients" type="text_general" indexed="false" stored="true" multiValued="true"/>
+  <field name="ingredientname" type="text_general" indexed="true" stored="true" multiValued="true"/>
 
    <!-- end own indexed fields end-->
 
