@@ -1,10 +1,12 @@
 var Manager;
+//var KindOfMenuWidget;
 
 (function ($) {
 
   $(function () {
     Manager = new AjaxSolr.Manager({
-      solrUrl: 'http://localhost:8983/solr/recipeCollection/'
+
+      solrUrl: 'http://localhost:8983/solr/' //recipeCollection/'
       // If you are using a local Solr instance with a "reuters" core, use:
       // solrUrl: 'http://localhost:8983/solr/reuters/'
       // If you are using a local Solr instance with a single core, use:
@@ -34,7 +36,12 @@ var Manager;
     Manager.addWidget(new AjaxSolr.AutocompleteWidget({
       id: 'text',
       target: '#search',
-      fields: [ 'title'/*,'gluten', 'diabetus', 'lactose', 'sportsman', 'antialc', 'pork', 'vegetarian', 'vegan', 'requiredskill'*/]
+      fields: ['title'/*,'gluten', 'diabetus', 'lactose', 'sportsman', 'antialc', 'pork', 'vegetarian', 'vegan', 'requiredskill'*/]
+    }));
+    Manager.addWidget(new AjaxSolr.AutocompleteWidget({
+      id: 'addField',
+      target: '#addField',
+      fields: ['title']
     }));
     Manager.addWidget(new AjaxSolr.KindOfMenuWidget({
       id: 'kindOfMenuSelector',
@@ -44,7 +51,7 @@ var Manager;
     Manager.addWidget(new AjaxSolr.NutritionConceptWidget({
       id: 'nutritionConceptSelect',
       target: '#nutritionConceptSelect',
-      fields: ['gluten', 'diabetus', 'lactose', 'sportsman', 'antialc', 'pork', 'vegetarian', 'vegan']
+      fields: ['vegetarian', 'vegan', 'antialc']
     }));
     Manager.addWidget(new AjaxSolr.AddIngredientsWidget({
       id: 'addField',
@@ -68,7 +75,7 @@ var Manager;
     for (var name in params) {
       Manager.store.addByValue(name, params[name]);
     }
-    Manager.doRequest();
+    Manager.doRequest(0, 'recipeCollection/select');
 
   });
   
@@ -118,6 +125,8 @@ var Manager;
       makeAdvancedSearchItem({
         id: "advancedSearchItem"
       });
+      //KindOfMenuWidget = new AjaxSolr.KindOfMenuWidget();
+      //$('.kindOfMenuContainer').on('click', KindOfMenuWidget.onSelectedItemChange);
   }; 
 
   makeAdvancedSearchItem = function(options) {
@@ -127,6 +136,7 @@ var Manager;
       var $el = item.render(); 
       $('#content').append($el);
   };
+
 
   addMyRecipesItem = function() {
       makeMyRecipesItem({

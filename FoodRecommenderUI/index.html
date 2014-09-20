@@ -57,6 +57,15 @@
         <paper-shadow z="1"></paper-shadow>
       </div>
 
+      <!--<div id="addField">
+        <core-field>
+          <input placeholder="neue Zutat..." type="text" autocomplete="off" flex>
+          <paper-icon-button icon="add" class="addButton"></paper-icon-button>
+        </core-field>
+        <paper-shadow z="1"></paper-shadow>
+      </div>
+    </div>-->
+
 
     <div class="bottom fit" horizontal center-justified end layout>
       
@@ -103,10 +112,11 @@
   <script src="widgets/AddIngredientsWidget.js"></script>
   <script src="widgets/LevelOfDifficultyWidget.js"></script>
 
+  <script src="templates/HomeScreenItem.js"></script>
   <script src="templates/AdvancedSearchItem.js"></script>
+  <script src="templates/RecipeItem.js"></script>
   <script src="templates/ProfilItem.js"></script>
   <script src="templates/MyRecipesItem.js"></script>
-  <script src="templates/HomeScreenItem.js"></script>
 
 <script type="text/html" id="homeScreen-tpl">
     <div id="<%= id %>">
@@ -176,7 +186,7 @@
 
       <core-selector id="kindOfMenuSelector" selected="0">
         <div class="kindOfMenuContainer" id="starterOption">
-          <img src="res/images/Kochtopf.png">
+          <img src="res/images/Kochtopf.png" />
           <div class="selectionMark">
             <div class="iconDiv"></div>
             <core-icon icon="check"></core-icon>
@@ -184,15 +194,15 @@
           <div>Frühstück</div>
         </div>
         <div class="kindOfMenuContainer" id="lunchOption">
-          <img src="res/images/Kochtopf.png">
+          <img src="res/images/Kochtopf.png" />
           <div>Mittagessen</div>
         </div>
         <!--<div class="kindOfMenuContainer" id="dessertOption">
-          <img src="res/images/Kochtopf.png">
+          <img src="res/images/Kochtopf.png" />
           <div>Dessert</div>
         </div>
         <div class="kindOfMenuContainer" id="drinksOption">
-          <img src="res/images/Kochtopf.png">
+          <img src="res/images/Kochtopf.png" />
           <div>Getränke</div>
         </div>-->
       </core-selector>
@@ -202,12 +212,9 @@
 
       <core-dropdown valueattr="label" selected="0" id="nutritionConceptSelect">
           <core-item label="keines"></core-item>
-          <core-item label="Vegetarisch"></core-item>
-          <core-item label="Vegan"></core-item>
-          <core-item label="Fettarm"></core-item>
-          <core-item label="Diabetiker"></core-item>
-          <core-item label="Laktosefrei"></core-item>
-          <core-item label="Gluthenfrei"></core-item>
+          <core-item label="vegetarisch"></core-item>
+          <core-item label="vegan"></core-item>
+          <core-item label="alkoholfrei"></core-item>
         </core-dropdown>
 
 
@@ -231,7 +238,7 @@
 
       <div id="addField">
         <core-field>
-          <input placeholder="neue Zutat..."flex>
+          <input placeholder="neue Zutat..." type="text" autocomplete="off" flex>
           <paper-icon-button icon="add" class="addButton"></paper-icon-button>
         </core-field>
         <paper-shadow z="1"></paper-shadow>
@@ -268,6 +275,24 @@
     </div>
     </div>
 
+    </div>
+  </script>
+
+  <script type="text/html" id="recipe-tpl">
+    <div class="resultElement" id="<%= resultId %>" data_id="<%= recipeId %>">
+      <div class="resultImg">
+        <img src="./res/images/ajax-loader.gif">
+      </div>
+      <div class="resultDescription">
+        <h2><%= title %></h2>
+        <p id="links_<%= id %>" class="links"></p>
+        <p><%= snippet %></p>
+      </div>
+      <paper-icon-button icon="star" class="addToFavouritesBtn"></paper-icon-button>
+      <div class="iconContainer">
+        <%= images %>
+      </div>
+      <paper-shadow z="1"></paper-shadow>
     </div>
   </script>
 
@@ -367,9 +392,5 @@
     </div>
   </script>
 
-  <!--<script>
-            FoodRecommender.init();
-           
-        </script>-->
 </body>
 </html>
