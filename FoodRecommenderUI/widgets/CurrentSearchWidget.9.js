@@ -21,7 +21,7 @@ AjaxSolr.CurrentSearchWidget = AjaxSolr.AbstractWidget.extend({
     if (q != '*:*') {
       links.push($('<a href="#"></a>').text('(x) ' + q).click(function () {
         self.manager.store.get('q').val('*:*');
-        self.doRequest();
+        self.doRequest(0, 'recipeCollection/select');
         return false;
       }));
     }
@@ -42,7 +42,7 @@ AjaxSolr.CurrentSearchWidget = AjaxSolr.AbstractWidget.extend({
       links.unshift($('<a href="#"></a>').text('remove all').click(function () {
         self.manager.store.get('q').val('*:*');
         self.manager.store.remove('fq');
-        self.doRequest();
+        self.doRequest(0, 'recipeCollection/select');
         return false;
       }));
     }
@@ -64,7 +64,7 @@ AjaxSolr.CurrentSearchWidget = AjaxSolr.AbstractWidget.extend({
     var self = this;
     return function () {
       if (self.manager.store.removeByValue('fq', facet)) {
-        self.doRequest();
+        self.doRequest(0, 'recipeCollection/select');
       }
       return false;
     };

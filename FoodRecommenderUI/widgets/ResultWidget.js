@@ -1,3 +1,5 @@
+var resultId = 0; 
+
 (function (callback) {
   if (typeof define === 'function' && define.amd) {
     define(['core/AbstractWidget'], callback);
@@ -41,32 +43,31 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
     return function () {
       self.manager.store.remove('fq');
       self.manager.store.addByValue('fq', facet_field + ':' + AjaxSolr.Parameter.escapeValue(facet_value));
-      self.doRequest();
+      self.doRequest(0, 'recipeCollection/select');
       return false;
     };
   },
 
   afterRequest: function () {
+    
     var recipeId;
     var resultContainer = this;
     $(this.target).empty();
     for (var i = 0, l = this.manager.response.response.docs.length; i < l; i++) {
       var doc = this.manager.response.response.docs[i];
-      $(this.target).append(this.template(doc));
+      this.addRecipeItem(doc);
       $('.resultImg img').each(function() {
-          recipeId = $(this).attr('id'); 
+          recipeId = $(this).closest('.resultElement').attr('data_id'); 
           var img = $(this);
           var url = "http://www.chefkoch.de/rezepte/" + recipeId;
-          resultContainer.getImage(url, function(result) {
-              img.attr('src', result);
-          });
+          resultContainer.getImage(url, img);
       }); 
       var items = [];
-      items = items.concat(this.facetLinks('timetowork', doc.TimeToWork));
-      items = items.concat(this.facetLinks('requiredskill', doc.RequiredSkill));
-      items = items.concat(this.facetLinks('vegetarian', doc.Vegetarian));
-      items = items.concat(this.facetLinks('vegan', doc.Vegan));
-      items = items.concat(this.facetLinks('userrating', doc.UserRating));
+      items = items.concat(this.facetLinks('timetowork', doc.timetowork));
+      items = items.concat(this.facetLinks('requiredskill', doc.requiredSkill));
+      items = items.concat(this.facetLinks('vegetarian', doc.vegetarian));
+      items = items.concat(this.facetLinks('vegan', doc.vegan));
+      //items = items.concat(this.facetLinks('userrating', doc.UserRating));
 
       var $links = $('#links_' + doc.id);
       $links.empty();
@@ -76,62 +77,79 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
     }
   },
 
-  template: function (doc) {
-    //console.log(doc);
-    //console.log(doc.type/*, doc.vegan, doc.gluten, doc.lactose, doc.vegetarian, doc.antialc*/);
+  addRecipeItem: function(doc) {
+    console.log(doc);
+    resultId++;
     var snippet = '';
-    if (doc.instructions.length > 300) {
-      snippet += /*doc.dateline + ' ' + */doc.instructions.substring(0, 300);
-      snippet += '<span style="display:none;">' + doc.instructions.substring(300);
+    var recipeId = doc.recipe_id; 
+    var title = doc.title; 
+    var id = doc.id; 
+    var instructions = doc.instructions; 
+    var timeToWork = doc.timetowork;
+    var vegetarian = doc.vegetarian; 
+    var vegan = doc.vegan; 
+    var antialc = doc.antialc; 
+    if (instructions.length > 200) {
+      snippet += instructions.substring(0, 200);
+      snippet += '<span style="display:none;">' + instructions.substring(200);
       snippet += '</span> <a href="#" class="more">more</a>';
     }
     else {
-      snippet += /*doc.dateline + ' ' + */doc.instructions;
+      snippet += doc.instructions;
     }
 
     var images = ""; 
-    images += doc.vegan ? '<img src="./res/images/vegan.png">' : ''; 
-    images += doc.gluten ? '<img src="./res/images/gluthenfrei.png">' : ''; 
-    images += doc.lactose ? '<img src="./res/images/laktosefrei.png">' : ''; 
-    images += doc.vegetarian ? '<img src="./res/images/vegetarisch.png">' : ''; 
-    images += doc.antialc ? '<img src="./res/images/alkoholfrei.png">' : ''; 
+    images += vegetarian ? '<img src="./res/images/vegetarisch.png">' : ''; 
+    images += vegan ? '<img src="./res/images/vegan.png">' : ''; 
+    images += antialc ? '<img src="./res/images/alkoholfrei.png">' : ''; 
 
-    var output = '<div class="resultElement"><div class="resultImg"><img id="' + doc.recipe_id + '" src="./res/images/ajax-loader.gif"></div><div class="resultDescription"><h2>' + doc.title + '</h2>';
-    output += '<p id="links_' + doc.id + '" class="links"></p>';
-    output += '<p>' + snippet + '</p></div><paper-icon-button icon="star" class="addToFavouritesBtn"></paper-icon-button><div class="iconContainer">'+ images+'</div><paper-shadow z="1"></paper-shadow></div>';
-    return output;
-  },
+      this.makeRecipeItem({
+        resultId: "resultElement" + resultId, 
+        recipeId: recipeId,
+        title: title,
+        id: id,
+        snippet: snippet, 
+        images: images
+      });
+      $(document).on('click', '#resultElement' + resultId + ' .addToFavouritesBtn', {'recipeId': recipeId, 'title': title, 'instructions': instructions, 'timeToWork': timeToWork, 'vegetarian': this.booleanToNumber(vegetarian), 'vegan': this.booleanToNumber(vegan), 'antialc': this.booleanToNumber(antialc)}, this.onAddToFavouritesBtnClick);
+  },  
 
-  getImage: function(url, callback) {
-    var imgUrl = '';
-    $.getJSON("http://query.yahooapis.com/v1/public/yql?"+
-                "q=select%20*%20from%20html%20where%20url%3D%22"+
-                encodeURIComponent(url)+
-                "%22&format=xml'&callback=?",
-        function(data){
-          if(data.results[0]){
-            var data = data.results[0];
+  makeRecipeItem: function(options) {
+      var item = RecipeItem().init({
+        resultId: options.resultId, 
+        recipeId: options.recipeId,
+        title: options.title,
+        id: options.id,
+        snippet: options.snippet, 
+        images: options.images
+      });
+      var $el = item.render(); 
+      $('#docs').append($el);
+  }, 
 
-            var startIndex = data.indexOf('id="slider"'); 
-            if(startIndex == -1) {
-              imgUrl = "res/images/noImage.png"; 
-            } else{
-              var endIndex = data.indexOf("</a>", startIndex); 
-              var slicedString = data.slice(startIndex, endIndex)
-              var beginStr = 'href="'; 
-              var endStr = '.jpg'; 
-              var imgSrcStart = slicedString.indexOf(beginStr) + beginStr.length;
-              var imgSrcEnd = slicedString.indexOf(endStr) + endStr.length; 
-              slicedString = slicedString.slice(imgSrcStart, imgSrcEnd); 
-              imgUrl = slicedString; 
-              
-            }
-          } else {
-            imgUrl = "res/images/noImage.png"; 
-          }
-          callback(imgUrl);
-        }
-      );
+  booleanToNumber: function(boolean) {
+    return (boolean == false ? 0 : 1);
+  }, 
+
+  onAddToFavouritesBtnClick: function(event) {
+    var recipeId = event.data.recipeId; 
+    var title = event.data.title[0]; 
+    var instructions = event.data.instructions; 
+    var timeToWork = event.data.timeToWork; 
+    var vegetarian  = event.data.vegetarian; 
+    var vegan = event.data.vegan; 
+    var antialc = event.data.antialc; 
+    
+    var data = {recipeId: recipeId, title: title, instructions: instructions, timeToWork: timeToWork, vegetarian: vegetarian, vegan: vegan, antialc: antialc};
+    $.get("php/functions.php?command=saveRecipe", data); 
+  }, 
+
+  getImage: function(url, img) {
+    $.get("php/functions.php?command=getImage", {url: url}).done(
+    function(data) {
+      var json = data; 
+      img.attr('src', json);
+    });
   },
 
   init: function () {

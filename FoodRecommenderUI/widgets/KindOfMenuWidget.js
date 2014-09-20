@@ -1,14 +1,18 @@
+var self; 
+
 (function ($) {
 
 AjaxSolr.KindOfMenuWidget = AjaxSolr.AbstractFacetWidget.extend({
+   
   afterRequest: function () {
-    var self = this;
-
-    $(document).on('click', '.kindOfMenuContainer', {'self': self}, this.onSelectedItemChange);
+    self = this; 
+    console.log(self);
+    $(document).on('click', '.kindOfMenuContainer', this.onSelectedItemChange);
   },
 
   onSelectedItemChange: function(event) {
-    var self = event.data.self; 
+    //var self = $('#kindOfMenuSelector');//event.data.self; 
+    console.log("selected");
     $('#kindOfMenuSelector').find('.core-selected').find('.selectionMark').remove();
     $(event.currentTarget).append('<div class="selectionMark"><div class="iconDiv"></div><core-icon icon="check"></core-icon></div>');
     var text = $(event.currentTarget).find('div').text();
@@ -22,7 +26,7 @@ AjaxSolr.KindOfMenuWidget = AjaxSolr.AbstractFacetWidget.extend({
         break; 
     }
     if (value && self.set(value)) {
-        self.doRequest();
+        self.doRequest(0, 'recipeCollection/select');
       }
   }
 });

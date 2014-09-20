@@ -23,11 +23,11 @@ AjaxSolr.LevelOfDifficultyWidget = AjaxSolr.AbstractFacetWidget.extend({
         break; 
       default:
         self.clear();
-        self.doRequest();
+        self.doRequest(0, 'recipeCollection/select');
         break;
     }
     if (value && self.set(value)) {
-        self.doRequest();
+        self.doRequest(0, 'recipeCollection/select');
     } 
   }
 });

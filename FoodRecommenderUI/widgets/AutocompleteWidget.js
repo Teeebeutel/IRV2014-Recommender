@@ -11,9 +11,11 @@
 
 AjaxSolr.AutocompleteWidget = AjaxSolr.AbstractTextWidget.extend({
   afterRequest: function () {
+    $(this.target).find('input').unbind().removeData('events');
 
     var self = this;
 
+    console.log("hi");
     var callback = function (response) {
       var list = [];
       for (var i = 0; i < self.fields.length; i++) {
@@ -34,7 +36,7 @@ AjaxSolr.AutocompleteWidget = AjaxSolr.AbstractTextWidget.extend({
           if (ui.item) {
             self.requestSent = true;
             if (self.manager.store.addByValue('fq', ui.item.field + ':' + AjaxSolr.Parameter.escapeValue(ui.item.value))) {
-              self.doRequest();
+              self.doRequest(0, 'recipeCollection/select');
             }
           }
         }
@@ -45,13 +47,13 @@ AjaxSolr.AutocompleteWidget = AjaxSolr.AbstractTextWidget.extend({
         if (self.requestSent === false && e.which == 13) {
           var value = $(this).val();
           if (value && self.set(value)) {
-            self.doRequest();
+            self.doRequest(0, 'recipeCollection/select');
           }
         }
       });
     } // end callback
 
-    var params = [ 'rows=0&facet=true&facet.limit=-1&facet.mincount=1&json.nl=map' ];
+    var params = [ 'rows=0&facet=true&facet.limit=300&facet.mincount=1&json.nl=map' ];
     for (var i = 0; i < this.fields.length; i++) {
       params.push('facet.field=' + this.fields[i]);
     }
@@ -60,7 +62,7 @@ AjaxSolr.AutocompleteWidget = AjaxSolr.AbstractTextWidget.extend({
       params.push('fq=' + encodeURIComponent(values[i]));
     }
     params.push('q=' + this.manager.store.get('q').val());
-    $.getJSON(this.manager.solrUrl + 'select?' + params.join('&') + '&wt=json&json.wrf=?', {}, callback);
+    $.getJSON(this.manager.solrUrl + 'recipeCollection/select?' + params.join('&') + '&wt=json&json.wrf=?', {}, callback);
   }
 });
 
