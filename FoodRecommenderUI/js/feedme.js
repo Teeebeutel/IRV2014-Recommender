@@ -35,13 +35,13 @@ var Manager;
     Manager.addWidget(new AjaxSolr.AutocompleteWidget({
       id: 'text',
       target: '#search',
-      fields: ['title'/*,'gluten', 'diabetus', 'lactose', 'sportsman', 'antialc', 'pork', 'vegetarian', 'vegan', 'requiredskill'*/]
+      fields: ['title', 'ingredientname'/*,'gluten', 'diabetus', 'lactose', 'sportsman', 'antialc', 'pork', 'vegetarian', 'vegan', 'requiredskill'*/]
     }));
-    Manager.addWidget(new AjaxSolr.AutocompleteWidget({
+    /*Manager.addWidget(new AjaxSolr.AutocompleteWidget({
       id: 'addField',
       target: '#addField',
       fields: ['title']
-    }));
+    }));*/
     Manager.addWidget(new AjaxSolr.KindOfMenuWidget({
       id: 'kindOfMenuSelector',
       target: '#kindOfMenuSelector',
@@ -66,7 +66,7 @@ var Manager;
     Manager.store.addByValue('q', '*:*');
     var params = {
       facet: true,
-      'facet.field': [ 'gluten', 'diabetus', 'lactose', 'sportsman', 'antialc', 'pork', 'vegetarian', 'vegan' ],
+      'facet.field': [ 'ingredientname', 'gluten', 'diabetus', 'lactose', 'sportsman', 'antialc', 'pork', 'vegetarian', 'vegan' ],
       'facet.limit': 20,
       'facet.mincount': 1,
       'json.nl': 'map'
@@ -124,8 +124,28 @@ var Manager;
       makeAdvancedSearchItem({
         id: "advancedSearchItem"
       });
-      //KindOfMenuWidget = new AjaxSolr.KindOfMenuWidget();
-      //$('.kindOfMenuContainer').on('click', KindOfMenuWidget.onSelectedItemChange);
+
+      Manager.addWidget(new AjaxSolr.AutocompleteWidget({
+      id: 'addField',
+      target: '#addField',
+      fields: ['ingredientname']
+    }));
+
+    //Manager2.init();
+    Manager.store.addByValue('q', '*:*');
+    var params = {
+      facet: true,
+      'facet.field': [ 'ingredientname' ],
+      'facet.limit': 20,
+      'facet.mincount': 1,
+      'json.nl': 'map'
+    };
+    for (var name in params) {
+      Manager.store.addByValue(name, params[name]);
+    }
+    Manager.doRequest(0, 'recipeCollection/select');
+
+
   }; 
 
   makeAdvancedSearchItem = function(options) {

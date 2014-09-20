@@ -89,6 +89,7 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
     var vegetarian = doc.vegetarian; 
     var vegan = doc.vegan; 
     var antialc = doc.antialc; 
+    console.log(doc.ingredientname);
     if (instructions.length > 200) {
       snippet += instructions.substring(0, 200);
       snippet += '<span style="display:none;">' + instructions.substring(200);
@@ -139,7 +140,7 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
     var vegetarian  = event.data.vegetarian; 
     var vegan = event.data.vegan; 
     var antialc = event.data.antialc; 
-    
+
     var data = {recipeId: recipeId, title: title, instructions: instructions, timeToWork: timeToWork, vegetarian: vegetarian, vegan: vegan, antialc: antialc};
     $.get("php/functions.php?command=saveRecipe", data); 
   }, 
