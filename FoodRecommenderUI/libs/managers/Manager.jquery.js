@@ -33,6 +33,7 @@ AjaxSolr.Manager = AjaxSolr.AbstractManager.extend(
     }
     else {
       options.url = this.solrUrl + servlet + '?' + string + '&wt=json&json.wrf=?';
+      console.log(options.url);
     }
     jQuery.ajax(options).done(handler).fail(errorHandler);
   }
