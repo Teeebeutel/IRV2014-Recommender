@@ -14,7 +14,6 @@ AjaxSolr.CurrentSearchWidget = AjaxSolr.AbstractWidget.extend({
 
   afterRequest: function () {
     var self = this;
-    //console.log("self", self);
     var links = [];
 
     var q = this.manager.store.get('q').val();
@@ -57,7 +56,6 @@ AjaxSolr.CurrentSearchWidget = AjaxSolr.AbstractWidget.extend({
     else {
       $(this.target).html('<li>Viewing all documents!</li>');
     }
-    console.log('i am done!');
   },
 
   removeFacet: function (facet) {

@@ -1,14 +1,14 @@
 (function ($) {
 
 AjaxSolr.DurationWidget = AjaxSolr.AbstractFacetWidget.extend({
-  afterRequest: function () {
+  init: function () {
     var self = this;
 
-    $(document).on('click', '.levelOfDifficulty', {'self': self}, this.onSelectedItemChange);
+    //$(document).on('click', '.levelOfDifficulty', {'self': self}, this.onSelectedItemChange);
   },
 
   onSelectedItemChange: function(event) {
-    var self = event.data.self; 
+    /*var self = event.data.self; 
     var text = $(event.currentTarget).attr('id');
     var value; 
     switch(text) {
@@ -28,7 +28,7 @@ AjaxSolr.DurationWidget = AjaxSolr.AbstractFacetWidget.extend({
     }
     if (value && self.set(value)) {
         self.doRequest(0, 'recipeCollection/select');
-    } 
+    } */
   }
 });
 

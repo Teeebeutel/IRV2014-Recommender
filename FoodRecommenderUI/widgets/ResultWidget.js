@@ -63,11 +63,7 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
           resultContainer.getImage(url, img);
       }); 
       var items = [];
-      items = items.concat(this.facetLinks('timetowork', doc.timetowork));
-      items = items.concat(this.facetLinks('requiredskill', doc.requiredSkill));
-      items = items.concat(this.facetLinks('vegetarian', doc.vegetarian));
-      items = items.concat(this.facetLinks('vegan', doc.vegan));
-      //items = items.concat(this.facetLinks('userrating', doc.UserRating));
+      items = items.concat(this.facetLinks('ingredientname', doc.ingredientname));
 
       var $links = $('#links_' + doc.id);
       $links.empty();
@@ -94,7 +90,7 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
       snippet += '</span> <a href="#" class="more">more</a>';
     }
     else {
-      snippet += doc.instructions;
+      snippet += instructions;
     }
 
     var images = ""; 

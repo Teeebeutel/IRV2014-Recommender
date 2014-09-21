@@ -45,7 +45,7 @@
     <div id="heading" flex>feed.me</div>
     <div id="search">
         <core-field>
-          <paper-icon-button icon="search"></paper-icon-button>
+          <paper-icon-button icon="search" id="searchButton"></paper-icon-button>
           
           <input placeholder="Suchen..." type="text" id="query" name="query" autocomplete="off" flex>
           <paper-icon-button icon="clear" class="clearButton"></paper-icon-button>
@@ -86,38 +86,37 @@
 
   </div>
   
-  <script src="libs/jquery-2.1.1.js"></script>
-  <script src="libs/underscore.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="libs/jquery-2.1.1.js"></script>
+  <script type="text/javascript" src="libs/underscore.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js"></script>
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/themes/smoothness/jquery-ui.css">
-  <script src="js/feedme.js"></script>
+  <script type="text/javascript" src="js/feedme.js"></script>
   
 
 
-  <script src="libs/core/Core.js"></script>
-  <script src="libs/core/AbstractManager.js"></script>
-  <script src="libs/managers/Manager.jquery.js"></script>
-  <script src="libs/core/Parameter.js"></script>
-  <script src="libs/core/ParameterStore.js"></script>
-  <script src="libs/core/AbstractWidget.js"></script>
-  <script src="widgets/ResultWidget.js"></script>
-  <script src="libs/widgets/jquery/PagerWidget.js"></script>
-  <script src="libs/core/AbstractFacetWidget.js"></script>
-  <script src="widgets/TagcloudWidget.js"></script>
-  <script src="widgets/CurrentSearchWidget.9.js"></script>
-  <script src="libs/core/AbstractTextWidget.js"></script>
-  <script src="widgets/AutocompleteWidget.js"></script>
-  <script src="widgets/DurationWidget.js"></script>
-  <script src="widgets/KindOfMenuWidget.js"></script>
-  <script src="widgets/NutritionConceptWidget.js"></script>
-  <script src="widgets/AddIngredientsWidget.js"></script>
-  <script src="widgets/LevelOfDifficultyWidget.js"></script>
+  <script type="text/javascript" src="libs/core/Core.js"></script>
+  <script type="text/javascript" src="libs/core/AbstractManager.js"></script>
+  <script type="text/javascript" src="libs/managers/Manager.jquery.js"></script>
+  <script type="text/javascript" src="libs/core/Parameter.js"></script>
+  <script type="text/javascript" src="libs/core/ParameterStore.js"></script>
+  <script type="text/javascript" src="libs/core/AbstractWidget.js"></script>
+  <script type="text/javascript" src="widgets/ResultWidget.js"></script>
+  <script type="text/javascript" src="libs/widgets/jquery/PagerWidget.js"></script>
+  <script type="text/javascript" src="libs/core/AbstractFacetWidget.js"></script>
+  <script type="text/javascript" src="widgets/CurrentSearchWidget.js"></script>
+  <script type="text/javascript" src="libs/core/AbstractTextWidget.js"></script>
+  <script type="text/javascript" src="widgets/AutocompleteWidget.js"></script>
+  <script type="text/javascript" src="widgets/DurationWidget.js"></script>
+  <script type="text/javascript" src="widgets/KindOfMenuWidget.js"></script>
+  <script type="text/javascript" src="widgets/NutritionConceptWidget.js"></script>
+  <script type="text/javascript" src="widgets/AddIngredientsWidget.js"></script>
+  <script type="text/javascript" src="widgets/LevelOfDifficultyWidget.js"></script>
 
-  <script src="templates/HomeScreenItem.js"></script>
-  <script src="templates/AdvancedSearchItem.js"></script>
-  <script src="templates/RecipeItem.js"></script>
-  <script src="templates/ProfilItem.js"></script>
-  <script src="templates/MyRecipesItem.js"></script>
+  <script type="text/javascript" src="templates/HomeScreenItem.js"></script>
+  <script type="text/javascript" src="templates/AdvancedSearchItem.js"></script>
+  <script type="text/javascript" src="templates/RecipeItem.js"></script>
+  <script type="text/javascript" src="templates/ProfilItem.js"></script>
+  <script type="text/javascript" src="templates/MyRecipesItem.js"></script>
 
 <script type="text/html" id="homeScreen-tpl">
     <div id="<%= id %>">
@@ -280,6 +279,7 @@
       <div class="resultDescription">
         <h2><%= title %></h2>
         <p id="links_<%= id %>" class="links"></p>
+        <br class="clear" />
         <p><%= snippet %></p>
       </div>
       <paper-icon-button icon="star" class="addToFavouritesBtn"></paper-icon-button>

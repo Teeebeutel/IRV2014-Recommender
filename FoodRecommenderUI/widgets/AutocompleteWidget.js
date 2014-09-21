@@ -10,9 +10,14 @@
 (function ($) {
 
 AjaxSolr.AutocompleteWidget = AjaxSolr.AbstractTextWidget.extend({
-  afterRequest: function () {
-    $(this.target).find('input').unbind().removeData('events');
+  onSearchButtonClick:  function(event) {
+      console.log('click');
+  }, 
 
+  afterRequest: function () {
+    console.log("request");
+    $(this.target).find('input').unbind().removeData('events');
+    $('#searchButton').on('click', this.onSearchButtonClick); 
     var self = this;
 
     var callback = function (response) {
@@ -40,7 +45,7 @@ AjaxSolr.AutocompleteWidget = AjaxSolr.AbstractTextWidget.extend({
           }
         }
       });
-
+      
       // This has lower priority so that requestSent is set.
       $(self.target).find('input').bind('keydown', function(e) {
         if (self.requestSent === false && e.which == 13) {

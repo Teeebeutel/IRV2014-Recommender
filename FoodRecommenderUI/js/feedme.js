@@ -1,5 +1,4 @@
 var Manager;
-//var KindOfMenuWidget;
 
 (function ($) {
 
@@ -25,9 +24,6 @@ var Manager;
       prevLabel: '&lt;',
       nextLabel: '&gt;',
       innerWindow: 1
-      /*renderHeader: function (perPage, offset, total) {
-        $('#pager-header').html($('<span></span>').text('displaying ' + Math.min(total, offset + 1) + ' to ' + Math.min(total, offset + perPage) + ' of ' + total));
-      }*/
     }));
     Manager.addWidget(new AjaxSolr.CurrentSearchWidget({
       id: 'currentsearch',
@@ -36,7 +32,7 @@ var Manager;
     Manager.addWidget(new AjaxSolr.AutocompleteWidget({
       id: 'text',
       target: '#search',
-      fields: ['title', 'ingredientname'/*,'gluten', 'diabetus', 'lactose', 'sportsman', 'antialc', 'pork', 'vegetarian', 'vegan', 'requiredskill'*/], 
+      fields: ['title', 'ingredientname'], 
       multivalue: true
     }));
     Manager.addWidget(new AjaxSolr.KindOfMenuWidget({
@@ -46,7 +42,6 @@ var Manager;
     }));
     var fields = ['vegetarian', 'vegan', 'antialc'];
     for (var i = 0, l = fields.length; i < l; i++) {
-      console.log(fields[i]);
       Manager.addWidget(new AjaxSolr.NutritionConceptWidget({
         id: fields[i],
         target: '#' + fields[i], 
@@ -58,11 +53,11 @@ var Manager;
       target: '#durationSelect',
       field: 'timetowork'
     }));
-    Manager.addWidget(new AjaxSolr.AddIngredientsWidget({
+    /*Manager.addWidget(new AjaxSolr.AddIngredientsWidget({
       id: 'addField',
       target: '#addField',
       field: 'type'
-    }));
+    }));*/
     Manager.addWidget(new AjaxSolr.LevelOfDifficultyWidget({
       id: 'levelOfDifficultySelector',
       target: '#levelOfDifficultySelector',
@@ -81,7 +76,7 @@ var Manager;
     for (var name in params) {
       Manager.store.addByValue(name, params[name]);
     }
-    Manager.doRequest(0, 'recipeCollection/select');
+    //Manager.doRequest(0, 'recipeCollection/select');
 
   });
   
@@ -132,11 +127,11 @@ var Manager;
         id: "advancedSearchItem"
       });
 
-      Manager.addWidget(new AjaxSolr.AutocompleteWidget({
+      /*Manager.addWidget(new AjaxSolr.AutocompleteWidget({
         id: 'addField',
         target: '#addField',
         fields: ['ingredientname']
-      }));
+      }));*/
       Manager.doRequest(0, 'recipeCollection/select');
       $(document).on('click', '#countSelect core-item', onCountSelectChange);
   }; 

@@ -1,7 +1,7 @@
 (function ($) {
 
 AjaxSolr.LevelOfDifficultyWidget = AjaxSolr.AbstractFacetWidget.extend({
-  afterRequest: function () {
+  init: function () {
     var self = this;
 
     $(document).on('click', '.levelOfDifficulty', {'self': self}, this.onSelectedItemChange);

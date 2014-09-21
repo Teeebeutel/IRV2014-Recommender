@@ -1,16 +1,14 @@
 (function ($) {
 
 AjaxSolr.NutritionConceptWidget = AjaxSolr.AbstractFacetWidget.extend({
-  afterRequest: function () {
-    self = this;
-    field = self.field;
-
-    $('#' + self.field).on('click', {'self': self}, this.onNutritionConceptSelectChange); 
-  },
+  init: function () {
+    var self = this;
+    $(document).on('click', '#' + self.field, {'self': self}, this.onNutritionConceptSelectChange);
+  }, 
 
   onNutritionConceptSelectChange: function(event) {
     var self = event.data.self; 
-    //var currentlySelectedOption = $(event.currentTarget).attr("label"); 
+    console.log("nutritionchange");
     var currentlySelectedOption = $(event.currentTarget).attr("id");
     console.log(currentlySelectedOption);
     if (currentlySelectedOption == self.field && self.set("true")) {
