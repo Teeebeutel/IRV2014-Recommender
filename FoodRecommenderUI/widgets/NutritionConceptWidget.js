@@ -1,21 +1,37 @@
+var self; 
+
 (function ($) {
 
 AjaxSolr.NutritionConceptWidget = AjaxSolr.AbstractFacetWidget.extend({
   afterRequest: function () {
-    var self = this;
+    self = this;
+    console.log(self);
 
-    //$(document).on('core-select', '#nutritionConceptSelect', this.onNutritionConceptSelectChange); 
-
-    $(document).on('click', '#nutritionConceptSelect core-item', this.onNutritionConceptSelectChange); 
+    $('#nutritionConceptSelect').on('click', 'core-item', this.onNutritionConceptSelectChange); 
 
   },
 
   onNutritionConceptSelectChange: function(event) {
-    console.log(event);
     var target = this;
-    //var currentlySelectedOption = $(event.currentTarget.selectedItem).attr("label"); 
     var currentlySelectedOption = $(event.currentTarget).attr("label"); 
     console.log(currentlySelectedOption);
+    var value;
+    console.log(self.field);
+    var result; 
+    switch(currentlySelectedOption) {
+      case "vegetarisch":
+        value = "vegetarian"; 
+        break; 
+      case "vegan": 
+        value = "vegan";
+        break; 
+      case "alkoholfrei": 
+        value = "antialc";
+        break; 
+    }
+    if (value == self.field && self.set("true")) {
+        self.doRequest(0, 'recipeCollection/select');
+      }
   }
 });
 

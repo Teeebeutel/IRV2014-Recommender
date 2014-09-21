@@ -5,6 +5,7 @@ var Manager;
 
   $(function () {
     Manager = new AjaxSolr.Manager({
+
       solrUrl: 'http://localhost:8983/solr/' //recipeCollection/'
       // If you are using a local Solr instance with a "reuters" core, use:
       // solrUrl: 'http://localhost:8983/solr/reuters/'
@@ -35,7 +36,8 @@ var Manager;
     Manager.addWidget(new AjaxSolr.AutocompleteWidget({
       id: 'text',
       target: '#search',
-      fields: ['title', 'ingredientname'/*,'gluten', 'diabetus', 'lactose', 'sportsman', 'antialc', 'pork', 'vegetarian', 'vegan', 'requiredskill'*/]
+      fields: ['title', 'ingredientname'/*,'gluten', 'diabetus', 'lactose', 'sportsman', 'antialc', 'pork', 'vegetarian', 'vegan', 'requiredskill'*/], 
+      multivalue: true
     }));
     /*Manager.addWidget(new AjaxSolr.AutocompleteWidget({
       id: 'addField',
@@ -47,11 +49,23 @@ var Manager;
       target: '#kindOfMenuSelector',
       field: 'type'
     }));
-    Manager.addWidget(new AjaxSolr.NutritionConceptWidget({
+   /* Manager.addWidget(new AjaxSolr.NutritionConceptWidget({
       id: 'nutritionConceptSelect',
       target: '#nutritionConceptSelect',
       fields: ['vegetarian', 'vegan', 'antialc']
-    }));
+    }));*/
+
+    var fields = ['vegetarian', 'vegan', 'antialc'];
+    for (var i = 0, l = fields.length; i < l; i++) {
+      console.log(fields[i]);
+      Manager.addWidget(new AjaxSolr.NutritionConceptWidget({
+        id: fields[i],
+        target: '#nutritionConceptSelect', //'#' + fields[i],
+        field: fields[i]
+      }));
+    }
+
+
     Manager.addWidget(new AjaxSolr.AddIngredientsWidget({
       id: 'addField',
       target: '#addField',
