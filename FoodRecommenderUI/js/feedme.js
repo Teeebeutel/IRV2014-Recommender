@@ -24,10 +24,10 @@ var Manager;
       target: '#pager',
       prevLabel: '&lt;',
       nextLabel: '&gt;',
-      innerWindow: 1,
-      renderHeader: function (perPage, offset, total) {
+      innerWindow: 1
+      /*renderHeader: function (perPage, offset, total) {
         $('#pager-header').html($('<span></span>').text('displaying ' + Math.min(total, offset + 1) + ' to ' + Math.min(total, offset + perPage) + ' of ' + total));
-      }
+      }*/
     }));
     Manager.addWidget(new AjaxSolr.CurrentSearchWidget({
       id: 'currentsearch',
@@ -39,33 +39,25 @@ var Manager;
       fields: ['title', 'ingredientname'/*,'gluten', 'diabetus', 'lactose', 'sportsman', 'antialc', 'pork', 'vegetarian', 'vegan', 'requiredskill'*/], 
       multivalue: true
     }));
-    /*Manager.addWidget(new AjaxSolr.AutocompleteWidget({
-      id: 'addField',
-      target: '#addField',
-      fields: ['title']
-    }));*/
     Manager.addWidget(new AjaxSolr.KindOfMenuWidget({
       id: 'kindOfMenuSelector',
       target: '#kindOfMenuSelector',
       field: 'type'
     }));
-   /* Manager.addWidget(new AjaxSolr.NutritionConceptWidget({
-      id: 'nutritionConceptSelect',
-      target: '#nutritionConceptSelect',
-      fields: ['vegetarian', 'vegan', 'antialc']
-    }));*/
-
     var fields = ['vegetarian', 'vegan', 'antialc'];
     for (var i = 0, l = fields.length; i < l; i++) {
       console.log(fields[i]);
       Manager.addWidget(new AjaxSolr.NutritionConceptWidget({
         id: fields[i],
-        target: '#nutritionConceptSelect', //'#' + fields[i],
+        target: '#' + fields[i], 
         field: fields[i]
       }));
     }
-
-
+    Manager.addWidget(new AjaxSolr.DurationWidget({
+      id: 'durationSelect',
+      target: '#durationSelect',
+      field: 'timetowork'
+    }));
     Manager.addWidget(new AjaxSolr.AddIngredientsWidget({
       id: 'addField',
       target: '#addField',
@@ -83,7 +75,8 @@ var Manager;
       'facet.field': [ 'ingredientname', 'gluten', 'diabetus', 'lactose', 'sportsman', 'antialc', 'pork', 'vegetarian', 'vegan' ],
       'facet.limit': 20,
       'facet.mincount': 1,
-      'json.nl': 'map'
+      'json.nl': 'map', 
+      'rows': 10
     };
     for (var name in params) {
       Manager.store.addByValue(name, params[name]);
@@ -140,27 +133,19 @@ var Manager;
       });
 
       Manager.addWidget(new AjaxSolr.AutocompleteWidget({
-      id: 'addField',
-      target: '#addField',
-      fields: ['ingredientname']
-    }));
-
-    //Manager2.init();
-    Manager.store.addByValue('q', '*:*');
-    var params = {
-      facet: true,
-      'facet.field': [ 'ingredientname' ],
-      'facet.limit': 20,
-      'facet.mincount': 1,
-      'json.nl': 'map'
-    };
-    for (var name in params) {
-      Manager.store.addByValue(name, params[name]);
-    }
-    Manager.doRequest(0, 'recipeCollection/select');
-
-
+        id: 'addField',
+        target: '#addField',
+        fields: ['ingredientname']
+      }));
+      Manager.doRequest(0, 'recipeCollection/select');
+      $(document).on('click', '#countSelect core-item', onCountSelectChange);
   }; 
+
+  onCountSelectChange = function(event) {
+    var value = $(event.currentTarget).attr('label');
+    Manager.store.addByValue('rows', value);
+    Manager.doRequest(0, 'recipeCollection/select');
+  };
 
   makeAdvancedSearchItem = function(options) {
       var item = AdvancedSearchItem().init({

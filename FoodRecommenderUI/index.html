@@ -107,7 +107,7 @@
   <script src="widgets/CurrentSearchWidget.9.js"></script>
   <script src="libs/core/AbstractTextWidget.js"></script>
   <script src="widgets/AutocompleteWidget.js"></script>
-  <script src="widgets/AutocompleteWidget2.js"></script>
+  <script src="widgets/DurationWidget.js"></script>
   <script src="widgets/KindOfMenuWidget.js"></script>
   <script src="widgets/NutritionConceptWidget.js"></script>
   <script src="widgets/AddIngredientsWidget.js"></script>
@@ -198,14 +198,6 @@
           <img src="res/images/Kochtopf.png" />
           <div>Mittagessen</div>
         </div>
-        <!--<div class="kindOfMenuContainer" id="dessertOption">
-          <img src="res/images/Kochtopf.png" />
-          <div>Dessert</div>
-        </div>
-        <div class="kindOfMenuContainer" id="drinksOption">
-          <img src="res/images/Kochtopf.png" />
-          <div>Getränke</div>
-        </div>-->
       </core-selector>
 
 
@@ -213,14 +205,14 @@
 
       <core-dropdown valueattr="label" selected="0" id="nutritionConceptSelect">
           <core-item label="keines"></core-item>
-          <core-item label="vegetarisch"></core-item>
-          <core-item label="vegan"></core-item>
-          <core-item label="alkoholfrei"></core-item>
+          <core-item label="vegetarisch" id="vegetarian"></core-item>
+          <core-item label="vegan" id="vegan"></core-item>
+          <core-item label="alkoholfrei" id="antialc"></core-item>
         </core-dropdown>
 
 
       <h2>Dauer</h2></br>
-      <paper-slider pin value="0" max="120" editable></paper-slider>
+      <paper-slider pin value="0" max="120" id="durationSelect" editable></paper-slider>
 
       <h2>Schwierigkeitsgrad</h2></br>
       <core-selector id="levelOfDifficultySelector" selected="0">
@@ -271,6 +263,7 @@
         <div id="docs"></div>
         <div id="navigation">
           <ul id="pager" class="pagination"></ul>
+          <div id="pager-header"></div>
         </div>
       </div>
     </div>

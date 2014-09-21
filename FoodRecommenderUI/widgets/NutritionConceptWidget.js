@@ -1,35 +1,19 @@
-var self; 
-
 (function ($) {
 
 AjaxSolr.NutritionConceptWidget = AjaxSolr.AbstractFacetWidget.extend({
   afterRequest: function () {
     self = this;
-    console.log(self);
+    field = self.field;
 
-    $('#nutritionConceptSelect').on('click', 'core-item', this.onNutritionConceptSelectChange); 
-
+    $('#' + self.field).on('click', {'self': self}, this.onNutritionConceptSelectChange); 
   },
 
   onNutritionConceptSelectChange: function(event) {
-    var target = this;
-    var currentlySelectedOption = $(event.currentTarget).attr("label"); 
+    var self = event.data.self; 
+    //var currentlySelectedOption = $(event.currentTarget).attr("label"); 
+    var currentlySelectedOption = $(event.currentTarget).attr("id");
     console.log(currentlySelectedOption);
-    var value;
-    console.log(self.field);
-    var result; 
-    switch(currentlySelectedOption) {
-      case "vegetarisch":
-        value = "vegetarian"; 
-        break; 
-      case "vegan": 
-        value = "vegan";
-        break; 
-      case "alkoholfrei": 
-        value = "antialc";
-        break; 
-    }
-    if (value == self.field && self.set("true")) {
+    if (currentlySelectedOption == self.field && self.set("true")) {
         self.doRequest(0, 'recipeCollection/select');
       }
   }
