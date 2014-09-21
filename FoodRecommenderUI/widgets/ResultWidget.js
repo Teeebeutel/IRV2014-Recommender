@@ -78,7 +78,6 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
   },
 
   addRecipeItem: function(doc) {
-    console.log(doc);
     resultId++;
     var snippet = '';
     var recipeId = doc.recipe_id; 
@@ -89,7 +88,6 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
     var vegetarian = doc.vegetarian; 
     var vegan = doc.vegan; 
     var antialc = doc.antialc; 
-    console.log(doc.ingredientname);
     if (instructions.length > 200) {
       snippet += instructions.substring(0, 200);
       snippet += '<span style="display:none;">' + instructions.substring(200);
