@@ -14,10 +14,14 @@ AjaxSolr.AutocompleteWidget = AjaxSolr.AbstractTextWidget.extend({
       console.log('click');
   }, 
 
+  init: function() {
+    $('#searchButton').on('click', this.onSearchButtonClick); 
+  }, 
+  
   afterRequest: function () {
     console.log("request");
     $(this.target).find('input').unbind().removeData('events');
-    $('#searchButton').on('click', this.onSearchButtonClick); 
+    
     var self = this;
 
     var callback = function (response) {

@@ -11,6 +11,7 @@
 			getImage($url);
 			break;
 		case 'saveRecipe':
+			$id  = $_GET['id']; 
 			$recipeId  = $_GET['recipeId']; 
 			$title = $_GET['title']; 
 			$instructions = $_GET['instructions']; 
@@ -18,8 +19,12 @@
 			$vegetarian = $_GET['vegetarian'];
 			$vegan = $_GET['vegan']; 
 			$antialc = $_GET['antialc']; 
-			$res = $db->saveRecipe($recipeId, $title, $instructions, $timeToWork, $vegetarian, $vegan, $antialc);
+			$imgSrc = $_GET['imgSrc'];
+			$res = $db->saveRecipe($id, $recipeId, $title, $instructions, $timeToWork, $vegetarian, $vegan, $antialc, $imgSrc);
 			break;
+		case 'getRecipes': 
+			$res = $db->getRecipes();
+			break; 
 		default: 
 			return;
 	}

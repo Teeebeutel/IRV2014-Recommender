@@ -7,6 +7,7 @@ RecipeItem = function() {
 	id = null,
 	snippet = null, 
 	images = null,  
+	imgSrc = null, 
 
 	init = function(options) {
 		resultId = options.resultId;
@@ -15,6 +16,7 @@ RecipeItem = function() {
 		id = options.id; 
 		snippet = options.snippet; 
 		images = options.images; 
+		imgSrc = options.imgSrc; 
 
 		template = $('#recipe-tpl').html(); 
 
@@ -28,7 +30,8 @@ RecipeItem = function() {
 			title: title,
 			id: id, 
 			snippet: snippet, 
-			images: images
+			images: images, 
+			imgSrc: imgSrc
 		}); 
 
 		return $(tpl); 

@@ -57,16 +57,6 @@
         <paper-shadow z="1"></paper-shadow>
       </div>
 
-      <!--<div id="addField">
-        <core-field>
-          <input placeholder="neue Zutat..." type="text" autocomplete="off" flex>
-          <paper-icon-button icon="add" class="addButton"></paper-icon-button>
-        </core-field>
-        <paper-shadow z="1"></paper-shadow>
-      </div>
-    </div>-->
-
-
     <div class="bottom fit" horizontal center-justified end layout>
       
       <paper-tabs id="mainMenuTabs" selected="0" flex style="width: 70%;">
@@ -135,17 +125,17 @@
     <h2>Menüart</h2></br>
 
     <div class="card">
-      <img src="res/images/Kochtopf.png">
+      <img src="res/images/Kochtopf.png" class="horizontalFormat">
       <paper-shadow z="1"></paper-shadow>
     </div>
 
     <div class="card selectedCard">
-      <img src="res/images/Kochtopf.png">
+      <img src="res/images/Kochtopf.png" class="horizontalFormat">
       <paper-shadow z="1"></paper-shadow>
     </div>
 
     <div class="card">
-      <img src="res/images/Kochtopf.png">
+      <img src="res/images/Kochtopf.png" class="horizontalFormat">
       <paper-shadow z="1"></paper-shadow>
     </div>
     <br  class="clear" />
@@ -153,24 +143,69 @@
     <h2>Ernährungskonzept</h2></br>
 
     <div class="card">
-      <img src="res/images/alkoholfrei.png">
+      <img src="res/images/alkoholfrei.png" class="horizontalFormat">
       <paper-shadow z="1"></paper-shadow>
     </div>
 
     <div class="card selectedCard">
-      <img src="res/images/vegan.png">
+      <img src="res/images/vegan.png" class="horizontalFormat">
       <paper-shadow z="1"></paper-shadow>
     </div>
 
     <div class="card">
-      <img src="res/images/Vegetarisch.png">
+      <img src="res/images/Vegetarisch.png" class="horizontalFormat">
       <paper-shadow z="1"></paper-shadow>
     </div>
     <br  class="clear" />
 
 
     <h2>Dauer</h2></br>
+
+    <div class="card">
+      <img src="res/images/0min.png" class="uprightFormat">
+      <paper-shadow z="1"></paper-shadow>
+    </div>
+
+    <div class="card">
+      <img src="res/images/15min.png" class="uprightFormat">
+      <paper-shadow z="1"></paper-shadow>
+    </div>
+
+    <div class="card">
+      <img src="res/images/30min.png" class="uprightFormat">
+      <paper-shadow z="1"></paper-shadow>
+    </div>
+
+    <div class="card">
+      <img src="res/images/45min.png" class="uprightFormat">
+      <paper-shadow z="1"></paper-shadow>
+    </div>
+    <br  class="clear" />
+
+
     <h2>Schwierigkeitsgrad</h2></br>
+
+    <div class="card">
+      <img src="res/images/AmpelGanz.png" class="uprightFormat">
+      <paper-shadow z="1"></paper-shadow>
+    </div>
+
+    <div class="card">
+      <img src="res/images/AmpelGrün.png" class="uprightFormat">
+      <paper-shadow z="1"></paper-shadow>
+    </div>
+
+    <div class="card">
+      <img src="res/images/AmpelGelb.png" class="uprightFormat">
+      <paper-shadow z="1"></paper-shadow>
+    </div>
+
+    <div class="card">
+      <img src="res/images/AmpelRot.png" class="uprightFormat">
+      <paper-shadow z="1"></paper-shadow>
+    </div>
+    <br  class="clear" />
+
     </div>
   </script>
 
@@ -251,12 +286,10 @@
         <span>Sortierung</span>
         <core-dropdown valueattr="label" selected="0" id="sortSelect">
           <core-item label="Relevanz"></core-item>
-          <core-item label="Zeit"></core-item>
           <core-item label="Dauer"></core-item>
           <core-item label="Schwierigkeit"></core-item>
         </core-dropdown>
       </div>
-
 
       <div id="result">
         <div id="docs"></div>
@@ -274,7 +307,7 @@
   <script type="text/html" id="recipe-tpl">
     <div class="resultElement" id="<%= resultId %>" data_id="<%= recipeId %>">
       <div class="resultImg">
-        <img src="./res/images/ajax-loader.gif">
+        <img src="<%= imgSrc %>">
       </div>
       <div class="resultDescription">
         <h2><%= title %></h2>
@@ -382,7 +415,6 @@
 
   <script type="text/html" id="myRecipes-tpl">
     <div id="<%= id %>">
-      MyRecipes
     </div>
   </script>
 

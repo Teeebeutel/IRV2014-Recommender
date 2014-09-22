@@ -1,5 +1,5 @@
 var Manager;
-
+var ResultWidget; 
 (function ($) {
 
   $(function () {
@@ -11,7 +11,7 @@ var Manager;
       // If you are using a local Solr instance with a single core, use:
       // solrUrl: 'http://localhost:8983/solr/'
     });
-
+    ResultWidget = new AjaxSolr.ResultWidget();
     initUI();
 
     Manager.addWidget(new AjaxSolr.ResultWidget({
@@ -154,6 +154,14 @@ var Manager;
   addMyRecipesItem = function() {
       makeMyRecipesItem({
         id: "myRecipesItem"
+      });
+      $.get("php/functions.php?command=getRecipes").done(
+        function(data) {
+          var json = data; 
+          var object = jQuery.parseJSON(json);
+          for (var i = 0; i < object.length; i++) {
+            ResultWidget.addRecipeItem(object[i].id, object[i].recipeId, object[i].title, object[i].instructions, object[i].timeToWork, object[i].vegetarian, object[i].vegan, object[i].antialc, '#myRecipesItem', object[i].imgSrc);
+          }
       });
   }; 
 

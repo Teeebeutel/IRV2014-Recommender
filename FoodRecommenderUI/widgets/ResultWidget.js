@@ -55,7 +55,17 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
     $(this.target).empty();
     for (var i = 0, l = this.manager.response.response.docs.length; i < l; i++) {
       var doc = this.manager.response.response.docs[i];
-      this.addRecipeItem(doc);
+
+      var recipeId = doc.recipe_id; 
+      var title = doc.title; 
+      var id = doc.id; 
+      var instructions = doc.instructions; 
+      var timeToWork = doc.timetowork;
+      var vegetarian = doc.vegetarian; 
+      var vegan = doc.vegan; 
+      var antialc = doc.antialc;
+
+      this.addRecipeItem(id, recipeId, title, instructions, timeToWork, vegetarian, vegan, antialc, '#docs', "./res/images/ajax-loader.gif");
       $('.resultImg img').each(function() {
           recipeId = $(this).closest('.resultElement').attr('data_id'); 
           var img = $(this);
@@ -65,7 +75,7 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
       var items = [];
       items = items.concat(this.facetLinks('ingredientname', doc.ingredientname));
 
-      var $links = $('#links_' + doc.id);
+      var $links = $('#links_' + id);
       $links.empty();
       for (var j = 0, m = items.length; j < m; j++) {
         $links.append($('<li></li>').append(items[j]));
@@ -73,17 +83,41 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
     }
   },
 
-  addRecipeItem: function(doc) {
+  getTimeToWorkImg: function(timeToWork) {
+    var timeToWorkImg = ""; 
+
+    if (timeToWork != undefined) {
+      console.log(timeToWork);
+      if(timeToWork == 0) {
+        timeToWorkImg = '<img src="./res/images/0min.png">'; 
+      }
+      if(timeToWork > 0 && timeToWork <= 15) {
+        timeToWorkImg = '<img src="./res/images/15min.png">'; 
+      }
+      if(timeToWork > 15 && timeToWork <= 30) {
+        timeToWorkImg = '<img src="./res/images/30min.png">'; 
+      }
+      if(timeToWork > 30 && timeToWork <= 45) {
+        timeToWorkImg = '<img src="./res/images/45min.png">'; 
+      }
+      if(timeToWork > 45 && timeToWork <= 60) {
+        timeToWorkImg = '<img src="./res/images/60min.png">'; 
+      }
+      if(timeToWork > 60) {
+        timeToWorkImg = '<img src="./res/images/+60min.png">'; 
+      }
+    }
+    return timeToWorkImg; 
+  }, 
+
+  addRecipeItem: function(id, recipeId, title, instructions, timeToWork, vegetarian, vegan, antialc, container, imgSrc) {
+    
+    var thisVegetarian = vegetarian; 
+    var thisVegan = vegan; 
+    var thisAntialc = antialc; 
+    var timeToWorkImg = this.getTimeToWorkImg(timeToWork);
     resultId++;
     var snippet = '';
-    var recipeId = doc.recipe_id; 
-    var title = doc.title; 
-    var id = doc.id; 
-    var instructions = doc.instructions; 
-    var timeToWork = doc.timetowork;
-    var vegetarian = doc.vegetarian; 
-    var vegan = doc.vegan; 
-    var antialc = doc.antialc; 
     if (instructions.length > 200) {
       snippet += instructions.substring(0, 200);
       snippet += '<span style="display:none;">' + instructions.substring(200);
@@ -93,10 +127,17 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
       snippet += instructions;
     }
 
+    
+    if(jQuery.isNumeric(vegetarian)) {
+      thisVegetarian = this.numberToBoolean(vegetarian);
+      thisVegan = this.numberToBoolean(vegan);
+      thisAntialc = this.numberToBoolean(antialc);
+    }
     var images = ""; 
-    images += vegetarian ? '<img src="./res/images/vegetarisch.png">' : ''; 
-    images += vegan ? '<img src="./res/images/vegan.png">' : ''; 
-    images += antialc ? '<img src="./res/images/alkoholfrei.png">' : ''; 
+    images += thisVegetarian ? '<img src="./res/images/vegetarisch.png">' : ''; 
+    images += thisVegan ? '<img src="./res/images/vegan.png">' : ''; 
+    images += thisAntialc ? '<img src="./res/images/alkoholfrei.png">' : ''; 
+    images += timeToWorkImg;
 
       this.makeRecipeItem({
         resultId: "resultElement" + resultId, 
@@ -104,9 +145,12 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
         title: title,
         id: id,
         snippet: snippet, 
-        images: images
+        images: images, 
+        container: container, 
+        imgSrc: imgSrc
       });
-      $(document).on('click', '#resultElement' + resultId + ' .addToFavouritesBtn', {'recipeId': recipeId, 'title': title, 'instructions': instructions, 'timeToWork': timeToWork, 'vegetarian': this.booleanToNumber(vegetarian), 'vegan': this.booleanToNumber(vegan), 'antialc': this.booleanToNumber(antialc)}, this.onAddToFavouritesBtnClick);
+      var thisTimeToWork = (timeToWork == undefined ? -1 : timeToWork);
+      $(document).on('click', '#resultElement' + resultId + ' .addToFavouritesBtn', {'id': id, 'recipeId': recipeId, 'title': title, 'instructions': instructions, 'timeToWork': thisTimeToWork, 'vegetarian': this.booleanToNumber(thisVegetarian), 'vegan': this.booleanToNumber(thisVegan), 'antialc': this.booleanToNumber(thisAntialc)}, this.onAddToFavouritesBtnClick);
   },  
 
   makeRecipeItem: function(options) {
@@ -116,17 +160,24 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
         title: options.title,
         id: options.id,
         snippet: options.snippet, 
-        images: options.images
+        images: options.images, 
+        imgSrc: options.imgSrc
       });
       var $el = item.render(); 
-      $('#docs').append($el);
+      $(options.container).append($el);
   }, 
 
   booleanToNumber: function(boolean) {
     return (boolean == false ? 0 : 1);
   }, 
 
+  numberToBoolean: function(number) {
+    return (number == 0 ? false : true);
+  }, 
+
   onAddToFavouritesBtnClick: function(event) {
+    //console.log(event, $(event.currentTarget).closest('.resultElement').find('img').attr('src'));
+    var id = event.data.id;
     var recipeId = event.data.recipeId; 
     var title = event.data.title[0]; 
     var instructions = event.data.instructions; 
@@ -134,9 +185,11 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
     var vegetarian  = event.data.vegetarian; 
     var vegan = event.data.vegan; 
     var antialc = event.data.antialc; 
-
-    var data = {recipeId: recipeId, title: title, instructions: instructions, timeToWork: timeToWork, vegetarian: vegetarian, vegan: vegan, antialc: antialc};
+    var imgSrc = $(event.currentTarget).closest('.resultElement').find('img').attr('src');
+    var data = {id: id, recipeId: recipeId, title: title, instructions: instructions, timeToWork: timeToWork, vegetarian: vegetarian, vegan: vegan, antialc: antialc, imgSrc: imgSrc};
+    $(event.currentTarget).css('color', '#ffc107')
     $.get("php/functions.php?command=saveRecipe", data); 
+
   }, 
 
   getImage: function(url, img) {
