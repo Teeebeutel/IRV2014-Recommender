@@ -2,9 +2,7 @@
 
 AjaxSolr.LevelOfDifficultyWidget = AjaxSolr.AbstractFacetWidget.extend({
   init: function () {
-    var self = this;
-
-    $(document).on('click', '.levelOfDifficulty', {'self': self}, this.onSelectedItemChange);
+    $(document).on('click', '.levelOfDifficulty', {'self': this}, this.onSelectedItemChange);
   },
 
   onSelectedItemChange: function(event) {

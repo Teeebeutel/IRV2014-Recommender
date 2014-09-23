@@ -8,9 +8,7 @@ AjaxSolr.NutritionConceptWidget = AjaxSolr.AbstractFacetWidget.extend({
 
   onNutritionConceptSelectChange: function(event) {
     var self = event.data.self; 
-    console.log("nutritionchange");
     var currentlySelectedOption = $(event.currentTarget).attr("id");
-    console.log(currentlySelectedOption);
     if (currentlySelectedOption == self.field && self.set("true")) {
         self.doRequest(0, 'recipeCollection/select');
       }

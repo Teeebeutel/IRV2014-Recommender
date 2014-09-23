@@ -101,29 +101,50 @@
   <script type="text/javascript" src="widgets/NutritionConceptWidget.js"></script>
   <script type="text/javascript" src="widgets/AddIngredientsWidget.js"></script>
   <script type="text/javascript" src="widgets/LevelOfDifficultyWidget.js"></script>
+  <script type="text/javascript" src="widgets/ImageSliderWidget.js"></script>
 
   <script type="text/javascript" src="templates/HomeScreenItem.js"></script>
   <script type="text/javascript" src="templates/AdvancedSearchItem.js"></script>
   <script type="text/javascript" src="templates/RecipeItem.js"></script>
   <script type="text/javascript" src="templates/ProfilItem.js"></script>
   <script type="text/javascript" src="templates/MyRecipesItem.js"></script>
-
-<script type="text/html" id="homeScreen-tpl">
-    <div id="<%= id %>">
-      <div id="sliderContainer">
-      <slider-component>
-        <img src="res/images/Nudelsalat.jpg">
+<!--<img src="res/images/Nudelsalat.jpg">
         <img src="res/images/Cheesecake.jpg">
         <img src="res/images/Tortillas.jpg">
         <img src="res/images/Pizzateig.jpg">
         <img src="res/images/Plaetzchen.jpg">
         <img src="res/images/PestoRosso.jpg">
-        <img src="res/images/RucolasalatMitErdbeeren.jpg">
+        <img src="res/images/RucolasalatMitErdbeeren.jpg">-->
+<script type="text/html" id="homeScreen-tpl">
+    <div id="<%= id %>">
+      <div id="sliderContainer">
+      <slider-component>
+        <img>
+        <img>
+        <img>
+        <img>
+        <img>
+        <img>
+        <img>
+        <img>
+        <img>
+        <img>
+        <img>
+        <img>
+        <img>
+        <img>
+        <img>
       </slider-component>
+    </div>
+
+    <div id="preselectionContainer">
+    <div id="background">
       <paper-shadow z="1"></paper-shadow>
     </div>
-    <h2>Menüart</h2></br>
 
+    <div class="preselectionHeading">Menüart</div>
+
+    <paper-icon-button class="preselectionLeftArrow" icon="chevron-left"></paper-icon-button>
     <div class="card">
       <img src="res/images/Kochtopf.png" class="horizontalFormat">
       <paper-shadow z="1"></paper-shadow>
@@ -138,10 +159,12 @@
       <img src="res/images/Kochtopf.png" class="horizontalFormat">
       <paper-shadow z="1"></paper-shadow>
     </div>
+    <paper-icon-button class="preselectionRightArrow" icon="chevron-right"></paper-icon-button>
     <br  class="clear" />
     
-    <h2>Ernährungskonzept</h2></br>
+    <div class="preselectionHeading">Ernährungskonzept</div>
 
+    <paper-icon-button class="preselectionLeftArrow" icon="chevron-left"></paper-icon-button>
     <div class="card">
       <img src="res/images/alkoholfrei.png" class="horizontalFormat">
       <paper-shadow z="1"></paper-shadow>
@@ -156,17 +179,19 @@
       <img src="res/images/Vegetarisch.png" class="horizontalFormat">
       <paper-shadow z="1"></paper-shadow>
     </div>
+    <paper-icon-button class="preselectionRightArrow" icon="chevron-right"></paper-icon-button>
     <br  class="clear" />
 
 
-    <h2>Dauer</h2></br>
+    <div class="preselectionHeading">Dauer</div>
 
+    <paper-icon-button class="preselectionLeftArrow" icon="chevron-left"></paper-icon-button>
     <div class="card">
       <img src="res/images/0min.png" class="uprightFormat">
       <paper-shadow z="1"></paper-shadow>
     </div>
 
-    <div class="card">
+    <div class="card  selectedCard">
       <img src="res/images/15min.png" class="uprightFormat">
       <paper-shadow z="1"></paper-shadow>
     </div>
@@ -175,22 +200,19 @@
       <img src="res/images/30min.png" class="uprightFormat">
       <paper-shadow z="1"></paper-shadow>
     </div>
-
-    <div class="card">
-      <img src="res/images/45min.png" class="uprightFormat">
-      <paper-shadow z="1"></paper-shadow>
-    </div>
+    <paper-icon-button class="preselectionRightArrow" icon="chevron-right"></paper-icon-button>
     <br  class="clear" />
 
 
-    <h2>Schwierigkeitsgrad</h2></br>
+    <div class="preselectionHeading">Schwierigkeitsgrad</div>
 
+    <paper-icon-button class="preselectionLeftArrow" icon="chevron-left"></paper-icon-button>
     <div class="card">
       <img src="res/images/AmpelGanz.png" class="uprightFormat">
       <paper-shadow z="1"></paper-shadow>
     </div>
 
-    <div class="card">
+    <div class="card selectedCard">
       <img src="res/images/AmpelGrün.png" class="uprightFormat">
       <paper-shadow z="1"></paper-shadow>
     </div>
@@ -199,12 +221,9 @@
       <img src="res/images/AmpelGelb.png" class="uprightFormat">
       <paper-shadow z="1"></paper-shadow>
     </div>
-
-    <div class="card">
-      <img src="res/images/AmpelRot.png" class="uprightFormat">
-      <paper-shadow z="1"></paper-shadow>
-    </div>
+    <paper-icon-button class="preselectionRightArrow" icon="chevron-right"></paper-icon-button>
     <br  class="clear" />
+    </div>
 
     </div>
   </script>

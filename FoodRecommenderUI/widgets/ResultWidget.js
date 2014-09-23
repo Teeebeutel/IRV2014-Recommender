@@ -87,7 +87,6 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
     var timeToWorkImg = ""; 
 
     if (timeToWork != undefined) {
-      console.log(timeToWork);
       if(timeToWork == 0) {
         timeToWorkImg = '<img src="./res/images/0min.png">'; 
       }
@@ -176,7 +175,6 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
   }, 
 
   onAddToFavouritesBtnClick: function(event) {
-    //console.log(event, $(event.currentTarget).closest('.resultElement').find('img').attr('src'));
     var id = event.data.id;
     var recipeId = event.data.recipeId; 
     var title = event.data.title[0]; 
