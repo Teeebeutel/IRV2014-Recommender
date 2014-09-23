@@ -1,5 +1,6 @@
 var Manager;
 var ResultWidget; 
+var ImageManager;
 (function ($) {
 
   $(function () {
@@ -10,6 +11,9 @@ var ResultWidget;
       // solrUrl: 'http://localhost:8983/solr/reuters/'
       // If you are using a local Solr instance with a single core, use:
       // solrUrl: 'http://localhost:8983/solr/'
+    });
+    ImageManager = new AjaxSolr.Manager({
+      solrUrl: 'http://localhost:8983/solr/' 
     });
     ResultWidget = new AjaxSolr.ResultWidget();
     initUI();
@@ -58,6 +62,11 @@ var ResultWidget;
       target: '#addField',
       field: 'type'
     }));*/
+    /*ImageManager.addWidget(new AjaxSolr.ImageSliderWidget({
+      id: 'sliderContainer',
+      target: '#sliderContainer slider-component', 
+      field: 'userRating'
+    }));*/
     Manager.addWidget(new AjaxSolr.LevelOfDifficultyWidget({
       id: 'levelOfDifficultySelector',
       target: '#levelOfDifficultySelector',
@@ -76,7 +85,22 @@ var ResultWidget;
     for (var name in params) {
       Manager.store.addByValue(name, params[name]);
     }
-    //Manager.doRequest(0, 'recipeCollection/select');
+
+    /*ImageManager.init();
+    ImageManager.store.addByValue('q', '*:*');
+    var imageManagerParams = {
+      facet: true,
+      'facet.field': ['userRating'],
+      //'facet.limit': 20,
+      'sort': 'userRating desc',
+      'facet.mincount': 1,
+      'json.nl': 'map', 
+      'rows': 15
+    };
+    for (var name in imageManagerParams) {
+      ImageManager.store.addByValue(name, imageManagerParams[name]);
+    }
+    ImageManager.doRequest(0, 'recipeCollection/select');*/
 
   });
   
@@ -112,6 +136,28 @@ var ResultWidget;
     makeHomeScreenItem({
       id: "homeScreenItem"
     });
+
+    ImageManager.addWidget(new AjaxSolr.ImageSliderWidget({
+      id: 'sliderContainer',
+      target: '#sliderContainer slider-component', 
+      field: 'userRating'
+    }));
+    
+    ImageManager.init();
+    ImageManager.store.addByValue('q', '*:*');
+    var imageManagerParams = {
+      facet: true,
+      'facet.field': ['userRating'],
+      //'facet.limit': 20,
+      'sort': 'userRating desc',
+      'facet.mincount': 1,
+      'json.nl': 'map', 
+      'rows': 15
+    };
+    for (var name in imageManagerParams) {
+      ImageManager.store.addByValue(name, imageManagerParams[name]);
+    }
+    ImageManager.doRequest(0, 'recipeCollection/select');
   };
 
   makeHomeScreenItem = function(options) {

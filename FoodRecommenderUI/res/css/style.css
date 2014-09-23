@@ -32,6 +32,14 @@ body {
   display: block;
 }
 
+#background {
+  position: absolute;
+  height: 760px;
+  width:180px;
+  background-color: #795548;
+  left: 408px;
+}
+
 #kindOfMenuSelector {
   border-bottom: none;
   list-style: none;
@@ -64,8 +72,8 @@ body {
 }
 
 .card {
-  width: 200px; 
-  height: 200px; 
+  width: 100px; 
+  height: 100px; 
   background-color: #fff;
   border-radius: 2px;
   float: left;
@@ -73,6 +81,9 @@ body {
   padding: 20px;
 }
 
+.card:not(.selectedCard) {
+  margin-top: 40px;
+}
 .horizontalFormat {
   width: 100%;
 }
@@ -85,8 +96,8 @@ body {
 }
 
 .selectedCard {
-  width: 300px; 
-  height: 300px; 
+  width: 150px; 
+  height: 150px; 
 }
 
 core-toolbar {
@@ -111,7 +122,7 @@ paper-tab /deep/ #ink {
 .rightSide {
   margin-left: 20px;
 }
-#mainMenuTabs {
+#mainMenuTabs, #sliderContainer {
   box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -241,6 +252,7 @@ a:hover {
 #sliderContainer {
   border-radius: 2px;
   overflow: hidden;
+  margin-bottom: 20px;
 }
 body /deep/ core-dropdown::shadow #menu {
   border: 1px solid #ccc;
@@ -260,6 +272,9 @@ paper-slider::shadow #sliderBar::shadow #activeProgress {
   background-color: #795548;
 }
 
+.preselectionLeftArrow, .preselectionRightArrow {
+  float: left;
+}
 #addField {
   background-color: #fff;
   margin-right: 10px;
@@ -296,8 +311,37 @@ input[type="range"] {
   padding: 0 0 10px 10px;
 }
 
-.menuTitle, paper-radio-button {
+.menuTitle, paper-radio-button, .preselectionHeading {
   float: left;
+}
+
+.preselectionHeading {
+  font-size: 20px;
+  font-weight: bold;
+  width: 184px;
+  margin-top: 20px;
+}
+
+#preselectionContainer {
+  padding: 0px 0px 20px 20px;
+}
+
+#preselectionContainer paper-icon-button, .preselectionHeading {
+  margin-top: 70px;
+}
+
+.preselectionHeading {
+  margin-right: 20px;
+}
+
+#sliderContainer slider-component {
+  overflow: hidden;
+  width: 1000px; 
+  
+}
+
+#sliderContainer slider-component /deep/ img {
+  height:auto;
 }
 
 core-selector paper-icon-button:not([active])::shadow core-icon {
@@ -496,41 +540,4 @@ paper-checkbox::shadow #ink[checked] {
     
 paper-checkbox::shadow #checkbox.checked {
   border-color: #795548;
-}
-
-/* tagcloud */
-
-a.tagcloud_size_0 {
-
-font-size: 80%;
-}
-a.tagcloud_size_1 {
-font-size: 90%;
-}
-a.tagcloud_size_2 {
-font-size: 100%;
-}
-a.tagcloud_size_3 {
-font-size: 110%;
-}
-a.tagcloud_size_4 {
-font-size: 120%;
-}
-a.tagcloud_size_5 {
-font-size: 130%;
-}
-a.tagcloud_size_6 {
-font-size: 140%;
-}
-a.tagcloud_size_7 {
-font-size: 150%
-}
-a.tagcloud_size_8 {
-font-size: 160%;
-}
-a.tagcloud_size_9 {
-font-size: 170%;
-}
-a.tagcloud_size_10 {
-font-size: 180%;
 }

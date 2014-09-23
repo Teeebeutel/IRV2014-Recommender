@@ -32,7 +32,8 @@ AjaxSolr.AutocompleteWidget = AjaxSolr.AbstractTextWidget.extend({
           list.push({
             field: field,
             value: facet,
-            label: facet + ' (' + response.facet_counts.facet_fields[field][facet] + ') - ' + field
+            label: facet
+            //label: facet + ' (' + response.facet_counts.facet_fields[field][facet] + ') - ' + field
           });
         }
       }

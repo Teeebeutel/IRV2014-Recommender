@@ -3,8 +3,7 @@
 AjaxSolr.KindOfMenuWidget = AjaxSolr.AbstractFacetWidget.extend({
    
   init: function () {
-    self = this; 
-    $(document).on('click', '.kindOfMenuContainer', {'self': self}, this.onSelectedItemChange);
+    $(document).on('click', '.kindOfMenuContainer', {'self': this}, this.onSelectedItemChange);
   },
 
   onSelectedItemChange: function(event) {
