@@ -2,7 +2,7 @@
   <dataSource type="JdbcDataSource" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/recommender" user="root" password="hollaHeMann1337"/>
     <document name="recipes">
     	<entity name="item" query="select * from showrecipes" transformer="TemplateTransformer">
-    	    <field column="TITLE" name="title" />
+    	    <field column="TITLE" name="title" />  
     		<field column="RECIPE_ID" name="recipe_id" />  
             <field column="VEGETARIAN" name="vegetarian" /> 
             <field column="VEGAN" name="began" />
@@ -18,11 +18,17 @@
             <field column="TIMETOCOOK" name="timetocook" />
             <field column="TIMETOREST" name="timetorest" />
             <field column="SOURCE" name="url" template="http://www.chefkoch.de/rezepte/${item.Recipe_ID}"/>
-
+            <!-- for ingredientnames as in fr_ingredients -->
+            <entity name="ingredients" query="select b.name from fr_ingredients as b, showrecipes as c where c.Recipe_ID = '${item.Recipe_ID}' AND c.Recipe_ID = b.Recipe_ID">
+                <field column="name" name="ingredientname" />
+            </entity>  
+            
+            <!-- for clean ingredient names without any noise(like verbs, adjectives etc)-->
+            <!--
             <entity name="ingredients" query="select a.name from fr_cleaningredientnames as a, fr_ingredients as b, showrecipes as c where c.Recipe_ID = '${item.Recipe_ID}' AND c.Recipe_ID = b.Recipe_ID AND b.CleanNames_ID = a.id">
                 <field column="name" name="ingredientname" />
             </entity>         
-
+            -->
         </entity>
     </document>
 </dataConfig>
