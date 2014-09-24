@@ -108,15 +108,10 @@
   <script type="text/javascript" src="templates/RecipeItem.js"></script>
   <script type="text/javascript" src="templates/ProfilItem.js"></script>
   <script type="text/javascript" src="templates/MyRecipesItem.js"></script>
-<!--<img src="res/images/Nudelsalat.jpg">
-        <img src="res/images/Cheesecake.jpg">
-        <img src="res/images/Tortillas.jpg">
-        <img src="res/images/Pizzateig.jpg">
-        <img src="res/images/Plaetzchen.jpg">
-        <img src="res/images/PestoRosso.jpg">
-        <img src="res/images/RucolasalatMitErdbeeren.jpg">-->
+
 <script type="text/html" id="homeScreen-tpl">
     <div id="<%= id %>">
+      <paper-fab icon="search" id="preselectionSearchButton"></paper-fab>
       <div id="sliderContainer">
       <slider-component>
         <img>
@@ -142,89 +137,94 @@
       <paper-shadow z="1"></paper-shadow>
     </div>
 
+    <div class="preselectionKindContainer" id="preselectionKindOfMenuContainer">
     <div class="preselectionHeading">Menüart</div>
 
     <paper-icon-button class="preselectionLeftArrow" icon="chevron-left"></paper-icon-button>
-    <div class="card">
+    <div class="card leftCard">
       <img src="res/images/Kochtopf.png" class="horizontalFormat">
       <paper-shadow z="1"></paper-shadow>
     </div>
 
     <div class="card selectedCard">
-      <img src="res/images/Kochtopf.png" class="horizontalFormat">
+      <img src="res/images/keines.png" class="horizontalFormat" id="type:none">
       <paper-shadow z="1"></paper-shadow>
     </div>
 
-    <div class="card">
-      <img src="res/images/Kochtopf.png" class="horizontalFormat">
+    <div class="card rightCard">
+      <img src="res/images/Kaffetasse.png" class="horizontalFormat">
       <paper-shadow z="1"></paper-shadow>
     </div>
     <paper-icon-button class="preselectionRightArrow" icon="chevron-right"></paper-icon-button>
     <br  class="clear" />
-    
+    </div>
+
+    <div class="preselectionKindContainer" id="preselectionNutritionConceptContainer">
     <div class="preselectionHeading">Ernährungskonzept</div>
 
     <paper-icon-button class="preselectionLeftArrow" icon="chevron-left"></paper-icon-button>
-    <div class="card">
+    <div class="card leftCard">
       <img src="res/images/alkoholfrei.png" class="horizontalFormat">
       <paper-shadow z="1"></paper-shadow>
     </div>
 
     <div class="card selectedCard">
-      <img src="res/images/vegan.png" class="horizontalFormat">
+      <img src="res/images/vegetarisch.png" class="horizontalFormat" id="vegetarian:true">
       <paper-shadow z="1"></paper-shadow>
     </div>
 
-    <div class="card">
-      <img src="res/images/Vegetarisch.png" class="horizontalFormat">
+    <div class="card rightCard">
+      <img src="res/images/vegan.png" class="horizontalFormat">
       <paper-shadow z="1"></paper-shadow>
     </div>
     <paper-icon-button class="preselectionRightArrow" icon="chevron-right"></paper-icon-button>
     <br  class="clear" />
+    </div>
 
-
+    <div class="preselectionKindContainer" id="preselectionDurationContainer">
     <div class="preselectionHeading">Dauer</div>
 
     <paper-icon-button class="preselectionLeftArrow" icon="chevron-left"></paper-icon-button>
-    <div class="card">
-      <img src="res/images/0min.png" class="uprightFormat">
+    <div class="card leftCard">
+      <img src="res/images/+60min.png" class="horizontalFormat">
       <paper-shadow z="1"></paper-shadow>
     </div>
 
     <div class="card  selectedCard">
-      <img src="res/images/15min.png" class="uprightFormat">
+      <img src="res/images/keines.png" class="horizontalFormat" id="timetowork:none">
       <paper-shadow z="1"></paper-shadow>
     </div>
 
-    <div class="card">
-      <img src="res/images/30min.png" class="uprightFormat">
+    <div class="card rightCard">
+      <img src="res/images/0min.png" class="horizontalFormat">
       <paper-shadow z="1"></paper-shadow>
     </div>
     <paper-icon-button class="preselectionRightArrow" icon="chevron-right"></paper-icon-button>
     <br  class="clear" />
+    </div>
 
-
+    <div class="preselectionKindContainer" id="preselectionLevelOfDifficultyContainer">
     <div class="preselectionHeading">Schwierigkeitsgrad</div>
 
     <paper-icon-button class="preselectionLeftArrow" icon="chevron-left"></paper-icon-button>
-    <div class="card">
-      <img src="res/images/AmpelGanz.png" class="uprightFormat">
+    <div class="card leftCard">
+      <img src="res/images/AmpelRot.png" class="uprightFormat">
       <paper-shadow z="1"></paper-shadow>
     </div>
 
     <div class="card selectedCard">
-      <img src="res/images/AmpelGrün.png" class="uprightFormat">
+      <img src="res/images/keines.png" class="uprightFormat" id="requiredSkill:none">
       <paper-shadow z="1"></paper-shadow>
     </div>
 
-    <div class="card">
-      <img src="res/images/AmpelGelb.png" class="uprightFormat">
+    <div class="card rightCard">
+      <img src="res/images/AmpelGrün.png" class="uprightFormat">
       <paper-shadow z="1"></paper-shadow>
     </div>
     <paper-icon-button class="preselectionRightArrow" icon="chevron-right"></paper-icon-button>
     <br  class="clear" />
     </div>
-
+    </div>
     </div>
   </script>
 
@@ -240,7 +240,7 @@
 
       <core-selector id="kindOfMenuSelector" selected="0">
         <div class="kindOfMenuContainer" id="starterOption">
-          <img src="res/images/Kochtopf.png" />
+          <img src="res/images/Kaffetasse.png" />
           <div class="selectionMark">
             <div class="iconDiv"></div>
             <core-icon icon="check"></core-icon>
@@ -319,7 +319,6 @@
       </div>
     </div>
     </div>
-
     </div>
   </script>
 
