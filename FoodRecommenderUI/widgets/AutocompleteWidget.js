@@ -10,12 +10,51 @@
 (function ($) {
 
 AjaxSolr.AutocompleteWidget = AjaxSolr.AbstractTextWidget.extend({
+
+
+
+  addAdvancedSearchItem: function() {
+      makeAdvancedSearchItem({
+        id: "advancedSearchItem"
+      });
+      Manager.doRequest(0, 'recipeCollection/select');
+      $(document).on('click', '#countSelect core-item', onCountSelectChange);
+  },
+
+  onCountSelectChange: function(event) {
+    var value = $(event.currentTarget).attr('label');
+    Manager.store.addByValue('rows', value);
+    Manager.doRequest(0, 'recipeCollection/select');
+  },
+
+  makeAdvancedSearchItem: function(options) {
+      var item = AdvancedSearchItem().init({
+        id: options.id
+      });
+      var $el = item.render(); 
+      $('#content').append($el);
+  },
+
+  emptyContent: function() {
+    $('#content').empty();
+  },
+
+
+
+
   onSearchButtonClick:  function(event) {
-      console.log('click');
+      var value = $('#query').val();
+      var self = event.data.self;
+      console.log(value);
+      if (value && self.set(value)) {
+        self.emptyContent();
+        self.addAdvancedSearchItem();
+        self.doRequest(0, 'recipeCollection/select');
+      }
   }, 
 
   init: function() {
-    $('#searchButton').on('click', this.onSearchButtonClick); 
+    $('#searchButton').on('click', {'self': this}, this.onSearchButtonClick); 
   }, 
   
   afterRequest: function () {
@@ -23,8 +62,7 @@ AjaxSolr.AutocompleteWidget = AjaxSolr.AbstractTextWidget.extend({
     $(this.target).find('input').unbind().removeData('events');
     
     var self = this;
-
-    var callback = function (response) {
+      var callback = function (response) {
       var list = [];
       for (var i = 0; i < self.fields.length; i++) {
         var field = self.fields[i];
@@ -45,6 +83,8 @@ AjaxSolr.AutocompleteWidget = AjaxSolr.AbstractTextWidget.extend({
           if (ui.item) {
             self.requestSent = true;
             if (self.manager.store.addByValue('fq', ui.item.field + ':' + AjaxSolr.Parameter.escapeValue(ui.item.value))) {
+              self.emptyContent();
+              self.addAdvancedSearchItem();
               self.doRequest(0, 'recipeCollection/select');
             }
           }
@@ -56,6 +96,8 @@ AjaxSolr.AutocompleteWidget = AjaxSolr.AbstractTextWidget.extend({
         if (self.requestSent === false && e.which == 13) {
           var value = $(this).val();
           if (value && self.set(value)) {
+            self.emptyContent();
+            self.addAdvancedSearchItem();
             self.doRequest(0, 'recipeCollection/select');
           }
         }

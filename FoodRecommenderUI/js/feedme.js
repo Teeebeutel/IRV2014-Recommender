@@ -94,6 +94,14 @@ var ImageManager;
     $('#fastAdviceMenuItem').on('click', onFastAdviceMenuItemClick); 
     $('#myRecipesMenuItem').on('click', onMyRecipesMenuItemClick); 
     $('#profilMenuItem').on('click', onProfilMenuItemClick); 
+    //$('#query').on('keydown', onKeyUpInSearchField);
+    /*$('#query').keypress(function(event) {
+      var keycode = (event.keyCode ? event.keyCode : event.which);
+      if (keycode == '13') {
+          emptyContent();
+          addAdvancedSearchItem();
+      }
+    });*/
   };
 
   onHomeMenuItemClick = function(event) {
@@ -120,7 +128,6 @@ var ImageManager;
     makeHomeScreenItem({
       id: "homeScreenItem"
     });
-
     ImageManager.addWidget(new AjaxSolr.ImageSliderWidget({
       id: 'sliderContainer',
       target: '#sliderContainer slider-component', 
@@ -203,9 +210,9 @@ var ImageManager;
       case "preselectionLevelOfDifficultyContainer":
         kindOfMenuItems = [
           {key: "res/images/keines.png", value: "requiredSkill:none"}, 
-          {key: "res/images/AmpelGrün.png", value: "requiredSkill:25"}, 
-          {key: "res/images/AmpelGelb.png", value: "requiredSkill:50"}, 
-          {key: "res/images/AmpelRot.png", value: "requiredSkill:75"}];
+          {key: "res/images/leicht.png", value: "requiredSkill:25"}, 
+          {key: "res/images/mittel.png", value: "requiredSkill:50"}, 
+          {key: "res/images/schwer.png", value: "requiredSkill:75"}];
         break;
     }
     if(direction == "left") {
@@ -320,6 +327,14 @@ var ImageManager;
       });
       var $el = item.render(); 
       $('#content').append($el);
+  };
+
+  onKeyUpInSearchField = function(event) {
+    console.log("enter");
+    if(event.which == 13) {
+      emptyContent();
+      addAdvancedSearchItem();
+    }
   };
 
   emptyContent = function() {

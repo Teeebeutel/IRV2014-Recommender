@@ -208,18 +208,18 @@
 
     <paper-icon-button class="preselectionLeftArrow" icon="chevron-left"></paper-icon-button>
     <div class="card leftCard">
-      <img src="res/images/AmpelRot.png" class="uprightFormat">
+      <img src="res/images/schwer.png" class="horizontalFormat">
       <paper-shadow z="1"></paper-shadow>
     </div>
 
 
     <div class="card selectedCard">
-      <img src="res/images/keines.png" class="uprightFormat" id="requiredSkill:none">
+      <img src="res/images/keines.png" class="horizontalFormat" id="requiredSkill:none">
       <paper-shadow z="1"></paper-shadow>
     </div>
 
     <div class="card rightCard">
-      <img src="res/images/AmpelGrün.png" class="uprightFormat">
+      <img src="res/images/leicht.png" class="horizontalFormat">
       <paper-shadow z="1"></paper-shadow>
     </div>
     <paper-icon-button class="preselectionRightArrow" icon="chevron-right"></paper-icon-button>
@@ -296,9 +296,10 @@
   <div class="right">
       <div id="countSelectContainer">
       <span>Anzahl</span>
-      <core-dropdown valueattr="label" selected="0" id="countSelect">
-          <core-item label="10"></core-item>
+      <core-dropdown valueattr="label" selected="1" id="countSelect">
           <core-item label="5"></core-item>
+          <core-item label="10"></core-item>
+          <core-item label="15"></core-item>
         </core-dropdown>
       </div>
 
