@@ -11,7 +11,7 @@ AjaxSolr.ImageSliderWidget = AjaxSolr.AbstractFacetWidget.extend({
     $('#sliderContainer slider-component /deep/ img').each(function() {
       doc = docs[i];
       var img = $(this);
-      self.getImage(doc.url, img);
+      self.getImage("http://www.chefkoch.de/rezepte/" + doc.recipe_id, img);
       i++;
     });
   }, 
