@@ -22,7 +22,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   top: 0;
   left: 0;
   /* FIXME(ffu): remove hard-coded drawer panel width */
-  width: 256px;
+  width: 320px; /*256px;*/
   height: 100%;
   box-sizing: border-box;
   -mox-box-sizing: border-box;

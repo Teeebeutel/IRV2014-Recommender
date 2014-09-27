@@ -28,12 +28,6 @@ AjaxSolr.CurrentSearchWidget = AjaxSolr.AbstractWidget.extend({
     var fq = this.manager.store.values('fq');
     console.log(fq);
     for (var i = 0, l = fq.length; i < l; i++) {
-      /*if (fq[i].match(/[\[\{]\S+ TO \S+[\]\}]/)) {
-        var field = fq[i].match(/^\w+:/)[0];
-        var value = fq[i].substr(field.length + 1, 10);
-        links.push($('<a href="#"></a>').text('(x) ' + field + value).click(self.removeFacet(fq[i])));
-      }
-      else {*/
         var text;
         var value = fq[i].split(":")[1];
         if(value == "breakfast") {

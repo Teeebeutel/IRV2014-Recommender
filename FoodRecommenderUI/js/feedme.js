@@ -62,11 +62,6 @@ var ImageManager;
       target: '#addField',
       field: 'type'
     }));*/
-    /*ImageManager.addWidget(new AjaxSolr.ImageSliderWidget({
-      id: 'sliderContainer',
-      target: '#sliderContainer slider-component', 
-      field: 'userRating'
-    }));*/
     Manager.addWidget(new AjaxSolr.LevelOfDifficultyWidget({
       id: 'levelOfDifficultySelector',
       target: '#levelOfDifficultySelector',
@@ -85,6 +80,7 @@ var ImageManager;
     for (var name in params) {
       Manager.store.addByValue(name, params[name]);
     }
+    Manager.doRequest(0, 'recipeCollection/select');
 
   });
   
@@ -94,14 +90,6 @@ var ImageManager;
     $('#fastAdviceMenuItem').on('click', onFastAdviceMenuItemClick); 
     $('#myRecipesMenuItem').on('click', onMyRecipesMenuItemClick); 
     $('#profilMenuItem').on('click', onProfilMenuItemClick); 
-    //$('#query').on('keydown', onKeyUpInSearchField);
-    /*$('#query').keypress(function(event) {
-      var keycode = (event.keyCode ? event.keyCode : event.which);
-      if (keycode == '13') {
-          emptyContent();
-          addAdvancedSearchItem();
-      }
-    });*/
   };
 
   onHomeMenuItemClick = function(event) {
@@ -143,27 +131,25 @@ var ImageManager;
       'sort': 'userRating desc',
       'facet.mincount': 1,
       'json.nl': 'map', 
-      'rows': 15
+      'rows': 20
     };
     for (var name in imageManagerParams) {
       ImageManager.store.addByValue(name, imageManagerParams[name]);
     }
     ImageManager.doRequest(0, 'recipeCollection/select');
-    /*$('.preselectionKindContainer').each(function() {
-        var current = $(this);
-        console.log($(this).find('.preselectionLeftArrow'));
-        $(document).on('click', $(this).find('.preselectionLeftArrow'), onPreselectionLeftArrowClick);
-    });*/
-  $('.preselectionLeftArrow').on('click', {'direction': 'left'}, onPreselectionArrowClick);
-  $('.preselectionRightArrow').on('click', {'direction': 'right'}, onPreselectionArrowClick);
-  $('#preselectionSearchButton').on('click', onPreselectionSearchButtonClick);
- /* Manager.addWidget(new AjaxSolr.PreselectionWidget({
-      id: 'preselectionContainer',
-      target: '.preselectionContainer',
-      //field: 'type'
-      fields: ['type', 'vegetarian', 'vegan', 'antialc', 'timetowork', 'requiredSkill'], 
-      multivalue: true
-    }));*/
+    adaptImgSliderHeight();
+    $('.preselectionLeftArrow').on('click', {'direction': 'left'}, onPreselectionArrowClick);
+    $('.preselectionRightArrow').on('click', {'direction': 'right'}, onPreselectionArrowClick);
+    $('#preselectionSearchButton').on('click', onPreselectionSearchButtonClick);
+    $('#sliderContainer slider-component /deep/ #container').attr('height'); 
+    $(window).on('resize', adaptImgSliderHeight);
+    $('#menuButton').hide();
+  };
+
+  adaptImgSliderHeight = function(event) {
+    var imgSlider = $('#sliderContainer');
+    var width = imgSlider.width(); 
+    imgSlider.height(width * 0.5);
   };
 
   makeHomeScreenItem = function(options) {
@@ -172,6 +158,11 @@ var ImageManager;
     });
     var $el = item.render(); 
     $('#content').append($el);
+  };
+
+  onMenuButtonClick = function(event) {
+      var drawerPanel = document.getElementById('drawerPanel');
+      drawerPanel.togglePanel();
   };
 
   onPreselectionArrowClick = function(event) {
@@ -250,9 +241,7 @@ var ImageManager;
       
       if(id != undefined) {
         if(id == "type:none" || id == "timetowork:none" || id == "requiredSkill:none") {
-        //Manager.store.remove(id.split(":")[0]);
         Manager.store.removeByValue('fq', new RegExp('^'+ id.split(":")[0]+ ':'));
-        //Manager.store.removeByValue('fq', new RegExp('^type:'));
       } else {
         Manager.store.addByValue('fq', id);
       }
@@ -268,12 +257,12 @@ var ImageManager;
       makeAdvancedSearchItem({
         id: "advancedSearchItem"
       });
-
-      /*Manager.addWidget(new AjaxSolr.AutocompleteWidget({
+      $('#menuButton').show().on('click', onMenuButtonClick); 
+      Manager.addWidget(new AjaxSolr.AutocompleteWidget2({
         id: 'addField',
         target: '#addField',
         fields: ['ingredientname']
-      }));*/
+      }));
       Manager.doRequest(0, 'recipeCollection/select');
       $(document).on('click', '#countSelect core-item', onCountSelectChange);
   }; 
@@ -305,6 +294,7 @@ var ImageManager;
             ResultWidget.addRecipeItem(object[i].id, object[i].recipeId, object[i].title, object[i].instructions, object[i].timeToWork, object[i].vegetarian, object[i].vegan, object[i].antialc, '#myRecipesItem', object[i].imgSrc);
           }
       });
+      $('#menuButton').hide();
   }; 
 
   makeMyRecipesItem = function(options) {
@@ -319,6 +309,7 @@ var ImageManager;
       makeProfilItem({
         id: "profilItem"
       });
+      $('#menuButton').hide();
   };
 
   makeProfilItem = function(options) {

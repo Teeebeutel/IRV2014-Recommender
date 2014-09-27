@@ -6,7 +6,7 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
 
-  <title>Foodrecommender</title>
+  <title>feed.me</title>
 
   <script src="libs/bower_components/platform/platform.js"></script>
   <link rel="stylesheet" href="libs/bootstrap-3.2.0/css/bootstrap.min.css">
@@ -42,6 +42,7 @@
 <body>
 
   <core-toolbar class="tall" >
+    <core-icon-button icon="menu" id="menuButton"></core-icon-button>
     <div id="heading" flex>feed.me</div>
     <div id="search">
         <core-field>
@@ -49,7 +50,7 @@
           
           <input placeholder="Suchen..." type="text" id="query" name="query" autocomplete="off" flex>
           <paper-icon-button icon="clear" class="clearButton"></paper-icon-button>
-          <core-dropdown valueattr="label" selected="0" id="searchTypeSelect">
+          <core-dropdown valueattr="label" selected="1" id="searchTypeSelect">
               <core-item label="profilbezogen"></core-item>
               <core-item label="frei"></core-item>
           </core-dropdown>
@@ -96,6 +97,7 @@
   <script type="text/javascript" src="widgets/CurrentSearchWidget.js"></script>
   <script type="text/javascript" src="libs/core/AbstractTextWidget.js"></script>
   <script type="text/javascript" src="widgets/AutocompleteWidget.js"></script>
+  <script type="text/javascript" src="widgets/AutocompleteWidget2.js"></script>
   <script type="text/javascript" src="widgets/DurationWidget.js"></script>
   <script type="text/javascript" src="widgets/KindOfMenuWidget.js"></script>
   <script type="text/javascript" src="widgets/NutritionConceptWidget.js"></script>
@@ -138,92 +140,92 @@
     </div>
 
     <div class="preselectionKindContainer" id="preselectionKindOfMenuContainer">
-    <div class="preselectionHeading">Menüart</div>
+    <!--<div class="preselectionHeading">Menüart</div>-->
 
     <paper-icon-button class="preselectionLeftArrow" icon="chevron-left"></paper-icon-button>
     <div class="card leftCard">
-      <img src="res/images/Kochtopf.png" class="horizontalFormat">
+      <img src="res/images/Kochtopf.png">
       <paper-shadow z="1"></paper-shadow>
     </div>
 
     <div class="card selectedCard">
-      <img src="res/images/keines.png" class="horizontalFormat" id="type:none">
+      <img src="res/images/keines.png" id="type:none">
       <paper-shadow z="1"></paper-shadow>
     </div>
 
     <div class="card rightCard">
-      <img src="res/images/Kaffetasse.png" class="horizontalFormat">
+      <img src="res/images/Kaffetasse.png">
       <paper-shadow z="1"></paper-shadow>
     </div>
     <paper-icon-button class="preselectionRightArrow" icon="chevron-right"></paper-icon-button>
-    <br  class="clear" />
+   
     </div>
 
     <div class="preselectionKindContainer" id="preselectionNutritionConceptContainer">
-    <div class="preselectionHeading">Ernährungskonzept</div>
+    <!--<div class="preselectionHeading">Ernährungskonzept</div>-->
 
     <paper-icon-button class="preselectionLeftArrow" icon="chevron-left"></paper-icon-button>
     <div class="card leftCard">
-      <img src="res/images/alkoholfrei.png" class="horizontalFormat">
+      <img src="res/images/alkoholfrei.png">
       <paper-shadow z="1"></paper-shadow>
     </div>
 
     <div class="card selectedCard">
-      <img src="res/images/vegetarisch.png" class="horizontalFormat" id="vegetarian:true">
+      <img src="res/images/vegetarisch.png" id="vegetarian:true">
       <paper-shadow z="1"></paper-shadow>
     </div>
 
     <div class="card rightCard">
-      <img src="res/images/vegan.png" class="horizontalFormat">
+      <img src="res/images/vegan.png">
       <paper-shadow z="1"></paper-shadow>
     </div>
     <paper-icon-button class="preselectionRightArrow" icon="chevron-right"></paper-icon-button>
-    <br  class="clear" />
+    
     </div>
 
     <div class="preselectionKindContainer" id="preselectionDurationContainer">
-    <div class="preselectionHeading">Dauer</div>
+    <!--<div class="preselectionHeading">Dauer</div>-->
 
     <paper-icon-button class="preselectionLeftArrow" icon="chevron-left"></paper-icon-button>
     <div class="card leftCard">
-      <img src="res/images/+60min.png" class="horizontalFormat">
+      <img src="res/images/+60min.png">
       <paper-shadow z="1"></paper-shadow>
     </div>
 
     <div class="card  selectedCard">
-      <img src="res/images/keines.png" class="horizontalFormat" id="timetowork:none">
+      <img src="res/images/keines.png" id="timetowork:none">
       <paper-shadow z="1"></paper-shadow>
     </div>
 
     <div class="card rightCard">
-      <img src="res/images/0min.png" class="horizontalFormat">
+      <img src="res/images/0min.png">
       <paper-shadow z="1"></paper-shadow>
     </div>
     <paper-icon-button class="preselectionRightArrow" icon="chevron-right"></paper-icon-button>
-    <br  class="clear" />
+   
     </div>
 
     <div class="preselectionKindContainer" id="preselectionLevelOfDifficultyContainer">
-    <div class="preselectionHeading">Schwierigkeitsgrad</div>
+    <!--<div class="preselectionHeading">Schwierigkeitsgrad</div>-->
 
     <paper-icon-button class="preselectionLeftArrow" icon="chevron-left"></paper-icon-button>
     <div class="card leftCard">
-      <img src="res/images/schwer.png" class="horizontalFormat">
+      <img src="res/images/schwer.png">
       <paper-shadow z="1"></paper-shadow>
     </div>
 
 
     <div class="card selectedCard">
-      <img src="res/images/keines.png" class="horizontalFormat" id="requiredSkill:none">
+      <img src="res/images/keines.png" id="requiredSkill:none">
       <paper-shadow z="1"></paper-shadow>
     </div>
 
     <div class="card rightCard">
-      <img src="res/images/leicht.png" class="horizontalFormat">
+      <img src="res/images/leicht.png">
       <paper-shadow z="1"></paper-shadow>
     </div>
     <paper-icon-button class="preselectionRightArrow" icon="chevron-right"></paper-icon-button>
-    <br  class="clear" />
+
     </div>
     </div>
     </div>
@@ -232,12 +234,15 @@
 
   <script type="text/html" id="advancedSearch-tpl">
     <div id="<%= id %>">
-      <div class="left leftSide">
-      <h2>Current Selection</h2>
+      <core-drawer-panel id="drawerPanel">
+
+  <core-header-panel drawer>
+      <div class="leftSide">
+      <h4>Current Selection</h4>
       <ul id="selection"></ul>
       
 
-      <h2>Menüart</h2></br>
+      <h4>Menüart</h4>
 
       <core-selector id="kindOfMenuSelector" selected="0">
         <div class="kindOfMenuContainer" id="starterOption">
@@ -255,7 +260,7 @@
       </core-selector>
 
 
-      <h2>Ernährungskonzept</h2></br>
+      <h4>Ernährungskonzept</h4>
 
       <core-dropdown valueattr="label" selected="0" id="nutritionConceptSelect">
           <core-item label="keines"></core-item>
@@ -265,10 +270,10 @@
         </core-dropdown>
 
 
-      <h2>Dauer</h2></br>
+      <h4>Dauer</h4>
       <paper-slider pin value="0" max="120" id="durationSelect" editable></paper-slider>
 
-      <h2>Schwierigkeitsgrad</h2></br>
+      <h4>Schwierigkeitsgrad</h4>
       <core-selector id="levelOfDifficultySelector" selected="0">
         <div class="levelOfDifficulty" id="egal"></div>
         <div class="levelOfDifficulty" id="leicht"></div>
@@ -281,7 +286,7 @@
         <div class="levelOfDifficultyText">mittel</div>
         <div class="levelOfDifficultyText">schwer</div>
      
-      <h2>Zutaten</h2></br>
+      <h4>Zutaten</h4>
 
       <div id="addField">
         <core-field>
@@ -291,9 +296,10 @@
         <paper-shadow z="1"></paper-shadow>
       </div>
     </div>
-  
+  </core-header-panel>
 
-  <div class="right">
+  <core-header-panel main>
+      <div class="right">
       <div id="countSelectContainer">
       <span>Anzahl</span>
       <core-dropdown valueattr="label" selected="1" id="countSelect">
@@ -321,6 +327,101 @@
       </div>
     </div>
     </div>
+
+  </core-header-panel>
+
+</core-drawer-panel>
+
+
+      <!--<div class="left leftSide">
+      <h4>Current Selection</h4>
+      <ul id="selection"></ul>
+      
+
+      <h4>Menüart</h4>
+
+      <core-selector id="kindOfMenuSelector" selected="0">
+        <div class="kindOfMenuContainer" id="starterOption">
+          <img src="res/images/Kaffetasse.png" />
+          <div class="selectionMark">
+            <div class="iconDiv"></div>
+            <core-icon icon="check"></core-icon>
+          </div>
+          <div>Frühstück</div>
+        </div>
+        <div class="kindOfMenuContainer" id="lunchOption">
+          <img src="res/images/Kochtopf.png" />
+          <div>Mittagessen</div>
+        </div>
+      </core-selector>
+
+
+      <h4>Ernährungskonzept</h4>
+
+      <core-dropdown valueattr="label" selected="0" id="nutritionConceptSelect">
+          <core-item label="keines"></core-item>
+          <core-item label="vegetarisch" id="vegetarian"></core-item>
+          <core-item label="vegan" id="vegan"></core-item>
+          <core-item label="alkoholfrei" id="antialc"></core-item>
+        </core-dropdown>
+
+
+      <h4>Dauer</h4>
+      <paper-slider pin value="0" max="120" id="durationSelect" editable></paper-slider>
+
+      <h4>Schwierigkeitsgrad</h4>
+      <core-selector id="levelOfDifficultySelector" selected="0">
+        <div class="levelOfDifficulty" id="egal"></div>
+        <div class="levelOfDifficulty" id="leicht"></div>
+        <div class="levelOfDifficulty" id="mittel"></div>
+        <div class="levelOfDifficulty" id="schwer"></div>
+      </core-selector>
+
+        <div class="levelOfDifficultyText">egal</div>
+        <div class="levelOfDifficultyText">leicht</div>
+        <div class="levelOfDifficultyText">mittel</div>
+        <div class="levelOfDifficultyText">schwer</div>
+     
+      <h4>Zutaten</h4>
+
+      <div id="addField">
+        <core-field>
+          <input placeholder="neue Zutat..." type="text" autocomplete="off" flex>
+          <paper-icon-button icon="add" class="addButton"></paper-icon-button>
+        </core-field>
+        <paper-shadow z="1"></paper-shadow>
+      </div>
+    </div>-->
+  
+
+  <!--<div class="right">
+      <div id="countSelectContainer">
+      <span>Anzahl</span>
+      <core-dropdown valueattr="label" selected="1" id="countSelect">
+          <core-item label="5"></core-item>
+          <core-item label="10"></core-item>
+          <core-item label="15"></core-item>
+        </core-dropdown>
+      </div>
+
+      <div id="sortSelectContainer">
+        <span>Sortierung</span>
+        <core-dropdown valueattr="label" selected="0" id="sortSelect">
+          <core-item label="Relevanz"></core-item>
+          <core-item label="Dauer"></core-item>
+          <core-item label="Schwierigkeit"></core-item>
+        </core-dropdown>
+      </div>
+
+      <div id="result">
+        <div id="docs"></div>
+        <div id="navigation">
+          <ul id="pager" class="pagination"></ul>
+          <div id="pager-header"></div>
+        </div>
+      </div>
+    </div>
+    </div>-->
     </div>
   </script>
 
