@@ -11,7 +11,7 @@ AjaxSolr.ImageSliderWidget = AjaxSolr.AbstractFacetWidget.extend({
     $('#sliderContainer slider-component /deep/ img').each(function() {
       doc = docs[i];
       var img = $(this);
-      console.log(doc.url, doc.title);
+      //console.log(doc.url, doc.title);
       self.getImage(doc.url, img);
       i++;
     });
@@ -20,7 +20,7 @@ AjaxSolr.ImageSliderWidget = AjaxSolr.AbstractFacetWidget.extend({
   getImage: function(url, img) {
     $.get("php/functions.php?command=getImage", {url: url}).done(
     function(data) {
-      console.log(data);
+      //console.log(data);
       img.attr('src', data);
     });
   }

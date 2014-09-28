@@ -171,12 +171,12 @@
     </div>
 
     <div class="card selectedCard">
-      <img src="res/images/vegetarisch.png" id="vegetarian:true">
+      <img src="res/images/keines.png" id="vegetarian:none">
       <paper-shadow z="1"></paper-shadow>
     </div>
 
     <div class="card rightCard">
-      <img src="res/images/vegan.png">
+      <img src="res/images/vegetarisch.png">
       <paper-shadow z="1"></paper-shadow>
     </div>
     <paper-icon-button class="preselectionRightArrow" icon="chevron-right"></paper-icon-button>
@@ -244,13 +244,9 @@
 
       <h4>Menüart</h4>
 
-      <core-selector id="kindOfMenuSelector" selected="0">
+      <core-selector id="kindOfMenuSelector" selected="<%= kindOfMenuNr %>">
         <div class="kindOfMenuContainer" id="starterOption">
           <img src="res/images/Kaffetasse.png" />
-          <div class="selectionMark">
-            <div class="iconDiv"></div>
-            <core-icon icon="check"></core-icon>
-          </div>
           <div>Frühstück</div>
         </div>
         <div class="kindOfMenuContainer" id="lunchOption">
@@ -262,8 +258,8 @@
 
       <h4>Ernährungskonzept</h4>
 
-      <core-dropdown valueattr="label" selected="0" id="nutritionConceptSelect">
-          <core-item label="keines"></core-item>
+      <core-dropdown valueattr="label" selected="<%= nutritionConceptNr %>" id="nutritionConceptSelect">
+          <core-item label="keines" id="noNutritionConcept"></core-item>
           <core-item label="vegetarisch" id="vegetarian"></core-item>
           <core-item label="vegan" id="vegan"></core-item>
           <core-item label="alkoholfrei" id="antialc"></core-item>
@@ -271,10 +267,10 @@
 
 
       <h4>Dauer</h4>
-      <paper-slider pin value="0" max="120" id="durationSelect" editable></paper-slider>
+      <paper-slider pin value="<%= durationValue %>" max="120" id="durationSelect" editable></paper-slider>
 
       <h4>Schwierigkeitsgrad</h4>
-      <core-selector id="levelOfDifficultySelector" selected="0">
+      <core-selector id="levelOfDifficultySelector" selected="<%= levelOfDifficultyNr %>">
         <div class="levelOfDifficulty" id="egal"></div>
         <div class="levelOfDifficulty" id="leicht"></div>
         <div class="levelOfDifficulty" id="mittel"></div>

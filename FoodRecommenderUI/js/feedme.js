@@ -1,6 +1,6 @@
-var Manager;
-var ResultWidget; 
-var ImageManager;
+var Manager, ResultWidget, ImageManager;
+var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItems;
+
 (function ($) {
 
   $(function () {
@@ -71,7 +71,7 @@ var ImageManager;
     Manager.store.addByValue('q', '*:*');
     var params = {
       facet: true,
-      'facet.field': [ 'ingredientname', 'gluten', 'diabetus', 'lactose', 'sportsman', 'antialc', 'pork', 'vegetarian', 'vegan' ],
+      //'facet.field': [ 'ingredientname', 'gluten', 'diabetus', 'lactose', 'sportsman', 'antialc', 'pork', 'vegetarian', 'vegan' ],
       'facet.limit': 20,
       'facet.mincount': 1,
       'json.nl': 'map', 
@@ -85,6 +85,29 @@ var ImageManager;
   });
   
   initUI = function() {
+    KindOfMenuItems = [
+          {key: "res/images/keines.png", value: "type:none"}, 
+          {key: "res/images/Kaffetasse.png", value: "type:breakfast"}, 
+          {key: "res/images/Kochtopf.png", value: "type:mainmeal"}]; 
+    NutritionConceptItems = [
+          {key: "res/images/keines.png", value: "vegetarian:none"}, 
+          {key: "res/images/vegetarisch.png", value: "vegetarian:true"}, 
+          {key: "res/images/vegan.png", value: "vegan:true"}, 
+          {key: "res/images/alkoholfrei.png", value: "antialc:true"}]; 
+    DurationItems = [
+          {key: "res/images/keines.png", value: "timetowork:none"}, 
+          {key: "res/images/0min.png", value: "timetowork:[* TO *]"}, 
+          {key: "res/images/15min.png", value: "timetowork:[1 TO 15]"}, 
+          {key: "res/images/30min.png", value: "timetowork:[16 TO 30]"}, 
+          {key: "res/images/45min.png", value: "timetowork:[31 TO 45]"}, 
+          {key: "res/images/60min.png", value: "timetowork:[46 TO 60]"}, 
+          {key: "res/images/+60min.png", value: "timetowork:[60 TO *]"}];
+    LevelOfDifficultyItems = [
+          {key: "res/images/keines.png", value: "requiredSkill:none"}, 
+          {key: "res/images/leicht.png", value: "requiredSkill:25"}, 
+          {key: "res/images/mittel.png", value: "requiredSkill:50"}, 
+          {key: "res/images/schwer.png", value: "requiredSkill:75"}];
+
     addHomeScreenItem();
     $('#homeMenuItem').on('click', onHomeMenuItemClick); 
     $('#fastAdviceMenuItem').on('click', onFastAdviceMenuItemClick); 
@@ -99,7 +122,7 @@ var ImageManager;
 
   onFastAdviceMenuItemClick = function(event) {
     emptyContent();
-    addAdvancedSearchItem();
+    addAdvancedSearchItem(-1, 0, 0, 0);
   };
 
   onMyRecipesMenuItemClick = function(event) {
@@ -168,65 +191,48 @@ var ImageManager;
   onPreselectionArrowClick = function(event) {
     var direction = event.data.direction;
     var container = $(event.currentTarget).closest('.preselectionKindContainer');
-    var id = container.attr('id')
-    var currentImg = container.find('.selectedCard img')
+    var id = container.attr('id');
+    var currentImg = container.find('.selectedCard img');
     var leftImg = container.find('.leftCard img');
     var rightImg = container.find('.rightCard img');
     var currentImgSrc = currentImg.attr('src');
-    var kindOfMenuItems;
+    var preselectionItems;
 
     switch(id) {
       case "preselectionKindOfMenuContainer": 
-        kindOfMenuItems = [
-          {key: "res/images/keines.png", value: "type:none"}, 
-          {key: "res/images/Kaffetasse.png", value: "type:breakfast"}, 
-          {key: "res/images/Kochtopf.png", value: "type:mainmeal"}];
+        preselectionItems = KindOfMenuItems;
         break;
       case "preselectionNutritionConceptContainer":
-        kindOfMenuItems = [
-          {key: "res/images/vegetarisch.png", value: "vegetarian:true"}, 
-          {key: "res/images/vegan.png", value: "vegan:true"}, 
-          {key: "res/images/alkoholfrei.png", value: "antialc:true"}];
+        preselectionItems = NutritionConceptItems;
         break;
       case "preselectionDurationContainer":
-        kindOfMenuItems = [
-          {key: "res/images/keines.png", value: "timetowork:none"}, 
-          {key: "res/images/0min.png", value: "timetowork:[* TO *]"}, 
-          {key: "res/images/15min.png", value: "timetowork:[1 TO 15]"}, 
-          {key: "res/images/30min.png", value: "timetowork:[16 TO 30]"}, 
-          {key: "res/images/45min.png", value: "timetowork:[31 TO 45]"}, 
-          {key: "res/images/60min.png", value: "timetowork:[46 TO 60]"}, 
-          {key: "res/images/+60min.png", value: "timetowork:[60 TO *]"}];
+        preselectionItems = DurationItems;
         break;
       case "preselectionLevelOfDifficultyContainer":
-        kindOfMenuItems = [
-          {key: "res/images/keines.png", value: "requiredSkill:none"}, 
-          {key: "res/images/leicht.png", value: "requiredSkill:25"}, 
-          {key: "res/images/mittel.png", value: "requiredSkill:50"}, 
-          {key: "res/images/schwer.png", value: "requiredSkill:75"}];
+        preselectionItems = LevelOfDifficultyItems;
         break;
     }
     if(direction == "left") {
-      for (var i = 0; i < kindOfMenuItems.length; i++) {
-        if(kindOfMenuItems[i].key == currentImgSrc) {
-          var newMiddlePosition = (i == 0 ? kindOfMenuItems.length-1 : i-1);
-          var newLeftPosition = (newMiddlePosition == 0 ? kindOfMenuItems.length-1 : newMiddlePosition-1);
-          currentImg.attr('src', kindOfMenuItems[newMiddlePosition].key);
-          currentImg.attr('id', kindOfMenuItems[newMiddlePosition].value);
-          rightImg.attr('src', kindOfMenuItems[i].key);
-          leftImg.attr('src', kindOfMenuItems[newLeftPosition].key);
+      for (var i = 0; i < preselectionItems.length; i++) {
+        if(preselectionItems[i].key == currentImgSrc) {
+          var newMiddlePosition = (i == 0 ? preselectionItems.length-1 : i-1);
+          var newLeftPosition = (newMiddlePosition == 0 ? preselectionItems.length-1 : newMiddlePosition-1);
+          currentImg.attr('src', preselectionItems[newMiddlePosition].key);
+          currentImg.attr('id', preselectionItems[newMiddlePosition].value);
+          rightImg.attr('src', preselectionItems[i].key);
+          leftImg.attr('src', preselectionItems[newLeftPosition].key);
         }
       }
     }
     if(direction == "right") {
-      for (var i = 0; i < kindOfMenuItems.length; i++) {
-        if(kindOfMenuItems[i].key == currentImgSrc) {
-          var newMiddlePosition = (i == kindOfMenuItems.length-1 ? 0 : i+1);
-          var newRightPosition = (newMiddlePosition == kindOfMenuItems.length-1 ? 0 : newMiddlePosition+1);
-          currentImg.attr('src', kindOfMenuItems[newMiddlePosition].key);
-          currentImg.attr('id', kindOfMenuItems[newMiddlePosition].value);
-          leftImg.attr('src', kindOfMenuItems[i].key);
-          rightImg.attr('src', kindOfMenuItems[newRightPosition].key);
+      for (var i = 0; i < preselectionItems.length; i++) {
+        if(preselectionItems[i].key == currentImgSrc) {
+          var newMiddlePosition = (i == preselectionItems.length-1 ? 0 : i+1);
+          var newRightPosition = (newMiddlePosition == preselectionItems.length-1 ? 0 : newMiddlePosition+1);
+          currentImg.attr('src', preselectionItems[newMiddlePosition].key);
+          currentImg.attr('id', preselectionItems[newMiddlePosition].value);
+          leftImg.attr('src', preselectionItems[i].key);
+          rightImg.attr('src', preselectionItems[newRightPosition].key);
         }
       }
     }
@@ -237,26 +243,61 @@ var ImageManager;
     Manager.store.addByValue('q', '*:*');
     $('.selectedCard').each(function() {
       var id = $(this).find('img').attr('id');
-      //console.log(id.split(":")[1]);
-      
       if(id != undefined) {
         if(id == "type:none" || id == "timetowork:none" || id == "requiredSkill:none") {
-        Manager.store.removeByValue('fq', new RegExp('^'+ id.split(":")[0]+ ':'));
-      } else {
-        Manager.store.addByValue('fq', id);
-      }
+          Manager.store.removeByValue('fq', new RegExp('^'+ id.split(":")[0]+ ':'));
+        } 
+        else if(id == "vegetarian:none") {
+          Manager.store.removeByValue('fq', new RegExp('^vegetarian:'));
+          Manager.store.removeByValue('fq', new RegExp('^vegan:'));
+          Manager.store.removeByValue('fq', new RegExp('^antialc:'));
+        } else {
+          Manager.store.addByValue('fq', id);
+        }
       }
     });
     Manager.doRequest(0, 'recipeCollection/select');
     $('#mainMenuTabs').prop('selected', 1);
+
+    var kindOfMenuImg = $('#preselectionKindOfMenuContainer .selectedCard img').attr('src');
+    var nutritionConceptImg = $('#preselectionNutritionConceptContainer .selectedCard img').attr('src');
+    var durationImg = $('#preselectionDurationContainer .selectedCard img').attr('src');
+    var levelOfDifficultyImg = $('#preselectionLevelOfDifficultyContainer .selectedCard img').attr('src');
+
+    kindOfMenuNr = getImgNr(kindOfMenuImg, KindOfMenuItems); 
+    nutritionConceptNr = getImgNr(nutritionConceptImg, NutritionConceptItems);
+    durationValue = getImgNr(durationImg, DurationItems);
+    levelOfDifficultyNr = getImgNr(levelOfDifficultyImg, LevelOfDifficultyItems); 
+
     emptyContent();
-    addAdvancedSearchItem();
+    addAdvancedSearchItem(kindOfMenuNr-1, nutritionConceptNr, durationValue, levelOfDifficultyNr);
   };
 
-  addAdvancedSearchItem = function() {
+  getImgNr = function(image, object) {
+    var nr = 0;
+    for (var i = 0; i < object.length; i++) {
+      console.log(image, object[i].key);
+      if(object[i].key == image) {
+        nr = i;
+      }
+    }
+    return nr;
+  };
+
+  addAdvancedSearchItem = function(kindOfMenuNr, nutritionConceptNr, durationValue, levelOfDifficultyNr) {
       makeAdvancedSearchItem({
-        id: "advancedSearchItem"
+        id: "advancedSearchItem", 
+        kindOfMenuNr: kindOfMenuNr, 
+        nutritionConceptNr: nutritionConceptNr, 
+        durationValue: durationValue, 
+        levelOfDifficultyNr: levelOfDifficultyNr
       });
+     /* $('#kindOfMenuSelector').find('.core-selected').find('.selectionMark').remove();*/
+     if(kindOfMenuNr != -1) {
+        $('.kindOfMenuContainer:eq(' + kindOfMenuNr +')').append('<div class="selectionMark"><div class="iconDiv"></div><core-icon icon="check"></core-icon></div>');
+     }
+      
+
       $('#menuButton').show().on('click', onMenuButtonClick); 
       Manager.addWidget(new AjaxSolr.AutocompleteWidget2({
         id: 'addField',
@@ -265,7 +306,15 @@ var ImageManager;
       }));
       Manager.doRequest(0, 'recipeCollection/select');
       $(document).on('click', '#countSelect core-item', onCountSelectChange);
+      $(document).on('click', '#noNutritionConcept', onNutritionConceptDeselect);
   }; 
+
+  onNutritionConceptDeselect = function(event) {
+    Manager.store.removeByValue('fq', new RegExp('^vegetarian:'));
+    Manager.store.removeByValue('fq', new RegExp('^vegan:'));
+    Manager.store.removeByValue('fq', new RegExp('^antialc:'));
+    Manager.doRequest(0, 'recipeCollection/select');
+  };
 
   onCountSelectChange = function(event) {
     var value = $(event.currentTarget).attr('label');
@@ -275,7 +324,11 @@ var ImageManager;
 
   makeAdvancedSearchItem = function(options) {
       var item = AdvancedSearchItem().init({
-        id: options.id
+        id: options.id, 
+        kindOfMenuNr: options.kindOfMenuNr, 
+        nutritionConceptNr: options.nutritionConceptNr, 
+        durationValue: options.durationValue, 
+        levelOfDifficultyNr: options.levelOfDifficultyNr
       });
       var $el = item.render(); 
       $('#content').append($el);
@@ -324,7 +377,7 @@ var ImageManager;
     console.log("enter");
     if(event.which == 13) {
       emptyContent();
-      addAdvancedSearchItem();
+      addAdvancedSearchItem(-1, 0, 0, 0);
     }
   };
 

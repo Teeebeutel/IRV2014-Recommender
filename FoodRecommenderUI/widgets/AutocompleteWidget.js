@@ -54,6 +54,8 @@ AjaxSolr.AutocompleteWidget = AjaxSolr.AbstractTextWidget.extend({
         //self.manager.store.get('q').val('*:*');
         //self.manager.store.remove('fq');
         self.doRequest(0, 'recipeCollection/select');
+        $('#levelOfDifficultySelector').prop('selected', 0);
+        $('#nutritionConceptSelect').prop('selected', 0);
       }
   }, 
 
@@ -92,6 +94,8 @@ AjaxSolr.AutocompleteWidget = AjaxSolr.AbstractTextWidget.extend({
               self.emptyContent();
               self.addAdvancedSearchItem();
               self.doRequest(0, 'recipeCollection/select');
+              $('#levelOfDifficultySelector').prop('selected', 0);
+              $('#nutritionConceptSelect').prop('selected', 0);
             }
           }
         }
@@ -107,6 +111,8 @@ AjaxSolr.AutocompleteWidget = AjaxSolr.AbstractTextWidget.extend({
             self.emptyContent();
             self.addAdvancedSearchItem();
             self.doRequest(0, 'recipeCollection/select');
+            $('#levelOfDifficultySelector').prop('selected', 0);
+            $('#nutritionConceptSelect').prop('selected', 0);
           }
         }
       });

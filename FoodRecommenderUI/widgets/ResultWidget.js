@@ -41,6 +41,7 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
   facetHandler: function (facet_field, facet_value) {
     var self = this;
     return function () {
+      $('#levelOfDifficultySelector').attr('selected', "0");
       self.manager.store.remove('fq');
       self.manager.store.addByValue('fq', facet_field + ':' + AjaxSolr.Parameter.escapeValue(facet_value));
       self.doRequest(0, 'recipeCollection/select');
