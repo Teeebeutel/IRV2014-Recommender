@@ -41,7 +41,7 @@
 </head>
 <body>
 
-  <core-toolbar class="tall" >
+  <core-toolbar class="tall" id"coreToolbar">
     <core-icon-button icon="menu" id="menuButton"></core-icon-button>
     <div id="heading" flex>feed.me</div>
     <div id="search">
@@ -59,7 +59,15 @@
       </div>
 
     <div class="bottom fit" horizontal center-justified end layout>
-      
+      <x-dialogLogin class="dialog">
+      <h2>Login</h2>
+      <paper-input label="E-mail" floatingLabel></paper-input>
+      <paper-input label="Passwort" floatingLabel></paper-input><br />
+      <paper-button class="colored dialogButton" label="Ohne Login" id="withoutLoginButton" core-overlay-toggle></paper-button>
+      <paper-button class="colored dialogButton" label="Ok" id="loginButton" core-overlay-toggle></paper-button><br />
+      <paper-button class="colored dialogButton" label="Registrieren" id="registrationButton" core-overlay-toggle></paper-button>
+    </x-dialogLogin>
+
       <paper-tabs id="mainMenuTabs" selected="0" flex style="width: 70%;">
 
         <paper-tab id="homeMenuItem">Home</paper-tab>
@@ -113,6 +121,16 @@
 
 <script type="text/html" id="homeScreen-tpl">
     <div id="<%= id %>">
+      <!--<div id="loginContainer"></div>
+      <x-dialogLogin class="dialog">
+      <h2>Login</h2>
+      <paper-input label="E-mail" floatingLabel></paper-input>
+      <paper-input label="Passwort" floatingLabel></paper-input><br />
+      <paper-button class="colored dialogButton" label="Ohne Login" id="withoutLoginButton" core-overlay-toggle></paper-button>
+      <paper-button class="colored dialogButton" label="Ok" id="loginButton" core-overlay-toggle></paper-button><br />
+      <paper-button class="colored dialogButton" label="Registrieren" id="registrationButton" core-overlay-toggle></paper-button>
+    </x-dialogLogin>-->
+
       <paper-fab icon="search" id="preselectionSearchButton"></paper-fab>
       <div id="sliderContainer">
       <slider-component>
@@ -228,6 +246,7 @@
 
     </div>
     </div>
+
     </div>
   </script>
 
@@ -364,7 +383,7 @@
 
       <h4>Dauer</h4>
       <paper-slider pin value="0" max="120" id="durationSelect" editable></paper-slider>
-
+      
       <h4>Schwierigkeitsgrad</h4>
       <core-selector id="levelOfDifficultySelector" selected="0">
         <div class="levelOfDifficulty" id="egal"></div>

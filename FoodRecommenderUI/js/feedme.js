@@ -36,7 +36,7 @@ var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItem
     Manager.addWidget(new AjaxSolr.AutocompleteWidget({
       id: 'text',
       target: '#search',
-      fields: ['title', 'ingredientname'], 
+      fields: ['titleStop', 'ingredientname'], 
       multivalue: true
     }));
     Manager.addWidget(new AjaxSolr.KindOfMenuWidget({
@@ -82,6 +82,22 @@ var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItem
     }
     Manager.doRequest(0, 'recipeCollection/select');
 
+    Polymer('x-dialogLogin', {
+          toggle: function() {
+            this.$.overlay.toggle();
+          }
+      });
+    var el = document.createElement('div');
+    el.innerHTML = '\
+        <polymer-element name="x-dialogLogin">\
+          <template>\
+              <core-overlay id="overlay" autoCloseDisabled="true" layered backdrop opened>\
+              <content></content>\
+              </core-overlay>\
+          </template>\
+        </polymer-element>';
+      document.getElementById('coreToolbar').appendChild(el);
+
   });
   
   initUI = function() {
@@ -109,10 +125,12 @@ var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItem
           {key: "res/images/schwer.png", value: "requiredSkill:75"}];
 
     addHomeScreenItem();
+
     $('#homeMenuItem').on('click', onHomeMenuItemClick); 
     $('#fastAdviceMenuItem').on('click', onFastAdviceMenuItemClick); 
     $('#myRecipesMenuItem').on('click', onMyRecipesMenuItemClick); 
     $('#profilMenuItem').on('click', onProfilMenuItemClick); 
+
   };
 
   onHomeMenuItemClick = function(event) {
@@ -167,6 +185,22 @@ var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItem
     $('#sliderContainer slider-component /deep/ #container').attr('height'); 
     $(window).on('resize', adaptImgSliderHeight);
     $('#menuButton').hide();
+
+    /*Polymer('x-dialogLogin', {
+          toggle: function() {
+            this.$.overlay.toggle();
+          }
+      });
+    var el = document.createElement('div');
+    el.innerHTML = '\
+        <polymer-element name="x-dialogLogin">\
+          <template>\
+              <core-overlay id="overlay" autoCloseDisabled="true" layered backdrop opened>\
+              <content></content>\
+              </core-overlay>\
+          </template>\
+        </polymer-element>';
+      document.getElementById('homeScreenItem').appendChild(el);*/
   };
 
   adaptImgSliderHeight = function(event) {
@@ -264,14 +298,19 @@ var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItem
     var durationImg = $('#preselectionDurationContainer .selectedCard img').attr('src');
     var levelOfDifficultyImg = $('#preselectionLevelOfDifficultyContainer .selectedCard img').attr('src');
 
+    var durationImgNr = getImgNr(durationImg, DurationItems);
     kindOfMenuNr = getImgNr(kindOfMenuImg, KindOfMenuItems); 
     nutritionConceptNr = getImgNr(nutritionConceptImg, NutritionConceptItems);
-    durationValue = getImgNr(durationImg, DurationItems);
+    durationValue = getDurationValue(durationImgNr);
     levelOfDifficultyNr = getImgNr(levelOfDifficultyImg, LevelOfDifficultyItems); 
 
     emptyContent();
     addAdvancedSearchItem(kindOfMenuNr-1, nutritionConceptNr, durationValue, levelOfDifficultyNr);
   };
+
+  getDurationValue = function(nr) {
+    return nr<= 1 ? 0 : (nr-1)*15;
+  };  
 
   getImgNr = function(image, object) {
     var nr = 0;
@@ -292,7 +331,6 @@ var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItem
         durationValue: durationValue, 
         levelOfDifficultyNr: levelOfDifficultyNr
       });
-     /* $('#kindOfMenuSelector').find('.core-selected').find('.selectionMark').remove();*/
      if(kindOfMenuNr != -1) {
         $('.kindOfMenuContainer:eq(' + kindOfMenuNr +')').append('<div class="selectionMark"><div class="iconDiv"></div><core-icon icon="check"></core-icon></div>');
      }
@@ -334,7 +372,6 @@ var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItem
       $('#content').append($el);
   };
 
-
   addMyRecipesItem = function() {
       makeMyRecipesItem({
         id: "myRecipesItem"
@@ -374,7 +411,6 @@ var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItem
   };
 
   onKeyUpInSearchField = function(event) {
-    console.log("enter");
     if(event.which == 13) {
       emptyContent();
       addAdvancedSearchItem(-1, 0, 0, 0);

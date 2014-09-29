@@ -29,11 +29,23 @@ AjaxSolr.CurrentSearchWidget = AjaxSolr.AbstractWidget.extend({
     console.log(fq);
     for (var i = 0, l = fq.length; i < l; i++) {
         var text;
-        var value = fq[i].split(":")[1];
+        var array = fq[i].split(":");
+        var value = array[1];
+        var description = array[0];
         if(value == "breakfast") {
           text = "Frühstück";
         } else if(value == "mainmeal") {
           text = "Mittagessen";
+        } else if(fq[i] == "requiredSkill:25") {
+          text = "leicht";
+        } else if(fq[i] == "requiredSkill:50") {
+          text = "mittel";
+        } else if(fq[i] == "requiredSkill:75") {
+          text = "schwer";
+        } else if(description == "vegetarian") {
+          text = "vegetarisch";
+        } else if(description == "antialc") {
+          text = "alkoholfrei"; 
         } else if(value == "true" || value == "false") {
           text = fq[i].split(":")[0];
         } else {
