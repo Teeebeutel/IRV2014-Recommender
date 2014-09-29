@@ -31,12 +31,15 @@
 
 	function getImage($url) {
 		require '../libs/simplehtmldom_1_5/simple_html_dom.php';
+		//print_r($url);
 		$html = file_get_html($url);
-		$result; 
-		if ($html->find('#recipe-no-picture')) {
-			$result = "res/images/noImage.png";
-		} else {
-			$result = $html->find('#slideshow a', 0)->href; 
+		$result = "res/images/noImage.png"; 
+		if(!empty($html)) {
+			if ($html->find('#recipe-no-picture')) {
+				$result = "res/images/noImage.png";
+			} else {
+				$result = $html->find('#slideshow a', 0)->href; 
+			}
 		}
 		print_r($result);
 	}

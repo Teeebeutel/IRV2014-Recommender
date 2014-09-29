@@ -42,12 +42,27 @@ body {
 
 #background {
   position: absolute;
-  height: 760px;
+  /*height: 760px;*/
+  height: 780px;
   width:180px;
   background-color: #795548;
-  left: 408px;
+  /*left: 408px;*/
+  /*left: 40%;*/
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  margin-bottom: 30px;
 }
 
+.preselectionKindContainer {
+  text-align: center;
+  /*display: inline-block;*/
+}
+
+.card, .preselectionLeftArrow, .preselectionRightArrow {
+  display: inline-block;
+}
 #kindOfMenuSelector {
   border-bottom: none;
   list-style: none;
@@ -69,10 +84,6 @@ body {
   margin: 0px auto;
 }
 
-#content {
-  height: 100%;
-}
-
 .addToFavouritesBtn {
   position: absolute;
   top: 10px; 
@@ -84,7 +95,7 @@ body {
   height: 100px; 
   background-color: #fff;
   border-radius: 2px;
-  float: left;
+  /*float: left;*/
   margin: 20px;
   padding: 20px;
 }
@@ -92,20 +103,21 @@ body {
 .card:not(.selectedCard) {
   margin-top: 40px;
 }
-.horizontalFormat {
+.card img {
   width: 100%;
 }
 
-.uprightFormat {
+/*.uprightFormat {
   height: 100%;
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
+}*/
 
 .selectedCard {
   width: 150px; 
   height: 150px; 
+  margin-bottom: 0px;
 }
 
 core-toolbar {
@@ -130,9 +142,21 @@ paper-tab /deep/ #ink {
 .rightSide {
   margin-left: 20px;
 }
+
 #mainMenuTabs, #sliderContainer {
   box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
 }
+
+#menuButton {
+  color: #fff;
+  /*position: absolute;
+  left: 10; 
+  top: 10;*/
+}
+
+/*core-drawer-panel:not([narrow]) #menuButton {
+  display: none;
+}*/
 
 img {
   border: none;
@@ -151,14 +175,12 @@ a:hover {
   margin: 0px auto;
 }
 
-.clear {
-  clear: both;
-}
+
 
 .right {
-  float: left;
   width: 628px;
-  padding: 10px 20px 10px 40px;
+  margin: 20px auto;
+  padding: 10px 0px 10px 0px;
   /*border-left: 1px solid #aaa;*/
   text-align: justify;
 }
@@ -201,7 +223,7 @@ a:hover {
   border-radius: 2px; 
   margin: 10px;
   background-color: #fff;
-  height: 300px;
+  height: 350px;
 
 }
 
@@ -257,11 +279,6 @@ a:hover {
   height: 100%;
 }
 
-#sliderContainer {
-  border-radius: 2px;
-  overflow: hidden;
-  margin-bottom: 20px;
-}
 body /deep/ core-dropdown::shadow #menu {
   border: 1px solid #ccc;
 }
@@ -280,9 +297,9 @@ paper-slider::shadow #sliderBar::shadow #activeProgress {
   background-color: #795548;
 }
 
-.preselectionLeftArrow, .preselectionRightArrow {
+/*.preselectionLeftArrow, .preselectionRightArrow {
   float: left;
-}
+}*/
 #addField {
   background-color: #fff;
   margin-right: 10px;
@@ -314,10 +331,23 @@ input[type="range"] {
 }
 
 .leftSide {
-  float: left; 
   width: 300px;
-  padding: 0 0 10px 10px;
+  padding: 0 0 10px 00px;
+  margin: 20px !important;
 }
+
+[drawer] {
+  background-color: #fff;
+  box-shadow: 1px 0 1px rgba(0, 0, 0, 0.1);
+ /* width: 320px !important;*/
+}
+
+#menuButton {
+  margin-top: 25px;
+}
+/*core-drawer-panel:not([narrow]) #menuButton {
+  display: none;
+}*/
 
 .menuTitle, paper-radio-button, .preselectionHeading {
   float: left;
@@ -331,7 +361,8 @@ input[type="range"] {
 }
 
 #preselectionContainer {
-  padding: 0px 0px 20px 20px;
+  margin: 0px auto;
+  /*padding: 0px 0px 20px 20px;*/
 }
 
 #preselectionContainer paper-icon-button, .preselectionHeading {
@@ -342,10 +373,29 @@ input[type="range"] {
   margin-right: 20px;
 }
 
+#drawerPanel {
+  margin-top: 192px;
+}
+
+core-drawer-panel /deep/ #dropShadow {
+  display: none;
+}
 #sliderContainer slider-component {
-  overflow: hidden;
-  width: 1000px; 
+  /*overflow: hidden;*/
+  /*width: 1000px; */
   
+}
+
+#sliderContainer {
+  width: 50%;
+  border-radius: 2px;
+  overflow: hidden;
+  margin: 0px auto 20px auto;
+}
+
+#sliderContainer slider-component /deep/ #container {
+  width: 100%;
+  height: 100%;
 }
 
 #sliderContainer slider-component /deep/ img {
@@ -379,6 +429,7 @@ core-selector paper-icon-button:not([active])::shadow core-icon {
   margin: 0px 0px 10px 10px;
   border-radius: 2px;
   overflow: hidden;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
 
 .kindOfMenuContainer img {
@@ -458,9 +509,11 @@ slider-component::shadow .accent:hover {
 }
 
 #content {
-  width: 1000px;
+  /*width: 1000px;*/
+  height: 100%;
+ /* width: 80%;*/
   margin: 0px auto !important; 
-  position: relative;
+  /*position: relative;*/
   padding-top: 20px;
 }
 
