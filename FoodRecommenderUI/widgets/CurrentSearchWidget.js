@@ -24,9 +24,10 @@ AjaxSolr.CurrentSearchWidget = AjaxSolr.AbstractWidget.extend({
         return false;
       }));
     }
-
+    /*TODO: delete/reformat querys automatically added due to user preferences
+      how do i determine wether i added it or i did not? :/
+    */
     var fq = this.manager.store.values('fq');
-    console.log(fq);
     for (var i = 0, l = fq.length; i < l; i++) {
         var text;
         var value = fq[i].split(":")[1];
@@ -37,7 +38,11 @@ AjaxSolr.CurrentSearchWidget = AjaxSolr.AbstractWidget.extend({
         } else if(value == "true" || value == "false") {
           text = fq[i].split(":")[0];
         } else {
-          text = value;
+          if( fq[i].split(":")[0].match(/![A-Za-z]+/)){
+            text = 'Ohne '+value;
+          }else{
+            text = value;
+          }
         }
         links.push($('<a href="#"></a>').text('(x) ' + text/*fq[i]*/).click(self.removeFacet(fq[i])));
      // }
