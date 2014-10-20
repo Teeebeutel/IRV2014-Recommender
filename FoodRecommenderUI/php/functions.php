@@ -25,6 +25,16 @@
 		case 'getRecipes': 
 			$res = $db->getRecipes();
 			break; 
+		case 'saveNewUser':     
+            $username = $_GET['username'];
+            $password = $_GET['password'];
+            $db->saveNewUser($username, $password); 
+            break; 
+        case 'checkUser': 
+            $username = $_GET['username'];
+            $password = $_GET['password'];
+            $db->checkUser($username, $password); 
+            break; 
 		default: 
 			return;
 	}

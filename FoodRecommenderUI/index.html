@@ -59,14 +59,6 @@
       </div>
 
     <div class="bottom fit" horizontal center-justified end layout>
-      <x-dialogLogin class="dialog">
-      <h2>Login</h2>
-      <paper-input label="E-mail" floatingLabel></paper-input>
-      <paper-input label="Passwort" floatingLabel></paper-input><br />
-      <paper-button class="colored dialogButton" label="Ohne Login" id="withoutLoginButton" core-overlay-toggle></paper-button>
-      <paper-button class="colored dialogButton" label="Ok" id="loginButton" core-overlay-toggle></paper-button><br />
-      <paper-button class="colored dialogButton" label="Registrieren" id="registrationButton" core-overlay-toggle></paper-button>
-    </x-dialogLogin>
 
       <paper-tabs id="mainMenuTabs" selected="0" flex style="width: 70%;">
 
@@ -84,12 +76,14 @@
   <div id="content" class="main">
 
   </div>
+
   
   <script type="text/javascript" src="libs/jquery-2.1.1.js"></script>
   <script type="text/javascript" src="libs/underscore.js"></script>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js"></script>
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/themes/smoothness/jquery-ui.css">
   <script type="text/javascript" src="js/feedme.js"></script>
+  <script type="text/javascript" src="js/UserHandler.js"></script>
   
 
 
@@ -113,23 +107,17 @@
   <script type="text/javascript" src="widgets/LevelOfDifficultyWidget.js"></script>
   <script type="text/javascript" src="widgets/ImageSliderWidget.js"></script>
 
+  <script type="text/javascript" src="js/LoginView.js"></script>
   <script type="text/javascript" src="templates/HomeScreenItem.js"></script>
   <script type="text/javascript" src="templates/AdvancedSearchItem.js"></script>
   <script type="text/javascript" src="templates/RecipeItem.js"></script>
   <script type="text/javascript" src="templates/ProfilItem.js"></script>
   <script type="text/javascript" src="templates/MyRecipesItem.js"></script>
+  <script type="text/javascript" src="templates/LoginOverlayItem.js"></script>
+  <script type="text/javascript" src="templates/RegistrationOverlayItem.js"></script>
 
 <script type="text/html" id="homeScreen-tpl">
     <div id="<%= id %>">
-      <!--<div id="loginContainer"></div>
-      <x-dialogLogin class="dialog">
-      <h2>Login</h2>
-      <paper-input label="E-mail" floatingLabel></paper-input>
-      <paper-input label="Passwort" floatingLabel></paper-input><br />
-      <paper-button class="colored dialogButton" label="Ohne Login" id="withoutLoginButton" core-overlay-toggle></paper-button>
-      <paper-button class="colored dialogButton" label="Ok" id="loginButton" core-overlay-toggle></paper-button><br />
-      <paper-button class="colored dialogButton" label="Registrieren" id="registrationButton" core-overlay-toggle></paper-button>
-    </x-dialogLogin>-->
 
       <paper-fab icon="search" id="preselectionSearchButton"></paper-fab>
       <div id="sliderContainer">
@@ -158,7 +146,6 @@
     </div>
 
     <div class="preselectionKindContainer" id="preselectionKindOfMenuContainer">
-    <!--<div class="preselectionHeading">Menüart</div>-->
 
     <paper-icon-button class="preselectionLeftArrow" icon="chevron-left"></paper-icon-button>
     <div class="card leftCard">
@@ -180,7 +167,6 @@
     </div>
 
     <div class="preselectionKindContainer" id="preselectionNutritionConceptContainer">
-    <!--<div class="preselectionHeading">Ernährungskonzept</div>-->
 
     <paper-icon-button class="preselectionLeftArrow" icon="chevron-left"></paper-icon-button>
     <div class="card leftCard">
@@ -202,7 +188,6 @@
     </div>
 
     <div class="preselectionKindContainer" id="preselectionDurationContainer">
-    <!--<div class="preselectionHeading">Dauer</div>-->
 
     <paper-icon-button class="preselectionLeftArrow" icon="chevron-left"></paper-icon-button>
     <div class="card leftCard">
@@ -348,95 +333,6 @@
 </core-drawer-panel>
 
 
-      <!--<div class="left leftSide">
-      <h4>Current Selection</h4>
-      <ul id="selection"></ul>
-      
-
-      <h4>Menüart</h4>
-
-      <core-selector id="kindOfMenuSelector" selected="0">
-        <div class="kindOfMenuContainer" id="starterOption">
-          <img src="res/images/Kaffetasse.png" />
-          <div class="selectionMark">
-            <div class="iconDiv"></div>
-            <core-icon icon="check"></core-icon>
-          </div>
-          <div>Frühstück</div>
-        </div>
-        <div class="kindOfMenuContainer" id="lunchOption">
-          <img src="res/images/Kochtopf.png" />
-          <div>Mittagessen</div>
-        </div>
-      </core-selector>
-
-
-      <h4>Ernährungskonzept</h4>
-
-      <core-dropdown valueattr="label" selected="0" id="nutritionConceptSelect">
-          <core-item label="keines"></core-item>
-          <core-item label="vegetarisch" id="vegetarian"></core-item>
-          <core-item label="vegan" id="vegan"></core-item>
-          <core-item label="alkoholfrei" id="antialc"></core-item>
-        </core-dropdown>
-
-
-      <h4>Dauer</h4>
-      <paper-slider pin value="0" max="120" id="durationSelect" editable></paper-slider>
-      
-      <h4>Schwierigkeitsgrad</h4>
-      <core-selector id="levelOfDifficultySelector" selected="0">
-        <div class="levelOfDifficulty" id="egal"></div>
-        <div class="levelOfDifficulty" id="leicht"></div>
-        <div class="levelOfDifficulty" id="mittel"></div>
-        <div class="levelOfDifficulty" id="schwer"></div>
-      </core-selector>
-
-        <div class="levelOfDifficultyText">egal</div>
-        <div class="levelOfDifficultyText">leicht</div>
-        <div class="levelOfDifficultyText">mittel</div>
-        <div class="levelOfDifficultyText">schwer</div>
-     
-      <h4>Zutaten</h4>
-
-      <div id="addField">
-        <core-field>
-          <input placeholder="neue Zutat..." type="text" autocomplete="off" flex>
-          <paper-icon-button icon="add" class="addButton"></paper-icon-button>
-        </core-field>
-        <paper-shadow z="1"></paper-shadow>
-      </div>
-    </div>-->
-  
-
-  <!--<div class="right">
-      <div id="countSelectContainer">
-      <span>Anzahl</span>
-      <core-dropdown valueattr="label" selected="1" id="countSelect">
-          <core-item label="5"></core-item>
-          <core-item label="10"></core-item>
-          <core-item label="15"></core-item>
-        </core-dropdown>
-      </div>
-
-      <div id="sortSelectContainer">
-        <span>Sortierung</span>
-        <core-dropdown valueattr="label" selected="0" id="sortSelect">
-          <core-item label="Relevanz"></core-item>
-          <core-item label="Dauer"></core-item>
-          <core-item label="Schwierigkeit"></core-item>
-        </core-dropdown>
-      </div>
-
-      <div id="result">
-        <div id="docs"></div>
-        <div id="navigation">
-          <ul id="pager" class="pagination"></ul>
-          <div id="pager-header"></div>
-        </div>
-      </div>
-    </div>
-    </div>-->
     </div>
   </script>
 
@@ -541,13 +437,37 @@
         <paper-shadow z="1"></paper-shadow>
       </div>
 
-
       </div>
-
 
     </div>
   </script>
 
+
+  <script type="text/html" id="loginOverlay-tpl">
+    <div id="<%= id %>">
+      <div class="overlayBackground"></div>
+      <div id="loginOverlayContainer">
+          <h2>Login</h2>
+          <paper-input label="Username" id="loginUsernameInput" floatingLabel></paper-input>
+          <paper-input label="Passwort" id="loginPasswordInput" type="password" floatingLabel></paper-input><br />
+          <p id="loginErrorMessage">falscher Nutzername oder falsches Passwort</p>
+          <paper-button class="colored dialogButton" label="Ok" id="loginButton"></paper-button>
+          <paper-button class="colored dialogButton" label="ohne Login" id="withoutLoginButton"></paper-button>
+          <paper-button class="colored dialogButton" label="Registrieren" id="toRegistrationViewButton"></paper-button>
+      </div>
+    </div>
+  </script>
+
+  <script type="text/html" id="registrationOverlay-tpl">
+    <div id="<%= id %>">
+      <h2>Registrieren</h2>
+      <paper-input label="Username" id="registrationUsernameInput" floatingLabel></paper-input>
+      <paper-input label="Passwort" id="registrationPasswordInput" type="password" floatingLabel></paper-input>
+      <paper-input label="Passwort bestätigen" id="registrationPasswordConfirmInput" type="password" floatingLabel></paper-input><br />
+      <p id="loginErrorMessage">Passwort stimmt nicht überein</p>
+      <paper-button class="colored dialogButton" label="Ok" id="registrationButton"></paper-button>
+    </div>
+  </script>
 
   <script type="text/html" id="myRecipes-tpl">
     <div id="<%= id %>">

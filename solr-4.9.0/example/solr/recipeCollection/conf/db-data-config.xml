@@ -18,17 +18,15 @@
             <field column="TIMETOCOOK" name="timetocook" />
             <field column="TIMETOREST" name="timetorest" />
             <field column="SOURCE" name="url" template="http://www.chefkoch.de/rezepte/${item.Recipe_ID}"/>
-            <!-- for ingredientnames as in fr_ingredients -->
+            <!-- for ingredientnames as in fr_ingredients 
             <entity name="ingredients" query="select b.name from fr_ingredients as b, showrecipes as c where c.Recipe_ID = '${item.Recipe_ID}' AND c.Recipe_ID = b.Recipe_ID">
                 <field column="name" name="ingredientname" />
             </entity>  
-            
+            -->
             <!-- for clean ingredient names without any noise(like verbs, adjectives etc)-->
-            <!--
             <entity name="ingredients" query="select a.name from fr_cleaningredientnames as a, fr_ingredients as b, showrecipes as c where c.Recipe_ID = '${item.Recipe_ID}' AND c.Recipe_ID = b.Recipe_ID AND b.CleanNames_ID = a.id">
                 <field column="name" name="ingredientname" />
             </entity>         
-            -->
         </entity>
     </document>
 </dataConfig>

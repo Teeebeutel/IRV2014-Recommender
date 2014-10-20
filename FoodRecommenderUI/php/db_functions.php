@@ -33,6 +33,30 @@ class DB_Functions {
         return preg_replace("/\\\\u([a-f0-9]{4})/e", "iconv('UCS-4LE','UTF-8',pack('V', hexdec('U$1')))", $struct);
     }
 
+    /*saves username and password of a new registered user*/
+    public function saveNewUser($username, $password) {
+        $cryptedPassword = crypt($password, "§4$q&%weq35gd(g!");
+        $userResult = mysql_query("INSERT INTO USER (User_Name, Password) VALUES ('$username', '$cryptedPassword');");
+        $userId = mysql_insert_id();
+        $_SESSION['currentUserId'] = $userId; 
+        echo $_SESSION['currentUserId'];
+    }
+
+    /*checks if the username and the corresponding password is existing in the database*/
+    public function checkUser($username, $password) {
+        $cryptedPassword = crypt($password, "§4$q&%weq35gd(g!");
+        $userResult = mysql_query("SELECT * FROM USER WHERE User_Name='$username' AND Password='$cryptedPassword';");
+        if (mysql_num_rows($userResult) > 0) {
+            $userRow = mysql_fetch_array($userResult); 
+            if($userRow['Password'] == $cryptedPassword) {
+                $_SESSION['currentUserId'] = $userRow['User_ID'];
+                echo "right";
+            } else echo "wrong";
+        } else {
+            echo "wrong"; 
+        }
+    }
+
 
 }
 

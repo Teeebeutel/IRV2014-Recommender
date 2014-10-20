@@ -34,9 +34,75 @@ body {
   padding: 20px;
 }
 
-#loginContainer {
+/*#loginContainer {
   width: 30px; 
   height: 30px;
+}*/
+
+#registrationOverlayContainer {
+  height: 450px;
+}
+
+#loginOverlayContainer h2, #registrationOverlayContainer h2 {
+  margin-bottom: 30px;
+}
+
+#loginOverlayContainer, #registrationOverlayContainer {
+  width: 400px; 
+  height: 400px;
+  background-color: #fff;
+  border-radius: 2px; 
+  padding: 30px;
+  border-radius: 2px;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  z-index: 3;
+}
+
+.dialogButton {
+  position: absolute;
+  bottom: 30px;
+}
+
+#loginButton, #registrationButton {
+  right: 30px; 
+}
+
+#withoutLoginButton {
+  left: 180px;
+}
+
+#loginErrorMessage {
+  color: red;
+  display: none; 
+  text-align: center; 
+}
+
+#registrationOverlayContainer {
+  height: 450px;
+}
+
+#loginOverlayContainer h2, #registrationOverlayContainer h2 {
+  margin-bottom: 30px;
+}
+
+#loginOverlayContainer paper-input, #registrationOverlayContainer paper-input {
+  width: 100%;
+}
+
+.overlayBackground {
+  position: absolute; 
+  background-color: #000;
+  height: 100%;
+  opacity: 0.6; 
+  top: 0; left: 0; bottom: 0; right: 0;
+  z-index: 2;
+}
+
+.avoidScrolling {
+  height: 100%;
+  overflow: hidden;
 }
 
 .core-opened /deep/ .loginDescription {

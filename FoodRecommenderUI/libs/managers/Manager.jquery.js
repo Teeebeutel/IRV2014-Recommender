@@ -16,7 +16,6 @@ AjaxSolr.Manager = AjaxSolr.AbstractManager.extend(
   /** @lends AjaxSolr.Manager.prototype */
   {
   executeRequest: function (servlet, string, handler, errorHandler) {
-
     var self = this,
         options = {dataType: 'json'};
     string = string || this.store.string();
@@ -33,7 +32,6 @@ AjaxSolr.Manager = AjaxSolr.AbstractManager.extend(
     }
     else {
       options.url = this.solrUrl + servlet + '?' + string + '&wt=json&json.wrf=?';
-      console.log(options.url);
     }
     jQuery.ajax(options).done(handler).fail(errorHandler);
   }

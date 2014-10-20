@@ -1,11 +1,13 @@
 var Manager, ResultWidget, ImageManager;
+var UserHandler, LoginView;
 var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItems;
 
 (function ($) {
 
   $(function () {
+    UserHandler.init();
+    //LoginView.init();
     Manager = new AjaxSolr.Manager({
-
       solrUrl: 'http://localhost:8983/solr/' //recipeCollection/'
       // If you are using a local Solr instance with a "reuters" core, use:
       // solrUrl: 'http://localhost:8983/solr/reuters/'
@@ -80,23 +82,8 @@ var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItem
     for (var name in params) {
       Manager.store.addByValue(name, params[name]);
     }
+    
     Manager.doRequest(0, 'recipeCollection/select');
-
-    Polymer('x-dialogLogin', {
-          toggle: function() {
-            this.$.overlay.toggle();
-          }
-      });
-    var el = document.createElement('div');
-    el.innerHTML = '\
-        <polymer-element name="x-dialogLogin">\
-          <template>\
-              <core-overlay id="overlay" autoCloseDisabled="true" layered backdrop opened>\
-              <content></content>\
-              </core-overlay>\
-          </template>\
-        </polymer-element>';
-      document.getElementById('coreToolbar').appendChild(el);
 
   });
   
@@ -130,7 +117,11 @@ var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItem
     $('#fastAdviceMenuItem').on('click', onFastAdviceMenuItemClick); 
     $('#myRecipesMenuItem').on('click', onMyRecipesMenuItemClick); 
     $('#profilMenuItem').on('click', onProfilMenuItemClick); 
+    LoginView.init();
+  };
 
+  addUserPreferences = function (Manager) {
+    UserHandler.addPreferences(Manager);
   };
 
   onHomeMenuItemClick = function(event) {
@@ -141,6 +132,7 @@ var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItem
   onFastAdviceMenuItemClick = function(event) {
     emptyContent();
     addAdvancedSearchItem(-1, 0, 0, 0);
+    Manager.store.remove('fq');
   };
 
   onMyRecipesMenuItemClick = function(event) {
@@ -186,21 +178,6 @@ var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItem
     $(window).on('resize', adaptImgSliderHeight);
     $('#menuButton').hide();
 
-    /*Polymer('x-dialogLogin', {
-          toggle: function() {
-            this.$.overlay.toggle();
-          }
-      });
-    var el = document.createElement('div');
-    el.innerHTML = '\
-        <polymer-element name="x-dialogLogin">\
-          <template>\
-              <core-overlay id="overlay" autoCloseDisabled="true" layered backdrop opened>\
-              <content></content>\
-              </core-overlay>\
-          </template>\
-        </polymer-element>';
-      document.getElementById('homeScreenItem').appendChild(el);*/
   };
 
   adaptImgSliderHeight = function(event) {
@@ -275,6 +252,8 @@ var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItem
   onPreselectionSearchButtonClick = function(event) {
     Manager.store.remove('fq');
     Manager.store.addByValue('q', '*:*');
+    /*TODO: add "insert preferences*/
+    addUserPreferences(Manager);
     $('.selectedCard').each(function() {
       var id = $(this).find('img').attr('id');
       if(id != undefined) {
@@ -315,7 +294,7 @@ var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItem
   getImgNr = function(image, object) {
     var nr = 0;
     for (var i = 0; i < object.length; i++) {
-      console.log(image, object[i].key);
+      //console.log(image, object[i].key);
       if(object[i].key == image) {
         nr = i;
       }
@@ -378,7 +357,7 @@ var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItem
       });
       $.get("php/functions.php?command=getRecipes").done(
         function(data) {
-          var json = data; 
+          var json = data;
           var object = jQuery.parseJSON(json);
           for (var i = 0; i < object.length; i++) {
             ResultWidget.addRecipeItem(object[i].id, object[i].recipeId, object[i].title, object[i].instructions, object[i].timeToWork, object[i].vegetarian, object[i].vegan, object[i].antialc, '#myRecipesItem', object[i].imgSrc);
