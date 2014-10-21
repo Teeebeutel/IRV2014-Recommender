@@ -376,14 +376,16 @@ var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItem
 
   addProfilItem = function() {
       makeProfilItem({
-        id: "profilItem"
+        id: "profilItem", 
+        username: "Username"
       });
       $('#menuButton').hide();
   };
 
   makeProfilItem = function(options) {
       var item = ProfilItem().init({
-        id: options.id
+        id: options.id,
+        username: options.username
       });
       var $el = item.render(); 
       $('#content').append($el);

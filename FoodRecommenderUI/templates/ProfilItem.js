@@ -2,10 +2,12 @@ ProfilItem = function() {
 	var that  = {}, 
 	template  = null, 
 	id = null, 
+	username = null, 
 
 	init = function(options) {
 		console.log("hi");
 		id = options.id; 
+		username = options.username; 
 
 		template = $('#profil-tpl').html(); 
 
@@ -14,7 +16,8 @@ ProfilItem = function() {
 
 	render = function() {
 		var tpl = _.template(template, {
-			id: id
+			id: id, 
+			username: username
 		}); 
 
 		return $(tpl); 

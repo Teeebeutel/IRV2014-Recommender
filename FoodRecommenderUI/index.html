@@ -288,7 +288,7 @@
      
       <h4>Zutaten</h4>
 
-      <div id="addField">
+      <div id="addField" class="addInput">
         <core-field>
           <input placeholder="neue Zutat..." type="text" autocomplete="off" flex>
           <paper-icon-button icon="add" class="addButton"></paper-icon-button>
@@ -358,15 +358,39 @@
   <script type="text/html" id="profil-tpl">
     <div id="<%= id %>">
       <div class="center">
+
+      <div class="ingredientsLikes">
+        <h4>Zutaten, die ich mag:</h4>
+        <div class="addInput" id="likeAddInput">
+          <core-field>
+            <input placeholder="Zutat" type="text" autocomplete="off" flex>
+            <paper-icon-button icon="add" class="addButton"></paper-icon-button>
+          </core-field>
+        </div>
+        <div id="likeBox" class="ingredientsBox">
+        </div>
+        <h4>Zutaten, die ich nicht mag:</h4>
+        <div class="addInput" id="dislikeAddInput">
+          <core-field>
+            <input placeholder="Zutat" type="text" autocomplete="off" flex>
+            <paper-icon-button icon="add" class="addButton"></paper-icon-button>
+          </core-field>
+        </div>
+        <div id="dislikeBox" class="ingredientsBox">
+        </div>
+        <paper-shadow z="1"></paper-shadow>
+      </div>
+
+
       <div class="profilInformation">
         <div>
           <div id="cathegories">
-            <p>Name</p><p>Email</p>
+            <p>Username</p><p>Passwort</p>
           </div>
           <div id="personalInformation">
-            <p>Max Mustermann</p><p>max@mustermann.de</p>
+            <p><%= username %></p><p>Passwort</p>
           </div>
-        </div>
+        </div><br class="clear" />
         <paper-button class="colored dialogButton" label="Bearbeiten"></paper-button>
         <paper-shadow z="1"></paper-shadow>
       </div>

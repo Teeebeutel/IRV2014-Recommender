@@ -34,11 +34,6 @@ body {
   padding: 20px;
 }
 
-/*#loginContainer {
-  width: 30px; 
-  height: 30px;
-}*/
-
 #registrationOverlayContainer {
   height: 450px;
 }
@@ -129,12 +124,9 @@ body {
 
 #background {
   position: absolute;
-  /*height: 760px;*/
   height: 780px;
   width:180px;
   background-color: #795548;
-  /*left: 408px;*/
-  /*left: 40%;*/
   margin-left: auto;
   margin-right: auto;
   left: 0;
@@ -144,12 +136,12 @@ body {
 
 .preselectionKindContainer {
   text-align: center;
-  /*display: inline-block;*/
 }
 
 .card, .preselectionLeftArrow, .preselectionRightArrow {
   display: inline-block;
 }
+
 #kindOfMenuSelector {
   border-bottom: none;
   list-style: none;
@@ -182,7 +174,6 @@ body {
   height: 100px; 
   background-color: #fff;
   border-radius: 2px;
-  /*float: left;*/
   margin: 20px;
   padding: 20px;
 }
@@ -193,13 +184,6 @@ body {
 .card img {
   width: 100%;
 }
-
-/*.uprightFormat {
-  height: 100%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}*/
 
 .selectedCard {
   width: 150px; 
@@ -236,14 +220,8 @@ paper-tab /deep/ #ink {
 
 #menuButton {
   color: #fff;
-  /*position: absolute;
-  left: 10; 
-  top: 10;*/
 }
 
-/*core-drawer-panel:not([narrow]) #menuButton {
-  display: none;
-}*/
 
 img {
   border: none;
@@ -262,13 +240,10 @@ a:hover {
   margin: 0px auto;
 }
 
-
-
 .right {
   width: 628px;
   margin: 20px auto;
   padding: 10px 0px 10px 0px;
-  /*border-left: 1px solid #aaa;*/
   text-align: justify;
 }
 
@@ -288,6 +263,7 @@ a:hover {
 #pager-header {
   display: inline;
 }
+
 #pager li,
 .links li {
   list-style-type: none;
@@ -297,6 +273,7 @@ a:hover {
 #selection {
   padding: 10px 15px 0;
 }
+
 #selection li {
   list-style-type: none;
 }
@@ -333,7 +310,6 @@ a:hover {
   top: 0px;
   height: 100%;
 }
-
 
 #imgContainer {
   width: 480px;
@@ -383,24 +359,38 @@ paper-slider::shadow #sliderKnobInner::before,
 paper-slider::shadow #sliderBar::shadow #activeProgress {
   background-color: #795548;
 }
+.ingredientsBox {
+  width: 100%;
+  min-height: 40px;
+  border: 2px solid #ccc; /*#5a5a5a;*/
+  margin: 20px 0px;
+}
 
-/*.preselectionLeftArrow, .preselectionRightArrow {
-  float: left;
-}*/
-#addField {
+#likeBox {
+  margin-bottom: 40px;
+}
+
+.addInput {
   background-color: #fff;
   margin-right: 10px;
 }
 
-#addField input {
+#likeAddInput, #dislikeAddInput {
+  border: 2px solid #ccc;
+  margin: 0px;
+}
+
+.addInput input {
   margin-left: 10px;
 }
 .addButton {
   border-left: 2px solid #ccc;
 }
+
 core-dropdown /deep/ core-item {
   padding: 0px 10px 0px 10px;
 }
+
 .left {
   float: left;
 }
@@ -426,15 +416,11 @@ input[type="range"] {
 [drawer] {
   background-color: #fff;
   box-shadow: 1px 0 1px rgba(0, 0, 0, 0.1);
- /* width: 320px !important;*/
 }
 
 #menuButton {
   margin-top: 25px;
 }
-/*core-drawer-panel:not([narrow]) #menuButton {
-  display: none;
-}*/
 
 .menuTitle, paper-radio-button, .preselectionHeading {
   float: left;
@@ -449,7 +435,6 @@ input[type="range"] {
 
 #preselectionContainer {
   margin: 0px auto;
-  /*padding: 0px 0px 20px 20px;*/
 }
 
 #preselectionContainer paper-icon-button, .preselectionHeading {
@@ -466,11 +451,6 @@ input[type="range"] {
 
 core-drawer-panel /deep/ #dropShadow {
   display: none;
-}
-#sliderContainer slider-component {
-  /*overflow: hidden;*/
-  /*width: 1000px; */
-  
 }
 
 #sliderContainer {
@@ -533,7 +513,8 @@ core-selector paper-icon-button:not([active])::shadow core-icon {
   top: -30px;
   left: -30px;
 }
-#calendar {
+
+/*#calendar {
   width: 160px;
 }
 
@@ -552,7 +533,7 @@ core-selector paper-icon-button:not([active])::shadow core-icon {
 
 .tagcloud_item:hover {
   color: #f00;
-}
+}*/
 
 .white {
   background-color: white;
@@ -596,18 +577,17 @@ slider-component::shadow .accent:hover {
 }
 
 #content {
-  /*width: 1000px;*/
   height: 100%;
- /* width: 80%;*/
   margin: 0px auto !important; 
-  /*position: relative;*/
   padding-top: 20px;
 }
 
 .center {
-  width: 300px;
-  margin: 20px auto; 
-  position: relative;
+  margin: 220px auto; 
+  width: 80%; 
+  height: 80%;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
 }
 
 #personalInformation {
@@ -655,12 +635,42 @@ paper-checkbox /deep/ #ink {
   padding-left: 60px;
 }
 
-.profilInformation {
+.profilInformation, .ingredientsLikes {
   padding: 20px;
-  width: 300px;
   float: left;
   margin-bottom: 20px;
+  margin-right: 20px;
   background-color: #fff;
+}
+
+@media (max-width: 750px) {
+  .ingredientsLikes, .profilInformation {
+    width: 100%;
+  }
+}
+
+@media (min-width: 750px) and (max-width: 1000px) {
+
+  .ingredientsLikes {
+    width: 100%;
+  }
+
+  .profilInformation {
+    width: 46%;
+  }
+
+}
+
+@media (min-width: 1000px) {
+
+  .ingredientsLikes {
+    width: 60%;
+  }
+
+  .profilInformation {
+    width: 35%;
+  }
+
 }
 
 .profilInformation p {

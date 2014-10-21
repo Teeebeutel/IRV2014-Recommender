@@ -16,14 +16,15 @@ class DB_Functions {
     }
 
     public function saveRecipe($id, $recipeId, $title, $instructions, $timeToWork, $vegetarian, $vegan, $antialc, $imgSrc) {
-        $result = mysql_query("INSERT INTO FAVOURITE_RECIPE(ID, RECIPE_ID, USER_ID, TITLE, INSTRUCTIONS, TIME_TO_WORK, VEGAN, VEGETARIAN, ANTIALC, IMG_SRC) VALUES('$id', '$recipeId', 1, '$title', '$instructions', '$timeToWork', '$vegan', '$vegetarian', '$antialc', '$imgSrc');");
+        $userId = $_SESSION['currentUserId']; 
+        $result = mysql_query("INSERT INTO FAVOURITE_RECIPE(ID, Recipe_ID, Title, Instructions, Time_To_Work, Vegan, Vegetarian, Antialc, Img_Src, User_ID) VALUES('$id', '$recipeId', '$title', '$instructions', '$timeToWork', '$vegan', '$vegetarian', '$antialc', '$imgSrc', '$userId');");
     }
 
     public function getRecipes() {
         $result = mysql_query("SELECT * FROM FAVOURITE_RECIPE;") or die(mysql_error());
         $recipes = array();
         while($row = mysql_fetch_array($result)) {
-            $recipes[] = array("id"=>$row['ID'], "recipeId"=>$row['RECIPE_ID'], "userId"=>$row['USER_ID'], "title"=>$row['TITLE'], "instructions"=>$row['INSTRUCTIONS'], "timeToWork"=>$row['TIME_TO_WORK'], "vegan"=>$row['VEGAN'], "vegetarian"=>$row['VEGETARIAN'], "antialc"=>$row['ANTIALC'], "imgSrc"=>$row['IMG_SRC']);
+            $recipes[] = array("id"=>$row['ID'], "recipeId"=>$row['Recipe_ID'], "userId"=>$row['User_ID'], "title"=>$row['Title'], "instructions"=>$row['Instructions'], "timeToWork"=>$row['Time_To_Work'], "vegan"=>$row['Vegan'], "vegetarian"=>$row['Vegetarian'], "antialc"=>$row['Antialc'], "imgSrc"=>$row['Img_Src']);
         }
         echo $this->jsonRemoveUnicodeSequences($recipes);
     }
