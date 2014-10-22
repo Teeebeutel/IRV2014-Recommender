@@ -6,7 +6,6 @@ var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItem
 
   $(function () {
     UserHandler.init();
-    //LoginView.init();
     Manager = new AjaxSolr.Manager({
       solrUrl: 'http://localhost:8983/solr/' //recipeCollection/'
       // If you are using a local Solr instance with a "reuters" core, use:
@@ -17,6 +16,12 @@ var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItem
     ImageManager = new AjaxSolr.Manager({
       solrUrl: 'http://localhost:8983/solr/' 
     });
+    LikeManager = new AjaxSolr.Manager({
+      solrUrl: 'http://localhost:8983/solr/' 
+    }); 
+    DislikeManager = new AjaxSolr.Manager({
+      solrUrl: 'http://localhost:8983/solr/' 
+    }); 
     ResultWidget = new AjaxSolr.ResultWidget();
     initUI();
 
@@ -59,11 +64,6 @@ var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItem
       target: '#durationSelect',
       field: 'timetowork'
     }));
-    /*Manager.addWidget(new AjaxSolr.AddIngredientsWidget({
-      id: 'addField',
-      target: '#addField',
-      field: 'type'
-    }));*/
     Manager.addWidget(new AjaxSolr.LevelOfDifficultyWidget({
       id: 'levelOfDifficultySelector',
       target: '#levelOfDifficultySelector',
@@ -112,11 +112,16 @@ var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItem
           {key: "res/images/schwer.png", value: "requiredSkill:75"}];
 
     addHomeScreenItem();
-
     $('#homeMenuItem').on('click', onHomeMenuItemClick); 
     $('#fastAdviceMenuItem').on('click', onFastAdviceMenuItemClick); 
     $('#myRecipesMenuItem').on('click', onMyRecipesMenuItemClick); 
     $('#profilMenuItem').on('click', onProfilMenuItemClick); 
+
+    /*this is for the page to be scrolled to the top on page refresh*/
+    $(window).on('beforeunload', function() {
+      $(window).scrollTop(0);
+    });
+
     LoginView.init();
   };
 
@@ -142,7 +147,8 @@ var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItem
 
   onProfilMenuItemClick = function(event) {
     emptyContent();
-    addProfilItem();
+    getProfilInformation();
+    //addProfilItem();
   };
 
   addHomeScreenItem = function() {
@@ -160,7 +166,6 @@ var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItem
     var imageManagerParams = {
       facet: true,
       'facet.field': ['userRating'],
-      //'facet.limit': 20,
       'sort': 'userRating desc',
       'facet.mincount': 1,
       'json.nl': 'map', 
@@ -294,7 +299,6 @@ var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItem
   getImgNr = function(image, object) {
     var nr = 0;
     for (var i = 0; i < object.length; i++) {
-      //console.log(image, object[i].key);
       if(object[i].key == image) {
         nr = i;
       }
@@ -374,12 +378,46 @@ var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItem
       $('#content').append($el);
   };
 
-  addProfilItem = function() {
+  getProfilInformation = function() {
+    $.get("php/functions.php?command=getProfilData").done(
+      function(data) {
+        var object = jQuery.parseJSON(data); 
+        console.log(object['userName']); 
+        console.log(object['likes']);
+        console.log(object['dislikes']);
+        addProfilItem(object['userName'], object['likes'], object['dislikes']);
+      });
+  };
+
+  addProfilItem = function(username, likes, dislikes) {
       makeProfilItem({
         id: "profilItem", 
-        username: "Username"
+        username: username
       });
       $('#menuButton').hide();
+
+      LikeManager.addWidget(new AjaxSolr.AutocompleteWidget2({
+        id: 'likeAddInput',
+        target: '#likeAddInput',
+        fields: ['ingredientname']
+      }));
+      DislikeManager.addWidget(new AjaxSolr.AutocompleteWidget2({
+        id: 'dislikeAddInput',
+        target: '#dislikeAddInput',
+        fields: ['ingredientname']
+      }));
+      LikeManager.addWidget(new AjaxSolr.IngredientsListWidget({
+        id: 'ingredientsLikes',
+        target: '#likeBox', 
+        saved: likes
+      }));
+      DislikeManager.addWidget(new AjaxSolr.IngredientsListWidget({
+        id: 'ingredientsDislikes',
+        target: '#dislikeBox', 
+        saved: dislikes
+      }));
+      LikeManager.doRequest(0, 'recipeCollection/select');
+      DislikeManager.doRequest(0, 'recipeCollection/select');
   };
 
   makeProfilItem = function(options) {

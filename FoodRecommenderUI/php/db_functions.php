@@ -1,5 +1,8 @@
 <?php
 
+session_start();
+
+
 class DB_Functions {
 
     private $db;
@@ -15,9 +18,34 @@ class DB_Functions {
         
     }
 
+    function jsonRemoveUnicodeSequences($struct) {
+        $struct = preg_replace('/(\\\\n|\\\\t)/', ' ', json_encode($struct));
+        return preg_replace("/\\\\u([a-f0-9]{4})/e", "iconv('UCS-4LE','UTF-8',pack('V', hexdec('U$1')))", $struct);
+    }
+
     public function saveRecipe($id, $recipeId, $title, $instructions, $timeToWork, $vegetarian, $vegan, $antialc, $imgSrc) {
         $userId = $_SESSION['currentUserId']; 
         $result = mysql_query("INSERT INTO FAVOURITE_RECIPE(ID, Recipe_ID, Title, Instructions, Time_To_Work, Vegan, Vegetarian, Antialc, Img_Src, User_ID) VALUES('$id', '$recipeId', '$title', '$instructions', '$timeToWork', '$vegan', '$vegetarian', '$antialc', '$imgSrc', '$userId');");
+    }
+
+    public function getProfilData() {
+        $userId = $_SESSION['currentUserId']; 
+        $likes = array();
+        $dislikes = array();
+        $userResult = mysql_query("SELECT User_Name FROM USER WHERE User_ID='$userId';");
+        $ingredientsLikesResult = mysql_query("SELECT Ingredient_Name FROM INGREDIENTS_LIKES WHERE User_ID='$userId';");
+        $ingredientsDislikesResult = mysql_query("SELECT Ingredient_Name FROM INGREDIENTS_DISLIKES WHERE User_ID='$userId';");
+
+        $userRow = mysql_fetch_array($userResult); 
+        $userName = $userRow['User_Name']; 
+        while($likesRow = mysql_fetch_array($ingredientsLikesResult)) {
+            $likes[] = $likesRow['Ingredient_Name'];
+        }
+        while($dislikesRow = mysql_fetch_array($ingredientsDislikesResult)) {
+            $dislikes[] = $dislikesRow['Ingredient_Name'];
+        }
+        $result = array("userName"=>$userName, "likes"=>$likes, "dislikes"=>$dislikes);
+        echo json_encode($result); 
     }
 
     public function getRecipes() {
@@ -29,9 +57,21 @@ class DB_Functions {
         echo $this->jsonRemoveUnicodeSequences($recipes);
     }
 
-    function jsonRemoveUnicodeSequences($struct) {
-        $struct = preg_replace('/(\\\\n|\\\\t)/', ' ', json_encode($struct));
-        return preg_replace("/\\\\u([a-f0-9]{4})/e", "iconv('UCS-4LE','UTF-8',pack('V', hexdec('U$1')))", $struct);
+    public function saveIngredient($value, $kind) {
+        $userId = $_SESSION['currentUserId']; 
+        if($kind == "ingredientsLikes") {
+            $ingredientResult = mysql_query("INSERT INTO INGREDIENTS_LIKES (User_ID, Ingredient_Name) VALUES ('$userId', '$value');");
+        } else if($kind == "ingredientsDislikes") {
+            $ingredientResult = mysql_query("INSERT INTO INGREDIENTS_DISLIKES (User_ID, Ingredient_Name) VALUES ('$userId', '$value');");
+        }
+    }
+
+    public function deleteIngredient($value, $kind) {
+        if($kind == "ingredientsLikes") {
+            $ingredientResult = mysql_query("DELETE FROM INGREDIENTS_LIKES WHERE Ingredient_Name = '$value';");
+        } else if($kind == "ingredientsDislikes") {
+            $ingredientResult = mysql_query("DELETE FROM INGREDIENTS_DISLIKES WHERE Ingredient_Name = '$value';");
+        }
     }
 
     /*saves username and password of a new registered user*/

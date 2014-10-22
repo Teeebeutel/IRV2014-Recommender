@@ -359,11 +359,13 @@ paper-slider::shadow #sliderKnobInner::before,
 paper-slider::shadow #sliderBar::shadow #activeProgress {
   background-color: #795548;
 }
+
 .ingredientsBox {
   width: 100%;
   min-height: 40px;
   border: 2px solid #ccc; /*#5a5a5a;*/
   margin: 20px 0px;
+  padding: 10px 0px 0px 10px;
 }
 
 #likeBox {
@@ -582,6 +584,31 @@ slider-component::shadow .accent:hover {
   padding-top: 20px;
 }
 
+.centerInformation {
+  margin: 0px auto !important; 
+  height: 100%;
+}
+
+.facetItem {
+  color: #fff; 
+  background-color: #795548;
+  margin: 0px 10px 10px 0px;
+  padding: 10px 20px 10px 20px;
+  border-radius: 2px; 
+  display: inline-block;
+  position: relative; 
+}
+
+.deleteButton {
+  display: none; 
+  width: 10px; 
+  height: 10px; 
+  position: absolute; 
+  right: 0;
+  top: 0;
+  cursor: pointer;
+}
+
 .center {
   margin: 220px auto; 
   width: 80%; 
@@ -593,6 +620,11 @@ slider-component::shadow .accent:hover {
 #personalInformation {
     font-weight: bold;
     font-size: 10pt;
+    float: left;
+}
+
+#cathegories {
+  float: left;
 }
 
 .dialogButton {
@@ -682,7 +714,6 @@ paper-checkbox /deep/ #ink {
   
 .profilInformation div {
     color: black;
-    float: left;
 }
 
 .cBContainer {

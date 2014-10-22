@@ -18,3 +18,15 @@ CREATE TABLE USER (
 	Password VARCHAR(30), 
 	PRIMARY KEY (User_ID)
 ); 
+
+CREATE TABLE INGREDIENTS_LIKES (
+	User_ID BIGINT NOT NULL, 
+	Ingredient_Name VARCHAR(100), 
+	PRIMARY KEY (User_ID, Ingredient_Name)
+); 
+
+CREATE TABLE INGREDIENTS_DISLIKES (
+	User_ID BIGINT NOT NULL, 
+	Ingredient_Name VARCHAR(100), 
+	PRIMARY KEY (User_ID, Ingredient_Name)
+); 

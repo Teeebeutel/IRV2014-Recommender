@@ -51,8 +51,6 @@ AjaxSolr.AutocompleteWidget = AjaxSolr.AbstractTextWidget.extend({
       if (value && self.set(value)) {
         self.emptyContent();
         self.addAdvancedSearchItem();
-        //self.manager.store.get('q').val('*:*');
-        //self.manager.store.remove('fq');
         self.doRequest(0, 'recipeCollection/select');
         $('#levelOfDifficultySelector').prop('selected', 0);
         $('#nutritionConceptSelect').prop('selected', 0);
@@ -101,6 +99,13 @@ AjaxSolr.AutocompleteWidget = AjaxSolr.AbstractTextWidget.extend({
         }
       });
       
+      $(self.target).find('input').on('click', function() {
+          var input = $(self.target).find('input'); 
+          input.focus(); 
+          input.select(); 
+
+      });
+
       // This has lower priority so that requestSent is set.
       $(self.target).find('input').bind('keydown', function(e) {
         if (self.requestSent === false && e.which == 13) {

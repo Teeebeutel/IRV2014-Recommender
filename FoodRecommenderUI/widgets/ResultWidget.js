@@ -186,7 +186,7 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
     var antialc = event.data.antialc; 
     var imgSrc = $(event.currentTarget).closest('.resultElement').find('img').attr('src');
     var data = {id: id, recipeId: recipeId, title: title, instructions: instructions, timeToWork: timeToWork, vegetarian: vegetarian, vegan: vegan, antialc: antialc, imgSrc: imgSrc};
-    $(event.currentTarget).css('color', '#ffc107')
+    $(event.currentTarget).css('color', '#ffc107');
     $.get("php/functions.php?command=saveRecipe", data); 
 
   }, 

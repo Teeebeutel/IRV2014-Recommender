@@ -29,6 +29,7 @@ LoginView = (function() {
     var data = {username: username, password: password};
     $.get("php/functions.php?command=checkUser", data).done(
     function(data) {
+      console.log(data); 
       showErrorMessageOrHide(data);
     });
   }, 

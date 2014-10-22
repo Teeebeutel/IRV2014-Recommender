@@ -106,6 +106,7 @@
   <script type="text/javascript" src="widgets/AddIngredientsWidget.js"></script>
   <script type="text/javascript" src="widgets/LevelOfDifficultyWidget.js"></script>
   <script type="text/javascript" src="widgets/ImageSliderWidget.js"></script>
+  <script type="text/javascript" src="widgets/IngredientsListWidget.js"></script>
 
   <script type="text/javascript" src="js/LoginView.js"></script>
   <script type="text/javascript" src="templates/HomeScreenItem.js"></script>
@@ -115,6 +116,7 @@
   <script type="text/javascript" src="templates/MyRecipesItem.js"></script>
   <script type="text/javascript" src="templates/LoginOverlayItem.js"></script>
   <script type="text/javascript" src="templates/RegistrationOverlayItem.js"></script>
+  <script type="text/javascript" src="templates/FacetItem.js"></script>
 
 <script type="text/html" id="homeScreen-tpl">
     <div id="<%= id %>">
@@ -235,6 +237,12 @@
     </div>
   </script>
 
+  <script type="text/html" id="facet-tpl">
+    <div class="facetItem" id="<%= id %>">
+      <div class="ingredientName"><%= title %></div>
+      <div class="deleteButton">x</div>
+    </div>
+  </script>
 
   <script type="text/html" id="advancedSearch-tpl">
     <div id="<%= id %>">
@@ -383,7 +391,7 @@
 
 
       <div class="profilInformation">
-        <div>
+        <div class="centerInformation">
           <div id="cathegories">
             <p>Username</p><p>Passwort</p>
           </div>

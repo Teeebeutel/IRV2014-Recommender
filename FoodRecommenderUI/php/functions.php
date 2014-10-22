@@ -35,6 +35,19 @@
             $password = $_GET['password'];
             $db->checkUser($username, $password); 
             break; 
+        case 'saveIngredient': 
+        	$value = $_GET['value'];
+        	$kind = $_GET['kind'];
+        	$db->saveIngredient($value, $kind); 
+        	break;
+        case 'deleteIngredient': 
+        	$value = $_GET['value'];
+        	$kind = $_GET['kind'];
+        	$db->deleteIngredient($value, $kind);
+        	break; 
+        case 'getProfilData':
+        	$db->getProfilData();
+        	break;
 		default: 
 			return;
 	}
