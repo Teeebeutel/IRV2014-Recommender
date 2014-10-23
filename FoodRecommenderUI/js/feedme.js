@@ -1,6 +1,7 @@
 var Manager, ResultWidget, ImageManager;
-var UserHandler, LoginView;
+var UserHandler, LoginView, ProfilView;
 var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItems;
+var firstProfilLoad, userName; 
 
 (function ($) {
 
@@ -99,7 +100,7 @@ var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItem
           {key: "res/images/alkoholfrei.png", value: "antialc:true"}]; 
     DurationItems = [
           {key: "res/images/keines.png", value: "timetowork:none"}, 
-          {key: "res/images/0min.png", value: "timetowork:[* TO *]"}, 
+          {key: "res/images/0min.png", value: "timetowork:none"}, 
           {key: "res/images/15min.png", value: "timetowork:[1 TO 15]"}, 
           {key: "res/images/30min.png", value: "timetowork:[16 TO 30]"}, 
           {key: "res/images/45min.png", value: "timetowork:[31 TO 45]"}, 
@@ -123,6 +124,8 @@ var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItem
     });
 
     LoginView.init();
+    ProfilView.init();
+    firstProfilLoad = true; 
   };
 
   addUserPreferences = function (Manager) {
@@ -264,8 +267,7 @@ var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItem
       if(id != undefined) {
         if(id == "type:none" || id == "timetowork:none" || id == "requiredSkill:none") {
           Manager.store.removeByValue('fq', new RegExp('^'+ id.split(":")[0]+ ':'));
-        } 
-        else if(id == "vegetarian:none") {
+        } else if(id == "vegetarian:none") {
           Manager.store.removeByValue('fq', new RegExp('^vegetarian:'));
           Manager.store.removeByValue('fq', new RegExp('^vegan:'));
           Manager.store.removeByValue('fq', new RegExp('^antialc:'));
@@ -379,17 +381,21 @@ var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItem
   };
 
   getProfilInformation = function() {
-    $.get("php/functions.php?command=getProfilData").done(
+    if(firstProfilLoad == true) {
+      $.get("php/functions.php?command=getProfilData").done(
       function(data) {
         var object = jQuery.parseJSON(data); 
-        console.log(object['userName']); 
-        console.log(object['likes']);
-        console.log(object['dislikes']);
-        addProfilItem(object['userName'], object['likes'], object['dislikes']);
+        userName = object['userName']; 
+        addProfilItem(userName, object['likes'], object['dislikes']);
       });
+    } else {
+      addProfilItem(userName, ProfilView.getLikes(), ProfilView.getDislikes()); 
+    }
+    
   };
 
   addProfilItem = function(username, likes, dislikes) {
+    firstProfilLoad = false; 
       makeProfilItem({
         id: "profilItem", 
         username: username
@@ -408,16 +414,24 @@ var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItem
       }));
       LikeManager.addWidget(new AjaxSolr.IngredientsListWidget({
         id: 'ingredientsLikes',
-        target: '#likeBox', 
-        saved: likes
+        target: '#likeBox'
       }));
       DislikeManager.addWidget(new AjaxSolr.IngredientsListWidget({
         id: 'ingredientsDislikes',
-        target: '#dislikeBox', 
-        saved: dislikes
+        target: '#dislikeBox'
       }));
       LikeManager.doRequest(0, 'recipeCollection/select');
       DislikeManager.doRequest(0, 'recipeCollection/select');
+
+      ProfilView.emptyIngredientsArray(); 
+      for (var i = 0; i < likes.length; i++) {
+        ProfilView.addIngredient(likes[i], '#likeBox', 'ingredientsLikes');
+        console.log(likes[i]); 
+      }
+      for (var i = 0; i < dislikes.length; i++) {
+        ProfilView.addIngredient(dislikes[i], '#dislikeBox', 'ingredientsDislikes');
+        console.log(dislikes[i]); 
+      }
   };
 
   makeProfilItem = function(options) {

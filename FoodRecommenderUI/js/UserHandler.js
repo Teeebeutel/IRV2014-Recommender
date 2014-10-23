@@ -45,7 +45,7 @@ UserHandler = (function() {
 	
 	getDislikes = function(){
 		/*add 'SELECT INGREDIENT_NAME FROM ingredients_dislikes WHERE USER_ID = '+getCurrentUserID()*/
-		toReturn = ["öl","koriander"];
+		toReturn = ["koriander"];
 		return toReturn;
 	},
 	

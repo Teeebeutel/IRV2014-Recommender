@@ -9,10 +9,6 @@ AjaxSolr.DurationWidget = AjaxSolr.AbstractFacetWidget.extend({
     var self = event.data.self;
     var timeToWork = event.currentTarget.value_; 
     var startValue, endValue;
-    if(timeToWork == 0) {
-        startValue = "*";
-        endValue = "*";
-      }
       if(timeToWork > 0 && timeToWork <= 15) {
         startValue = "1";
         endValue = "15";
@@ -32,6 +28,9 @@ AjaxSolr.DurationWidget = AjaxSolr.AbstractFacetWidget.extend({
       if(timeToWork > 60) {
         startValue = "60";
         endValue = "*";
+      } else {
+        self.clear();
+        self.doRequest(0, 'recipeCollection/select');
       }
 
     if (startValue && endValue && self.set('[' + startValue + ' TO ' + endValue + ']')) {

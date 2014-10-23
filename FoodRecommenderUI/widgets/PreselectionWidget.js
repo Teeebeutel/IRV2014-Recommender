@@ -5,7 +5,6 @@ AjaxSolr.PreselectionWidget = AjaxSolr.AbstractFacetWidget.extend({
     var self = this;
     console.log(this);
     this.doRequest(0, 'recipeCollection/select');
-    //$(document).on('click', '#' + self.field, {'self': self}, this.onNutritionConceptSelectChange);
   }, 
 
   onNutritionConceptSelectChange: function(event) {
