@@ -118,6 +118,14 @@ var firstProfilLoad, userName;
     $('#myRecipesMenuItem').on('click', onMyRecipesMenuItemClick); 
     $('#profilMenuItem').on('click', onProfilMenuItemClick); 
 
+    $.get("php/functions.php?command=getProfilData").done(
+      function(data) {
+        var object = jQuery.parseJSON(data); 
+        userName = object['userName']; 
+        ProfilView.setIngredients(object['likes'], object['dislikes']); 
+        //addProfilItem(userName, object['likes'], object['dislikes']);
+    });
+
     /*this is for the page to be scrolled to the top on page refresh*/
     $(window).on('beforeunload', function() {
       $(window).scrollTop(0);
@@ -381,7 +389,7 @@ var firstProfilLoad, userName;
   };
 
   getProfilInformation = function() {
-    if(firstProfilLoad == true) {
+    /*if(firstProfilLoad == true) {
       $.get("php/functions.php?command=getProfilData").done(
       function(data) {
         var object = jQuery.parseJSON(data); 
@@ -390,8 +398,8 @@ var firstProfilLoad, userName;
       });
     } else {
       addProfilItem(userName, ProfilView.getLikes(), ProfilView.getDislikes()); 
-    }
-    
+    }*/
+    addProfilItem(userName, ProfilView.getLikes(), ProfilView.getDislikes()); 
   };
 
   addProfilItem = function(username, likes, dislikes) {

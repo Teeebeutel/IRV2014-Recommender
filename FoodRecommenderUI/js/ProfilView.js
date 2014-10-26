@@ -8,7 +8,6 @@ ProfilView = (function() {
     return that; 
   }, 
   
-
   onIngredientItemEnter =  function(event) {
       $(event.currentTarget).find(".deleteButton").show(); 
   }, 
@@ -89,6 +88,11 @@ ProfilView = (function() {
 
   getDislikes = function() {
     return ingredientsDislikesArray; 
+  }, 
+
+  setIngredients = function(likes, dislikes) {
+    ingredientsLikesArray = likes; 
+    ingredientsDislikesArray = dislikes; 
   };
 
   that.init = init; 
@@ -96,6 +100,7 @@ ProfilView = (function() {
   that.emptyIngredientsArray = emptyIngredientsArray; 
   that.getLikes = getLikes; 
   that.getDislikes = getDislikes; 
+  that.setIngredients = setIngredients; 
 
   return that; 
 

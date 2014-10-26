@@ -34,64 +34,6 @@ AjaxSolr.IngredientsListWidget = AjaxSolr.AbstractWidget.extend({
     facetItemId = 0; 
   }, 
 
-  /*onIngredientItemEnter: function(event) {
-      $(event.currentTarget).find(".deleteButton").show(); 
-  }, 
-
-  onIngredientItemLeave: function(event) {
-      $(event.currentTarget).find(".deleteButton").hide(); 
-  },
-
-  onDeleteButtonClick: function(event) {
-    var self = event.data.self; 
-    var facetItem = $(event.currentTarget).closest(".facetItem");
-    var value = facetItem.find('.ingredientName').text();
-    ingredientsLikesArray = self.deleteFromArray(ingredientsLikesArray, value);
-    facetItem.remove(); 
-    var data = {value: value, kind: self.id};
-    $.get("php/functions.php?command=deleteIngredient", data); 
-  }, 
-
-  addIngredient: function(value, self) {
-    if(ingredientsLikesArray.length == 0 || !(ingredientsLikesArray.indexOf(value) > -1)) {
-        self.addFacetItem(value, self); 
-        ingredientsLikesArray.push(value);
-        var data = {value: value, kind: self.id};
-        $.get("php/functions.php?command=saveIngredient", data); 
-    }
-  }, 
-
-  deleteFromArray: function(array, value) {
-    for(var i in array) {
-      if(array[i] == value) {
-        array.splice(i,1);
-        break; 
-      }
-    }
-    return array;
-  }, 
-
-  addFacetItem: function(value, self) {
-      self.makeFacetItem({
-        id: "facetItem" + facetItemId, 
-        title: value, 
-        self: self
-      });
-      $("#facetItem" + facetItemId).on("mouseenter", self.onIngredientItemEnter);
-      $("#facetItem" + facetItemId).on("mouseleave", self.onIngredientItemLeave);
-      $("#facetItem" + facetItemId).on("click", ".deleteButton", {self: self}, self.onDeleteButtonClick); 
-      facetItemId++; 
-  }, 
-
-  makeFacetItem: function(options) {
-      var item = FacetItem().init({
-        id: options.id, 
-        title: options.title
-      });
-      var $el = item.render(); 
-      $(options.self.target).append($el);
-  },*/
-
   afterRequest: function () {
     var self = this;
 

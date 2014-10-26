@@ -45,14 +45,22 @@ UserHandler = (function() {
 	
 	getDislikes = function(){
 		/*add 'SELECT INGREDIENT_NAME FROM ingredients_dislikes WHERE USER_ID = '+getCurrentUserID()*/
+		/*$.get("php/functions.php?command=getDislikes").done(
+        function(data) {
+          
+      	});
 		toReturn = ["koriander"];
-		return toReturn;
+		return toReturn;*/
 	},
 	
 	getLikes = function(){
 		/*add 'SELECT INGREDIENT_NAME FROM ingredients_likes WHERE USER_ID = '+getCurrentUserID()*/
+		/*$.get("php/functions.php?command=getLikes").done(
+        function(data) {
+          
+      	});
 		toReturn = ["wurst","brot"];
-		return toReturn;
+		return toReturn;*/
 	},
 
 	addPreferences = function (Manager) {
