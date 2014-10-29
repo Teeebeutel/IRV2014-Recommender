@@ -51,8 +51,8 @@
           <input placeholder="Suchen..." type="text" id="query" name="query" autocomplete="off" flex>
           <paper-icon-button icon="clear" class="clearButton"></paper-icon-button>
           <core-dropdown valueattr="label" selected="1" id="searchTypeSelect">
-              <core-item label="profilbezogen"></core-item>
-              <core-item label="frei"></core-item>
+              <core-item label="profilbezogen" id="profilbezogen"></core-item>
+              <core-item label="frei" id="frei"></core-item>
           </core-dropdown>
         </core-field>
         <paper-shadow z="1"></paper-shadow>
@@ -63,7 +63,7 @@
       <paper-tabs id="mainMenuTabs" selected="0" flex style="width: 70%;">
 
         <paper-tab id="homeMenuItem">Home</paper-tab>
-        <paper-tab id="fastAdviceMenuItem">Schnell Vorschlag</paper-tab>
+        <paper-tab id="fastAdviceMenuItem">Erweiterte Suche</paper-tab>
         <paper-tab id="myRecipesMenuItem">Meine Rezepte</paper-tab>
         <paper-tab id="profilMenuItem">Profil</paper-tab>
       </paper-tabs>
@@ -99,7 +99,6 @@
   <script type="text/javascript" src="widgets/CurrentSearchWidget.js"></script>
   <script type="text/javascript" src="libs/core/AbstractTextWidget.js"></script>
   <script type="text/javascript" src="widgets/AutocompleteWidget.js"></script>
-  <script type="text/javascript" src="widgets/AutocompleteWidget2.js"></script>
   <script type="text/javascript" src="widgets/DurationWidget.js"></script>
   <script type="text/javascript" src="widgets/KindOfMenuWidget.js"></script>
   <script type="text/javascript" src="widgets/NutritionConceptWidget.js"></script>
@@ -212,7 +211,6 @@
     </div>
 
     <div class="preselectionKindContainer" id="preselectionLevelOfDifficultyContainer">
-    <!--<div class="preselectionHeading">Schwierigkeitsgrad</div>-->
 
     <paper-icon-button class="preselectionLeftArrow" icon="chevron-left"></paper-icon-button>
     <div class="card leftCard">
@@ -348,7 +346,7 @@
   <script type="text/html" id="recipe-tpl">
     <div class="resultElement" id="<%= resultId %>" data_id="<%= recipeId %>">
       <div class="resultImg">
-        <img src="<%= imgSrc %>">
+        <img src="<%= imgSrc %>" class="recipeImg">
       </div>
       <div class="resultDescription">
         <h2><%= title %></h2>

@@ -1,12 +1,11 @@
 var Manager, ResultWidget, ImageManager;
 var UserHandler, LoginView, ProfilView;
 var KindOfMenuItems, NutritionConceptItems, DurationItems, LevelOfDifficultyItems;
-var firstProfilLoad, userName; 
+var firstProfilLoad, userName, selected; 
 
 (function ($) {
 
   $(function () {
-    UserHandler.init();
     Manager = new AjaxSolr.Manager({
       solrUrl: 'http://localhost:8983/solr/' //recipeCollection/'
       // If you are using a local Solr instance with a "reuters" core, use:
@@ -74,7 +73,6 @@ var firstProfilLoad, userName;
     Manager.store.addByValue('q', '*:*');
     var params = {
       facet: true,
-      //'facet.field': [ 'ingredientname', 'gluten', 'diabetus', 'lactose', 'sportsman', 'antialc', 'pork', 'vegetarian', 'vegan' ],
       'facet.limit': 20,
       'facet.mincount': 1,
       'json.nl': 'map', 
@@ -117,13 +115,13 @@ var firstProfilLoad, userName;
     $('#fastAdviceMenuItem').on('click', onFastAdviceMenuItemClick); 
     $('#myRecipesMenuItem').on('click', onMyRecipesMenuItemClick); 
     $('#profilMenuItem').on('click', onProfilMenuItemClick); 
+    $('#searchTypeSelect').on('click', 'core-item', onSearchTypeSelectChange); 
 
     $.get("php/functions.php?command=getProfilData").done(
       function(data) {
         var object = jQuery.parseJSON(data); 
         userName = object['userName']; 
         ProfilView.setIngredients(object['likes'], object['dislikes']); 
-        //addProfilItem(userName, object['likes'], object['dislikes']);
     });
 
     /*this is for the page to be scrolled to the top on page refresh*/
@@ -133,8 +131,33 @@ var firstProfilLoad, userName;
 
     LoginView.init();
     ProfilView.init();
+    UserHandler.init();
     firstProfilLoad = true; 
   };
+
+  onSearchTypeSelectChange = function(event) {
+    var newSelection = $(event.currentTarget).attr('id'); 
+    selected = newSelection; 
+    adaptSearchToSearchType(newSelection); 
+    Manager.doRequest(0, 'recipeCollection/select');
+  }; 
+
+  adaptSearchToSearchType = function(selection) {
+    if(selection == "frei") {
+      var likes = ProfilView.getLikes(); 
+      var dislikes = ProfilView.getDislikes(); 
+      for (var i = 0; i < likes.length; i++) {
+        Manager.store.removeByValue('fq', new RegExp("'" + likes[i] + "'"));
+      }
+      for (var i = 0; i < dislikes.length; i++) {
+        Manager.store.removeByValue('fq', new RegExp("'!" + dislikes[i] + "'"));
+      }
+      Manager.store.remove('fq');
+    } else if(selection == "profilbezogen") {
+      addUserPreferences(Manager);
+
+    }
+  }; 
 
   addUserPreferences = function (Manager) {
     UserHandler.addPreferences(Manager);
@@ -159,7 +182,6 @@ var firstProfilLoad, userName;
   onProfilMenuItemClick = function(event) {
     emptyContent();
     getProfilInformation();
-    //addProfilItem();
   };
 
   addHomeScreenItem = function() {
@@ -330,11 +352,12 @@ var firstProfilLoad, userName;
       
 
       $('#menuButton').show().on('click', onMenuButtonClick); 
-      Manager.addWidget(new AjaxSolr.AutocompleteWidget2({
+      Manager.addWidget(new AjaxSolr.AutocompleteWidget({
         id: 'addField',
         target: '#addField',
         fields: ['ingredientname']
       }));
+      adaptSearchToSearchType(selected); 
       Manager.doRequest(0, 'recipeCollection/select');
       $(document).on('click', '#countSelect core-item', onCountSelectChange);
       $(document).on('click', '#noNutritionConcept', onNutritionConceptDeselect);
@@ -404,18 +427,19 @@ var firstProfilLoad, userName;
 
   addProfilItem = function(username, likes, dislikes) {
     firstProfilLoad = false; 
+    ProfilView.emptyIngredientsArray(); 
       makeProfilItem({
         id: "profilItem", 
         username: username
       });
       $('#menuButton').hide();
 
-      LikeManager.addWidget(new AjaxSolr.AutocompleteWidget2({
+      LikeManager.addWidget(new AjaxSolr.AutocompleteWidget({
         id: 'likeAddInput',
         target: '#likeAddInput',
         fields: ['ingredientname']
       }));
-      DislikeManager.addWidget(new AjaxSolr.AutocompleteWidget2({
+      DislikeManager.addWidget(new AjaxSolr.AutocompleteWidget({
         id: 'dislikeAddInput',
         target: '#dislikeAddInput',
         fields: ['ingredientname']
@@ -431,14 +455,12 @@ var firstProfilLoad, userName;
       LikeManager.doRequest(0, 'recipeCollection/select');
       DislikeManager.doRequest(0, 'recipeCollection/select');
 
-      ProfilView.emptyIngredientsArray(); 
+      
       for (var i = 0; i < likes.length; i++) {
         ProfilView.addIngredient(likes[i], '#likeBox', 'ingredientsLikes');
-        console.log(likes[i]); 
       }
       for (var i = 0; i < dislikes.length; i++) {
         ProfilView.addIngredient(dislikes[i], '#dislikeBox', 'ingredientsDislikes');
-        console.log(dislikes[i]); 
       }
   };
 

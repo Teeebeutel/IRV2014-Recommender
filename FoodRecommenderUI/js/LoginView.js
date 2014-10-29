@@ -1,5 +1,6 @@
 LoginView = (function() {
   var that = {}, 
+  username = "", 
 
   init = function() {
     addLoginOverlayItem();
@@ -64,10 +65,26 @@ LoginView = (function() {
       $.get("php/functions.php?command=saveNewUser", data); 
       $('#loginErrorMessage').hide();
       hideOverlay();
+      //$(that).trigger('loggedIn'); 
+      /*initRecommenderWithLogin(); 
+      userName = username; */
     } else {
       $('#loginErrorMessage').show();
     }
   },
+
+  getUserName = function() {
+    return userName; 
+  }, 
+
+  /*initRecommenderWithLogin = function() {
+    $.get("php/functions.php?command=getProfilData").done(
+      function(data) {
+        var object = jQuery.parseJSON(data); 
+        //userName = object['userName']; 
+        ProfilView.setIngredients(object['likes'], object['dislikes']); 
+    });
+  }, */
 
   hideOverlay = function() {
     $('body').removeClass('avoidScrolling');
@@ -100,6 +117,7 @@ LoginView = (function() {
 
   that.init = init; 
   that.showErrorMessageOrHide = showErrorMessageOrHide; 
+  that.getUserName = getUserName; 
 
   return that; 
 

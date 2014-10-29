@@ -65,14 +65,9 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
       var vegetarian = doc.vegetarian; 
       var vegan = doc.vegan; 
       var antialc = doc.antialc;
-
-      this.addRecipeItem(id, recipeId, title, instructions, timeToWork, vegetarian, vegan, antialc, '#docs', "./res/images/ajax-loader.gif");
-      $('.resultImg img').each(function() {
-          recipeId = $(this).closest('.resultElement').attr('data_id'); 
-          var img = $(this);
-          var url = "http://www.chefkoch.de/rezepte/" + recipeId;
-          resultContainer.getImage(url, img);
-      }); 
+      
+      this.addRecipeItem(id, recipeId, title, instructions, timeToWork, vegetarian, vegan, antialc, '#docs', "./res/images/noImage.png");
+      
       var items = [];
       items = items.concat(this.facetLinks('ingredientname', doc.ingredientname));
 
@@ -149,6 +144,11 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
         container: container, 
         imgSrc: imgSrc
       });
+
+      var img = $('#resultElement'+resultId).find('.recipeImg');
+      var url = "http://www.chefkoch.de/rezepte/" + recipeId;
+      this.getImage(url, img);
+
       var thisTimeToWork = (timeToWork == undefined ? -1 : timeToWork);
       $(document).on('click', '#resultElement' + resultId + ' .addToFavouritesBtn', {'id': id, 'recipeId': recipeId, 'title': title, 'instructions': instructions, 'timeToWork': thisTimeToWork, 'vegetarian': this.booleanToNumber(thisVegetarian), 'vegan': this.booleanToNumber(thisVegan), 'antialc': this.booleanToNumber(thisAntialc)}, this.onAddToFavouritesBtnClick);
   },  

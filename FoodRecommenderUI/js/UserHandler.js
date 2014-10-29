@@ -1,3 +1,4 @@
+var ProfilView; 
 UserHandler = (function() {
 	var that = {},
 	preferences = {
@@ -5,14 +6,13 @@ UserHandler = (function() {
 		"dislikes":[],
 		"concepts":[]
 	},
-	currentID,
+	//currentID,
 
 	init = function (argument) {
 		/*get user id here*/
-		currentID = getCurrentUserID();
+		//currentID = getCurrentUserID();
 		/*now get user concepts*/
 		getPreferencesFromDb();
-		console.log("initiated user Agent");
 		userListeners();
 	},
 
@@ -44,33 +44,22 @@ UserHandler = (function() {
 	},
 	
 	getDislikes = function(){
-		/*add 'SELECT INGREDIENT_NAME FROM ingredients_dislikes WHERE USER_ID = '+getCurrentUserID()*/
-		/*$.get("php/functions.php?command=getDislikes").done(
-        function(data) {
-          
-      	});
-		toReturn = ["koriander"];
-		return toReturn;*/
+		return ProfilView.getDislikes(); 
 	},
 	
 	getLikes = function(){
-		/*add 'SELECT INGREDIENT_NAME FROM ingredients_likes WHERE USER_ID = '+getCurrentUserID()*/
-		/*$.get("php/functions.php?command=getLikes").done(
-        function(data) {
-          
-      	});
-		toReturn = ["wurst","brot"];
-		return toReturn;*/
+		return ProfilView.getLikes(); 
 	},
 
 	addPreferences = function (Manager) {
-		console.log("added preferences to", Manager);
-		for(item in preferences.dislikes){
-			Manager.store.addByValue('fq','!ingredientname:'+preferences.dislikes[item]);
+		var likes = getLikes(); 
+		var dislikes = getDislikes(); 
+
+		for(item in dislikes){
+			Manager.store.addByValue('fq','!ingredientname:'+dislikes[item]);
 		}
-		for(item in preferences.likes){
-			//console.log(added to )
-			Manager.store.addByValue('fq','ingredientname:'+preferences.likes[item]);
+		for(item in likes){
+			Manager.store.addByValue('fq','ingredientname:'+likes[item]);
 		}
 		for(item in preferences.concepts){
 			/*potentially failing if not formatted correctly, need to check*/

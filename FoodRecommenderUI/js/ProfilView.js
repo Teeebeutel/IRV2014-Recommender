@@ -18,6 +18,7 @@ ProfilView = (function() {
 
   onDeleteButtonClick =  function(event) {
     var id = event.data.id; 
+    console.log("deleteButtonClicked", id); 
     var facetItem = $(event.currentTarget).closest(".facetItem");
     var value = facetItem.find('.ingredientName').text();
     ingredientsArray = deleteFromArray(ingredientsArray, value);
@@ -41,9 +42,9 @@ ProfilView = (function() {
     if(ingredientsArray.length == 0 || !(ingredientsArray.indexOf(value) > -1)) {
         addFacetItem(value, target, id); 
         ingredientsArray.push(value);
-        if(id == 'ingredientsLikes') {
+        if(id == 'ingredientsLikes' && !(ingredientsLikesArray.indexOf(value) > -1)) {
           ingredientsLikesArray.push(value); 
-        } else if(id == 'ingredientsDislikes') {
+        } else if(id == 'ingredientsDislikes' && !(ingredientsDislikesArray.indexOf(value) > -1)) {
           ingredientsDislikesArray.push(value); 
         }
         var data = {value: value, kind: id};
@@ -82,7 +83,7 @@ ProfilView = (function() {
       $(options.target).append($el);
   }, 
 
-  getLikes = function() {
+  getLikes = function() { 
     return ingredientsLikesArray; 
   }, 
 

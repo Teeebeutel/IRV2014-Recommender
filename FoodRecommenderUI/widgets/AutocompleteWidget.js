@@ -62,7 +62,6 @@ AjaxSolr.AutocompleteWidget = AjaxSolr.AbstractTextWidget.extend({
   }, 
   
   afterRequest: function () {
-    console.log("request");
     $(this.target).find('input').unbind().removeData('events');
     
     var self = this;
@@ -85,15 +84,22 @@ AjaxSolr.AutocompleteWidget = AjaxSolr.AbstractTextWidget.extend({
         source: list,
         select: function(event, ui) {
           if (ui.item) {
+            console.log(self.id);
             self.requestSent = true;
-            self.manager.store.get('q').val('*:*');
-            self.manager.store.remove('fq');
-            if (self.manager.store.addByValue('fq', ui.item.field + ':' + AjaxSolr.Parameter.escapeValue(ui.item.value))) {
-              self.emptyContent();
-              self.addAdvancedSearchItem();
-              self.doRequest(0, 'recipeCollection/select');
-              $('#levelOfDifficultySelector').prop('selected', 0);
-              $('#nutritionConceptSelect').prop('selected', 0);
+            if(self.id == "text") {
+              self.manager.store.get('q').val('*:*');
+              self.manager.store.remove('fq');
+              if (self.manager.store.addByValue('fq', ui.item.field + ':' + AjaxSolr.Parameter.escapeValue(ui.item.value))) {
+                self.emptyContent();
+                self.addAdvancedSearchItem();
+                self.doRequest(0, 'recipeCollection/select');
+                $('#levelOfDifficultySelector').prop('selected', 0);
+                $('#nutritionConceptSelect').prop('selected', 0);
+              }
+            } else {
+              if (self.manager.store.addByValue('fq', ui.item.field + ':' + AjaxSolr.Parameter.escapeValue(ui.item.value))) {
+                self.doRequest(0, 'recipeCollection/select');
+              }
             }
           }
         }
@@ -110,14 +116,20 @@ AjaxSolr.AutocompleteWidget = AjaxSolr.AbstractTextWidget.extend({
       $(self.target).find('input').bind('keydown', function(e) {
         if (self.requestSent === false && e.which == 13) {
           var value = $(this).val();
-          self.manager.store.get('q').val('*:*');
-          self.manager.store.remove('fq');
-          if (value && self.set(value)) {
-            self.emptyContent();
-            self.addAdvancedSearchItem();
-            self.doRequest(0, 'recipeCollection/select');
-            $('#levelOfDifficultySelector').prop('selected', 0);
-            $('#nutritionConceptSelect').prop('selected', 0);
+          if(self.id == "text") {
+            self.manager.store.get('q').val('*:*');
+            self.manager.store.remove('fq');
+            if (value && self.set(value)) {
+              self.emptyContent();
+              self.addAdvancedSearchItem();
+              self.doRequest(0, 'recipeCollection/select');
+              $('#levelOfDifficultySelector').prop('selected', 0);
+              $('#nutritionConceptSelect').prop('selected', 0);
+            }
+          } else {
+            if (value && self.set(value)) {
+              self.doRequest(0, 'recipeCollection/select');
+            }
           }
         }
       });
