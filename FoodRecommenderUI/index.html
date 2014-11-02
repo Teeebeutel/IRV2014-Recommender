@@ -82,11 +82,11 @@
   <script type="text/javascript" src="libs/underscore.js"></script>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js"></script>
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/themes/smoothness/jquery-ui.css">
-  <script type="text/javascript" src="js/feedme.js"></script>
-  <script type="text/javascript" src="js/UserHandler.js"></script>
+ 
+  <script type="text/javascript" src="js/FoodRecommender.js"></script>
+  <script type="text/javascript" src="js/MainController.js"></script>
+  <script type="text/javascript" src="js/MainModel.js"></script>
   
-
-
   <script type="text/javascript" src="libs/core/Core.js"></script>
   <script type="text/javascript" src="libs/core/AbstractManager.js"></script>
   <script type="text/javascript" src="libs/managers/Manager.jquery.js"></script>
@@ -102,21 +102,28 @@
   <script type="text/javascript" src="widgets/DurationWidget.js"></script>
   <script type="text/javascript" src="widgets/KindOfMenuWidget.js"></script>
   <script type="text/javascript" src="widgets/NutritionConceptWidget.js"></script>
-  <script type="text/javascript" src="widgets/AddIngredientsWidget.js"></script>
   <script type="text/javascript" src="widgets/LevelOfDifficultyWidget.js"></script>
   <script type="text/javascript" src="widgets/ImageSliderWidget.js"></script>
   <script type="text/javascript" src="widgets/IngredientsListWidget.js"></script>
 
+  <script type="text/javascript" src="js/MenuView.js"></script>
+  <script type="text/javascript" src="js/HomeScreenView.js"></script>
   <script type="text/javascript" src="js/LoginView.js"></script>
   <script type="text/javascript" src="js/ProfilView.js"></script>
-  <script type="text/javascript" src="templates/HomeScreenItem.js"></script>
-  <script type="text/javascript" src="templates/AdvancedSearchItem.js"></script>
-  <script type="text/javascript" src="templates/RecipeItem.js"></script>
-  <script type="text/javascript" src="templates/ProfilItem.js"></script>
-  <script type="text/javascript" src="templates/MyRecipesItem.js"></script>
-  <script type="text/javascript" src="templates/LoginOverlayItem.js"></script>
-  <script type="text/javascript" src="templates/RegistrationOverlayItem.js"></script>
-  <script type="text/javascript" src="templates/FacetItem.js"></script>
+  <script type="text/javascript" src="js/AdvancedSearchView.js"></script>
+  <script type="text/javascript" src="js/MyRecipesView.js"></script>
+  <script type="text/javascript" src="js/RecipeView.js"></script>
+  <script type="text/javascript" src="js/NotLoggedInView.js"></script>
+  <script type="text/javascript" src="js/NotLoggedInItem.js"></script>
+  <script type="text/javascript" src="js/HomeScreenItem.js"></script>
+  <script type="text/javascript" src="js/AdvancedSearchItem.js"></script>
+  <script type="text/javascript" src="js/RecipeItem.js"></script>
+  <script type="text/javascript" src="js/ProfilItem.js"></script>
+  <script type="text/javascript" src="js/MyRecipesItem.js"></script>
+  <script type="text/javascript" src="js/LoginOverlayItem.js"></script>
+  <script type="text/javascript" src="js/RegistrationOverlayItem.js"></script>
+  <script type="text/javascript" src="js/FacetItem.js"></script>
+
 
 <script type="text/html" id="homeScreen-tpl">
     <div id="<%= id %>">
@@ -152,16 +159,19 @@
     <paper-icon-button class="preselectionLeftArrow" icon="chevron-left"></paper-icon-button>
     <div class="card leftCard">
       <img src="res/images/Kochtopf.png">
+      <div class="preselectionTitle">Mittagessen</div>
       <paper-shadow z="1"></paper-shadow>
     </div>
 
     <div class="card selectedCard">
       <img src="res/images/keines.png" id="type:none">
+      <div class="preselectionTitle">ohne Mahlzeittyp</div>
       <paper-shadow z="1"></paper-shadow>
     </div>
 
     <div class="card rightCard">
       <img src="res/images/Kaffetasse.png">
+      <div class="preselectionTitle">Frühstück</div>
       <paper-shadow z="1"></paper-shadow>
     </div>
     <paper-icon-button class="preselectionRightArrow" icon="chevron-right"></paper-icon-button>
@@ -173,16 +183,19 @@
     <paper-icon-button class="preselectionLeftArrow" icon="chevron-left"></paper-icon-button>
     <div class="card leftCard">
       <img src="res/images/alkoholfrei.png">
+      <div class="preselectionTitle">alkoholfrei</div>
       <paper-shadow z="1"></paper-shadow>
     </div>
 
     <div class="card selectedCard">
       <img src="res/images/keines.png" id="vegetarian:none">
+      <div class="preselectionTitle">ohne Ernährungskonzept</div>
       <paper-shadow z="1"></paper-shadow>
     </div>
 
     <div class="card rightCard">
       <img src="res/images/vegetarisch.png">
+      <div class="preselectionTitle">vegetarisch</div>
       <paper-shadow z="1"></paper-shadow>
     </div>
     <paper-icon-button class="preselectionRightArrow" icon="chevron-right"></paper-icon-button>
@@ -194,16 +207,19 @@
     <paper-icon-button class="preselectionLeftArrow" icon="chevron-left"></paper-icon-button>
     <div class="card leftCard">
       <img src="res/images/+60min.png">
+      <div class="preselectionTitle">mehr als 60 min</div>
       <paper-shadow z="1"></paper-shadow>
     </div>
 
     <div class="card  selectedCard">
       <img src="res/images/keines.png" id="timetowork:none">
+      <div class="preselectionTitle">ohne Zeitangabe</div>
       <paper-shadow z="1"></paper-shadow>
     </div>
 
     <div class="card rightCard">
-      <img src="res/images/0min.png">
+      <img src="res/images/15min.png">
+      <div class="preselectionTitle">1-15 min</div>
       <paper-shadow z="1"></paper-shadow>
     </div>
     <paper-icon-button class="preselectionRightArrow" icon="chevron-right"></paper-icon-button>
@@ -215,17 +231,20 @@
     <paper-icon-button class="preselectionLeftArrow" icon="chevron-left"></paper-icon-button>
     <div class="card leftCard">
       <img src="res/images/schwer.png">
+      <div class="preselectionTitle">schwer</div>
       <paper-shadow z="1"></paper-shadow>
     </div>
 
 
     <div class="card selectedCard">
       <img src="res/images/keines.png" id="requiredSkill:none">
+      <div class="preselectionTitle">alle Schwierigkeitsstufen</div>
       <paper-shadow z="1"></paper-shadow>
     </div>
 
     <div class="card rightCard">
       <img src="res/images/leicht.png">
+      <div class="preselectionTitle">leicht</div>
       <paper-shadow z="1"></paper-shadow>
     </div>
     <paper-icon-button class="preselectionRightArrow" icon="chevron-right"></paper-icon-button>
@@ -353,11 +372,11 @@
         <p id="links_<%= id %>" class="links"></p>
         <br class="clear" />
         <p><%= snippet %></p>
-      </div>
-      <paper-icon-button icon="star" class="addToFavouritesBtn"></paper-icon-button>
-      <div class="iconContainer">
+        <div class="iconContainer">
         <%= images %>
       </div>
+      </div>
+      <paper-icon-button icon="star" class="addToFavouritesBtn"></paper-icon-button>
       <paper-shadow z="1"></paper-shadow>
     </div>
   </script>
@@ -489,6 +508,15 @@
     </div>
   </script>
 
+  <script type="text/html" id="notLoggedIn-tpl">
+    <div class="notLoggedIn" id="<%= id %>">
+      <div>Nur eingeloggte User können <%= text %></div>
+      <br class="clear" />
+      <paper-button class="colored" label="Login" id="loginButton">
+      </paper-button><paper-shadow z="1"></paper-shadow>
+    </div>
+  </script>
+
   <script type="text/html" id="registrationOverlay-tpl">
     <div id="<%= id %>">
       <h2>Registrieren</h2>
@@ -496,6 +524,7 @@
       <paper-input label="Passwort" id="registrationPasswordInput" type="password" floatingLabel></paper-input>
       <paper-input label="Passwort bestätigen" id="registrationPasswordConfirmInput" type="password" floatingLabel></paper-input><br />
       <p id="loginErrorMessage">Passwort stimmt nicht überein</p>
+      <paper-button class="colored dialogButton" label="Zurück" id="backToLoginButton"></paper-button>
       <paper-button class="colored dialogButton" label="Ok" id="registrationButton"></paper-button>
     </div>
   </script>
@@ -504,6 +533,10 @@
     <div id="<%= id %>">
     </div>
   </script>
+
+<script>
+  FoodRecommender.init();
+</script>
 
 </body>
 </html>

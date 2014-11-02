@@ -16,8 +16,9 @@ body {
 }
 
 .iconContainer {
-  position: absolute;
-  bottom: 0px;
+  /*position: absolute;
+  bottom: 0px;*/
+  height: 100px;
   padding-left: 300px;
 }
 
@@ -175,11 +176,11 @@ body {
   background-color: #fff;
   border-radius: 2px;
   margin: 20px;
-  padding: 20px;
+  padding: 15px 25px 0px 25px;
 }
 
 .card:not(.selectedCard) {
-  margin-top: 40px;
+ /* margin-top: 40px;*/
 }
 .card img {
   width: 100%;
@@ -287,8 +288,7 @@ a:hover {
   border-radius: 2px; 
   margin: 10px;
   background-color: #fff;
-  height: 350px;
-
+  min-height: 350px;
 }
 
 .resultElement h2 {
@@ -305,10 +305,11 @@ a:hover {
 
 .resultDescription {
   width: 400px;
-  position: absolute; 
+  display: inline-block;
+  /*position: absolute; 
   right: 0px; 
   top: 0px;
-  height: 100%;
+  height: 100%;*/
 }
 
 #imgContainer {
@@ -334,8 +335,9 @@ a:hover {
    width:150px; 
    height:150px; 
    margin-left: 10px;
-   top: 25%;
    overflow: hidden;
+   margin-top: 15%;
+   display: inline-block;
 }
 
 .resultImg img {
@@ -516,27 +518,6 @@ core-selector paper-icon-button:not([active])::shadow core-icon {
   left: -30px;
 }
 
-/*#calendar {
-  width: 160px;
-}
-
-#search_help {
-  font-size: 80%;
-}
-.tagcloud {
-  padding: 10px 15px 0;
-}
-.tagcloud_item {
-  float: left;
-  display: block;
-  margin-right: 4px;
-  color: #6998f0;
-}
-
-.tagcloud_item:hover {
-  color: #f00;
-}*/
-
 .white {
   background-color: white;
   height: 28px;
@@ -705,6 +686,13 @@ paper-checkbox /deep/ #ink {
 
 }
 
+.notLoggedIn {
+  text-align: center; 
+  width: 60%; 
+  background-color: #fff; 
+  margin: 20px auto; 
+  padding: 20px; 
+}
 .profilInformation p {
     padding: 20px;
     color: #333;
