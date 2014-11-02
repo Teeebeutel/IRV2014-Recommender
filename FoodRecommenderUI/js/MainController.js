@@ -30,14 +30,16 @@ FoodRecommender.MainController = (function() {
 
     $(loginView).on('loggedIn', onLoggedIn); 
     $(loginView).on('useWithoutLogin', onUseWithoutLogin); 
+    $(loginView).on('registrationButtonClick', onRegistrationButtonClick); 
 
     $(homeScreenView).on('preselectionSearchButtonClick', onPreselectionSearchButtonClick); 
 
     $(myRecipesView).on('addNotLoggedInView', onAddNotLoggedInView); 
-   // $(myRecipesView).on('getRecipes', onGetRecipes); 
+    $(myRecipesView).on('markAsFavourite', onMarkAsFavourite); 
     $(myRecipesView).on('showRecipes', onShowRecipes); 
 
     $(recipeView).on('saveRecipe', onSaveRecipe); 
+    $(recipeView).on('checkIfRecipeSavedJet', onCheckIfRecipeSavedJet); 
     $(profilView).on('addNotLoggedInView', onAddNotLoggedInView); 
 
     $(notLoggedInView).on('loginButtonClick', onLoginButtonClick); 
@@ -51,10 +53,24 @@ FoodRecommender.MainController = (function() {
 
     $(mainModel).on('addRecipeItem', onAddRecipeItem); 
     $(mainModel).on('getProfilAndRecipeDataDone', onGetProfilandRecipeDataDone); 
-   // $(mainModel).on('getProfilDataDone', onGetProfilDataDone); 
 
 		initUI();
 	}, 
+
+  onRegistrationButtonClick = function(event, username, password) {
+    initManager(); 
+    userName = username; 
+    mainModel.saveNewUser(username, password); 
+    profilView.initManagers(); 
+  }, 
+
+  onMarkAsFavourite = function(event, recipeContainer) {
+    $(recipeContainer).find('.addToFavouritesBtn').css('color', "#ffc107");
+  }, 
+
+  onCheckIfRecipeSavedJet = function(event, recipeId, recipeContainer) {
+    myRecipesView.isRecipeExistent(recipeId,recipeContainer); 
+  }, 
 
   onAddValueToManager = function(event, value) {
     Manager.store.addByValue('rows', value);
@@ -73,13 +89,11 @@ FoodRecommender.MainController = (function() {
   }, 
 
   onShowRecipes = function(event, savedRecipes) {
-   // console.log(savedRecipes); 
    console.log(savedRecipes.length);
     for (var i = 0; i < savedRecipes.length; i++) {
-        //console.log(savedRecipes[i].instructions); 
         recipeView.addRecipeItem(savedRecipes[i].id, savedRecipes[i].recipeId, savedRecipes[i].title, savedRecipes[i].instructions, savedRecipes[i].timeToWork, savedRecipes[i].vegetarian, savedRecipes[i].vegan, savedRecipes[i].antialc, '#myRecipesItem', savedRecipes[i].imgSrc);
-      }
-    }, 
+    }
+  }, 
 
   onAdaptSearchToPreselection = function(event, selectedItems) {
     Manager.store.remove('fq');
@@ -90,6 +104,15 @@ FoodRecommender.MainController = (function() {
             Manager.store.addByValue('fq', id);
           }
     }
+    startProfilBasedSearch(); 
+  }, 
+
+  startProfilBasedSearch = function() {
+    var likes = profilView.getLikes(); 
+    var dislikes = profilView.getDislikes();
+    console.log(likes); 
+    console.log(dislikes); 
+    addUserPreferences(likes, dislikes);
     Manager.doRequest(0, 'recipeCollection/select');
   }, 
 
@@ -97,11 +120,9 @@ FoodRecommender.MainController = (function() {
     var likes = profilView.getLikes(); 
     var dislikes = profilView.getDislikes();
     if(selection == "profilbezogen") {
-          addUserPreferences(likes, dislikes);
+      addUserPreferences(likes, dislikes);
     } else if(selection == "frei") { 
-      for (var i = 0; i < likes.length; i++) {
-        Manager.store.removeByValue('fq', new RegExp("ingredientname:" + likes[i]));
-      }
+      Manager.store.addByValue('q', '*:*');
       for (var i = 0; i < dislikes.length; i++) {
         Manager.store.removeByValue('fq', new RegExp("!ingredientname:" + dislikes[i]));
       }
@@ -177,7 +198,7 @@ FoodRecommender.MainController = (function() {
         Manager.store.addByValue(name, params[name]);
       }
       
-      Manager.doRequest(0, 'recipeCollection/select');
+      startProfilBasedSearch(); 
   },
 
 	initUI = function() {
@@ -190,7 +211,6 @@ FoodRecommender.MainController = (function() {
   }, 
   
   getRecipeDataDone = function(recipes) {
-    console.log(recipes); 
     myRecipesView.setRecipes(recipes);
   }, 
 
@@ -214,10 +234,6 @@ FoodRecommender.MainController = (function() {
     mainModel.saveRecipe(id, recipeId, title, instructions, timeToWork, vegetarian, vegan, antialc, imgSrc);
   }, 
 
- /* onGetRecipes = function(event) {
-    myRecipesView.getRecipes(); 
-  }, */
-
   onAddNotLoggedInView = function(event, text) {
     notLoggedInView.addNotLoggedInView(text); 
   }, 
@@ -227,7 +243,6 @@ FoodRecommender.MainController = (function() {
   }, 
 
   onLoggedIn = function(event) {
-    //mainModel.getProfilData(); 
     mainModel.getProfilAndRecipeData(); 
   }, 
 
@@ -246,12 +261,15 @@ FoodRecommender.MainController = (function() {
   }, 
 
   addUserPreferences = function (likes, dislikes) {
+    var likesString = ""; 
     for(item in dislikes){
       Manager.store.addByValue('fq','!ingredientname:'+dislikes[item]);
     }
     for(item in likes){
-      Manager.store.addByValue('fq','ingredientname:'+likes[item]);
+      likesString += ('ingredientname:' + likes[item] + " OR "); 
     }
+    likesString = likesString.substring(0, likesString.length-4); 
+    Manager.store.addByValue('q', likesString); 
   },
 
   onHomeMenuItemClick = function(event) {

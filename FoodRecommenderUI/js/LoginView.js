@@ -70,8 +70,8 @@ FoodRecommender.LoginView = (function() {
     } else if(password.length <= 8) {
       $('#loginErrorMessage').text("Das Passwort muss mindestens 8 Zeichen lang sein").show();
     } else if(password == passwordConfirm && password.length >= 8) {
-      var data = {username: username, password: password};
-      $.get("php/functions.php?command=saveNewUser", data); 
+      $(that).trigger('registrationButtonClick', [username, password]); 
+      
       $('#loginErrorMessage').hide();
       hideOverlay();
     } else {

@@ -41,6 +41,11 @@ FoodRecommender.MainModel = (function() {
 	        var recipes = jQuery.parseJSON(object['recipes']); 
 	        $(that).trigger('getProfilAndRecipeDataDone', [userName, likes, dislikes, recipes]); 
 	    });
+	}, 
+
+	saveNewUser = function(username, password) {
+		var data = {username: username, password: password};
+    	$.get("php/functions.php?command=saveNewUser", data); 
 	}; 
 	
 	that.init = init; 
@@ -48,6 +53,7 @@ FoodRecommender.MainModel = (function() {
 	that.saveRecipe = saveRecipe; 
 	that.getProfilData = getProfilData; 
 	that.getProfilAndRecipeData = getProfilAndRecipeData; 
+	that.saveNewUser = saveNewUser; 
 
 	return that; 
 }()); 

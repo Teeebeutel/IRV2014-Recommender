@@ -13,6 +13,7 @@ FoodRecommender.RecipeView = (function() {
     var timeToWorkImg = getTimeToWorkImg(timeToWork);
     resultId++;
     var snippet = '';
+
     if (instructions.length > 200) {
       snippet += instructions.substring(0, 200);
       snippet += '<span style="display:none;">' + instructions.substring(200);
@@ -50,6 +51,9 @@ FoodRecommender.RecipeView = (function() {
       getImage(url, img);
 
       var thisTimeToWork = (timeToWork == undefined ? -1 : timeToWork);
+      var recipeContainer = "#resultElement" + resultId; 
+      
+      $(that).trigger('checkIfRecipeSavedJet', [recipeId, recipeContainer]); 
       $(document).on('click', '#resultElement' + resultId + ' .addToFavouritesBtn', {'id': id, 'recipeId': recipeId, 'title': title, 'instructions': instructions, 'timeToWork': thisTimeToWork, 'vegetarian': booleanToNumber(thisVegetarian), 'vegan': booleanToNumber(thisVegan), 'antialc': booleanToNumber(thisAntialc)}, onAddToFavouritesBtnClick);
   },  
 

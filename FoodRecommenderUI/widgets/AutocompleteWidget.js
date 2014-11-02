@@ -21,6 +21,7 @@ AjaxSolr.AutocompleteWidget = AjaxSolr.AbstractTextWidget.extend({
       self.manager.store.remove('fq');
       //self.manager.store.get('q').val('*:*');
       if (value && self.set(value)) {
+        $('#mainMenuTabs').prop('selected', 1);
         self.emptyContent();
         FoodRecommender.AdvancedSearchView.addAdvancedSearchItem(-1, 0, 0, 0);
       }
@@ -42,7 +43,6 @@ AjaxSolr.AutocompleteWidget = AjaxSolr.AbstractTextWidget.extend({
             field: field,
             value: facet,
             label: facet
-            //label: facet + ' (' + response.facet_counts.facet_fields[field][facet] + ') - ' + field
           });
         }
       }
@@ -55,8 +55,8 @@ AjaxSolr.AutocompleteWidget = AjaxSolr.AbstractTextWidget.extend({
             self.requestSent = true;
             if(self.id == "text") {
               self.manager.store.remove('fq');
-              //self.manager.store.get('q').val('*:*');
               if (self.manager.store.addByValue('fq', ui.item.field + ':' + AjaxSolr.Parameter.escapeValue(ui.item.value))) {
+                $('#mainMenuTabs').prop('selected', 1);
                 self.emptyContent();
                 FoodRecommender.AdvancedSearchView.addAdvancedSearchItem(-1, 0, 0, 0);
               }
@@ -82,8 +82,8 @@ AjaxSolr.AutocompleteWidget = AjaxSolr.AbstractTextWidget.extend({
           var value = $(this).val();
           if(self.id == "text") {
             self.manager.store.remove('fq');
-            //self.manager.store.get('q').val('*:*');
             if (value && self.set(value)) {
+              $('#mainMenuTabs').prop('selected', 1);
               self.emptyContent();
               FoodRecommender.AdvancedSearchView.addAdvancedSearchItem(-1, 0, 0, 0);
             }

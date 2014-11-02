@@ -53,7 +53,7 @@ body {
   margin: auto;
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
-  z-index: 3;
+  z-index: 5;
 }
 
 .dialogButton {
@@ -93,7 +93,7 @@ body {
   height: 100%;
   opacity: 0.6; 
   top: 0; left: 0; bottom: 0; right: 0;
-  z-index: 2;
+  z-index: 4;
 }
 
 .avoidScrolling {
@@ -223,7 +223,6 @@ paper-tab /deep/ #ink {
   color: #fff;
 }
 
-
 img {
   border: none;
 }
@@ -239,6 +238,15 @@ a:hover {
 #wrap {
   width: 1000px;
   margin: 0px auto;
+}
+
+.leftSide {
+  /*position: fixed;
+  z-index: 0;*/
+}
+
+#homeScreenItem, #myRecipesItem, #notLoggedInItem {
+  margin-top: 192px;
 }
 
 .right {
@@ -282,6 +290,12 @@ a:hover {
 #docs {
   padding-top: 1px;
   padding-bottom: 20px;
+}
+
+core-toolbar {
+  position: fixed;
+  width: 100%;
+  z-index: 3; 
 }
 
 .resultElement {
