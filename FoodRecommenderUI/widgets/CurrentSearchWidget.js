@@ -17,16 +17,11 @@ AjaxSolr.CurrentSearchWidget = AjaxSolr.AbstractWidget.extend({
     var links = [];
 
     var q = this.manager.store.get('q').val();
-    if (q != '*:*') {
-      links.push($('<a href="#"></a>').text('(x) ' + q).click(function () {
-        self.manager.store.get('q').val('*:*');
-        self.doRequest(0, 'recipeCollection/select');
+      if (q != '*:*') {
+        links.push($('<a href="#"></a>').text('(x) ' + q).click(function () {
         return false;
       }));
     }
-    /*TODO: delete/reformat querys automatically added due to user preferences
-      how do i determine wether i added it or i did not? :/
-    */
     var fq = this.manager.store.values('fq');
     for (var i = 0, l = fq.length; i < l; i++) {
         var text;
@@ -59,15 +54,17 @@ AjaxSolr.CurrentSearchWidget = AjaxSolr.AbstractWidget.extend({
             text = value;
           }
         }
-        links.push($('<a href="#"></a>').text('(x) ' + text/*fq[i]*/).click(self.removeFacet(fq[i])));
-     // }
+        links.push($('<a href="#"></a>').text('(x) ' + text).click(self.removeFacet(fq[i])));
+    
     }
 
     if (links.length > 1) {
       links.unshift($('<a href="#"></a>').text('remove all').click(function () {
-        self.manager.store.get('q').val('*:*');
+        self.removeAllSelections(self); 
         self.manager.store.remove('fq');
+        self.manager.store.get('q').val('*:*');
         self.doRequest(0, 'recipeCollection/select');
+        
         return false;
       }));
     }
@@ -84,11 +81,55 @@ AjaxSolr.CurrentSearchWidget = AjaxSolr.AbstractWidget.extend({
     }
   },
 
+  removeAllSelections: function(self) {
+    self.removeNutritionConceptSelection(); 
+    self.removeDurationSelection(); 
+    self.removeLevelOfDifficultySelection(); 
+    self.removeKindOfMenuSelection(); 
+    self.clearInputs(); 
+  }, 
+
+  clearInputs: function() {
+    $('#search input').val(''); 
+    $('#addField input').val(''); 
+  }, 
+
+  removeNutritionConceptSelection: function() {
+    $('#nutritionConceptSelect').attr('selected', 0); 
+  }, 
+
+  removeDurationSelection: function() {
+    $('#durationSelect').val(0);
+  }, 
+
+  removeLevelOfDifficultySelection: function() {
+    $('#levelOfDifficultySelector').find('.core-selected').attr('class', 'levelOfDifficulty');
+    $('#egal').attr('class', 'levelOfDifficulty core-selected'); 
+  }, 
+
+  removeKindOfMenuSelection: function() {
+    $('#kindOfMenuSelector').find('.core-selected').attr('class', 'kindOfMenuContainer').find('.selectionMark').remove();
+  }, 
+
+  removeSelection: function(description, self) {
+    if(description == "type") {
+      self.removeKindOfMenuSelection(); 
+    } else if(description == "vegetarian" || description == "vegan" || description == "antialc") {
+      self.removeNutritionConceptSelection(); 
+    } else if(description == "timetowork") {
+      self.removeDurationSelection(); 
+    } else if(description == "requiredSkill") {
+      self.removeLevelOfDifficultySelection(); 
+    }
+  }, 
+
   removeFacet: function (facet) {
     var self = this;
-    return function () {
+    return function () { 
       if (self.manager.store.removeByValue('fq', facet)) {
         self.doRequest(0, 'recipeCollection/select');
+        var description = facet.split(":")[0];
+        self.removeSelection(description, self); 
       }
       return false;
     };

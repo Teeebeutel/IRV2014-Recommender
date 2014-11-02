@@ -1,13 +1,79 @@
-ProfilView = (function() {
+FoodRecommender.ProfilView = (function() {
   var that = {}, 
   ingredientsArray = [],
   ingredientsLikesArray = [],
   ingredientsDislikesArray = [],
+  LikeManager = null, 
+  DislikeManager = null, 
 
   init = function() {
     return that; 
   }, 
   
+  initManagers = function() {
+    LikeManager = new AjaxSolr.Manager({
+      solrUrl: 'http://localhost:8983/solr/' 
+    }); 
+    DislikeManager = new AjaxSolr.Manager({
+      solrUrl: 'http://localhost:8983/solr/' 
+    });
+
+    LikeManager.addWidget(new AjaxSolr.AutocompleteWidget({
+        id: 'likeAddInput',
+        target: '#likeAddInput',
+        fields: ['ingredientname']
+      }));
+      DislikeManager.addWidget(new AjaxSolr.AutocompleteWidget({
+        id: 'dislikeAddInput',
+        target: '#dislikeAddInput',
+        fields: ['ingredientname']
+      }));
+      LikeManager.addWidget(new AjaxSolr.IngredientsListWidget({
+        id: 'ingredientsLikes',
+        target: '#likeBox'
+      }));
+      DislikeManager.addWidget(new AjaxSolr.IngredientsListWidget({
+        id: 'ingredientsDislikes',
+        target: '#dislikeBox'
+      }));
+  }, 
+
+  addProfilItem = function(username, likes, dislikes) {
+    if(username != null) {
+      firstProfilLoad = false; 
+    emptyIngredientsArray(); 
+      makeProfilItem({
+        id: "profilItem", 
+        username: username
+      });
+      $('#menuButton').hide();
+
+      
+      LikeManager.doRequest(0, 'recipeCollection/select');
+      DislikeManager.doRequest(0, 'recipeCollection/select');
+
+      
+      for (var i = 0; i < likes.length; i++) {
+        addIngredient(likes[i], '#likeBox', 'ingredientsLikes');
+      }
+      for (var i = 0; i < dislikes.length; i++) {
+        addIngredient(dislikes[i], '#dislikeBox', 'ingredientsDislikes');
+      }
+    } else {
+      var text = "das Profil benutzen."; 
+      $(that).trigger('addNotLoggedInView', [text]); 
+    }
+  },
+
+  makeProfilItem = function(options) {
+      var item = ProfilItem().init({
+        id: options.id,
+        username: options.username
+      });
+      var $el = item.render(); 
+      $('#content').append($el);
+  },
+
   onIngredientItemEnter =  function(event) {
       $(event.currentTarget).find(".deleteButton").show(); 
   }, 
@@ -97,11 +163,13 @@ ProfilView = (function() {
   };
 
   that.init = init; 
+  that.addProfilItem = addProfilItem; 
   that.addIngredient = addIngredient; 
   that.emptyIngredientsArray = emptyIngredientsArray; 
   that.getLikes = getLikes; 
   that.getDislikes = getDislikes; 
   that.setIngredients = setIngredients; 
+  that.initManagers = initManagers; 
 
   return that; 
 

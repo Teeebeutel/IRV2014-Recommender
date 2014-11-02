@@ -23,11 +23,13 @@ class DB_Functions {
         return preg_replace("/\\\\u([a-f0-9]{4})/e", "iconv('UCS-4LE','UTF-8',pack('V', hexdec('U$1')))", $struct);
     }
 
+    /*saves a recipe in the database*/
     public function saveRecipe($id, $recipeId, $title, $instructions, $timeToWork, $vegetarian, $vegan, $antialc, $imgSrc) {
         $userId = $_SESSION['currentUserId']; 
         $result = mysql_query("INSERT INTO FAVOURITE_RECIPE(ID, Recipe_ID, Title, Instructions, Time_To_Work, Vegan, Vegetarian, Antialc, Img_Src, User_ID) VALUES('$id', '$recipeId', '$title', '$instructions', '$timeToWork', '$vegan', '$vegetarian', '$antialc', '$imgSrc', '$userId');");
     }
 
+    /*gets all informations necessary to show the profilscreen (username, likes and dislikes)*/
     public function getProfilData() {
         $userId = $_SESSION['currentUserId']; 
         $likes = array();
@@ -48,15 +50,17 @@ class DB_Functions {
         echo json_encode($result); 
     }
 
+    /*gets all saved recipes from this user*/
     public function getRecipes() {
-        $result = mysql_query("SELECT * FROM FAVOURITE_RECIPE;") or die(mysql_error());
+        $userId = $_SESSION['currentUserId']; 
+        $result = mysql_query("SELECT * FROM FAVOURITE_RECIPE WHERE User_ID='$userId';") or die(mysql_error());
         $recipes = array();
         while($row = mysql_fetch_array($result)) {
             $recipes[] = array("id"=>$row['ID'], "recipeId"=>$row['Recipe_ID'], "userId"=>$row['User_ID'], "title"=>$row['Title'], "instructions"=>$row['Instructions'], "timeToWork"=>$row['Time_To_Work'], "vegan"=>$row['Vegan'], "vegetarian"=>$row['Vegetarian'], "antialc"=>$row['Antialc'], "imgSrc"=>$row['Img_Src']);
         }
         echo $this->jsonRemoveUnicodeSequences($recipes);
     }
-
+    /*saves ingredients likes or dislikes added in the profil*/
     public function saveIngredient($value, $kind) {
         $userId = $_SESSION['currentUserId']; 
         if($kind == "ingredientsLikes") {
@@ -66,6 +70,7 @@ class DB_Functions {
         }
     }
 
+    /*delete ingredients likes or dislikes from the profil*/
     public function deleteIngredient($value, $kind) {
         if($kind == "ingredientsLikes") {
             $ingredientResult = mysql_query("DELETE FROM INGREDIENTS_LIKES WHERE Ingredient_Name = '$value';");

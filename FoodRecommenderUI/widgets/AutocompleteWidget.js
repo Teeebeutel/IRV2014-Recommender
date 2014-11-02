@@ -11,49 +11,18 @@
 
 AjaxSolr.AutocompleteWidget = AjaxSolr.AbstractTextWidget.extend({
 
-
-
-  addAdvancedSearchItem: function() {
-      makeAdvancedSearchItem({
-        id: "advancedSearchItem"
-      });
-      Manager.doRequest(0, 'recipeCollection/select');
-      $(document).on('click', '#countSelect core-item', onCountSelectChange);
-  },
-
-  onCountSelectChange: function(event) {
-    var value = $(event.currentTarget).attr('label');
-    Manager.store.addByValue('rows', value);
-    Manager.doRequest(0, 'recipeCollection/select');
-  },
-
-  makeAdvancedSearchItem: function(options) {
-      var item = AdvancedSearchItem().init({
-        id: options.id
-      });
-      var $el = item.render(); 
-      $('#content').append($el);
-  },
-
   emptyContent: function() {
     $('#content').empty();
   },
 
-
-
-
   onSearchButtonClick:  function(event) {
       var value = $('#query').val();
       var self = event.data.self;
-      console.log(value);
-      self.manager.store.get('q').val('*:*');
       self.manager.store.remove('fq');
+      //self.manager.store.get('q').val('*:*');
       if (value && self.set(value)) {
         self.emptyContent();
-        self.addAdvancedSearchItem();
-        self.doRequest(0, 'recipeCollection/select');
-        $('#levelOfDifficultySelector').prop('selected', 0);
-        $('#nutritionConceptSelect').prop('selected', 0);
+        FoodRecommender.AdvancedSearchView.addAdvancedSearchItem(-1, 0, 0, 0);
       }
   }, 
 
@@ -63,7 +32,6 @@ AjaxSolr.AutocompleteWidget = AjaxSolr.AbstractTextWidget.extend({
   
   afterRequest: function () {
     $(this.target).find('input').unbind().removeData('events');
-    
     var self = this;
       var callback = function (response) {
       var list = [];
@@ -84,19 +52,15 @@ AjaxSolr.AutocompleteWidget = AjaxSolr.AbstractTextWidget.extend({
         source: list,
         select: function(event, ui) {
           if (ui.item) {
-            console.log(self.id);
             self.requestSent = true;
             if(self.id == "text") {
-              self.manager.store.get('q').val('*:*');
               self.manager.store.remove('fq');
+              //self.manager.store.get('q').val('*:*');
               if (self.manager.store.addByValue('fq', ui.item.field + ':' + AjaxSolr.Parameter.escapeValue(ui.item.value))) {
                 self.emptyContent();
-                self.addAdvancedSearchItem();
-                self.doRequest(0, 'recipeCollection/select');
-                $('#levelOfDifficultySelector').prop('selected', 0);
-                $('#nutritionConceptSelect').prop('selected', 0);
+                FoodRecommender.AdvancedSearchView.addAdvancedSearchItem(-1, 0, 0, 0);
               }
-            } else {
+            } else if(self.id == "addField" || self.id == "likeAddInput" || self.id == "dislikeAddInput") {
               if (self.manager.store.addByValue('fq', ui.item.field + ':' + AjaxSolr.Parameter.escapeValue(ui.item.value))) {
                 self.doRequest(0, 'recipeCollection/select');
               }
@@ -117,16 +81,13 @@ AjaxSolr.AutocompleteWidget = AjaxSolr.AbstractTextWidget.extend({
         if (self.requestSent === false && e.which == 13) {
           var value = $(this).val();
           if(self.id == "text") {
-            self.manager.store.get('q').val('*:*');
             self.manager.store.remove('fq');
+            //self.manager.store.get('q').val('*:*');
             if (value && self.set(value)) {
               self.emptyContent();
-              self.addAdvancedSearchItem();
-              self.doRequest(0, 'recipeCollection/select');
-              $('#levelOfDifficultySelector').prop('selected', 0);
-              $('#nutritionConceptSelect').prop('selected', 0);
+              FoodRecommender.AdvancedSearchView.addAdvancedSearchItem(-1, 0, 0, 0);
             }
-          } else {
+          } else if(self.id == "addField" || self.id == "likeAddInput" || self.id == "dislikeAddInput") {
             if (value && self.set(value)) {
               self.doRequest(0, 'recipeCollection/select');
             }

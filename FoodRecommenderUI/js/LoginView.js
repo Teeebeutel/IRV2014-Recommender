@@ -1,8 +1,13 @@
-LoginView = (function() {
+FoodRecommender.LoginView = (function() {
   var that = {}, 
-  username = "", 
+ // username = "", 
 
   init = function() {
+    /*this is for the page to be scrolled to the top on page refresh*/
+    $(window).on('beforeunload', function() {
+      $(window).scrollTop(0);
+    });
+
     addLoginOverlayItem();
     return that; 
   }, 
@@ -11,6 +16,8 @@ LoginView = (function() {
     makeLoginOverlayItem({
       id: "loginOverlayItem"
     });
+    addRegistrationOverlayItem(); 
+    $('#registrationOverlayContainer').hide();
     $('#toRegistrationViewButton').on('click', onToRegistrationButtonClick);
     $('#loginButton').on('click', onLoginButtonClick);
     $('#withoutLoginButton').on('click', onWithoutLoginButtonClick);
@@ -21,6 +28,7 @@ LoginView = (function() {
       $('#loginErrorMessage').show();
     } else if (type == "right") {
       hideOverlay();
+      $(that).trigger('loggedIn'); 
     }
   }, 
 
@@ -37,11 +45,12 @@ LoginView = (function() {
 
   onWithoutLoginButtonClick = function(event) {
     hideOverlay();
+    $(that).trigger('useWithoutLogin'); 
   }, 
 
   onToRegistrationButtonClick = function(event) {
-    $('#loginOverlayContainer').remove();
-    addRegistrationOverlayItem();
+    $('#loginOverlayContainer').hide(); 
+    $('#registrationOverlayContainer').show();
   }, 
 
   onRegistrationButtonClick = function(event) {
@@ -65,26 +74,14 @@ LoginView = (function() {
       $.get("php/functions.php?command=saveNewUser", data); 
       $('#loginErrorMessage').hide();
       hideOverlay();
-      //$(that).trigger('loggedIn'); 
-      /*initRecommenderWithLogin(); 
-      userName = username; */
     } else {
       $('#loginErrorMessage').show();
     }
   },
 
-  getUserName = function() {
-    return userName; 
+  showOverlay = function() {
+    $('#loginOverlayItem').show();
   }, 
-
-  /*initRecommenderWithLogin = function() {
-    $.get("php/functions.php?command=getProfilData").done(
-      function(data) {
-        var object = jQuery.parseJSON(data); 
-        //userName = object['userName']; 
-        ProfilView.setIngredients(object['likes'], object['dislikes']); 
-    });
-  }, */
 
   hideOverlay = function() {
     $('body').removeClass('avoidScrolling');
@@ -95,7 +92,13 @@ LoginView = (function() {
     makeRegistrationOverlayItem({
       id: "registrationOverlayContainer"
     });
+    $('#backToLoginButton').on('click', onBackToLoginButtonClick); 
     $('#registrationButton').on('click', onRegistrationButtonClick);
+  }, 
+
+  onBackToLoginButtonClick = function(event) {
+    $('#registrationOverlayContainer').hide();
+    $('#loginOverlayContainer').show(); 
   }, 
 
   makeRegistrationOverlayItem = function(options) {
@@ -117,7 +120,7 @@ LoginView = (function() {
 
   that.init = init; 
   that.showErrorMessageOrHide = showErrorMessageOrHide; 
-  that.getUserName = getUserName; 
+  that.showOverlay = showOverlay; 
 
   return that; 
 
