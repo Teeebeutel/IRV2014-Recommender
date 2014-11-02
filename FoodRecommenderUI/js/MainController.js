@@ -34,7 +34,8 @@ FoodRecommender.MainController = (function() {
     $(homeScreenView).on('preselectionSearchButtonClick', onPreselectionSearchButtonClick); 
 
     $(myRecipesView).on('addNotLoggedInView', onAddNotLoggedInView); 
-    $(myRecipesView).on('getRecipes', onGetRecipes); 
+   // $(myRecipesView).on('getRecipes', onGetRecipes); 
+    $(myRecipesView).on('showRecipes', onShowRecipes); 
 
     $(recipeView).on('saveRecipe', onSaveRecipe); 
     $(profilView).on('addNotLoggedInView', onAddNotLoggedInView); 
@@ -49,7 +50,8 @@ FoodRecommender.MainController = (function() {
     $(advancedSearchView).on('doRequest', onDoRequest); 
 
     $(mainModel).on('addRecipeItem', onAddRecipeItem); 
-    $(mainModel).on('getProfilDataDone', onGetProfilDataDone); 
+    $(mainModel).on('getProfilAndRecipeDataDone', onGetProfilandRecipeDataDone); 
+   // $(mainModel).on('getProfilDataDone', onGetProfilDataDone); 
 
 		initUI();
 	}, 
@@ -69,6 +71,15 @@ FoodRecommender.MainController = (function() {
   onDoRequest = function(event) {
     Manager.doRequest(0, 'recipeCollection/select');
   }, 
+
+  onShowRecipes = function(event, savedRecipes) {
+   // console.log(savedRecipes); 
+   console.log(savedRecipes.length);
+    for (var i = 0; i < savedRecipes.length; i++) {
+        //console.log(savedRecipes[i].instructions); 
+        recipeView.addRecipeItem(savedRecipes[i].id, savedRecipes[i].recipeId, savedRecipes[i].title, savedRecipes[i].instructions, savedRecipes[i].timeToWork, savedRecipes[i].vegetarian, savedRecipes[i].vegan, savedRecipes[i].antialc, '#myRecipesItem', savedRecipes[i].imgSrc);
+      }
+    }, 
 
   onAdaptSearchToPreselection = function(event, selectedItems) {
     Manager.store.remove('fq');
@@ -173,8 +184,17 @@ FoodRecommender.MainController = (function() {
     firstProfilLoad = true; 
   },
 
+  onGetProfilandRecipeDataDone = function(event, username, likes, dislikes, recipes) {
+    getProfilDataDone(username, likes, dislikes); 
+    getRecipeDataDone(recipes); 
+  }, 
   
-  onGetProfilDataDone = function(event, username, likes, dislikes) {
+  getRecipeDataDone = function(recipes) {
+    console.log(recipes); 
+    myRecipesView.setRecipes(recipes);
+  }, 
+
+  getProfilDataDone = function(username, likes, dislikes) {
     var type = $('#content > div:first-of-type').attr('id'); 
     userName = username; 
     profilView.setIngredients(likes, dislikes); 
@@ -190,12 +210,13 @@ FoodRecommender.MainController = (function() {
   }, 
 
   onSaveRecipe = function(event, id, recipeId, title, instructions, timeToWork, vegetarian, vegan, antialc, imgSrc) {
+    myRecipesView.addRecipe(id, recipeId, title, instructions, timeToWork, vegetarian, vegan, antialc, imgSrc); 
     mainModel.saveRecipe(id, recipeId, title, instructions, timeToWork, vegetarian, vegan, antialc, imgSrc);
   }, 
 
-  onGetRecipes = function(event) {
-    mainModel.getRecipes(); 
-  }, 
+ /* onGetRecipes = function(event) {
+    myRecipesView.getRecipes(); 
+  }, */
 
   onAddNotLoggedInView = function(event, text) {
     notLoggedInView.addNotLoggedInView(text); 
@@ -206,7 +227,8 @@ FoodRecommender.MainController = (function() {
   }, 
 
   onLoggedIn = function(event) {
-    mainModel.getProfilData(); 
+    //mainModel.getProfilData(); 
+    mainModel.getProfilAndRecipeData(); 
   }, 
 
   onUseWithoutLogin = function() {
