@@ -30,7 +30,7 @@ class DB_Functions {
     }
 
     /*gets all informations necessary to show the profilscreen (username, likes and dislikes)*/
-    public function getProfilData() {
+    function getProfilData() {
         $userId = $_SESSION['currentUserId']; 
         $likes = array();
         $dislikes = array();
@@ -47,18 +47,26 @@ class DB_Functions {
             $dislikes[] = $dislikesRow['Ingredient_Name'];
         }
         $result = array("userName"=>$userName, "likes"=>$likes, "dislikes"=>$dislikes);
-        echo json_encode($result); 
+        return $result; 
+        //echo json_encode($result); 
+    }
+
+    public function getProfilAndRecipeData() {
+        $result = $this->getProfilData(); 
+        $recipes = $this->getRecipes(); 
+        $result["recipes"] = $recipes; 
+        echo json_encode($result);
     }
 
     /*gets all saved recipes from this user*/
-    public function getRecipes() {
+    function getRecipes() {
         $userId = $_SESSION['currentUserId']; 
         $result = mysql_query("SELECT * FROM FAVOURITE_RECIPE WHERE User_ID='$userId';") or die(mysql_error());
         $recipes = array();
         while($row = mysql_fetch_array($result)) {
             $recipes[] = array("id"=>$row['ID'], "recipeId"=>$row['Recipe_ID'], "userId"=>$row['User_ID'], "title"=>$row['Title'], "instructions"=>$row['Instructions'], "timeToWork"=>$row['Time_To_Work'], "vegan"=>$row['Vegan'], "vegetarian"=>$row['Vegetarian'], "antialc"=>$row['Antialc'], "imgSrc"=>$row['Img_Src']);
         }
-        echo $this->jsonRemoveUnicodeSequences($recipes);
+        return $this->jsonRemoveUnicodeSequences($recipes);
     }
     /*saves ingredients likes or dislikes added in the profil*/
     public function saveIngredient($value, $kind) {

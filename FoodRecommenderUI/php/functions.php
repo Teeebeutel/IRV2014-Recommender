@@ -48,13 +48,14 @@
         case 'getProfilData':
         	$db->getProfilData();
         	break;
+        case 'getProfilAndRecipeData': 
+        	$db->getProfilAndRecipeData(); 
 		default: 
 			return;
 	}
 
 	function getImage($url) {
 		require '../libs/simplehtmldom_1_5/simple_html_dom.php';
-		//print_r($url);
 		$html = file_get_html($url);
 		$result = "res/images/noImage.png"; 
 		if(!empty($html)) {

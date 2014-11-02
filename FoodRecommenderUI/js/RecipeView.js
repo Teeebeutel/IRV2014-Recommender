@@ -113,9 +113,6 @@ FoodRecommender.RecipeView = (function() {
     var imgSrc = $(event.currentTarget).closest('.resultElement').find('img').attr('src');
     $(event.currentTarget).css('color', '#ffc107');
     $(that).trigger('saveRecipe', [id, recipeId, title, instructions, timeToWork, vegetarian, vegan, antialc, imgSrc]);
-    /*var data = {id: id, recipeId: recipeId, title: title, instructions: instructions, timeToWork: timeToWork, vegetarian: vegetarian, vegan: vegan, antialc: antialc, imgSrc: imgSrc};
-    $.get("php/functions.php?command=saveRecipe", data); */
-
   }, 
 
   getImage =  function(url, img) {

@@ -1,5 +1,6 @@
 FoodRecommender.MyRecipesView = (function() {
 	var that = {},  
+  savedRecipes = []; 
 
 	init = function() {
 	  return that; 
@@ -10,7 +11,7 @@ FoodRecommender.MyRecipesView = (function() {
       makeMyRecipesItem({
         id: "myRecipesItem"
       });
-      $(that).trigger('getRecipes'); 
+      getRecipes(); 
     } else {
       var text = "Rezepte abspeichern."; 
       $(that).trigger('addNotLoggedInView', [text]); 
@@ -24,9 +25,26 @@ FoodRecommender.MyRecipesView = (function() {
       	});
       	var $el = item.render(); 
       	$('#content').append($el);
-  	};
+  	}, 
+
+    setRecipes = function(recipes) {
+      savedRecipes = recipes; 
+    }, 
+
+    getRecipes = function() {
+      $(that).trigger('showRecipes', [savedRecipes]); 
+    }, 
+
+    addRecipe = function(id, recipeId, title, instructions, timeToWork, vegetarian, vegan, antialc, imgSrc) {
+      var newRecipeObject = {id: id, recipeId: recipeId, title: title, instructions: instructions, timeToWork: timeToWork, vegetarian: vegetarian, vegan: vegan, antialc: antialc, imgSrc: imgSrc}; 
+      console.log(newRecipeObject); 
+      savedRecipes.push(newRecipeObject); 
+    };
 
 	that.addMyRecipesItem = addMyRecipesItem;
+  that.getRecipes = getRecipes; 
+  that.setRecipes = setRecipes; 
+  that.addRecipe = addRecipe; 
 	that.init = init; 
 	return that; 
 })(); 
