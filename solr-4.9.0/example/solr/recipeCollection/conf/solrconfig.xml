@@ -1594,7 +1594,7 @@
   <requestHandler name="/elevate" class="solr.SearchHandler" startup="lazy">
     <lst name="defaults">
       <str name="echoParams">explicit</str>
-      <str name="df">text</str>
+      <str name="df">title</str>
     </lst>
     <arr name="last-components">
       <str>elevator</str>
