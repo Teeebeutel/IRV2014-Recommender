@@ -269,8 +269,10 @@ FoodRecommender.MainController = (function() {
       likesString += ('ingredientname:' + likes[item] + " OR "); 
     }
     likesString = likesString.substring(0, likesString.length-4); 
+    if(likesString){
     Manager.store.addByValue('q', likesString); 
-  },
+      }
+    },
 
   onHomeMenuItemClick = function(event) {
     emptyContent();
